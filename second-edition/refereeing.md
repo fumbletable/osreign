@@ -25,4 +25,5 @@ This section contains material for the Referee's eyes only. Players, turn back n
 - [Reaction Rolls](refereeing/reaction-rolls/) - NPC initial attitudes
 - [Retainers](refereeing/retainers/) - Hiring, loyalty, and morale
 - [Bestiary](refereeing/bestiary/) - Monster rules and 190+ creatures
-- **Treasure** - Treasure types and tables *(coming soon)*
+- [Treasure](refereeing/treasure/) - Treasure types and generation tables
+- [Domain Play](refereeing/domain-play/) - Strongholds, retinues, and rulership *(placeholder)*
