@@ -1,0 +1,69 @@
+title: Olde Swords Reign
+description: Four classes. Infinite archetypes. Real danger.
+url: "https://osreign.com"
+baseurl: ""
+
+# Theme
+remote_theme: just-the-docs/just-the-docs
+
+# Colour scheme (light/dark)
+color_scheme: dark
+
+# Logo (optional - add later)
+# logo: "/assets/images/logo.png"
+
+# Aux links (top right)
+aux_links:
+  "Discord":
+    - "https://discord.gg/YOUR_INVITE_HERE"
+  "GitHub":
+    - "https://github.com/fumbletable/osreign"
+
+aux_links_new_tab: true
+
+# Footer
+footer_content: "Olde Swords Reign is licensed under <a href=\"https://opengamingfoundation.org/ogl.html\">OGL 1.0a</a>. Built with <a href=\"https://just-the-docs.com\">Just the Docs</a>."
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
+
+# Search
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 3
+  preview_words_before: 5
+  preview_words_after: 10
+  tokenizer_separator: /[\s/]+/
+  rel_url: true
+  button: false
+
+# Collections for organizing content
+collections:
+  players:
+    permalink: "/:collection/:path/"
+    output: true
+  refereeing:
+    permalink: "/:collection/:path/"
+    output: true
+
+# Build settings
+markdown: kramdown
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+# Exclude from build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-relative-links
