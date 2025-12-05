@@ -1,5 +1,6 @@
 ---
 title: Refereeing
+layout: default
 parent: Second Edition
 nav_order: 2
 has_children: true
