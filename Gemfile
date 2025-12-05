@@ -6,6 +6,8 @@ gem "just-the-docs", "~> 0.8"
 group :jekyll_plugins do
   gem "jekyll-seo-tag"
   gem "jekyll-relative-links"
+  gem "jekyll-remote-theme"
+  gem "jekyll-include-cache"
 end
 
 # Windows and JRuby does not include zoneinfo files

@@ -67,3 +67,5 @@ exclude:
 plugins:
   - jekyll-seo-tag
   - jekyll-relative-links
+  - jekyll-remote-theme
+  - jekyll-include-cache
