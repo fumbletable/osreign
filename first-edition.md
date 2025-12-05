@@ -12,10 +12,9 @@ The original Olde Swords Reign, released in 2021.
 
 ## Get the Book
 
-- [**DriveThruRPG**](https://www.drivethrurpg.com/) - PDF and Print-on-Demand
-- [**Amazon**](https://www.amazon.co.uk/) - Paperback
-
-*(Links to be updated)*
+- [**DriveThruRPG**](https://www.drivethrurpg.com/en/product/402830/olde-swords-reign) - PDF and Print-on-Demand
+- [**Amazon UK**](https://www.amazon.co.uk/Olde-Swords-Reign-Complete-adventure/dp/B0B7QTTS5T) - Paperback
+- [**Amazon US**](https://www.amazon.com/Olde-Swords-Reign-Complete-adventure/dp/B0B7QTTS5T) - Paperback
 
 ---
 
