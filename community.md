@@ -14,7 +14,7 @@ Join the Olde Swords Reign community.
 
 The OSwR Discord is where playtesting happens, rules get discussed, and the community shares their games.
 
-[**Join the Discord**](https://discord.gg/YOUR_INVITE_HERE){: .btn .btn-primary }
+[**Join the Discord**](https://discord.gg/KJgrHHDkSG){: .btn .btn-primary }
 
 ---
 
