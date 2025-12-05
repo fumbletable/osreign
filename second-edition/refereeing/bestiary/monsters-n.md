@@ -13,7 +13,7 @@ nav_order: 15
 **Naga, Guardian** (HD 11) | XP 1210
 AC 16 | HP 44 | Mv Normal | Ml 10
 Atk bite (d8 + poison), tail constrict (2d4)
-{Darkvision}
+[Darkvision]
 Poison bite (CON 16 or die). Casts spells as 6th-level Cleric. Immortal - returns 1d6 days after death.
 Giant serpent with human head. Guards sacred sites. Lawful and wise.
 
@@ -22,7 +22,7 @@ Giant serpent with human head. Guards sacred sites. Lawful and wise.
 **Naga, Spirit** (HD 10) | XP 1000
 AC 15 | HP 40 | Mv Normal | Ml 10
 Atk bite (d4 + poison)
-{Darkvision}
+[Darkvision]
 Poison bite (CON 16 or die). Casts spells as 7th-level Magic-User. Charming gaze (CHA 12 or charmed).
 Evil serpent with twisted human face. Schemes and manipulates from hidden lairs.
 
@@ -38,7 +38,7 @@ Primitive humans. Stronger than average (+1 damage). Live in caves, hunt in pack
 **Nightmare** (HD 6) | XP 360
 AC 16 | HP 24 | Mv Fast, Fly Fast | Ml 9
 Atk 2 hooves (d6 + d6 fire), bite (d6)
-{Darkvision} {Immune: Fire}
+[Darkvision] [Immune: Fire]
 Flaming hooves leave burning hoofprints. Can become ethereal. Evil steeds from the lower planes.
 
 ---

@@ -13,7 +13,7 @@ nav_order: 2
 **Ant, Giant Worker** (HD 1) | XP 10
 AC 16 | HP 4 | Mv Normal | Ml 7
 Atk bite (d6)
-{Mindless}
+[Mindless]
 Can carry 50x body weight. 5-6 ft long. Always found with others.
 Red or black with no statistical difference. Tends to fungus gardens in vast underground colonies.
 
@@ -22,7 +22,7 @@ Red or black with no statistical difference. Tends to fungus gardens in vast und
 **Ant, Giant Warrior** (HD 2) | XP 40
 AC 16 | HP 8 | Mv Normal | Ml 10
 Atk bite (2d6)
-{Mindless}
+[Mindless]
 Defend the colony to the death. About 6 ft long with larger mandibles than workers.
 
 ---
@@ -30,7 +30,7 @@ Defend the colony to the death. About 6 ft long with larger mandibles than worke
 **Ant, Giant Queen** (HD 10) | XP 1000
 AC 16 | HP 40 | Mv Slow | Ml 9
 Atk bite (2d6)
-{Mindless}
+[Mindless]
 Heart of the colony. About 9 ft long. Destroying her ends the colony's future.
 
 ---

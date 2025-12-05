@@ -20,7 +20,7 @@ Can travel for weeks without water. Spit causes no damage but is foul. Bad-tempe
 **Carrion Crawler** (HD 3) | XP 90
 AC 12 | HP 12 | Mv Fast, Climb Normal | Ml 9
 Atk 8 tentacles (paralysis)
-{Darkvision}
+[Darkvision]
 Paralysing tentacles (STR 8, 2d4 turns). Feeds on carrion but attacks living prey. 10 ft long segmented horror.
 
 ---
@@ -36,7 +36,7 @@ Ambush hunter. Stalks prey from above.
 **Catoblepas** (HD 6) | XP 360
 AC 12 | HP 24 | Mv Slow | Ml 8
 Atk bite (d6), tail (d8 + stun)
-{Darkvision}
+[Darkvision]
 Death Gaze (CON 12 or die). Head so heavy it drags on the ground. Tail strike stuns for d6 rounds.
 Buffalo-bodied beast with a grotesque head. Dwells in swamps.
 
@@ -45,7 +45,7 @@ Buffalo-bodied beast with a grotesque head. Dwells in swamps.
 **Cave Locust** (HD 2) | XP 40
 AC 14 | HP 8 | Mv Normal, Fly Normal | Ml 5
 Atk bite (d2), spit (special)
-{Darkvision}
+[Darkvision]
 Spit: brown goo causes nausea (CON 8 or -2 to all rolls for d6 turns). Shriek when startled attracts wandering monsters.
 
 ---
@@ -76,7 +76,7 @@ Bat-winged rooster with a serpentine tail. Struts with murderous intent.
 **Crab, Giant** (HD 3) | XP 90
 AC 16 | HP 12 | Mv Normal, Swim Normal | Ml 7
 Atk 2 claws (2d6)
-{Blindsight}
+[Blindsight]
 About 5 ft in diameter. Larger specimens move slower but hit harder.
 
 ---
@@ -99,5 +99,5 @@ Death Roll: After bite hits, victim must save (STR 12) or be dragged underwater 
 **Cyclops** (HD 13) | XP 1690
 AC 16 | HP 52 | Mv Normal | Ml 9
 Atk club (3d10) or rock (3d6, Far)
-{Darkvision}
+[Darkvision]
 One-eyed giants. Less intelligent than their multi-eyed kin. Shepherds and smiths.

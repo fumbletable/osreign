@@ -16,7 +16,7 @@ nav_order: 1
 **Monster Name** (HD X) | XP ##
 AC ## | HP ## | Mv Speed | Ml #
 Atk attacks (damage)
-{Tags}
+[Tags]
 Special abilities (STAT DC).
 Flavour - one or two evocative lines.
 ```
@@ -61,15 +61,15 @@ Tags are shorthand. Most are self-explanatory. Tags with universal rules:
 
 | Tag | Rule |
 |-----|------|
-| **{Undead}** | Immune to poison, charm, sleep, fear |
-| **{Mindless}** | Mental saves = 0 |
-| **{Incorporeal}** | Only harmed by silver or magic |
-| **{Swarm}** | Half damage from single-target attacks |
-| **{Regenerate X}** | Recovers X HP per round |
+| **[Undead]** | Immune to poison, charm, sleep, fear |
+| **[Mindless]** | Mental saves = 0 |
+| **[Incorporeal]** | Only harmed by silver or magic |
+| **[Swarm]** | Half damage from single-target attacks |
+| **[Regenerate X]** | Recovers X HP per round |
 
-Descriptive tags need no rule: {Darkvision}, {Cowardly}, {Territorial}, {Greedy}, etc.
+Descriptive tags need no rule: [Darkvision], [Cowardly], [Territorial], [Greedy], etc.
 
-Parameterised tags: {Immune: Fire}, {Resist: Cold}, {Vulnerable: Fire}
+Parameterised tags: [Immune: Fire], [Resist: Cold], [Vulnerable: Fire]
 
 ---
 
@@ -93,7 +93,7 @@ That's it. No other conversion needed.
 **Goblin** (HD 1) | XP 10
 AC 13 | HP 4 | Mv Normal | Ml 7
 Atk weapon (d6)
-{Darkvision} {Cowardly}
+[Darkvision] [Cowardly]
 Small green-skinned raiders. Attack in swarms, flee when outmatched.
 
 ---
@@ -101,7 +101,7 @@ Small green-skinned raiders. Attack in swarms, flee when outmatched.
 **Ghoul** (HD 2) | XP 40
 AC 13 | HP 8 | Mv Normal | Ml 9
 Atk 2 claws (d3), bite (d3)
-{Undead} {Darkvision}
+[Undead] [Darkvision]
 Paralyzing touch (CON 8, 2d4 rounds). Elves immune.
 Grave-stench and too-long fingers. Once human, now endlessly hungry.
 
@@ -110,7 +110,7 @@ Grave-stench and too-long fingers. Once human, now endlessly hungry.
 **Basilisk** (HD 6) | XP 360
 AC 15 | HP 24 | Mv Slow | Ml 9
 Atk bite (d10)
-{Darkvision}
+[Darkvision]
 Petrifying gaze (CON 12 or stone). Fighting blind = SETBACK.
 Eight-legged reptile with dead white eyes. Lairs in ruins, surrounded by statues of the unfortunate.
 
@@ -119,7 +119,7 @@ Eight-legged reptile with dead white eyes. Lairs in ruins, surrounded by statues
 **Troll** (HD 6) | XP 360
 AC 15 | HP 24 | Mv Normal | Ml 10
 Atk 2 claws (d6), bite (d10)
-{Darkvision} {Regenerate 3}
+[Darkvision] [Regenerate 3]
 Fire or acid stops regeneration.
 Rubbery green flesh, long arms, black eyes. Remembers everyone who hurt it.
 
@@ -128,7 +128,7 @@ Rubbery green flesh, long arms, black eyes. Remembers everyone who hurt it.
 **Rust Monster** (HD 5) | XP 250
 AC 17 | HP 20 | Mv Normal | Ml 7
 Atk antennae (special)
-{Darkvision}
+[Darkvision]
 Touch rusts metal instantly. Magic items: save or destroyed.
 Lobster-like scavenger. Loves the taste of iron. Harmless if you're naked.
 
@@ -137,6 +137,6 @@ Lobster-like scavenger. Loves the taste of iron. Harmless if you're naked.
 **Dragon** (HD 10) | XP 1000
 AC 19 | HP 40 | Mv Normal, Fly Fast | Ml 10
 Atk 2 claws (d8), bite (3d6)
-{Darkvision}
-Breath weapon (DEX 16, fire, 90' cone, HD damage). {Immune: Fire}
+[Darkvision]
+Breath weapon (DEX 16, fire, 90' cone, HD damage). [Immune: Fire]
 Ancient, cunning, and endlessly greedy. Enjoys flattery almost as much as gold.

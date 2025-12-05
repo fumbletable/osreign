@@ -13,7 +13,7 @@ nav_order: 9
 **Halfling** (HD 1) | XP 10
 AC 12 | HP 4 | Mv Normal | Ml 8
 Atk sword (d6) or sling (d4)
-{Resist: poison, magic (saves at +2)}
+[Resist: poison, magic (saves at +2)]
 Hide in wilderness (90%) or dungeons (2 in 6). Brave despite their size.
 Small folk who prize comfort but make fierce defenders of hearth and home.
 
@@ -22,7 +22,7 @@ Small folk who prize comfort but make fierce defenders of hearth and home.
 **Hawk, Giant** (HD 3) | XP 90
 AC 13 | HP 12 | Mv Normal, Fly Fast | Ml 8
 Atk 2 talons (d6), bite (d10)
-{Darkvision}
+[Darkvision]
 Keen-eyed hunters. Can be trained if taken young. Some are intelligent and can speak.
 
 ---
@@ -38,7 +38,7 @@ Human face, vulture body. Nests on cliffs and lures sailors to their doom.
 **Hellhound** (HD 4-7) | XP varies
 AC 15 | HP HD×4 | Mv Normal | Ml 9
 Atk bite (d6)
-{Darkvision}
+[Darkvision]
 Fire breath (HD d4s damage, Near, single target).
 Flame-eyed hounds from the lower planes. Serve evil masters or hunt in infernal packs.
 
@@ -54,7 +54,7 @@ Eagle head and wings, horse body. Easier to train than griffons, but less presti
 **Hobgoblin** (HD 1) | XP 10
 AC 14 | HP 4 | Mv Normal | Ml 9
 Atk sword (d8) or longbow (d8)
-{Darkvision}
+[Darkvision]
 Larger, more disciplined goblins. Militaristic and cruel. Form organized warbands.
 
 ---
@@ -62,7 +62,7 @@ Larger, more disciplined goblins. Militaristic and cruel. Form organized warband
 **Homunculus** (HD 2) | XP 40
 AC 13 | HP 8 | Mv Slow, Fly Normal | Ml 7
 Atk bite (d3)
-{Darkvision}
+[Darkvision]
 Sleep bite (CON 8). Other variants: poison bite, detect magic/evil.
 Tiny winged servant created by wizards. Abilities vary by creator's design.
 

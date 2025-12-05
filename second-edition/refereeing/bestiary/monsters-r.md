@@ -13,7 +13,7 @@ nav_order: 18
 **Rat, Giant** (HD 1/2) | XP 5
 AC 12 | HP 2 | Mv Normal | Ml 7
 Atk bite (d3)
-{Darkvision}
+[Darkvision]
 1 in 20 carry disease (CON 8, effects per Referee).
 Cat-sized vermin infesting dungeons everywhere. Attack in swarms when hungry.
 
@@ -29,7 +29,7 @@ Bad-tempered and willing to charge intruders. The woolly rhinoceros is a larger 
 **Roc** (HD 12) | XP 1440
 AC 15 | HP 48 | Mv Normal, Fly Fast | Ml 9
 Atk beak (3d6), 2 talons (2d6)
-{Darkvision}
+[Darkvision]
 Mythological great birds large enough to prey on elephants. Fledglings can be trained as mounts - eggs are priceless. Larger specimens (up to 18 HD) exist.
 
 ---
@@ -44,6 +44,6 @@ Large, intelligent baboons (4-5 ft tall). Aggressive and cruel omnivores. Prefer
 **Rust Monster** (HD 5) | XP 250
 AC 17 | HP 20 | Mv Normal | Ml 7
 Atk antennae (special)
-{Darkvision}
+[Darkvision]
 Touch rusts metal instantly. Magic items: save or destroyed (10% per +1 bonus to resist).
 Lobster-like scavenger. Loves the taste of iron. Harmless if you're naked.
