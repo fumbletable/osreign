@@ -1,7 +1,7 @@
 title: Olde Swords Reign
 description: Four classes. Infinite archetypes. Real danger.
-url: "https://osreign.com"
-baseurl: ""
+url: "https://fumbletable.github.io"
+baseurl: "/osreign"
 
 # Theme
 remote_theme: just-the-docs/just-the-docs
