@@ -24,5 +24,5 @@ This section contains material for the Referee's eyes only. Players, turn back n
 - [Traps & Hazards](refereeing/traps-and-hazards/) - Detection, triggers, and disarming
 - [Reaction Rolls](refereeing/reaction-rolls/) - NPC initial attitudes
 - [Retainers](refereeing/retainers/) - Hiring, loyalty, and morale
-- **Bestiary** - Monster rules and 190+ creatures *(coming soon)*
+- [Bestiary](refereeing/bestiary/) - Monster rules and 190+ creatures
 - **Treasure** - Treasure types and tables *(coming soon)*
