@@ -27,3 +27,4 @@ bundle exec jekyll serve
 Game content is licensed under [OGL 1.0a](https://opengamingfoundation.org/ogl.html).
 
 Website theme ([Just the Docs](https://github.com/just-the-docs/just-the-docs)) is MIT licensed.
+
