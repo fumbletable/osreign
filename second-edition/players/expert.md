@@ -8,6 +8,8 @@ nav_order: 2
 
 # Expert
 
+Experts are the skilled specialists—thieves, scouts, assassins, bards, rangers, and anyone who lives by their wits. You start with more feats than anyone else and can shape your character however you want.
+
 **HD:** 6 + CON, then 1d6 (avg 3) + CON per level
 **Saves:** DEX, INT
 **Ability Boost:** +1 DEX
@@ -19,8 +21,8 @@ nav_order: 2
 ## Class Features
 
 **Feats**
-- At level 1, gain **6 Expert Feats**.
-- At each odd level, gain +1 Expert Feat.
+- At level 1, gain **6 feats** from the Expert or General lists.
+- At each odd level, gain +1 feat from either list.
 
 **Boost Hook — Precision**
 When you spend a Boost Die, roll 2d6 and keep the higher result.

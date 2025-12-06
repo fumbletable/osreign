@@ -77,12 +77,12 @@ All classes follow the same advancement pattern:
 
 - **Odd levels (1, 3, 5, 7, 9, 11):** Class feature advancement
   - Fighter → +1 Fighter Feat
-  - Expert → +1 Expert Feat
+  - Expert → +1 Expert or General Feat
   - Cleric → unlocks next spell tier (1–6)
   - Magic-User → unlocks next spell tier (1–6)
 - **Even levels (2, 4, 6, 8, 10, 12):** +1 General Feat
 - **Levels 4, 8, 12:** +1 to any ability modifier (maximum +5)
-- **Multiclassing:** May only add a new class at odd levels
+- **Multiclassing:** May only add a new class at odd levels *(see [Multiclassing](#multiclassing) below — section needs expansion)*
 
 ---
 

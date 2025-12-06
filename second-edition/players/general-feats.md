@@ -6,105 +6,66 @@ grand_parent: Players
 nav_order: 1
 ---
 
-# General Feats (Draft Review)
+# General Feats
 
-These feats are tagged **General** but may overlap with class-specific or racial themes. Notes included for trimming, moving, or restricting.
-
----
-
-## Core General (likely stay General)
-
-- Alchemist — EDGE to craft/identify potions. *(utility)*
-- Ancient Lore — EDGE on history/arcane checks. *(utility)*
-- Animal Companion+ — Gain a 1 HD companion. *(flexible; could be Fighter/Expert too)*
-- Animal Whisperer — EDGE to calm/ride/direct animals.
-- Beast Bond — Boost your companion. *(ties into Companion)*
-- Attractive — EDGE when looks matter. *(social)*
-- Aura of Courage — Allies NEAR gain EDGE on fear saves.
-- Centered Mind — End charm/fear once per rest.
-- Countercharm — Protect allies from charm/fear while performing. *(bard-flavor)*
-- Cutting Words — Spend Boost to impose SETBACK on foe. *(bard-flavor)*
-- Disease Immunity — Immune to diseases.
-- Divine Sense — Detect undead/fiendish malice NEAR. *(paladin-flavor, but could stay General)*
-- Empath — Sense surface emotions.
-- Endurance — EDGE vs fatigue/exhaustion once/day.
-- Fast Healer — +1 HP per Hit Die spent.
-- Fearless — Auto-succeed vs mundane fear; EDGE vs magical.
-- Fleet of Foot — +5 ft Speed.
-- Gift of Tongues — +2 languages.
-- Healer — Use Provisions to heal 1d6+CON.
-- Herbalist — EDGE to ID/craft herbs; herbs as Provisions.
-- Hold Breath — CON minutes instead of CON rounds.
-- Improved Initiative — +2 to Initiative.
-- Resilience — 1/day reroll a failed save. *(replaces Iron Will, Indomitable, Unyielding)*
-- Jack of All Trades — Add PB to any untrained check once/scene. *(watch overlap with Expert feats)*
-- Keen Senses — Pick one sense (hearing, sight, smell). EDGE on checks using that sense. *(can take multiple times for different senses)*
-- Leadership — Spend Boost to aid ally.
-- Linguist — 2 extra languages.
-- Mentor — Train another PC, grant +1 once/session.
-- Natural Explorer — Ignore terrain, sense weather. *(ranger-flavor)*
-- ~~Observant~~ — CUT (too passive/5e-ish)
-- ~~Performer~~ — CUT (too narrow; use Silver Tongue for social manipulation via performance)
-- Poison Resistance — EDGE on saves vs poison.
-- Resilient — +1 to one save type.
-- Rider — Never fall from mount.
-- Strong Back — +5 slots capacity.
-- Survivalist — EDGE on track/forage.
-- Tactician — Allies NEAR gain EDGE on initiative.
+Any character can take these feats at even levels (2, 4, 6, 8, 10, 12).
 
 ---
 
-## Fighter-leaning (move or duplicate into Fighter)
+## Feat List
 
-- Armor Proficiency+ — Wear higher armor.
-- ~~Defensive Duelist~~ — CUT (redundant with Fighter-only Duelist)
-- ~~Dodge~~ — CUT (too generic; AC feats moved to Fighter)
-- Dual Wielder — EDGE on attacks when two-weapon fighting.
-- Heavy Armor Master — -2 damage in heavy.
-- Hunter's Mark — EDGE vs marked foe. *(ranger-flavor)*
-- Magic Resistance — EDGE vs spells. *(very strong; maybe Fighter-only)*
-- Martial Adept — Take 1 Fighter feat.
-- Mounted Combatant — EDGE vs smaller foes while mounted.
-- Opportunist — Free attack if foe misses. *(could be Expert too)*
-- Polearm Master — +5 ft reach.
-- Quick Draw — Swap weapons free.
-- ~~Savage Attacker~~ — CUT (replaced by Fighter-only Cutting Edge)
-- Shield Master — PB to saves with shield.
-- Tough — +2 HP per level.
-- Unarmored Defense — AC = 10 + DEX + CON. *(could also be Expert)*
-- Weapon Mastery+ — Gain weapon proficiencies.
-
----
-
-## Expert-leaning (move or duplicate into Expert)
-
-- ~~Dungeon Cunning~~ — CUT (use Trap Sense or Keen Senses)
-- Escape Artist — EDGE to escape bonds/grapples.
-- ~~Silent Step~~ — CUT (replaced by Expert-only Hide in Shadows)
-- ~~Skulker~~ — CUT (replaced by Expert-only Hide in Shadows)
-
----
-
-## Class-locked (already marked in file)
-
-- Arcane Focus+ (MU) — Spell school edge. *(Magic-User only)*
-- Armored Caster (MU) — Cast in Light armor. *(MU only)*
-- Channel (Cleric) — AoE healing. *(Cleric only)*
-- Divine Favor+ (Cleric) — SETBACK on saves vs chosen spell. *(Cleric only)*
-
----
-
-## Racial / Special Restrictions
-
-- Lucky — Recommend Halflings only.
-- Heroic Destiny — Feels too 5E; could cut.
-- Gambler's Luck — Modern swingy; could cut.
-- Blessed by the Gods — Boost capacity increase; may be too much.
-
----
-
-## Merge / Notes
-
-- ~~Keen Hearing, Sight, Smell~~ → **RESOLVED: Merged into Keen Senses (pick one sense)**
-- Animal feats → feel broadly useful (companions, pets), but double well as Fighter/Expert options.
-- Divine Sense / Aura of Courage → could be folded into Paladin archetypes, but fine as General.
+| Feat | Effect |
+|:-----|:-------|
+| Alchemist | EDGE to craft or identify potions. |
+| Ancient Lore | EDGE on history and arcane knowledge checks. |
+| Animal Companion | Gain a loyal 1 HD animal companion. |
+| Animal Whisperer | EDGE to calm, ride, or direct animals. |
+| Armor Proficiency | Gain proficiency with the next armor tier (Light → Medium → Heavy). |
+| Attractive | EDGE on CHA checks when looks would matter. |
+| Aura of Courage | Allies within NEAR gain EDGE on saves vs fear. |
+| Beast Bond | Your animal companion gains +1 HD and +1 to attack. Requires Animal Companion. |
+| Brawler | Add PB to unarmed attacks and grapple checks. Unarmed strikes deal 1d4 (1d6 at level 5, 1d8 at level 9). |
+| Centered Mind | Once per rest, end one charm or fear effect on yourself. |
+| Countercharm | While you perform, allies within NEAR gain EDGE vs charm and fear. |
+| Cutting Words | Spend a Boost Die to impose SETBACK on one enemy's next roll. |
+| Disease Immunity | You are immune to non-magical diseases. |
+| Divine Sense | You can sense undead and fiendish presence within NEAR. |
+| Dual Wielder | EDGE on attacks when fighting with two weapons. |
+| Empath | You can sense surface emotions in others. |
+| Endurance | EDGE on saves vs fatigue and exhaustion, once per day. |
+| Escape Artist | EDGE to escape bonds, grapples, and restraints. |
+| Fast Healer | When you spend Hit Dice to heal, add +1 HP per die. |
+| Favored Enemy | Choose a creature type. EDGE to track, recall lore, and attack that type. |
+| Fearless | Auto-succeed vs mundane fear; EDGE vs magical fear. |
+| Fleet of Foot | +5 ft to your Speed. |
+| Gift of Tongues | Learn 2 additional languages. |
+| Healer | Spend 1 Provisions to heal an ally for 1d6 + your CON. |
+| Heavy Armor Master | While wearing heavy armor, reduce non-magical physical damage by 2. |
+| Herbalist | EDGE to identify and craft herbal remedies. Herbs count as Provisions for healing. |
+| Hold Breath | You can hold your breath for CON minutes instead of CON rounds. |
+| Hunter's Mark | Mark one target. You have EDGE on attacks against that target until it dies or you rest. |
+| Improved Initiative | +2 to Initiative rolls. |
+| Jack of All Trades | Once per scene, add PB to any check you're not proficient in. |
+| Keen Senses | Pick one sense (hearing, sight, or smell). EDGE on checks using that sense. Can take multiple times for different senses. |
+| Leadership | Spend a Boost Die to grant an ally EDGE on their next roll. |
+| Linguist | Learn 2 additional languages. |
+| Lucky | Once per session, reroll any die. Halflings only. |
+| Magic Resistance | EDGE on saves vs spells and magical effects. |
+| Martial Adept | Take one Fighter Feat (you must meet any requirements). |
+| Mentor | Once per session, grant a PC you've trained +1 to a roll. |
+| Mounted Combatant | EDGE on melee attacks against creatures smaller than your mount. |
+| Natural Explorer | Ignore difficult terrain. You can sense weather changes 24 hours ahead. |
+| Opportunist | When an adjacent enemy misses you, make a free attack against them. |
+| Poison Resistance | EDGE on saves vs poison. |
+| Polearm Master | Your reach with polearms extends to 10 ft. |
+| Quick Draw | Swap weapons as a free action. |
+| Resilience | Once per day, reroll a failed save. |
+| Resilient | +1 to saves of one type (choose when you take this feat). |
+| Rider | You never fall from your mount involuntarily. |
+| Shield Master | Add PB to DEX saves while wielding a shield. |
+| Strong Back | +5 item slots to your carrying capacity. |
+| Survivalist | EDGE on checks to track or forage. |
+| Tactician | Allies within NEAR gain EDGE on Initiative rolls. |
+| Tough | +2 HP per level (retroactive). |
+| Unarmored Defense | When unarmored, AC = 10 + DEX + CON. |
+| Weapon Mastery | Gain proficiency with one weapon category (Light, Medium, or Heavy). |

@@ -6,73 +6,41 @@ grand_parent: Players
 nav_order: 2
 ---
 
-# Fighter Feats (Draft Review)
+# Fighter Feats
 
-These feats are tagged **Fighter**. Some could be broadened to Expert, or even General.
-
----
-
-## Core Fighter (stay Fighter)
-
-- Adaptive Fighter — Resist 1 damage type (stackable).
-- Adrenaline Rush — 1/combat, take 1 extra action. *(big burst; strong)*
-- Armor Master — +1 AC; no Stealth penalty in Heavy.
-- Battlecry — Frighten NEAR foes (WIS save).
-- Blind Fighting — No penalties in melee in magical darkness.
-- Bodyguard — Redirect 1 attack/round to yourself.
-- Cavalry Charge — Mounted charge +1d6 dmg; STR save or prone.
-- Cutting Edge — 1/turn, reroll damage (must take reroll).
-- Death Strike — Drop a foe → immediate extra melee attack.
-- Debilitating Blow — On hit, reduce Speed 1 round.
-- Duelist — +2 AC with 1-hand weapon, no shield. *Light or medium armor only.*
-- ~~Enduring Fighter~~ — CUT (redundant with Tough + Second Wind)
-- Heavy Hitter — On crit with 2-hander, roll +1 damage die.
-- Hold the Line — Interrupt charging foes.
-- Hurl Weapon — Throw any weapon to NEAR without penalty.
-- ~~Indomitable~~ — CUT (use General Resilience)
-- Iron Grip — Immune to disarm.
-- Last Stand — At 0 HP, stay up for 1 round.
-- Overpower — Grapple/shove EDGE.
-- Shield Bash — Shield attack for push/prone.
-- Stalwart — EDGE vs fear/charm while armored.
-- ~~Unyielding~~ — CUT (use General Resilience)
-- Weapon Specialization — +1 damage with chosen weapon.
+Fighters gain these feats at level 1 (×2) and at each odd level (3, 5, 7, 9, 11).
 
 ---
 
-## Core Fighter (continued)
+## Feat List
 
-- Ambush Hunter — 1st round, +1d6 damage. *(Fighter-only; ranger/hunter flavor)*
-- Brawler — PB to unarmed/grapple checks. *(fits Monk concept)*
-- Deflect Missiles — +3 AC vs ranged. *(could be Monk/Expert too)*
-- Eagle Eye — Mark target, EDGE on ranged. *(ranger/archer vibe)*
-- Feint — After Dodge, EDGE +1d6 dmg next melee. *(fencer/duelist vibe)*
-- Quick Reflexes — Add PB to Initiative. *(could be General)*
-- Skirmisher — Move half Speed without provoking. *(fits rogue-ish mobility)*
-- Whirlwind Attack — Attack all CLOSE foes (1/Day). *(Expert "swashbuckler" too)*
-
----
-
-## General-leaning (could be moved or duplicated)
-
-- Endurance Training — +2 fatigue buffer. *(already a General Endurance feat?)*
-- Precision Strike — Spend BD to add +1d6 to attack. *(fits Fighter but overlaps Boost system)*
-- Second Wind — Heal 1d6+CON once/combat. *(survivability, could be General)*
-- Tactician's Shout — Allies NEAR gain EDGE 1 round. *(already a General Tactician feat)*
-
----
-
-## Overlaps / Redundancies
-
-- ~~**Cutting Edge** vs **Savage Attacker**~~ → **RESOLVED: Cutting Edge (Fighter-only, 1/turn must take reroll), Savage Attacker cut**
-- ~~**Enduring Fighter** vs **Tough (General)**~~ → **RESOLVED: Enduring Fighter cut, keep Tough (passive) + Second Wind (active)**
-- ~~**Indomitable / Unyielding / Iron Will**~~ → **RESOLVED: All cut, replaced by General Resilience (1/day reroll any failed save)**
-- **Adrenaline Rush / Second Wind / Heroic Destiny (General)** — similar "one big extra action/avoid death" powers. Decide tone.
-
----
-
-## Notes
-
-- Many feats here feel like they overlap with *modern 5E maneuvers* (Adrenaline Rush, Whirlwind, Second Wind). Decide whether to keep the "cinematic" feel or trim down to old-school simplicity.
-- Several could be shared with **Experts** to enable Monk/Swashbuckler builds.
-- Some duplicates already exist in General → need to unify (damage rerolls, HP buffs, save rerolls).
+| Feat | Effect |
+|:-----|:-------|
+| Adaptive Fighter | Choose one damage type. Reduce damage of that type by 1. Can take multiple times. |
+| Adrenaline Rush | Once per combat, take one additional action on your turn. |
+| Ambush Hunter | On the first round of combat, deal +1d6 damage on a hit. |
+| Armor Master | +1 AC. Heavy armor no longer imposes Stealth penalties. |
+| Battlecry | As an action, all enemies within NEAR must make a WIS save or be Frightened for 1 round. |
+| Blind Fighting | No attack penalties in darkness or against invisible foes in melee. |
+| Bodyguard | Once per round, redirect an attack against an adjacent ally to yourself. |
+| Cavalry Charge | When you charge while mounted, deal +1d6 damage. Target must pass STR save or fall prone. |
+| Cutting Edge | Once per turn, reroll your damage dice. You must take the new result. |
+| Death Strike | When you drop a foe to 0 HP, immediately make another melee attack. |
+| Debilitating Blow | On a hit, reduce the target's Speed to half for 1 round. |
+| Deflect Missiles | +3 AC against ranged attacks. |
+| Duelist | +2 AC when wielding a one-handed weapon and no shield. Light or medium armor only. |
+| Eagle Eye | Mark one target. EDGE on ranged attacks against that target until you mark another. |
+| Feint | After taking the Dodge action, your next melee attack gains EDGE and +1d6 damage. |
+| Heavy Hitter | On a critical hit with a two-handed weapon, roll one additional damage die. |
+| Hold the Line | When an enemy moves into your reach, make a free attack against them. |
+| Hurl Weapon | Throw any melee weapon to NEAR range without penalty. |
+| Iron Grip | You cannot be disarmed. |
+| Last Stand | When reduced to 0 HP, you may continue fighting for 1 round before falling. |
+| Overpower | EDGE on grapple and shove attempts. |
+| Quick Reflexes | Add PB to Initiative rolls. |
+| Second Wind | Once per combat, heal 1d6 + CON as a bonus action. |
+| Shield Bash | Make an attack with your shield. On a hit, push the target 5 ft or knock them prone. |
+| Skirmisher | Move up to half your Speed without provoking opportunity attacks. |
+| Stalwart | EDGE on saves vs fear and charm while wearing armor. |
+| Weapon Specialization | +1 damage with one chosen weapon type. Can take multiple times for different weapons. |
+| Whirlwind Attack | Once per day, attack all enemies within CLOSE range. |

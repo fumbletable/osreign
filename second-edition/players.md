@@ -8,7 +8,7 @@ has_children: true
 
 # Player's Guide
 
-Everything you need to create a character and play Olde Swords Reign.
+Everything you need to create your character and start playing.
 
 ---
 

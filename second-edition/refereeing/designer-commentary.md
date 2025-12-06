@@ -32,6 +32,65 @@ Classic D&D had fighters, magic-users, clerics, and thieves. OSwR has Fighter, M
 
 ---
 
+## Why Abilities (Not Scores + Modifiers)
+
+In classic D&D and 5e, you roll 3d6 for a score (3-18), then look up a modifier (-4 to +4). OSwR skips the score entirely - you just record the modifier.
+
+**Why?** The score is vestigial. In play, you only ever use the modifier. "I have 16 Strength" means nothing until converted to "+2" (5e) or "+2 to hit" (OSE). OSwR cuts the middleman.
+
+**What about rolling?** You still roll 3d6 and use the table to find your ability. The process is identical - you just don't write down a number you'll never use again.
+
+**Classic divergence:** OSE uses scores (3-18) with varying modifier scales. OSwR's unified -4 to +4 range is closer to 5e but simpler than both.
+
+---
+
+## Why Boost Dice (Not Advantage/Disadvantage)
+
+5e's advantage system is elegant - roll 2d20, take best/worst. But it's binary: you either have it or you don't, and multiple sources don't stack.
+
+**Boost Dice are a resource.** You earn them (1d6 per day, refreshed on rest) and spend them deliberately. This creates decisions: "Do I boost this attack or save it for the trap ahead?"
+
+**They stack with EDGE.** A character with EDGE (roll 2d20 keep best) can still spend a Boost Die for extra effect. The systems complement rather than overlap.
+
+**Class hooks tie in.** Each class uses Boost Dice differently:
+- Fighter: Extra attack
+- Expert: Roll 2d6 keep best (precision)
+- Cleric/Magic-User: Trigger Boostable spell effects
+
+**Classic divergence:** OSE has no advantage system. OSwR adds both EDGE/SETBACK (situational, like 5e) and Boost Dice (resource-based, unique to OSwR).
+
+---
+
+## Why Ancestry (Not Race)
+
+Simple: "race" carries baggage. "Ancestry" describes what it actually is - where you come from, what you inherited.
+
+**Mechanical change:** OSwR ancestries have 3 traits max (Humans get 2). One is marked "Essential" - the defining old-school ability (Dwarf stonecunning, Elf ghoul immunity, Halfling fearlessness). The others can vary for sub-ancestries.
+
+**Classic divergence:** In OSE, demihuman races ARE classes. An Elf is a class, not an ancestry + class. OSwR separates these, allowing Dwarf Fighters, Elf Clerics, etc.
+
+---
+
+## Divergences from OSE/Classic
+
+Beyond the philosophical changes, here are specific mechanical divergences from Old-School Essentials and B/X:
+
+**Saves:** OSE has 5 save categories (Death, Wands, Paralysis, Breath, Spells). OSwR uses 6 ability-based saves with proficiency, matching 5e's structure.
+
+**Thief Skills:** OSE Thieves have percentage-based skills (Pick Locks 15%, Hide in Shadows 10%). OSwR Experts use feats - you either have the ability or you don't, with EDGE when applicable.
+
+**Turn Undead:** OSE uses a 2d6 table cross-referenced by Cleric level and undead HD. OSwR uses a flat DC 12 check with HD thresholds for effect.
+
+**AC System:** OSE uses descending AC (lower is better) or ascending as an option. OSwR uses ascending AC exclusively, matching 5e.
+
+**Spell Slots vs Memorization:** OSE Magic-Users prepare specific spells into slots (two Sleep means casting Sleep twice). OSwR uses 5e-style slots - prepare a list, spend slots flexibly.
+
+**Hit Dice for HP:** OSE rolls HD at each level (d8 for Fighter). OSwR does the same but offers the option to take the average, reducing variance.
+
+**Multiclassing:** OSE doesn't have multiclassing (demihumans were the multi-role option). OSwR allows multiclassing at odd levels, closer to AD&D's approach.
+
+---
+
 ## Why Feats Cost Gold?
 
 In 5e, you level up and get your features automatically. In OSwR, levelling grants the *capacity* for new abilities - you must still pay gold and spend time to unlock them.
@@ -142,11 +201,92 @@ This isn't explicit in the rules, but it's implicit in the pacing and costs. The
 
 ---
 
+## Why Experts Pick from Two Lists
+
+Experts start with 6 feats and gain +1 at odd levels. But the Expert feat list only has ~19 options. By level 11, they'd run out of meaningful choices.
+
+**The solution:** Experts can pick from Expert OR General feats. This fits their identity as generalists - versatile characters who dabble in everything. The larger combined pool (60+ feats) gives them real choices at every level.
+
+**Why not just add more Expert feats?** That's padding. The Expert fantasy is "jack of all trades," not "has their own giant list." Letting them dip into General captures the archetype better than inventing narrow feats to fill a quota.
+
+---
+
+## Why Brawler Scales
+
+Brawler grants unarmed damage that scales: 1d4 → 1d6 (level 5) → 1d8 (level 9).
+
+**The problem it solves:** Without scaling, monk-style builds fall behind weapon users at higher levels. A Fighter with a longsword does 1d8 damage forever. An unarmed character stuck at 1d4 feels weak.
+
+**Why not just use weapons?** Some players want unarmed builds. The system shouldn't punish that - it should make it viable without making it better than armed combat.
+
+**Why in General, not Fighter?** Both Fighter monks (combat focus) and Expert monks (agility/skill focus) should be buildable. Putting Brawler in General enables both paths.
+
+---
+
+## Why Turn Undead Uses a Flat DC
+
+Turn Undead requires a Normal (DC 12) WIS check. The power scales through HD thresholds, not DC increases.
+
+**The design:**
+- Affect up to 2d6 + PB Hit Dice of undead
+- Destroy if HD ≤ level − 3
+- Turn if HD ≤ level + 1
+- No effect if HD > level + 1
+
+**Why flat DC?** Simplicity. Players remember "DC 12" easily. The HD thresholds handle scaling - a level 1 Cleric can turn weak undead, a level 10 Cleric destroys them and turns stronger ones.
+
+**Why level − 3 for destroy?** Destroying undead should feel earned. A level 1 Cleric shouldn't instantly vaporise skeletons. At level 4, they can destroy 1 HD undead. This creates a meaningful progression.
+
+---
+
 ## What's Still Being Figured Out
 
-**Treasure tables.** We have the XP ratios but not the generation tables. How much treasure per room? Per dungeon level? This needs playtesting.
+**Multiclassing rules.** We know it happens at odd levels, but the full rules (HP calculation, save proficiencies, spell slot stacking) need writing.
 
 **Domain play.** Stronghold costs, army management, domain income. The bones are there; the flesh isn't.
+
+---
+
+## Sections To Write
+
+*These placeholders ensure every major system gets explained. Fill in during editing passes.*
+
+### Character Creation
+- [ ] **Why Backgrounds Work This Way** - Skills as narrative, not mechanical lists
+- [ ] **Why Hindrances?** - Optional flaws for bonus feats
+
+### Equipment & Resources
+- [ ] **Why Slot-Based Encumbrance?** - Simplicity over pound-counting
+- [ ] **Why Provisions?** - Abstract resource vs tracking rations
+- [ ] **Why Equipment Kits?** - Speed up character creation
+
+### Combat
+- [ ] **Why Side-Based Initiative?** - Group action vs individual rolls
+- [ ] **Why Death Saves Work This Way** - Stakes without instant death
+- [ ] **Why No Opportunity Attacks?** - Movement freedom in OSR play
+
+### Rests & Recovery
+- [ ] **Why Two Rest Types?** - Short vs Long, when HD refresh
+- [ ] **Why Fatigue Matters?** - Pressure without death spirals
+
+### Exploration
+- [ ] **Why Turns & Rounds?** - Time as resource
+- [ ] **Why Random Encounters?** - Pressure that drives decisions
+- [ ] **Why Light Rules Matter?** - Darkness as gameplay
+
+### Magic
+- [ ] **Why Spell Slots (Not Points)?** - Flexibility vs Vancian
+- [ ] **Why Six Spell Tiers?** - Pacing power growth
+- [ ] **Why Spellbooks Cost Gold?** - Knowledge as treasure
+- [ ] **Why Boostable Spells?** - Resource decisions for casters
+
+### Social & Hirelings
+- [ ] **Why 2d6 Reaction Rolls?** - Bell curve social encounters
+- [ ] **Why Morale Checks?** - Monsters that flee
+- [ ] **Why Retainer Rules?** - Henchmen as gameplay
+
+### Referee Tools
+- [ ] **Why These Difficulty Tiers?** - Easy/Normal/Hard at 8/12/16
 
 ---
 

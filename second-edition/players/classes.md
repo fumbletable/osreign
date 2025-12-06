@@ -10,7 +10,7 @@ has_children: true
 # Classes
 
 OSwR has four base classes: [Cleric](cleric/), [Expert](expert/), [Fighter](fighter/), [Magic-User](magic-user/).
-Your class sets hit points, proficient saves, weapon/armor proficiencies, and what you gain on level-ups.
+Your class sets your hit points, saves, weapon and armor proficiencies, and what you gain as you level.
 
 This small set is by design. The mix of **Feats** and **multiclassing** lets you shape almost any archetype you want:
 
@@ -27,11 +27,11 @@ Rather than dozens of rigid classes, OSwR gives you four broad frameworks and th
 ## Unified Cadence
 - **Odd levels (1 / 3 / 5 / 7 / 9 / 11):** your class "pop."
   - **Fighter:** +1 Fighter Feat
-  - **Expert:** +1 Expert Feat (starts with 6 at level 1)
+  - **Expert:** +1 Expert or General Feat (starts with 6 at level 1)
   - **Cleric:** unlock next spell tier (1–6)
   - **Magic-User:** unlock next spell tier (1–6)
 - **Even levels (2 / 4 / 6 / 8 / 10 / 12):** +1 General Feat.
-- At **levels 4, 8, 12:** +1 to any one ability (max 20).
+- At **levels 4, 8, 12:** +1 to any ability (max +5).
 - **Multiclassing:** only at odd levels.
 
 ---
@@ -53,5 +53,5 @@ All characters begin with:
 - **Saves:** These are your proficient saves—add PB and the ability mod. Non-proficient saves use only the ability mod.
 - **Weapons / Armor:** Listed by **tags**. Add PB to attacks with proficient weapons. Shields give their normal AC bonus.
   Some restrictions apply (e.g., Cleric "Bludgeoning only").
-- **Ability Boost:** At level 1, your class grants +1 to a specific ability score.
+- **Ability Boost:** At level 1, your class grants +1 to a specific ability.
 - **Spellcasters:** Cleric & Magic-User use **Spell Slots** with prepared lists. See [Magic Overview](../magic/) for preparation and casting.

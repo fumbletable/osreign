@@ -8,6 +8,8 @@ nav_order: 1
 
 # Fighter
 
+Fighters are masters of combat—trained soldiers, hardened veterans, or natural-born warriors. You hit hard and stay standing.
+
 **HD:** 8 + CON, then 1d8 (avg 4) + CON per level
 **Saves:** STR, CON
 **Ability Boost:** +1 STR

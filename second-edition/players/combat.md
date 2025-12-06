@@ -9,65 +9,73 @@ nav_order: 2
 # Combat
 
 ## Combat Order
-1. **Reflex check:**
-   • Everyone rolls `d20 + DEX mod` vs DC 12 (Easy 8 / Hard 16 at Referee's call).
-   • Pass → act before the enemy this round.
-   • Fail → miss your first turn; join in next round.
-2. **After round 1:** Heroes act first each round, then the enemy.
-3. **On your turn:** Move up to your Speed + take 1 Action.
-4. **Ongoing effects:** Count down on your turn.
+
+When a fight breaks out:
+
+1. **Reflex check** - Everyone rolls d20 + DEX mod vs DC 12. Pass and you act before the enemy this round. Fail and you miss your first turn, joining in next round.
+2. **After round 1** - Heroes act first each round, then the enemy.
+3. **On your turn** - Move up to your Speed and take one Action.
+4. **Ongoing effects** - Count down durations at the start of your turn.
 
 ---
 
 ## Attacks & Damage
-- **Attack roll:** `d20 + ability mod + PB` ≥ target AC.
-  - STR for melee, DEX for ranged or Finesse.
-- **Hit:** Roll weapon/spell damage + ability mod; subtract from target HP.
-- **Crit:** Natural 20 = double damage dice.
-- **Miss:** No damage (Referee may add a minor complication).
-- **Cover or concealment:** May grant SETBACK or +2 AC (Referee call).
+
+To hit, roll d20 + ability mod + proficiency bonus. Beat the target's AC and you hit. Use STR for melee, DEX for ranged (or Finesse weapons).
+
+**Hit:** Roll your weapon damage + ability mod. Subtract from their HP.
+
+**Crit:** Natural 20 doubles your damage dice.
+
+**Miss:** No damage. The Referee might add a minor complication.
+
+**Cover:** Partial cover gives SETBACK to the attacker or +2 AC - Referee's call.
 
 ---
 
 ## Saving Throws
-- Roll `d20 + relevant ability mod (+PB if proficient)` vs DC set by the Referee.
-- Success = avoid or reduce harm; failure = full effect.
-- Apply Fatigue penalty to the roll.
+
+Roll d20 + ability mod (+ proficiency if you've got it) vs the DC. Beat it and you avoid or reduce the harm. Fail and you take the full effect. Don't forget to apply your Fatigue penalty.
 
 ---
 
 ## Death & Dying
-- At **0 HP**, roll **2d6 – Fatigue** each round until you recover or die.
 
-| Roll | Result |
-|------|---------|
-| 11+ | Pop up with HP = CON mod or HD roll (min 1). |
-| 10 | Stable; wake next turn at 1 HP. |
-| 4 | Dead, but take one **heroic action** before you fall. |
-| 3– | Dead outright. |
-| 5–9 | Still dying; roll again next round. |
+At 0 HP, you're dying. Each round, roll 2d6 minus your Fatigue.
+
+| Roll | What happens |
+|------|--------------|
+| 11+ | You're back up with HP equal to your CON mod or one HD roll (minimum 1) |
+| 10 | Stable - you wake next turn at 1 HP |
+| 5–9 | Still dying - roll again next round |
+| 4 | Dead, but you get one heroic action before you fall |
+| 3– | Dead outright |
 
 ---
 
 ## Combat Actions
-You may move up to your Speed and take **one Action** each turn.
 
-- **Attack:** Melee or ranged attack vs AC.
-- **Cast Spell:** Resolve per the spell's description.
-- **Dodge:** Enemies attacking you suffer SETBACK until your next turn.
-- **Disengage:** Move without provoking opportunity attacks.
-- **Dash:** Double your movement for this turn.
-- **Aid / Help:** Grant an ally EDGE on their next roll this round; must be in reach.
-- **Grapple:** STR vs target's STR/DEX; success → target's Speed = 0.
-- **Shove / Push:** STR vs target's STR/DEX; success → push 5 ft or knock prone.
-- **Disarm:** STR or DEX vs target's STR/DEX; success → target drops weapon.
-- **Hide:** DEX (Stealth); requires cover or distraction; remain hidden until revealed.
-- **Stabilise:** Action + 1 Provision; target at 0 HP becomes Stable (wake next turn at 1 HP).
-- **Use Object / Item:** Draw, drink, light, open, or interact once.
-- **Ready:** Name a trigger; when it occurs, take the prepared Action as a Reaction.
-- **Improvised Stunt:** Describe any creative act; roll ability vs DC; success = effect, failure = complication.
-- **Opportunity Attack (Reaction):** When a foe leaves your reach without Disengaging; 1/round.
+On your turn you can move up to your Speed and take one Action.
+
+| Action | What it does |
+|--------|--------------|
+| **Attack** | Melee or ranged attack vs AC |
+| **Cast Spell** | Resolve per the spell description |
+| **Dodge** | Attacks against you have SETBACK until your next turn |
+| **Disengage** | Move without provoking opportunity attacks |
+| **Dash** | Double your movement this turn |
+| **Help** | Give an ally EDGE on their next roll (must be in reach) |
+| **Grapple** | STR vs their STR or DEX - success means their Speed drops to 0 |
+| **Shove** | STR vs their STR or DEX - push them 5 ft or knock them prone |
+| **Disarm** | STR or DEX vs theirs - they drop their weapon |
+| **Hide** | DEX check, needs cover or distraction |
+| **Stabilise** | Costs 1 Provision - dying ally becomes stable, wakes at 1 HP next turn |
+| **Use Object** | Draw, drink, light, open, or interact once |
+| **Ready** | Name a trigger - when it happens, take your prepared action as a Reaction |
+| **Improvise** | Describe something creative, roll vs DC, see what happens |
+
+**Opportunity Attack:** When a foe leaves your reach without Disengaging, you can use your Reaction to attack them. Once per round.
 
 ---
 
-*Combat ends when all foes flee, surrender, or fall.*
+Combat ends when all foes flee, surrender, or fall.

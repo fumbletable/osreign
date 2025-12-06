@@ -8,22 +8,22 @@ nav_order: 1
 
 **Four classes. Infinite archetypes. Real danger.**
 
-OSwR gives players the character customisation they want while keeping the danger, resource tension, and emergent play that makes OSR games sing.
+OSwR gives you the character customisation you want while keeping the danger, resource tension, and emergent play that makes OSR games sing.
 
 ---
 
-## What Is This Game For?
+## What's This Game For?
 
-- Running classic modules (Keep on the Borderlands, etc.) with modern player expectations
-- Dangerous adventures where choices matter
+- Running classic modules (Keep on the Borderlands, etc.) with modern expectations
+- Dangerous adventures where your choices matter
 - Emergent storytelling through systems, not scripts
-- Tables that want grit without learning an unfamiliar ruleset
+- Grit without learning an unfamiliar ruleset
 
-## What OSwR Is NOT For
+## What OSwR Isn't
 
-- Superhero fantasy (go play 5e)
-- "Roll to see if you miss again" frustration (go play B/X)
-- Rules-light improv with no mechanical teeth (go play Knave)
+- Not superhero fantasy - danger stays real at every level
+- Not old-school frustration - you hit things, you just might die doing it
+- Not rules-light - the mechanics have teeth
 
 ---
 
@@ -35,6 +35,14 @@ OSwR gives players the character customisation they want while keeping the dange
 - **Boost Dice** - Session-based resource pool for dramatic moments
 - **Danger stays real** - Lower HP, meaningful death, no safety nets
 - **Resource management matters** - Encumbrance, light, rest cycles
+
+## Simple Rules, Real Depth
+
+Everything runs on a few core ideas - EDGE/SETBACK is just +/-1d6, weapons fit into three categories, DCs are 8/12/16. That's it.
+
+But simple doesn't mean shallow. Those three weapon categories completely change how classes play. EDGE and SETBACK create tactical positioning without a grid. The maths is easy to run, but the choices matter.
+
+You'll learn OSwR in one session. You'll still be finding new angles a year later.
 
 ---
 

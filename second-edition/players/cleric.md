@@ -8,9 +8,12 @@ nav_order: 3
 
 # Cleric
 
+Clerics channel divine power—whether from the gods, nature, or some higher force. You're a capable combatant who heals allies, smites enemies, and shapes your path through your chosen oath.
+
 **HD:** 6 + CON, then 1d6 (avg 3) + CON per level
 **Saves:** WIS, CHA
 **Ability Boost:** +1 WIS
+**Weapons / Armor:** See your Oath below.
 
 ---
 
@@ -19,7 +22,7 @@ nav_order: 3
 - **Casting stat:** WIS
 - **Save DC:** 8 + PB + WIS
 - **Spell attack:** PB + WIS
-- **Preparation:** After a rest, prepare spells equal to your **level + WIS modifier**.
+- **Preparation:** After a rest, prepare spells equal to your **level + WIS**.
 - **Casting:** Spend a slot of the spell's tier or higher. The slot is lost; the spell remains on your list.
 - **Progression:** Clerics use the Spell Slot Progression table (see [Magic Overview](../magic/)).
 
@@ -31,7 +34,7 @@ When casting a spell marked **Boostable**, you may spend a **Boost Die** to trig
 
 ---
 
-# Oaths
+## Oaths
 
 At 1st level, choose one oath. This shapes your path, spell list, and unique gifts.
 
@@ -46,8 +49,8 @@ At 1st level, choose one oath. This shapes your path, spell list, and unique gif
 
 **Turn Undead**
 **Action:** Present holy symbol and call upon your power.
-- Make a **Normal WIS check**.
-- **On success:** affect `2d6 + PB` HD of undead within NEAR, starting with the lowest HD first.
+- Make a **Normal (DC 12) WIS check**.
+- **On success:** affect up to `2d6 + PB` HD of undead within NEAR, starting with the lowest HD first.
   - If the undead's HD ≤ (your level − 3), it is **Destroyed**.
   - If the undead's HD ≤ (your level + 1), it is **Turned** for `2d6` rounds (must flee, cannot approach).
   - If its HD > (your level + 1), it is **unaffected**.
@@ -72,7 +75,6 @@ At 1st level, choose one oath. This shapes your path, spell list, and unique gif
 - **HP:** While shaped, your HP becomes the beast's full HP. When that HP is lost or the duration ends, you revert; any excess damage carries over.
 - **Resource trade:** The Hit Dice spent are **gone from your pool until you rest in a Safe Haven.**
 - **Traits gained:** The beast's movement, senses, and natural attacks. You cannot cast spells while shaped. Gear merges or drops (your choice).
-- **Tone:** Every change taxes your body; too many shifts leave you unable to heal.
 
 **Starting Kit:**
 - Leather, Staff, Sickles, Sling; Herbalist's Kit, Holy Symbol.

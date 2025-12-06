@@ -8,7 +8,7 @@ nav_order: 4
 
 # Backgrounds (d50)
 
-Roll or choose one. Backgrounds replace skills: when your background reasonably applies, add your **PB** to non-combat checks.
+Roll or choose one. Your background replaces skills - when it reasonably applies, add your PB to non-combat checks.
 
 | d50 | Background        | Description                                                                   |
 | --: | ----------------- | ----------------------------------------------------------------------------- |

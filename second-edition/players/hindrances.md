@@ -8,7 +8,7 @@ nav_order: 5
 
 # Hindrances (d50)
 
-Roll or choose one. Hindrances represent flaws, weaknesses, or limits that shape your character.
+Roll or choose one. Hindrances are flaws, weaknesses, or limits that make your character more interesting - and earn you an extra feat at character creation.
 
 | d50 | Hindrance           | Effect                                                                                    |
 | --: | ------------------- | ----------------------------------------------------------------------------------------- |

@@ -6,54 +6,56 @@ grand_parent: Players
 nav_order: 1
 ---
 
-## Core Rules
+# Rolling Dice
 
-### Rolling Dice
-- **Checks:** Roll `d20 + ability modifier (+ proficiency if it applies)`.
-- **Success:** Total ≥ Difficulty Class (DC).
-- **Failure:** Total < DC → introduces a consequence or complication (never a dead end).
-- Each roll should shape the story with new challenges or opportunities.
+When the outcome's uncertain, you roll dice.
 
----
+## Checks
 
-### Saving Throws
-- Used for sudden threats (traps, spells, hazards).
-- Roll `d20 + relevant ability modifier (+ proficiency if it applies)`.
-- **Success:** Avoid or reduce harm.
-- **Failure:** Harmful effect applies.
-- Example: Resisting poison gas = CON save.
+Roll d20 + your ability modifier (+ proficiency bonus if it applies). Beat the Difficulty Class (DC) and you succeed. Fall short and something goes wrong - but never a dead end. Every roll should push the story forward.
 
 ---
 
-### Difficulty Classes
-- **Easy (8):** straightforward tasks (climb a knotted rope).
-- **Normal (12):** standard challenge (cross a narrow ledge).
-- **Hard (16):** difficult tasks (decipher ancient text).
+## Saving Throws
+
+When something nasty happens fast - a trap springs, a spell hits, the floor gives way - you make a saving throw. Roll d20 + the relevant ability mod (+ proficiency if you've got it). Beat the DC and you avoid or reduce the harm. Fail and it hits you full force.
+
+*Example: Poison gas fills the room. CON save to resist.*
 
 ---
 
-### Contests
-- Opposed rolls when two forces directly conflict.
-- Both roll; higher total wins.
-- Tie: status quo holds, or Referee adds a small complication.
-- Example: Grappling an enemy = opposed STR checks.
+## Difficulty Classes
+
+| DC | Difficulty | Example |
+|---:|------------|---------|
+| 8 | Easy | Climb a knotted rope |
+| 12 | Normal | Cross a narrow ledge |
+| 16 | Hard | Decipher ancient text |
+
+Most checks are DC 12. The Referee sets the DC based on how hard the task actually is.
 
 ---
 
-### Group Checks
-- If at least half succeed, the group succeeds.
-- Anyone may forgo rolling to grant a teammate **EDGE** instead.
+## Contests
+
+When you're directly opposing someone - arm wrestling, grappling, a tug-of-war - both sides roll. Highest total wins. On a tie, nothing changes (or the Referee adds a small complication).
 
 ---
 
-### Passive Checks
-- Passive = `10 + ability modifier (+ PB if background/knack clearly applies)`.
-- Used when rolling would slow play.
-- Example: Passive Perception 14 notices a hidden tripwire.
+## Group Checks
+
+When the whole party attempts something together, everyone rolls. If at least half succeed, the group succeeds. You can skip your roll to give a teammate EDGE on theirs instead.
 
 ---
 
-### General Principles
-- **Specific beats General:** If a rule (feat, spell, item) conflicts with a broader rule, the specific one wins.
-  - Example: A magical feat granting martial weapon proficiency overrides a general restriction.
-- **Round Down:** Always round fractions down (HP, SP, XP, etc.).
+## Passive Checks
+
+Sometimes rolling would slow things down. Your passive score is 10 + ability mod (+ proficiency if your background applies). The Referee uses this when you're not actively trying - like noticing a tripwire you weren't looking for.
+
+---
+
+## General Principles
+
+**Specific beats general.** If a feat, spell, or item contradicts a broader rule, the specific one wins.
+
+**Round down.** Always. HP, XP, damage - if there's a fraction, drop it.

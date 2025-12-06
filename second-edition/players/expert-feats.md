@@ -6,70 +6,32 @@ grand_parent: Players
 nav_order: 3
 ---
 
-# Expert Feats (Draft Review)
+# Expert Feats
 
-These feats are tagged **Expert**. Many overlap with General stealth/social feats or Fighter tricks.
-
----
-
-## Core Expert (stay Expert)
-
-- Backstab — From hidden: EDGE, +LVL×2 dmg once/target/combat. *(classic thief skill)*
-- ~~Charmer~~ — CUT (replaced by Winning Smile)
-- Contacts (High) — Noble/merchant connections.
-- Contacts (Low) — Underworld connections.
-- ~~Crowdworker~~ — CUT (folded into Hide in Shadows / handled narratively)
-- Disguise — EDGE to pass as role.
-- ~~Fast Talker~~ — CUT (replaced by Winning Smile)
-- Forgery Master — EDGE to forge/spot documents.
-- Garrote — From behind: restrain & silence target (escape on STR 12).
-- ~~Hear Noise~~ — CUT (use General Keen Senses, pick hearing)
-- Hide in Shadows — EDGE to hide after LoS break. *(classic thief skill)*
-- Infiltrator — EDGE on stealth/deception vs guards.
-- Innate Tracker — EDGE to track (numbers, size, time). *(ranger-flavor)*
-- ~~Keen Eye~~ — CUT (use Keen Senses or Trap Sense)
-- Master of Disguise — Allies gain EDGE from your disguises.
-- Pick Locks — Open mundane locks with tools. *(classic thief skill)*
-- Pick Pockets — Attempt theft unnoticed (WIS vs your DEX roll).
-- Poisoner — Craft/apply poisons; immunity to self-use.
-- ~~Shadowstep~~ — CUT (folded into Hide in Shadows)
-- Sleight of Hand — Conceal/palm small items.
-- ~~Streetwise~~ — CUT (replaced by Winning Smile)
-- Silver Tongue — EDGE on checks to deceive or lie. *(con artist, spy, trickster)*
-- Winning Smile — EDGE on checks to persuade or charm. *(face, diplomat, negotiator)*
-- ~~Trap Sense~~ — CUT (replaced by Trap Expert)
-- ~~Trap Master~~ — CUT (replaced by Trap Expert)
-- Trap Expert — EDGE to find, disable, or set traps. *(classic thief skill)*
+Experts gain 6 of these feats at level 1 and +1 at each odd level (3, 5, 7, 9, 11).
 
 ---
 
-## Multi-Class (Expert + Fighter)
+## Feat List
 
-- Deflect Missiles — +3 AC vs ranged. *(appears in Fighter list too)*
-- Gambit — Take SETBACK now; next roll this turn gains +2 EDGE dice. *(feels martial trick too)*
-
----
-
-## General-leaning (could be broadened)
-
-- Escape Artist — Auto-escape non-magical bonds in 1 Turn. *(already in General)*
-- Innate Tracker — Could be shared with Fighter (ranger builds).
-- ~~Keen Eye~~ — CUT (replaced by General Keen Senses)
-- Streetwise — Could overlap General "Jack of All Trades."
-
----
-
-## Overlaps / Redundancies
-
-- ~~Assassinate vs Backstab vs Ambush Hunter~~ → **RESOLVED: Backstab (Expert-only), Ambush Hunter (Fighter-only), Assassinate cut**
-- Disguise vs Master of Disguise → could fold into one scalable feat.
-- ~~Trap Sense + Trap Master~~ → **RESOLVED: Combined into Trap Expert (EDGE to find, disable, or set traps)**
-- ~~Hear Noise vs Keen Eye vs Dungeon Cunning~~ → **RESOLVED: All cut, use General Keen Senses (pick sense)**
-
----
-
-## Notes
-
-- This list maps almost directly to **classic thief abilities** (Hear Noise, Pick Locks, Hide, Backstab, etc.), which is good — Experts feel like the OSR skill chassis.
-- Many feats here already overlap with the **General** list (Escape Artist, stealth, social). We need to trim duplicates and decide whether "stealth" lives in Expert only, or is also available as General for other builds.
-- ~~Social feats (Charmer, Fast Talker, Streetwise)~~ → **RESOLVED: Consolidated to Silver Tongue (deception) + Winning Smile (persuasion/charm)**
+| Feat | Effect |
+|:-----|:-------|
+| Backstab | From hidden: EDGE on the attack, +2 × your level damage. Once per target per combat. |
+| Contacts (High) | You have connections among nobles, merchants, and guild leaders. |
+| Contacts (Low) | You have connections in the underworld—thieves, fences, smugglers. |
+| Deflect Missiles | +3 AC against ranged attacks. |
+| Disguise | EDGE on checks to pass yourself off as someone else. |
+| Forgery Master | EDGE to forge documents or spot forgeries. |
+| Gambit | Take SETBACK on your current roll. Your next roll this turn gains +2 dice (roll 3, keep best). |
+| Garrote | From behind: restrain and silence target. Target escapes on STR (12). |
+| Hide in Shadows | After breaking line of sight, EDGE to remain hidden. |
+| Infiltrator | EDGE on stealth and deception checks against guards and sentries. |
+| Innate Tracker | EDGE to track creatures (numbers, size, time elapsed). |
+| Master of Disguise | Allies using your disguises also gain EDGE. |
+| Pick Locks | Open non-magical locks with thieves' tools. No check required for mundane locks. |
+| Pick Pockets | Attempt theft unnoticed. Target's WIS vs your DEX roll. |
+| Poisoner | Craft and apply poisons. Immune to your own poisons. |
+| Silver Tongue | EDGE on checks to deceive, lie, or misdirect. |
+| Sleight of Hand | Conceal or palm small items without being noticed. |
+| Trap Expert | EDGE to find, disable, or set traps. |
+| Winning Smile | EDGE on checks to persuade, charm, or negotiate. |

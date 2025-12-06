@@ -7,7 +7,7 @@ has_children: true
 
 # Second Edition
 
-The complete Olde Swords Reign rules, free to read online.
+The complete rules, free to read online.
 
 ---
 
@@ -17,7 +17,7 @@ OSwR is organised into two sections:
 
 ### Players
 
-Everything you need to create and play a character:
+Everything you need to create and play your character:
 - Character creation, ancestries, and backgrounds
 - Four classes: Fighter, Expert, Cleric, Magic-User
 - Feats for building your archetype
@@ -28,7 +28,7 @@ Everything you need to create and play a character:
 
 ### Refereeing
 
-Everything the Referee needs to run the game:
+Everything you need to run the game:
 - Referee principles and advice
 - Dungeon and wilderness exploration procedures
 - NPCs, reactions, and morale
@@ -40,9 +40,9 @@ Everything the Referee needs to run the game:
 
 ## Print Editions
 
-When Second Edition is complete:
+When the Second Edition is complete:
 
 - **Player's Guide** - The Players section only (affordable player handout)
 - **Full Book** - Everything (Players + Refereeing)
 
-Both will be available as free PDF and at-cost print.
+Both will be available as free PDF and cheap print.
