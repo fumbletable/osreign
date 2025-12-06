@@ -44,20 +44,34 @@ In classic D&D and 5e, you roll 3d6 for a score (3-18), then look up a modifier 
 
 ---
 
-## Why Boost Dice (Not Advantage/Disadvantage)
+## Why EDGE/SETBACK (Not Advantage/Disadvantage)
 
-5e's advantage system is elegant - roll 2d20, take best/worst. But it's binary: you either have it or you don't, and multiple sources don't stack.
+5e's advantage system is elegant but binary: roll 2d20, take best/worst. You either have it or you don't, and multiple sources don't stack. That binary nature creates problems—if you have advantage from one source, additional advantages are worthless. Stacking circumstantial bonuses should *matter*.
 
-**Boost Dice are a resource.** You earn them (1d6 per day, refreshed on rest) and spend them deliberately. This creates decisions: "Do I boost this attack or save it for the trap ahead?"
+**EDGE and SETBACK use 1d6.** EDGE adds 1d6 to your roll. SETBACK subtracts 1d6. They cancel one-for-one, but they also *stack*. Two sources of EDGE means +2d6. Being really well-prepared matters more than being slightly prepared.
 
-**They stack with EDGE.** A character with EDGE (roll 2d20 keep best) can still spend a Boost Die for extra effect. The systems complement rather than overlap.
+**Why d6?** It feels different from the core d20. Rolling a d6 alongside your d20 has a tactile, additive quality that 2d20-keep-best lacks. The language is natural too: "take an edge" makes intuitive sense at the table.
 
-**Class hooks tie in.** Each class uses Boost Dice differently:
-- Fighter: Extra attack
-- Expert: Roll 2d6 keep best (precision)
-- Cleric/Magic-User: Trigger Boostable spell effects
+**Classic divergence:** OSE has no advantage system. OSwR uses EDGE/SETBACK for situational modifiers that stack.
 
-**Classic divergence:** OSE has no advantage system. OSwR adds both EDGE/SETBACK (situational, like 5e) and Boost Dice (resource-based, unique to OSwR).
+---
+
+## Why Boost Dice?
+
+Boost Dice started as physical d6s handed to players for doing cool things. The origin was simple: reward players at the table with something tangible they can immediately use.
+
+**Reset each session.** You start with half your Proficiency Bonus in Boost Dice (minimum 1). They don't carry over—use them or lose them. This encourages spending rather than hoarding.
+
+**The Referee gives more.** Play up your hindrances? Boost Die. Do something memorable? Boost Die. This creates a feedback loop: players engage with their characters, Referee rewards it, everyone has fun.
+
+**Class-specific uses.** Each class spends Boost Dice differently:
+- **Fighter:** Extra attack (aggressive, combat-focused)
+- **Expert:** Roll 2d6 keep best (precision, reliability)
+- **Cleric/Magic-User:** Trigger Boostable spell effects (resource multiplication)
+
+**Why separate from EDGE?** EDGE is situational—the environment or circumstances give it to you. Boost Dice are earned through play and spent deliberately. They're a player resource, not a Referee ruling.
+
+**Classic divergence:** This replaces 5e's Inspiration (which nobody remembers to use) with something visible, tactile, and tied to character identity.
 
 ---
 
@@ -256,18 +270,141 @@ Turn Undead requires a Normal (DC 12) WIS check. The power scales through HD thr
 - [ ] **Why Hindrances?** - Optional flaws for bonus feats
 
 ### Equipment & Resources
+- [x] **Why Weapon Tags?** - See below
+- [x] **Why Armor Works This Way?** - See below
 - [ ] **Why Slot-Based Encumbrance?** - Simplicity over pound-counting
-- [ ] **Why Provisions?** - Abstract resource vs tracking rations
+- [x] **Why Supply (Not Rations)?** - See below
 - [ ] **Why Equipment Kits?** - Speed up character creation
 
+---
+
+## Why Supply (Not Rations)?
+
+OSwR uses "Supply" as an abstract resource rather than tracking individual rations, waterskins, and bandages.
+
+**What Supply represents:** Food, water, basic medical supplies, and general consumables. One unit covers a day of sustenance or one use of healing/recovery.
+
+**Why abstract?** Tracking 14 rations, 3 waterskins, and 6 torches is bookkeeping without decisions. Supply simplifies: you have X uses, spend them as needed. The decision is when to use them, not whether you remembered to buy the right type.
+
+**Where it's spent:**
+- Breathers (1 Supply to heal or shake off Fatigue)
+- Stabilizing dying allies (1 Supply)
+- Daily sustenance (on wilderness expeditions)
+
+**Why not "Provisions"?** We changed the name. "Provisions" sounds like food only. "Supply" better captures the abstraction—it's whatever consumable the situation demands.
+
+---
+
+## Why Weapon Tags?
+
+Weapon tags give players tactical options without adding cognitive load. The design principle: tags must be either **conditional triggers** (happens automatically when X occurs) or **simple trades** (sacrifice one thing, get another).
+
+**Cleave** (Greataxe, Greatsword): When you drop a foe to 0 HP, deal d4 to an adjacent enemy. No decision needed - it just happens. Rewards aggressive play and makes two-handers feel powerful against groups.
+
+**Crush** (Mace, Maul): Trade your STR damage to knock the target prone. Simple choice: damage or control? No save, no slowdown.
+
+**Hook** (Flail, Poleaxe, Sickle): Trade your STR damage to push or pull 5 ft. Battlefield positioning for tactical players.
+
+**What we cut:** Earlier drafts had Armor-Piercing, Quiet, Parry, Accurate, Ready. Each failed the "earns its place" test:
+- *Armor-Piercing*: Became the +1 on crossbows and shortsword - the bonus IS the benefit
+- *Quiet*: Situational flavor, not a combat choice. Daggers are obviously quiet
+- *Parry/Accurate/Ready*: Added complexity without interesting decisions
+
+**The +1 pattern:** Shortsword (d6+1), Light Crossbow (d6+1), Heavy Crossbow (d8+1) all have a flat +1 to damage. For crossbows, this represents armor-piercing power - you get more damage but Loading means you can't fire every round. For shortsword, it's the premium over the cheaper Sickle (which has Hook instead).
+
+---
+
+## Why Armor Works This Way?
+
+**Three tiers, clear trade-offs:**
+- **Leather (AC 12 + DEX)**: Full mobility, any DEX bonus
+- **Chain (AC 14 + DEX max 2)**: Solid protection, some mobility
+- **Plate (AC 18)**: Best protection, no DEX, Stealth SETBACK, Bulky, expensive
+
+**Why AC 18 for Plate?** Earlier drafts had AC 16, but that made Chain + high DEX strictly better. A character with DEX +2 in Chain gets AC 16 - same as Plate, but cheaper, lighter, quieter, and faster to don.
+
+At AC 18, Plate is definitively the highest AC in the game. You pay for it (300 gp, STR 12, Bulky slot, Stealth penalty, 10 min to don), but you get something Chain can't match. Chain + Shield (AC 17) is competitive for those who want a hand free.
+
+**Shield Sunder:** When you take damage, you can destroy your shield to reduce that damage to 0. This is a meaningful defensive choice - spend your shield to survive a big hit. Shields are cheap (7 gp), so it's not about resource hoarding. It's about dramatic moments: "The ogre's club crashes down - you raise your shield, which explodes into splinters, but you're alive."
+
 ### Combat
-- [ ] **Why Side-Based Initiative?** - Group action vs individual rolls
+- [x] **Why Side-Based Initiative?** - See below
 - [ ] **Why Death Saves Work This Way** - Stakes without instant death
 - [ ] **Why No Opportunity Attacks?** - Movement freedom in OSR play
 
+---
+
+## Why Side-Based Initiative?
+
+OSwR uses side-based combat with declare-then-resolve. This is inspired by Cairn and classic OSR games, not 5e's individual initiative.
+
+**The flow:**
+1. First contact: Each hero rolls d20 + DEX vs DC 12. Pass = act before enemies.
+2. Heroes who passed declare actions, roll, and resolve.
+3. All enemies declare and resolve.
+4. All heroes declare and resolve.
+5. Repeat steps 3–4 until combat ends.
+
+**Why no individual initiative?** Rolling and tracking initiative for every combatant slows play without adding meaningful decisions. In 5e, initiative is often "roll high, act first, forget the number." Side-based combat removes that bookkeeping entirely.
+
+**Why declare before rolling?** This is the key design choice. When everyone on a side declares their action before any dice are rolled, actions resolve simultaneously. You can't wait to see if the Fighter kills the goblin before deciding who to attack.
+
+**What this enables:**
+- **Faster play.** No initiative tracking, no "whose turn is it?"
+- **Coordination matters.** "I'll hold the door while you grab the chest" requires trust—you're both committing.
+- **No reactive optimization.** Players and enemies both commit before knowing outcomes. This matches the fiction of simultaneous combat better than sequential turns.
+
+**The first-contact check.** The DEX check at the start determines whether you get a free swing before enemies act. Pass and your side gets a full action before any enemy moves. Fail and enemies go first—but then you join in with the other heroes. You don't "miss a turn"; the flow just starts with enemies instead of heroes.
+
+**Classic divergence:** This matches Cairn's approach more than 5e's. OSE uses d6 group initiative (rerolled each round). OSwR's single first-contact check is simpler—one roll at the fight's start, then pure alternation.
+
 ### Rests & Recovery
-- [ ] **Why Two Rest Types?** - Short vs Long, when HD refresh
-- [ ] **Why Fatigue Matters?** - Pressure without death spirals
+- [x] **Why Three Rest Types?** - See below
+- [x] **Why Fatigue Has Five Levels?** - See below
+- [x] **Why Dropping to 0 HP Causes Fatigue?** - See below
+
+---
+
+## Why Three Rest Types?
+
+OSwR has Breathers, Night's Rest, and Safe Haven. Each serves a different purpose:
+
+**Breather (10 minutes):** Quick recovery after a fight. Spend 1 Supply, choose to heal (1d4 + CON) OR shake off 1 Fatigue. If an ally helps you, you can do both. This creates decisions: heal HP or clear Fatigue? Help your friend or take your own Breather?
+
+**Night's Rest (8 hours):** Spend Hit Dice to heal (roll + CON each), recover spell slots, remove 1-2 Fatigue depending on conditions. Hit Dice don't come back until Safe Haven—this is the key pressure point.
+
+**Safe Haven (1d4+1 days):** Full reset. The variable duration matters: you can't plan exactly when you'll be ready. Sometimes the dungeon won't wait.
+
+**Why not just Short/Long rest?** 5e's two-rest system encourages "adventuring day" pacing that doesn't fit dungeon crawling. Three tiers create more pressure: Breathers are quick but limited, Night's Rest costs Hit Dice you can't easily recover, and Safe Haven requires leaving the danger zone entirely.
+
+---
+
+## Why Fatigue Has Five Levels?
+
+| Level | Effect |
+|------:|--------|
+| 1 | −1 to all checks and saves |
+| 2 | −2 to all checks and saves |
+| 3 | −3 to all checks and saves; Speed drops one step |
+| 4 | −4 to all checks and saves; Speed drops to Slow |
+| 5 | Incapacitated—can't act until you rest |
+
+**Gradual pressure, not sudden death.** Fatigue accumulates from environmental stress (forced march, bad weather, sleeping in armor) and combat (dropping to 0 HP). The escalating penalties create tension without killing characters outright.
+
+**Recovery is deliberate.** You can clear 1 Fatigue during a Breather (with a CON save), or 1-2 during Night's Rest depending on shelter. Full reset requires Safe Haven. This means Fatigue stacks up faster than it clears—exactly the pressure an OSR game needs.
+
+---
+
+## Why Dropping to 0 HP Causes Fatigue?
+
+Getting knocked out should matter. In 5e, the optimal strategy is often to let allies drop, then heal them with 1 HP ("yo-yo healing"). There's no lasting consequence.
+
+In OSwR, dropping to 0 HP automatically gives you 1 Fatigue when you get back up. No save. This creates real stakes:
+
+1. **Combat has lasting effects.** Even if you survive, you're weakened.
+2. **Breather choices matter.** After a tough fight, do you heal HP or clear the Fatigue you just gained?
+3. **Teamwork helps.** If an ally spends their Breather tending to you, you can do both.
+4. **Attrition pressure.** Multiple knockdowns in a dungeon stack up, pushing parties toward retreat.
 
 ### Exploration
 - [ ] **Why Turns & Rounds?** - Time as resource
@@ -287,6 +424,19 @@ Turn Undead requires a Normal (DC 12) WIS check. The power scales through HD thr
 
 ### Referee Tools
 - [ ] **Why These Difficulty Tiers?** - Easy/Normal/Hard at 8/12/16
+- [x] **Why No Passive Checks?** - See below
+
+---
+
+## Why No Passive Checks?
+
+5e has passive Perception (10 + modifier) for "always-on" awareness. We cut it.
+
+**The problem:** Passive checks give the illusion of a system while the Referee is really just deciding. If your passive is 12 and the DC is 12, you notice. If the DC is 13, you don't. The Referee sets both numbers—they're deciding the outcome with extra steps.
+
+**OSR philosophy:** If you don't say you're looking, you don't find it. Player engagement matters. "I search the room" should prompt description and decisions, not a number comparison.
+
+**What replaces it:** Referee judgment. If the trap is obvious and the players are being careful, they notice. If it's hidden and they're rushing, they trigger it. If it's uncertain, call for a roll. No passive score needed.
 
 ---
 

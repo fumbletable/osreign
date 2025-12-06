@@ -8,10 +8,20 @@ nav_order: 6
 
 # Encumbrance
 
-- **Carry limit:** `10 + STR modifier` item slots.
-- **Backpack:** +10 slots.
-- **Bulky items:** count as 2 slots (gear, weapons, or armor tagged *Bulky*).
+How much you can carry.
 
-**Over capacity:**
-- If you exceed your slots → Speed drops to **Slow**, and you must roll a **CON save (DC 12)**. On a fail: gain **+1 Fatigue**.
-- If carrying more than 2× your slots → you are **immobile** until you drop gear.
+---
+
+## Carry Limit
+
+You have **10 + STR** item slots. A backpack adds 10 more.
+
+**Bulky items** take 2 slots. Gear, weapons, or armor tagged *Bulky* counts double.
+
+---
+
+## Over Capacity
+
+If you exceed your slots, your Speed drops to **Slow** and you roll a **CON save (DC 12)**. Fail and you gain **+1 Fatigue**.
+
+If you're carrying more than double your slots, you're **immobile** until you drop something.

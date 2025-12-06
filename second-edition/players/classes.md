@@ -50,7 +50,7 @@ All characters begin with:
 ## How to Read Class Lines
 - **HD:** At 1st level, you take the max of your HD (8 for Fighter, 6 for Cleric/Expert, 4 for Magic-User) + CON.
   At higher levels, roll your class Hit Die (or take the average in parentheses) and add CON.
-- **Saves:** These are your proficient saves—add PB and the ability mod. Non-proficient saves use only the ability mod.
+- **Saves:** These are your proficient saves—add PB and the relevant ability. Non-proficient saves use only the ability.
 - **Weapons / Armor:** Listed by **tags**. Add PB to attacks with proficient weapons. Shields give their normal AC bonus.
   Some restrictions apply (e.g., Cleric "Bludgeoning only").
 - **Ability Boost:** At level 1, your class grants +1 to a specific ability.

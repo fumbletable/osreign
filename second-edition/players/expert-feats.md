@@ -8,7 +8,7 @@ nav_order: 3
 
 # Expert Feats
 
-Experts gain 6 of these feats at level 1 and +1 at each odd level (3, 5, 7, 9, 11).
+You start with six of these at level 1 and pick another at each odd level (3, 5, 7, 9, 11). Experts can also choose from General Feats instead.
 
 ---
 
@@ -23,13 +23,13 @@ Experts gain 6 of these feats at level 1 and +1 at each odd level (3, 5, 7, 9, 1
 | Disguise | EDGE on checks to pass yourself off as someone else. |
 | Forgery Master | EDGE to forge documents or spot forgeries. |
 | Gambit | Take SETBACK on your current roll. Your next roll this turn gains +2 dice (roll 3, keep best). |
-| Garrote | From behind: restrain and silence target. Target escapes on STR (12). |
+| Garrote | From behind: restrain and silence your target. They escape on a STR save (DC 12). |
 | Hide in Shadows | After breaking line of sight, EDGE to remain hidden. |
 | Infiltrator | EDGE on stealth and deception checks against guards and sentries. |
 | Innate Tracker | EDGE to track creatures (numbers, size, time elapsed). |
 | Master of Disguise | Allies using your disguises also gain EDGE. |
 | Pick Locks | Open non-magical locks with thieves' tools. No check required for mundane locks. |
-| Pick Pockets | Attempt theft unnoticed. Target's WIS vs your DEX roll. |
+| Pick Pockets | Attempt theft unnoticed. Your DEX vs their WIS. |
 | Poisoner | Craft and apply poisons. Immune to your own poisons. |
 | Silver Tongue | EDGE on checks to deceive, lie, or misdirect. |
 | Sleight of Hand | Conceal or palm small items without being noticed. |

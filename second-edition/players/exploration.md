@@ -25,7 +25,7 @@ In a Turn, you can:
 
 **Light matters.** Torches burn out. Lanterns need oil. If your light dies in the dark, you're in serious trouble.
 
-**Rest matters.** After about an hour of exploration, you'll need to stop and rest or risk exhaustion.
+**Rest matters.** After about an hour of exploration, you'll need to stop and rest or risk Fatigue.
 
 ---
 
@@ -50,7 +50,7 @@ A typical day:
 
 **Ask questions.** "What do we see?" "Is there another way around?" "How far is the noise?" Information keeps you alive.
 
-**Manage your resources.** Light, food, water, rest — these aren't flavour, they're survival. Plan for them.
+**Manage your resources.** Light, food, water, rest—these aren't flavor, they're survival. Plan for them.
 
 **Time has consequences.** The longer you spend in a dangerous place, the more likely something finds you. Move with purpose.
 

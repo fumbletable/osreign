@@ -6,60 +6,63 @@ grand_parent: Players
 nav_order: 1
 ---
 
-## Weapons
+# Weapons
 
-Weapons are categorized by proficiency (Light/Medium/Heavy) and special properties.
-
-| Weapon         |  Cost | Damage            | Properties                                                      |
-| -------------- | ----: | ----------------- | --------------------------------------------------------------- |
-| Club           |  1 gp | 1d4 (B)           | Light                                                           |
-| Dagger         |  2 gp | 1d4 (P)           | Light, Finesse, Quiet, Thrown (Near)                            |
-| Staff          |  2 gp | 1d4 (B)           | Light                                                           |
-| Flail          |  8 gp | 1d6 (B)           | Medium, Hook                                                    |
-| Hand Axe       |  4 gp | 1d6 (S)           | Medium, Thrown (Near)                                           |
-| Mace           |  6 gp | 1d6 (B)           | Medium, Crush                                                   |
-| Shortsword     | 10 gp | 1d6 (S)           | Medium, Finesse                                                 |
-| Sickle         |  5 gp | 1d6 (S)           | Medium, Finesse, Hook                                           |
-| Warhammer      |  8 gp | 1d6 (B) / 1d8 (B) | Medium, Versatile                                               |
-| Spear          |  5 gp | 1d6 (P) / 1d8 (P) | Medium, Thrown (Near), Versatile                                |
-| Longsword      | 10 gp | 1d6 (S) / 1d8 (S) | Medium, Versatile, Parry                                        |
-| Greataxe       | 16 gp | 1d10 (S)          | Heavy, Two-Handed, Bulky, Cleave                                |
-| Greatsword     | 18 gp | 1d10 (S)          | Heavy, Two-Handed, Bulky, Accurate                              |
-| Maul           | 12 gp | 1d10 (B)          | Heavy, Two-Handed, Bulky, Crush                                 |
-| Poleaxe        | 14 gp | 1d10 (S)          | Heavy, Two-Handed, Bulky, Reach, Hook                           |
-| Dart           |  1 gp | 1d4 (P)           | Light, Ranged (Near), Quiet                                     |
-| Sling          |  1 gp | 1d4 (B)           | Light, Ranged (Near), Quiet                                     |
-| Javelin        |  2 gp | 1d6 (P)           | Medium, Thrown (Near)                                           |
-| Light Crossbow | 25 gp | 1d6 (P)           | Medium, Ranged (Far), Two-Handed, Loading, Ready                |
-| Shortbow       | 25 gp | 1d6 (P)           | Medium, Ranged (Far)                                            |
-| Heavy Crossbow | 50 gp | 1d8 (P)           | Heavy, Ranged (Far), Two-Handed, Loading, Ready, Armor-Piercing |
-| Longbow        | 60 gp | 1d8 (P)           | Heavy, Ranged (Far), Two-Handed, Accurate                       |
-
-*(P) Piercing, (S) Slashing, (B) Bludgeoning*
-
-**Crossbows**
-- Reloading a crossbow takes **1 action**.
-- If pre-loaded, the first shot of the scene benefits from **Ready**.
+Steel, wood, and string - here's what kills.
 
 ---
 
-## Weapon & Armor Tags Glossary
+## Weapon List
 
-- **Light / Medium / Heavy**: Proficiency bands; Heavy = restricted to Fighter.
-- **Finesse**: Use DEX instead of STR for attack & damage.
-- **Thrown (Near)**: Can be thrown to Near range.
-- **Ranged (Far)**: Effective at long range.
-- **Versatile**: One- or two-handed; use bigger damage die with 2 hands.
-- **Two-Handed**: Requires both hands.
-- **Bulky**: Counts as 2 slots for Encumbrance.
-- **Reach**: Attack 10 ft away.
-- **Loading**: Requires 1 action to reload.
-- **Sundered**: Destroy item to negate all damage from 1 attack.
-- **Hook**: On hit, may push/pull target 5 ft instead of adding STR/DEX to damage.
-- **Cleave**: Drop a foe to 0 HP → deal 1d4 to another CLOSE foe (once/turn).
-- **Crush**: On hit, may knock prone instead of damage (STR save 12 negates).
-- **Parry**: While wielding one-handed without a shield, gain +1 AC.
-- **Accurate**: If you didn't move this round, EDGE on 1 attack.
-- **Ready**: If loaded before combat, first attack this scene has EDGE.
-- **Quiet**: Makes little noise; immediate Stealth to hide has EDGE.
-- **Armor-Piercing**: +1 damage vs Medium/Heavy armor.
+| Weapon | Cost | Damage | Tags |
+|:-------|-----:|:------:|:-----|
+| Club | 1 gp | d4 | Light, Bludgeoning |
+| Dagger | 2 gp | d4 | Light, Piercing, Finesse, Thrown (Near) |
+| Dart | 1 gp | d4 | Light, Piercing, Ranged (Near) |
+| Flail | 8 gp | d6 | Medium, Bludgeoning, Hook |
+| Greataxe | 16 gp | d10 | Heavy, Slashing, Two-Handed, Bulky, Cleave |
+| Greatsword | 18 gp | d10 | Heavy, Slashing, Two-Handed, Bulky, Cleave |
+| Hand Axe | 4 gp | d6 | Medium, Slashing, Thrown (Near) |
+| Heavy Crossbow | 50 gp | d8+1 | Heavy, Piercing, Ranged (Far), Two-Handed, Loading |
+| Javelin | 2 gp | d6 | Medium, Piercing, Thrown (Near) |
+| Light Crossbow | 25 gp | d6+1 | Medium, Piercing, Ranged (Far), Two-Handed, Loading |
+| Longbow | 60 gp | d8 | Heavy, Piercing, Ranged (Far), Two-Handed |
+| Longsword | 10 gp | d6/d8 | Medium, Slashing, Versatile |
+| Mace | 6 gp | d6 | Medium, Bludgeoning, Crush |
+| Maul | 12 gp | d10 | Heavy, Bludgeoning, Two-Handed, Bulky, Crush |
+| Poleaxe | 14 gp | d10 | Heavy, Slashing, Two-Handed, Bulky, Reach, Hook |
+| Shortbow | 25 gp | d6 | Medium, Piercing, Ranged (Far) |
+| Shortsword | 10 gp | d6+1 | Medium, Slashing, Finesse |
+| Sickle | 5 gp | d6 | Medium, Slashing, Finesse, Hook |
+| Sling | 1 gp | d4 | Light, Bludgeoning, Ranged (Near) |
+| Spear | 5 gp | d6/d8 | Medium, Piercing, Thrown (Near), Versatile |
+| Staff | 2 gp | d4 | Light, Bludgeoning, Reach |
+| Warhammer | 8 gp | d6/d8 | Medium, Bludgeoning, Versatile |
+
+---
+
+## Weapon Tags
+
+**Proficiency tiers** - your class grants proficiency with Light, Medium, and/or Heavy weapons. Add PB to attacks with weapons you're proficient in.
+
+**Damage types:**
+- **Bludgeoning** - Blunt force (clubs, maces, hammers)
+- **Piercing** - Puncturing (daggers, spears, arrows)
+- **Slashing** - Cutting (swords, axes)
+
+**How you use it:**
+- **Finesse** - Can use DEX instead of STR for attack and damage
+- **Versatile** - One or two hands; two-handed uses the higher damage die
+- **Two-Handed** - Requires both hands
+- **Thrown (Near)** - Can be thrown to Near range
+- **Ranged (Near/Far)** - Fires projectiles to Near or Far range
+- **Reach** - Melee attacks reach 10 ft
+- **Loading** - Takes 1 action to reload after firing
+
+**Restrictions:**
+- **Bulky** - Counts as 2 slots for encumbrance
+
+**Special:**
+- **Cleave** - When you drop a foe to 0 HP, deal d4 damage to another foe within Close range (once per turn)
+- **Crush** - On a hit, you can knock the target prone instead of adding your STR to damage
+- **Hook** - On a hit, you can push or pull the target 5 ft instead of adding your STR to damage

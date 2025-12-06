@@ -9,37 +9,34 @@ has_children: true
 
 # Equipment
 
-Your character's equipment reflects their journey and defines how they interact with the world. From weapons and armor to tools and treasures, gear is essential for survival and adventure.
+Here's what you can buy and how much you can carry.
 
 ---
 
 ## Coins & Wealth
 
-**Currency system**
-- 100 cp = 10 sp = 1 gp
-- **Copper (cp):** small change.
-- **Silver (sp):** everyday use.
-- **Gold (gp):** major purchases, adventuring economy.
+The adventuring economy runs on gold.
 
-**Selling treasure**
-- **Arms & Armor:** half value.
-- **Gems & Art Objects:** full value.
-- **Magic Items:** rare; require negotiation in major settlements.
+- **100 cp = 10 sp = 1 gp**
+- You'll use copper for small purchases, silver for everyday goods, and gold for anything serious.
+
+When you sell treasure:
+- **Arms & Armor:** You get half value.
+- **Gems & Art Objects:** Full value.
+- **Magic Items:** Rare - you'll need to negotiate in a major settlement.
 
 ---
 
 ## Encumbrance (reminder)
 
-- **Carry:** 10 + STR modifier slots.
-- **Backpack:** +10 slots.
-- **Bulky items:** count as 2 slots.
-- **Over capacity:** Speed = Slow, and CON save (12) or gain 1 Fatigue.
+You can carry 10 + STR slots. A backpack adds another 10. Bulky items take 2 slots.
+
+If you're over capacity, your Speed drops to Slow and you make a CON save (DC 12) or gain 1 Fatigue.
 
 ---
 
 ## Sections
 
-- [Weapons](weapons/) - Melee and ranged weapons with properties
+- [Weapons](weapons/) - Melee and ranged weapons with tags
 - [Armor](armor/) - Protection and mobility trade-offs
-- [Adventuring Gear](adventuring-gear/) - Tools, supplies, and sundries
-- [Kits](kits/) - Specialist toolsets for specific tasks
+- [Adventuring Gear](adventuring-gear/) - Tools, supplies, kits, and sundries

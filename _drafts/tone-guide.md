@@ -20,7 +20,8 @@ You're explaining rules to a friend at your table. Friendly, direct, no waffle. 
 | Contractions ("don't", "you've") | Formal ("do not", "you have") |
 | Active voice ("you avoid harm") | Passive ("harm is avoided") |
 | Brief context before mechanics | Mechanics only, no setup |
-| Light humour where natural | Forced jokes or no personality |
+| Light humor where natural | Forced jokes or no personality |
+| American spelling (armor, favor) | UK spelling (armour, favour) |
 
 ---
 
@@ -58,6 +59,35 @@ Use natural language labels (Easy, Normal, Hard) but always include the DC in pa
 - Not: "Hard save"
 
 **IMPORTANT:** Book-wide pattern. Search for "Easy", "Normal", "Hard" difficulty references and add the DC number.
+
+---
+
+## Page Structure
+
+Every page follows this pattern:
+
+```
+# Heading
+
+[One punchy intro line - friendly, direct, sets context]
+
+---
+
+## First Section
+[Content]
+```
+
+The intro line comes right after the heading, before any sections. It's one sentence that tells the reader what this page is about or what they'll do here.
+
+Good examples:
+- "Here's what you'll do:" (character-creation)
+- "When the outcome's uncertain, you roll dice." (rolling-dice)
+- "Here's how fights work." (combat)
+- "Feats let you customize your character beyond class and background." (feats)
+
+Bad:
+- No intro (jumping straight to ## Section)
+- Flowery filler ("Your equipment reflects your journey...")
 
 ---
 
@@ -117,6 +147,19 @@ Tables and bullet lists are fine - this is a reference book. But:
 - Use "you" in the content where possible
 - Keep entries parallel in structure
 
+**Prefer prose over fragments.** Don't write:
+```
+- **Carry:** 10 + STR slots.
+- **Backpack:** +10 slots.
+```
+
+Write:
+```
+You can carry 10 + STR slots. A backpack adds another 10.
+```
+
+Bullet points are for lists of distinct items (weapons, feats, spells). For rules that flow together, use sentences.
+
 ---
 
 ## What to Avoid
@@ -167,15 +210,15 @@ Sign-off: Just "Damien" - no title, no formality.
 - [x] expert.md
 - [x] cleric.md
 - [x] magic-user.md
-- [ ] feats.md
-- [ ] general-feats.md
-- [ ] fighter-feats.md
-- [ ] expert-feats.md
-- [ ] equipment.md
-- [ ] weapons.md
-- [ ] armor.md
-- [ ] adventuring-gear.md
-- [ ] kits.md
+- [x] feats.md
+- [x] general-feats.md
+- [x] fighter-feats.md
+- [x] expert-feats.md
+- [x] equipment.md
+- [x] weapons.md
+- [x] armor.md
+- [x] adventuring-gear.md (merged kits.md into this)
+- [x] ~~kits.md~~ (deleted - merged into adventuring-gear.md)
 - [ ] rules.md
 - [ ] time-and-movement.md
 - [ ] rests-and-recovery.md

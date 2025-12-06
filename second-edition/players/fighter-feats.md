@@ -8,7 +8,7 @@ nav_order: 2
 
 # Fighter Feats
 
-Fighters gain these feats at level 1 (×2) and at each odd level (3, 5, 7, 9, 11).
+You start with two of these at level 1 and pick another at each odd level (3, 5, 7, 9, 11). These are what make Fighters dangerous.
 
 ---
 

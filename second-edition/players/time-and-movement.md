@@ -6,9 +6,13 @@ grand_parent: Players
 nav_order: 3
 ---
 
-## Time and Movement
+# Time and Movement
 
-### Time Segments
+How long things take and how far you can go.
+
+---
+
+## Time Segments
 
 | Segment | Duration | Use |
 |---------|----------|-----|
@@ -19,7 +23,7 @@ nav_order: 3
 
 ---
 
-### Movement Speeds
+## Movement
 
 | Speed | Per Round | Per Turn (dungeon) | Per Watch (wilderness) |
 |-------|----------:|-------------------:|------------------------:|
@@ -37,7 +41,7 @@ nav_order: 3
 
 ---
 
-### Light Sources
+## Light Sources
 
 | Source | Duration | Radius |
 |--------|----------|--------|
@@ -51,7 +55,7 @@ nav_order: 3
 
 ---
 
-### Ranges
+## Ranges
 
 | Range | Distance | Use |
 |-------|----------|-----|
@@ -62,7 +66,7 @@ nav_order: 3
 
 ---
 
-### Climbing, Swimming, Crawling
+## Climbing, Swimming, Crawling
 
 Movement is reduced by one step (Fast → Normal, Normal → Slow) unless the creature has a climbing or swimming speed.
 
@@ -71,17 +75,17 @@ Movement is reduced by one step (Fast → Normal, Normal → Slow) unless the cr
 
 ---
 
-### Jumping
+## Jumping
 
-**Long Jump:** Jump a distance equal to your Strength score in feet (with 10 ft run-up).
+**Long Jump:** 10 + STR feet (with 10 ft run-up). Standing long jump = half that.
 
-**High Jump:** Jump half your Strength score in feet (with 10 ft run-up). Standing high jump = quarter Strength score.
+**High Jump:** 3 + STR feet (with 10 ft run-up). Standing high jump = half that.
 
 Difficult landings or obstacles may require a STR or DEX check.
 
 ---
 
-### Falling
+## Falling
 
 Take **1d6 cumulative damage** for every 10 ft fallen. Land prone.
 
@@ -91,8 +95,8 @@ Take **1d6 cumulative damage** for every 10 ft fallen. Land prone.
 
 ---
 
-### Suffocation
+## Suffocation
 
-A creature can hold its breath for **1 + CON modifier** minutes (minimum 30 seconds).
+A creature can hold its breath for **1 + CON** minutes (minimum 30 seconds).
 
-When out of breath, survive for **CON modifier** rounds (minimum 1). At the start of the next turn after that, drop to 0 HP and begin dying. Cannot be stabilised until breathing again.
+When out of breath, survive for **CON** rounds (minimum 1). At the start of the next turn after that, drop to 0 HP and begin dying. Cannot be stabilized until breathing again.

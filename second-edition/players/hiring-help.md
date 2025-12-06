@@ -41,7 +41,7 @@ Dungeons are deadly. Smart adventurers bring backup.
 
 Your **Charisma** determines how many retainers will follow you:
 
-**Maximum retainers = PB + CHA modifier** (minimum 0)
+**Maximum retainers = PB + CHA** (minimum 0)
 
 High Charisma means more followers and better loyalty. Low Charisma means they're harder to keep.
 

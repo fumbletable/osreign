@@ -16,10 +16,10 @@ Not everything fights to the death. When the situation turns grim, creatures may
 
 Roll morale when:
 
-- **First blood** — the first ally falls
-- **Half down** — half the group is out of the fight
-- **Leader killed** — the boss, champion, or commander drops
-- **Overwhelming odds** — reinforcements arrive, or the situation shifts dramatically against them
+- **First blood:** The first ally falls
+- **Half down:** Half the group is out of the fight
+- **Leader killed:** The boss, champion, or commander drops
+- **Overwhelming odds:** Reinforcements arrive, or the situation shifts dramatically against them
 
 The Referee may also call for a check when something terrifying happens (dragon breathes fire, magic backfires spectacularly, etc.).
 

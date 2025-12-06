@@ -8,7 +8,7 @@ nav_order: 1
 
 # General Feats
 
-Any character can take these feats at even levels (2, 4, 6, 8, 10, 12).
+These feats are open to everyone. You pick one at each even level (2, 4, 6, 8, 10, 12) as you grow into whatever kind of adventurer you want to be.
 
 ---
 
