@@ -33,7 +33,7 @@ This page consolidates all economic information for OSwR - what things cost, wha
 
 **1 XP per 1 GP** of treasure recovered from dangerous locations.
 
-This is the primary advancement engine. See [Advancement](../advancement/) for full XP rules.
+This is the primary advancement engine. See [Advancement](advancement.md) for full XP rules.
 
 ---
 
@@ -78,7 +78,7 @@ Levelling grants capacity. Unlocking abilities costs gold and time.
 | Backup own spell | 1 hr/tier | 50 gp/tier |
 | Spellbook (blank, 20 capacity) | — | 200 gp |
 
-See [Spellbooks & Research](../spellbooks-and-research/) for full rules.
+See [Spellbooks & Research](spellbooks-and-research.md) for full rules.
 
 ---
 

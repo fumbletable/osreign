@@ -73,4 +73,4 @@ The Referee tracks their loyalty and morale. Your actions affect both.
 
 You can't always do everything alone. Hiring help is smart, not weak. But remember: these are people with their own survival instincts. Lead well, pay fairly, and they'll follow you into the dark.
 
-For full hiring rules, see the Referee section on [Retainers](../refereeing/retainers/).
+For full hiring rules, see the Referee section on [Retainers](../refereeing/retainers.md).

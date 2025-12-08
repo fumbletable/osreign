@@ -62,7 +62,7 @@ Retainers use the same 2d6 roll, but add modifiers:
 - **12** — rally (no more checks this fight)
 - **Fail** — withdraw, flee, or break
 
-See [Retainers](../refereeing/retainers/) for Loyalty tracking and the Retainer modifier table.
+See [Retainers](../refereeing/retainers.md) for Loyalty tracking and the Retainer modifier table.
 
 ---
 

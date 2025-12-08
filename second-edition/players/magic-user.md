@@ -25,7 +25,7 @@ Magic-Users wield arcane power through study and intellect. You're fragile in co
 - **Spell attack:** PB + INT
 - **Preparation:** After a rest, prepare spells equal to your **level + INT**.
 - **Casting:** Spend a slot of the spell's tier or higher. The slot is lost; the spell remains on your list.
-- **Progression:** Magic-Users use the Spell Slot Progression table (see [Magic Overview](../magic/)).
+- **Progression:** Magic-Users use the Spell Slot Progression table (see [Magic Overview](magic.md)).
 
 ---
 
@@ -52,7 +52,7 @@ You begin with a spellbook containing *Read Magic* plus **(1 + INT)** 1st-tier s
 - Add spells by copying from scrolls, other spellbooks, or through research.
 - Without your spellbook, you cannot prepare new spells.
 
-See [Spellbooks & Research](../spellbooks-research/) for copying, research, and scroll rules.
+See [Spellbooks & Research](spellbooks-and-research.md) for copying, research, and scroll rules.
 
 ---
 

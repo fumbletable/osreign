@@ -44,11 +44,10 @@ The stuff that keeps you alive between fights.
 |:-----|-----:|:------|
 | Provisions (6 uses) | 3 gp | Spend 1 on a Breather or Night's Rest |
 | Waterskin | 1 gp | Holds 1 day's water |
-| Backpack | 2 gp | +10 slots capacity |
-| Belt Pouch | 1 gp | Holds 20 coins or small tools |
-| Sack | 1 gp | Holds 40 coins or bulky goods |
+| Backpack | 2 gp | +10 slots capacity (worn) |
+| Sack | 1 gp | +5 slots capacity (requires a free hand) |
 | Small Chest | 5 gp | Lockable, holds valuables |
-| Large Chest | 15 gp | Heavy, Bulky, holds more |
+| Large Chest | 15 gp | Bulky, holds more |
 
 ---
 

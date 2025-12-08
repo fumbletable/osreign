@@ -37,6 +37,6 @@ If you're over capacity, your Speed drops to Slow and you make a CON save (DC 12
 
 ## Sections
 
-- [Weapons](weapons/) - Melee and ranged weapons with tags
-- [Armor](armor/) - Protection and mobility trade-offs
-- [Adventuring Gear](adventuring-gear/) - Tools, supplies, kits, and sundries
+- [Weapons](weapons.md) - Melee and ranged weapons with tags
+- [Armor](armor.md) - Protection and mobility trade-offs
+- [Adventuring Gear](adventuring-gear.md) - Tools, supplies, kits, and sundries

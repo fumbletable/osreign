@@ -329,8 +329,10 @@ At AC 18, Plate is definitively the highest AC in the game. You pay for it (300 
 
 ### Combat
 - [x] **Why Side-Based Initiative?** - See below
-- [ ] **Why Death Saves Work This Way** - Stakes without instant death
-- [ ] **Why No Opportunity Attacks?** - Movement freedom in OSR play
+- [x] **Why Death & Dying Uses Fatigue?** - See below
+- [x] **Why Opportunity Attacks Work This Way?** - See below
+- [x] **Why Disengage Lets You Dash?** - See below
+- [x] **Why DEX Doesn't Add to Ranged Damage?** - See below
 
 ---
 
@@ -357,6 +359,93 @@ OSwR uses side-based combat with declare-then-resolve. This is inspired by Cairn
 **The first-contact check.** The DEX check at the start determines whether you get a free swing before enemies act. Pass and your side gets a full action before any enemy moves. Fail and enemies go first—but then you join in with the other heroes. You don't "miss a turn"; the flow just starts with enemies instead of heroes.
 
 **Classic divergence:** This matches Cairn's approach more than 5e's. OSE uses d6 group initiative (rerolled each round). OSwR's single first-contact check is simpler—one roll at the fight's start, then pure alternation.
+
+---
+
+## Why Death & Dying Uses Fatigue?
+
+5e's death saves are boring. Roll a d20, pass or fail, three strikes either way. There's no tension after the first roll—just waiting to see which side hits three first.
+
+OSwR's death system uses 2d6 minus your Fatigue:
+
+| Roll | What happens |
+|------|--------------|
+| 11+ | Back up with HP equal to CON or one Hit Die (your choice) |
+| 10 | Stable—wake next turn at 1 HP |
+| 5–9 | Still dying—roll again next round |
+| 4 | Dead, but you get one heroic action first |
+| 3– | Dead outright |
+
+**Why this works:**
+
+1. **Instant tension.** Every roll matters. You could die on your first death check—or heroically spring back up. No three-strike countdown.
+
+2. **Fatigue integration.** The more battered you are, the harder it is to survive. A fresh character rolling 2d6 has good odds. A character at Fatigue 3 rolling 2d6−3? Much worse. This ties the death system to the rest of the game's attrition mechanics.
+
+3. **The heroic death.** Rolling exactly 4 is rare, but it creates memorable moments. "You're dead, but you get one last action." That's the stuff stories are made of.
+
+4. **Player choice on recovery.** When you roll 11+, you choose: CON (predictable) or Hit Die roll (potentially better, potentially worse). Even in recovery, there's a decision.
+
+---
+
+## Why Opportunity Attacks Work This Way?
+
+OSwR keeps opportunity attacks but adds a key restriction from the original OSwR: **you can't make an opportunity attack if you're already in melee with another creature.**
+
+**The flow:**
+- When a foe leaves your reach, you can make one free attack
+- This doesn't use your turn—it's a bonus swing
+- You can only make one opportunity attack per round
+
+**The "engaged in melee" rule:**
+
+This is the tactical piece. If the Fighter is toe-to-toe with an ogre, the Wizard can slip past that ogre without getting clubbed. The ogre is busy with the Fighter.
+
+**Why this matters:**
+
+1. **It's realistic.** If you're actively fighting someone, you can't also swing at someone walking past. Your attention is on the threat in front of you.
+
+2. **Rewards positioning.** "I'll hold this one while you get past" becomes a real tactic. Fighters become battlefield controllers by engaging threats.
+
+3. **Squishier characters can escape.** A Wizard with 4 HP shouldn't have to eat an opportunity attack just to reposition. If an ally is engaging the enemy, they're safe.
+
+4. **Creates teamwork.** The rule naturally encourages coordination without requiring complex mechanics.
+
+**One per round:** You get one opportunity attack per round, total. This prevents the "trigger five opportunity attacks by walking past five enemies" abuse while keeping the rule simple.
+
+---
+
+## Why Disengage Lets You Dash?
+
+In OSwR, Disengage does two things: you move without provoking opportunity attacks, AND you can Dash afterwards.
+
+**The problem being solved:** Characters should always be able to run from a fight. A Wizard with 4 HP facing an angry ogre needs an escape valve. If Disengage only prevents opportunity attacks but doesn't let you actually get away, you're still in reach next round.
+
+**The solution:** Disengage + Dash as a single action. You safely extract AND create distance. This is the retreat option—use it when things go wrong.
+
+**Why not make Dash a separate action?** Then retreating takes two turns (Disengage this turn, Dash next turn), during which the enemy can close the gap. The combined action makes retreat actually work.
+
+**This is from the original OSwR.** The rule existed specifically to ensure players could always flee. Running away is cool—you get to fight another day. OSR play should reward knowing when to run.
+
+---
+
+## Why DEX Doesn't Add to Ranged Damage?
+
+In OSwR, DEX adds to ranged attack rolls but NOT damage. Only melee (STR) and finesse (DEX choice) add ability to damage.
+
+**The reasoning:**
+
+1. **Range is already an advantage.** Archers attack from safety. Melee fighters take hits. The ranged character is already getting a benefit—they shouldn't also get bonus damage.
+
+2. **Old-school feel.** Classic D&D didn't add DEX to ranged damage. A bow does its damage dice, period. The skill (DEX) helps you hit; the weapon does the hurting.
+
+3. **Differentiation.** This makes the choice between ranged and melee meaningful. Want reliable damage? Get into melee with STR. Want safety? Stay back, but accept lower damage output.
+
+4. **Finesse is the hybrid.** If you want DEX for damage, use a finesse weapon—but that means being in melee range. You're trading safety for the ability modifier.
+
+**What this means in play:** A Fighter with STR +3 and a longsword does d8+3 damage. An Expert with DEX +3 and a shortbow does d6 damage (no bonus). The Fighter's damage is meaningfully higher, which compensates for the risk of being in melee.
+
+**Future consideration:** A feat that adds DEX to ranged damage could work for dedicated archers (Fighter or Expert). This would be an opt-in specialisation rather than a default, preserving the base design while rewarding the archetype.
 
 ### Rests & Recovery
 - [x] **Why Three Rest Types?** - See below

@@ -82,11 +82,11 @@ Ritual casting is slower but conserves resources for exploration and utility mag
 
 ## Sections
 
-- [Spellbooks & Research](spellbooks-and-research/) - Copying spells, research, and scrolls
-- [Spell Index](spell-index/) - Complete spell lists by class
-- [Tier 1 Spells](tier-1-spells/) - Level 1-2 caster spells
-- [Tier 2 Spells](tier-2-spells/) - Level 3-4 caster spells
-- [Tier 3 Spells](tier-3-spells/) - Level 5-6 caster spells
-- [Tier 4 Spells](tier-4-spells/) - Level 7-8 caster spells
-- [Tier 5 Spells](tier-5-spells/) - Level 9-10 caster spells
-- [Tier 6 Spells](tier-6-spells/) - Level 11-12 caster spells
+- [Spellbooks & Research](spellbooks-and-research.md) - Copying spells, research, and scrolls
+- [Spell Index](spell-index.md) - Complete spell lists by class
+- [Tier 1 Spells](tier-1-spells.md) - Level 1-2 caster spells
+- [Tier 2 Spells](tier-2-spells.md) - Level 3-4 caster spells
+- [Tier 3 Spells](tier-3-spells.md) - Level 5-6 caster spells
+- [Tier 4 Spells](tier-4-spells.md) - Level 7-8 caster spells
+- [Tier 5 Spells](tier-5-spells.md) - Level 9-10 caster spells
+- [Tier 6 Spells](tier-6-spells.md) - Level 11-12 caster spells

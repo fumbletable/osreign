@@ -9,7 +9,7 @@ has_children: true
 
 # Classes
 
-OSwR has four base classes: [Cleric](cleric/), [Expert](expert/), [Fighter](fighter/), [Magic-User](magic-user/).
+OSwR has four base classes: [Cleric](cleric.md), [Expert](expert.md), [Fighter](fighter.md), [Magic-User](magic-user.md).
 Your class sets your hit points, saves, weapon and armor proficiencies, and what you gain as you level.
 
 This small set is by design. The mix of **Feats** and **multiclassing** lets you shape almost any archetype you want:
@@ -54,4 +54,4 @@ All characters begin with:
 - **Weapons / Armor:** Listed by **tags**. Add PB to attacks with proficient weapons. Shields give their normal AC bonus.
   Some restrictions apply (e.g., Cleric "Bludgeoning only").
 - **Ability Boost:** At level 1, your class grants +1 to a specific ability.
-- **Spellcasters:** Cleric & Magic-User use **Spell Slots** with prepared lists. See [Magic Overview](../magic/) for preparation and casting.
+- **Spellcasters:** Cleric & Magic-User use **Spell Slots** with prepared lists. See [Magic Overview](magic.md) for preparation and casting.

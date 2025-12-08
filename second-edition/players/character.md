@@ -11,8 +11,8 @@ has_children: true
 
 This section covers everything you need to create your character.
 
-- [Character Creation](character-creation/) - The step-by-step process
-- [Ancestry](ancestry/) - Dwarves, Elves, Halflings, Humans
-- [Build-an-Ancestry](build-an-ancestry/) - Create custom ancestries
-- [Backgrounds](backgrounds/) - Your character's history
-- [Hindrances](hindrances/) - Optional flaws for extra feats
+- [Character Creation](character-creation.md) - The step-by-step process
+- [Ancestry](ancestry.md) - Dwarves, Elves, Halflings, Humans
+- [Build-an-Ancestry](build-an-ancestry.md) - Create custom ancestries
+- [Backgrounds](backgrounds.md) - Your character's history
+- [Hindrances](hindrances.md) - Optional flaws for extra feats

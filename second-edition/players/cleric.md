@@ -24,7 +24,7 @@ Clerics channel divine power—whether from the gods, nature, or some higher for
 - **Spell attack:** PB + WIS
 - **Preparation:** After a rest, prepare spells equal to your **level + WIS**.
 - **Casting:** Spend a slot of the spell's tier or higher. The slot is lost; the spell remains on your list.
-- **Progression:** Clerics use the Spell Slot Progression table (see [Magic Overview](../magic/)).
+- **Progression:** Clerics use the Spell Slot Progression table (see [Magic Overview](magic.md)).
 
 ---
 

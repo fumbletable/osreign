@@ -28,21 +28,31 @@ Here's how fights work.
 
 ## Attacks & Damage
 
-To hit, roll d20 + ability + PB. Beat the target's AC and you hit. Use STR for melee, DEX for ranged (or Finesse weapons).
+Roll d20 + ability + PB. Meet or beat the target's AC and you hit.
 
-**Hit:** Roll your weapon damage + ability. Subtract from their HP.
+- **Melee:** Add STR to attack and damage rolls.
+- **Ranged:** Add DEX to attack rolls only (no damage bonus).
+- **Finesse weapons:** Use DEX for both attack and damage instead of STR.
 
-**Crit:** Natural 20 doubles your damage dice.
+**Hit:** Roll your weapon's damage dice + ability (for melee/finesse). Subtract from their HP.
 
-**Miss:** No damage. The Referee might add a minor complication.
+**Critical Hit:** Natural 20 doubles your damage dice (not your ability).
 
-**Cover:** Partial cover gives SETBACK to the attacker or +2 AC—Referee's call.
+**Miss:** No damage.
+
+**Fumble:** Natural 1 invites a complication—dropped weapon, slipped footing, friendly fire. Referee's call.
+
+**Cover:**
+- *Partial cover* (half-hidden): Attacker has SETBACK.
+- *Full cover* (completely obscured): Can't be targeted.
 
 ---
 
 ## Saving Throws
 
-Roll d20 + ability (+ PB if you've got it) vs the DC. Beat it and you avoid or reduce the harm. Fail and you take the full effect. Don't forget to apply your Fatigue penalty.
+Roll d20 + ability vs the DC. Meet or beat it and you avoid or reduce the harm. Fail and you take the full effect.
+
+You add PB to saves your class grants proficiency in. Don't forget to apply your Fatigue penalty.
 
 ---
 
@@ -69,19 +79,30 @@ On your turn you can move up to your Speed and take one Action.
 | **Attack** | Melee or ranged attack vs AC |
 | **Cast Spell** | Resolve per the spell description |
 | **Dodge** | Attacks against you have SETBACK until your next turn |
-| **Disengage** | Move without provoking opportunity attacks |
+| **Disengage** | Move without provoking opportunity attacks. You can Dash afterwards to flee |
 | **Dash** | Double your movement this turn |
 | **Help** | Give an ally EDGE on their next roll (must be in reach) |
 | **Grapple** | STR vs their STR or DEX—success means their Speed drops to 0 |
 | **Shove** | STR vs their STR or DEX—push them 5 ft or knock them prone |
-| **Disarm** | STR or DEX vs theirs—they drop their weapon |
+| **Disarm** | STR or DEX vs theirs—weapon flies d10 ft in a random direction |
 | **Hide** | DEX check, needs cover or distraction |
 | **Stabilize** | Costs 1 Supply—dying ally becomes stable, wakes at 1 HP next turn |
-| **Use Object** | Draw, drink, light, open, or interact once |
-| **Ready** | Name a trigger—when it happens, take your prepared action as a Reaction |
+| **Ready** | Name a trigger—when it happens, take your prepared action |
 | **Improvise** | Describe something creative, roll vs DC, see what happens |
 
-**Opportunity Attack:** When a foe leaves your reach without Disengaging, you can use your Reaction to attack them. Once per round.
+**Free actions:** You can do minor things alongside your move and action—draw a weapon, open a door, shout a warning, drink a potion.
+
+---
+
+## Opportunity Attacks
+
+When a foe leaves your reach, you can make one free attack against them. This doesn't use up your turn.
+
+**You can't make an opportunity attack if:**
+- The foe Disengaged before moving
+- You're already in melee with another creature
+
+You can only make one opportunity attack per round.
 
 ---
 

@@ -12,16 +12,26 @@ How much you can carry.
 
 ---
 
-## Carry Limit
+## Slots
 
-You have **10 + STR** item slots. A backpack adds 10 more.
+You have **10 + STR** item slots. A backpack adds 10 more (lose the backpack, lose those slots).
 
-**Bulky items** take 2 slots. Gear, weapons, or armor tagged *Bulky* counts double.
+**What takes a slot:**
+- Most items that don't fit in your palm = 1 slot
+- **Bulky** items (plate armor, greataxe, maul, etc.) = 2 slots
+- 100 coins = 1 slot
+
+**Containers:**
+- **Backpack** — +10 slots (worn)
+- **Sack** — +5 slots (requires a free hand)
 
 ---
 
 ## Over Capacity
 
-If you exceed your slots, your Speed drops to **Slow** and you roll a **CON save (DC 12)**. Fail and you gain **+1 Fatigue**.
+If you exceed your slots:
+- Your Speed drops to **Slow**
+- Roll a **CON save (DC 12)** when you pick up the extra load. Fail = **+1 Fatigue**
+- If you increase your load further while already over capacity, roll again
 
-If you're carrying more than double your slots, you're **immobile** until you drop something.
+If you exceed **double** your slots, you're **immobile** until you drop something.

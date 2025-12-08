@@ -112,7 +112,7 @@ No trainer required—the character trains independently or seeks instruction as
 
 ### Spells
 
-See [Spellbooks & Research](spellbooks-and-research/) for full rules. In summary:
+See [Spellbooks & Research](spellbooks-and-research.md) for full rules. In summary:
 - **Copying a spell:** 1 day/tier, 100 gp/tier
 - **Researching a spell:** 1 week/tier, 700 gp/week, INT check
 
@@ -137,4 +137,4 @@ For 5e modules, treasure values are typically lower—adjust as needed or treat 
 
 ## Sections
 
-- [Economy](economy/) - Currency, banking, services, and costs
+- [Economy](economy.md) - Currency, banking, services, and costs
