@@ -40,7 +40,7 @@ Rather than dozens of rigid classes, OSwR gives you four broad frameworks and th
 All characters begin with:
 - Backpack
 - 6 Torches
-- 10 Provisions
+- 6 Supply
 - Wineskin
 - 25 gp
 - One **Starting Kit** (defined in your class entry), *or* roll `4d4 × 10 gp` and buy your own equipment.

@@ -68,6 +68,8 @@ At 0 HP, you're dying. Each round, roll 2d6 minus your Fatigue.
 | 4 | Dead, but you get one heroic action before you fall |
 | 3– | Dead outright |
 
+**Getting back up:** When you recover from 0 HP, make a CON save (DC 12) or gain 1 [Fatigue](rests-recovery-fatigue). Getting knocked out takes a toll.
+
 ---
 
 ## Combat Actions

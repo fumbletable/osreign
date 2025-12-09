@@ -164,9 +164,13 @@ Carousing lets players convert gold directly to XP by spending it on revelry. Th
 
 1. **Gold accumulation.** Without spending, treasure becomes meaningless numbers. Carousing gives it somewhere to go.
 
-2. **Different advancement strategies.** A Fighter who carouses and a Magic-User who saves for research will level at different rates. This is intentional - it creates party dynamics.
+2. **Different advancement strategies.** A Fighter who carouses and a Magic-User who saves for research will level at different rates. This is intentional—it creates party dynamics. The Fighter becomes a better bodyguard for the squishy wizard. Everyone benefits.
 
 3. **Story generation.** The mishap table creates situations. Gambling debts, new enemies, embarrassing tattoos, unexpected windfalls. Carousing turns downtime into adventure hooks.
+
+4. **The mishap curve.** The 2d6 table means hangover (7) is most common—roughly 17% of failed saves. The dramatic results (jail, windfalls) are rare but memorable. Most nights out end with a headache, not a crisis.
+
+**Limits by settlement size.** You can only spend what the local economy can absorb. A village tavern can't handle 2,000 gp of revelry. This also encourages returning to larger towns—and creates reasons to explore the world.
 
 ---
 
@@ -488,7 +492,7 @@ OSwR has Breathers, Night's Rest, and Safe Haven. Each serves a different purpos
 
 Getting knocked out should matter. In 5e, the optimal strategy is often to let allies drop, then heal them with 1 HP ("yo-yo healing"). There's no lasting consequence.
 
-In OSwR, dropping to 0 HP automatically gives you 1 Fatigue when you get back up. No save. This creates real stakes:
+In OSwR, dropping to 0 HP triggers a CON save (DC 12) when you get back up—fail and you gain 1 Fatigue. This creates real stakes while still giving players some agency:
 
 1. **Combat has lasting effects.** Even if you survive, you're weakened.
 2. **Breather choices matter.** After a tough fight, do you heal HP or clear the Fatigue you just gained?
@@ -496,9 +500,30 @@ In OSwR, dropping to 0 HP automatically gives you 1 Fatigue when you get back up
 4. **Attrition pressure.** Multiple knockdowns in a dungeon stack up, pushing parties toward retreat.
 
 ### Exploration
+- [x] **Why 6-Hour Watches?** - See below
 - [ ] **Why Turns & Rounds?** - Time as resource
 - [ ] **Why Random Encounters?** - Pressure that drives decisions
 - [ ] **Why Light Rules Matter?** - Darkness as gameplay
+
+---
+
+## Why 6-Hour Watches?
+
+Earlier drafts used 4-hour watches (six per day). We switched to 6-hour watches (four per day).
+
+**Why the change?**
+
+1. **Simpler mental model.** Four watches is easier to track than six. Dawn, Midday, Dusk, Night. Each is a quarter of the day.
+
+2. **Fewer rolls without less pressure.** With 4-hour watches, you rolled the hazard die more often, but each roll mattered less. The extra granularity didn't add meaningful decisions—it just created more bookkeeping.
+
+3. **Activities fit naturally.** A 6-hour watch is long enough to travel a meaningful distance, hunt for game, thoroughly explore a hex, or get a proper rest. 4-hour watches felt rushed—hunting took most of your watch with little time left.
+
+4. **Two travel watches works.** At 6 hours each, two watches of travel (12 hours) represents a long but manageable day. With 4-hour watches, "two watches of travel" was only 8 hours—too short for a proper journey.
+
+**What we lost:** Finer time tracking. With 4-hour watches, you could be more precise about "we travel until mid-afternoon." With 6-hour watches, time moves in larger chunks.
+
+**The trade-off was worth it.** The precision rarely mattered in play, but the complexity always cost attention. Four watches keeps the resource pressure while simplifying the tracking.
 
 ### Magic
 - [ ] **Why Spell Slots (Not Points)?** - Flexibility vs Vancian

@@ -49,9 +49,61 @@ Additional modes noted after: Fly, Swim, Climb, Burrow
 
 ## Morale (Ml)
 
-Monsters don't fight to the death. When the fight turns against them, roll **2d6** — if the result is **over** their Ml score, they flee or surrender.
+Not everything fights to the death. When the situation turns grim, creatures may flee, surrender, or break.
 
-See [Morale](../../players/rules/morale/) for full rules, triggers, and what happens when they break.
+### When to Check
+
+Roll morale when:
+
+- **First blood:** The first ally falls
+- **Half down:** Half the group is out of the fight
+- **Leader killed:** The boss, champion, or commander drops
+- **Overwhelming odds:** Reinforcements arrive, or the situation shifts dramatically against them
+
+The Referee may also call for a check when something terrifying happens (dragon breathes fire, magic backfires spectacularly, etc.).
+
+### The Roll
+
+Roll **2d6** and compare to the creature's **Morale score (Ml)**.
+
+| Result | Outcome |
+|--------|---------|
+| **Over Ml** | They break — flee, surrender, or scatter |
+| **Equal or under** | They hold — fight continues |
+
+Creatures with **Ml 12** never check morale — they fight until destroyed (golems, demons, the utterly devoted).
+
+### Morale Scores
+
+| Ml | Typical Creatures |
+|---:|-------------------|
+| 2 | Cowards, non-combatants forced to fight |
+| 5 | Poorly motivated, mercenaries with no stake |
+| 7 | Average — goblins, bandits, hired guards |
+| 9 | Disciplined — trained soldiers, pack predators |
+| 10 | Fanatics, apex predators, undead |
+| 12 | Fearless — never flee (golems, demons, the utterly devoted) |
+
+### What Happens When They Break?
+
+The Referee decides based on the creature and situation:
+
+- **Flee** — run for the nearest exit, drop heavy items
+- **Surrender** — throw down weapons, beg for mercy
+- **Scatter** — each creature runs in a different direction
+- **Fighting retreat** — back away while defending, looking for escape
+
+Intelligent creatures may negotiate. Mindless creatures may simply stop fighting and wander. Animals bolt.
+
+### Pursuing Fleeing Enemies
+
+If the party pursues:
+
+- **Faster than the enemy:** Catch them automatically
+- **Same speed:** Contest — DEX check vs DEX, or the Referee rules based on terrain
+- **Slower:** They escape unless the party has ranged attacks or other advantages
+
+Fleeing creatures may lead pursuers into traps, ambushes, or their lair.
 
 ---
 

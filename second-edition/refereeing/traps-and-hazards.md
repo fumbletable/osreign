@@ -57,4 +57,4 @@ Not all dangers are mechanical traps. Examples:
 ## Notes
 - Encourage players to describe *how* they test or disarm.
 - Referee adjudicates based on logic, not just dice.
-- Every Turn spent = risk: burning torches, draining provisions, and more rolls for wandering monsters.
+- Every Turn spent = risk: burning torches, draining Supply, and more rolls for wandering monsters.

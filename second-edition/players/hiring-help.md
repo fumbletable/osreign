@@ -58,19 +58,19 @@ Treat them well and they'll stay. Mistreat them and they'll desert — or worse.
 
 ---
 
-## In Dangerous Situations
+## Loyalty & Morale
 
-Retainers are not heroes. When the fight turns ugly:
-- They might flee
-- They might surrender
-- They might refuse orders
+Retainers are not heroes. They have their own survival instincts.
 
-The Referee tracks their loyalty and morale. Your actions affect both.
+**Loyalty** is how much they trust you. It starts neutral and changes based on how you treat them:
+
+- **Builds loyalty:** Fair pay, bonus treasure, saving their life, giving them good gear
+- **Damages loyalty:** Stingy pay, needless risk, using them as trap-finders, getting their friends killed
+
+**Morale** is whether they hold in combat. When the fight turns ugly—allies falling, overwhelming odds—the Referee checks their morale. Loyal retainers hold longer. Mistreated ones break and run.
+
+**The takeaway:** Treat them like valuable allies, not expendable resources, and they'll follow you into the dark. Treat them like meat shields, and they'll abandon you when you need them most.
 
 ---
 
-## The Bottom Line
-
-You can't always do everything alone. Hiring help is smart, not weak. But remember: these are people with their own survival instincts. Lead well, pay fairly, and they'll follow you into the dark.
-
-For full hiring rules, see the Referee section on [Retainers](../refereeing/retainers.md).
+*For full hiring and loyalty rules, see the Referee section on [Retainers](../refereeing/retainers).*

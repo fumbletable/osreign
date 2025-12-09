@@ -39,9 +39,9 @@ These feats are open to everyone. You pick one at each even level (2, 4, 6, 8, 1
 | Fearless | Auto-succeed vs mundane fear; EDGE vs magical fear. |
 | Fleet of Foot | +5 ft to your Speed. |
 | Gift of Tongues | Learn 2 additional languages. |
-| Healer | Spend 1 Provisions to heal an ally for 1d6 + your CON. |
+| Healer | Spend 1 Supply to heal an ally for 1d6 + your CON. |
 | Heavy Armor Master | While wearing heavy armor, reduce non-magical physical damage by 2. |
-| Herbalist | EDGE to identify and craft herbal remedies. Herbs count as Provisions for healing. |
+| Herbalist | EDGE to identify and craft herbal remedies. Herbs count as Supply for healing. |
 | Hold Breath | You can hold your breath for CON minutes instead of CON rounds. |
 | Hunter's Mark | Mark one target. You have EDGE on attacks against that target until it dies or you rest. |
 | Improved Initiative | +2 to Initiative rolls. |

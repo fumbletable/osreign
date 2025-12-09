@@ -61,7 +61,7 @@ nav_order: 3
 - **Casting Time:** 1 Action
 - **Range:** Touch
 - **Duration:** Instant
-- **Effect:** Cleanse food/drink for up to 1 day's provisions per tier. Spoiled or poisoned items become safe. {Ritual}
+- **Effect:** Cleanse food/drink for up to 1 day's Supply per tier. Spoiled or poisoned items become safe. {Ritual}
 - **Boost:** Double the amount affected.
 
 ---

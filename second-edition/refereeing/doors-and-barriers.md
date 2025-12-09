@@ -49,5 +49,5 @@ Barriers slow exploration and create noise. Each attempt costs at least **1 Turn
 ---
 
 ## Notes
-- **Every failed attempt eats time** → burning light and provisions.
+- **Every failed attempt eats time** → burning light and Supply.
 - **Every noisy success increases danger** → risk of wandering monsters.

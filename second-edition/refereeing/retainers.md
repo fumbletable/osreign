@@ -73,12 +73,17 @@ Add your **Retainer modifier** to all Loyalty rolls.
 
 ## Morale (in combat)
 
-Retainers check morale when the fight turns grim — see [Morale](../players/morale/) for triggers.
+Retainers check morale when the fight turns grim — same triggers as monsters (first ally down, half down, leader killed, overwhelming odds).
 
-**Roll:** 2d6 + Loyalty mod + Retainer modifier.
-- 8+ → they hold.
-- 12 → rally — no more morale checks this fight.
-- Fail → withdraw, flee, or break (Referee decides).
+**Retainer Ml:** 7 + Loyalty mod + Retainer modifier
+
+Then roll **2d6** against their effective Ml, just like monsters:
+- **Over Ml** → they break (flee, surrender, or withdraw)
+- **Equal or under** → they hold
+
+*Example: A retainer with Loyalty +1 and Retainer modifier +1 has effective Ml 9. Roll 2d6 — on 10+ they break.*
+
+A well-treated, loyal retainer (Loyalty +2, CHA +3 owner = Retainer +2) has effective Ml 11 — nearly fearless. A mistreated one (Loyalty −2, low CHA owner) might have Ml 4 — they'll run at the first sign of trouble.
 
 ---
 

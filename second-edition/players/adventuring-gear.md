@@ -10,6 +10,8 @@ nav_order: 3
 
 The stuff that keeps you alive between fights.
 
+**Slots:** Most items take 1 slot. Items marked **Bulky** take 2 slots. Tiny items (coins, gems, rings) can be bundled—see [Encumbrance](encumbrance).
+
 ---
 
 ## Light Sources
@@ -32,7 +34,7 @@ The stuff that keeps you alive between fights.
 | Pitons (10) | 1 gp | Fix lines, spike doors (needs hammer) |
 | Hammer | 1 gp | Drives pitons and spikes |
 | Iron Spikes (10) | 1 gp | Brace doors, stake tents, mark trails |
-| 10-Foot Pole | 1 gp | Poke floors, trip wires from safety |
+| 10-Foot Pole | 1 gp | Poke floors, trip wires from safety. **Bulky** |
 | Crowbar | 2 gp | EDGE on prying and breaking |
 | Shovel | 2 gp | Earthworks, graves, ditches |
 
@@ -42,12 +44,12 @@ The stuff that keeps you alive between fights.
 
 | Item | Cost | Notes |
 |:-----|-----:|:------|
-| Provisions (6 uses) | 3 gp | Spend 1 on a Breather or Night's Rest |
+| Supply (6 uses) | 3 gp | Food, water, bandages. Spend 1 for a Breather or Night's Rest |
 | Waterskin | 1 gp | Holds 1 day's water |
 | Backpack | 2 gp | +10 slots capacity (worn) |
 | Sack | 1 gp | +5 slots capacity (requires a free hand) |
 | Small Chest | 5 gp | Lockable, holds valuables |
-| Large Chest | 15 gp | Bulky, holds more |
+| Large Chest | 15 gp | **Bulky**, holds more |
 
 ---
 
@@ -56,9 +58,9 @@ The stuff that keeps you alive between fights.
 | Item | Cost | Notes |
 |:-----|-----:|:------|
 | Bedroll | 1 gp | Sleep anywhere |
-| Tent (2-person) | 10 gp | Protects from weather |
+| Tent (2-person) | 10 gp | Protects from weather. **Bulky** |
 | Tinderbox | 1 gp | Sparks in wind, not underwater |
-| Cook's Tools | 10 gp | Prepare meals, stretch provisions |
+| Cook's Tools | 10 gp | Prepare meals, stretch Supply |
 
 ---
 
@@ -69,7 +71,7 @@ Kits let you attempt actions that are otherwise impossible. Without the right ki
 | Item | Cost | Notes |
 |:-----|-----:|:------|
 | Thieves' Tools | 25 gp | Pick locks, disarm traps |
-| Healer's Kit (10 uses) | 10 gp | Required to stabilize at 0 HP |
+| Healer's Kit (10 uses) | 10 gp | EDGE on healing checks, treat poison and disease |
 | Herbalist's Kit | 15 gp | Identify plants, brew poultices, prepare antidotes |
 | Disguise Kit | 15 gp | Make-up, props, false identities |
 | Climbing Kit | 10 gp | EDGE on climbing checks |
@@ -87,7 +89,7 @@ Kits let you attempt actions that are otherwise impossible. Without the right ki
 | Spellbook | 50 gp | Required for Magic-User preparation |
 | Arcane Focus | 25 gp | Channel for Magic-User casting |
 | Holy Symbol | 5 gp | Required for Cleric casting |
-| Holy Water (flask) | 25 gp | Splash: 1d8 radiant vs undead, one use |
+| Holy Water (flask) | 25 gp | Splash: 1d8 damage to undead, fiends, and unholy creatures |
 
 ---
 

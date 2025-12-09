@@ -15,7 +15,7 @@ The wilderness is tracked in **Watches** (6 hours). Four watches make a day.
 > 2. Navigator rolls if travelling through unclear terrain
 > 3. Resolve the activity
 > 4. Roll hazard die (if travelling or night watch)
-> 5. Mark time; check provisions if needed
+> 5. Mark time; check Supply if needed
 
 ---
 
@@ -71,8 +71,8 @@ A character can forage during travel at Slow pace, or dedicate a watch to foragi
 
 **WIS check** - DC set by GM based on terrain and season. A bountiful forest in summer might be DC 8. A sparse hillside in winter DC 14.
 
-- **Success:** Find 1d4 provisions.
-- **Beat DC by 3+:** Find an additional 1d4 provisions.
+- **Success:** Find 1d4 Supply.
+- **Beat DC by 3+:** Find an additional 1d4 Supply.
 - **Fail:** Nothing found.
 
 ---
@@ -83,10 +83,10 @@ Hunting takes a **full watch** and cannot be done while travelling.
 
 **Step 1 - Locate Prey:** WIS check. DC set by GM based on terrain and game availability.
 - Success = prey found.
-- Determine prey size: **1d6 provisions, +1d6 for every 3 points you beat the DC.**
+- Determine prey size: **1d6 Supply, +1d6 for every 3 points you beat the DC.**
 
 **Step 2 - Kill:** Make an attack roll against a DC set by the GM (typically DC 12, harder for dangerous or wary prey).
-- **Success:** Harvest the provisions.
+- **Success:** Harvest the Supply.
 - **Fail:** Prey escapes. May try again next watch.
 
 *A skilled hunter in good territory can bring back a serious haul. A failed hunt costs precious time with nothing to show for it.*
@@ -114,7 +114,7 @@ Roll **1d6** once per watch travelled, and once each night.
 | 1 | **Encounter** — something appears. Roll or choose from your encounter table. |
 | 2 | **Sign** — tracks, spoor, distant smoke, old campfire, omen. Hints at what's nearby. |
 | 3 | **Weather** — conditions shift. Storm rolls in, fog descends, temperature drops. |
-| 4 | **Provisions** — spoilage, pests, dropped pack, torn sack. Lose 1d4 provisions. |
+| 4 | **Supply loss** — spoilage, pests, dropped pack, torn sack. Lose 1d4 Supply. |
 | 5–6 | **Nothing** — the journey continues uneventfully. |
 
 **At night:** Encounters arrive at camp. Signs are heard, not seen — sounds in the darkness, eyes reflecting firelight, howls in the distance.
