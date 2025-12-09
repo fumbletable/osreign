@@ -134,13 +134,13 @@ Temples offer healing and other services—for a price. Divine magic isn't free;
 
 | Service | Cost | Notes |
 |---------|------|-------|
-| Cure minor wounds | 10 gp | Heal 1d8 HP |
-| Cure serious wounds | 50 gp | Heal 2d8+2 HP |
-| Cure disease | 100 gp | Removes one disease |
-| Cure poison | 100 gp | Neutralises one poison |
-| Remove curse | 200 gp | May require quest for powerful curses |
-| Raise dead | 1,000 gp+ | If available at all. Rare. |
-| Divination | 100-500 gp | Varies by complexity |
+| Cure minor wounds | 50 gp | Heal 1d8 HP |
+| Cure serious wounds | 150 gp | Heal 2d8+2 HP |
+| Cure disease | 500 gp | Removes one disease |
+| Cure poison | 500 gp | Neutralises one poison |
+| Remove curse | 1,000 gp | May require quest for powerful curses |
+| Raise dead | 5,000 gp+ | If available at all. Rare. |
+| Divination | 200-1,000 gp | Varies by complexity |
 
 **Discounts:** Temples may reduce fees for faithful members, those who have done service, or adventurers pursuing the temple's goals.
 
@@ -157,7 +157,7 @@ Temples offer healing and other services—for a price. Divine magic isn't free;
 | Mercenary | 3-5 gp/day | Armed guard. Won't enter dungeons. |
 | Retainer | 2-5 gp/day + half share | Adventuring companion. Shares risk. |
 
-**Wergild:** 50 gp/level paid to a retainer's kin if they die in service.
+**Wergild:** 50 gp per level of the deceased retainer, paid to their kin if they die in service.
 
 ---
 
@@ -223,22 +223,3 @@ Deeper = richer. Treasure scales with risk.
 
 *[TO DO: Post-MVP content]*
 
----
-
-## Design Notes
-
-**Why 1:1 GP to XP?** This is the classic OSR ratio. It creates emergent gameplay - players pursue treasure because the system rewards it, not because the Referee decides their actions were "clever enough." The treasure IS the goal.
-
-**Why banking fees?** Gold is heavy (100 coins = 1 slot). Players can't carry their wealth. Banking provides security but takes a cut—another gold sink that scales with success. The one-month free withdrawal encourages adventuring over constant trips to the bank.
-
-**Why temple healing costs money?** Divine magic isn't free. These costs make HP attrition meaningful, encourage Clerics in the party, and provide income for the temple. A Cleric who can heal is valuable; buying healing is expensive.
-
-**Why training costs?** Gold needs somewhere to go. Without sinks, treasure piles up meaninglessly. Training costs ensure gold remains valuable at every level.
-
-**Why 100 gp/day for magic?** Simple, memorable, scales naturally with time. A week of research = 7 days = 700 gp. No lookup tables needed.
-
-**Why Cleric tithes?** Magic-Users pay per spell (100+ gp each). Without an equivalent cost, Clerics would have a massive economic advantage. The 10% tithe creates a comparable gold sink that scales with success - and fits the fiction of divine service.
-
-**Why Pious Offerings?** It's the Cleric alternative to carousing. Fighters drink; Clerics pray. Same mechanical effect (gold → XP), different fiction. Clerics who want to carouse still can - Pious Offerings is an option, not a requirement.
-
-**Module compatibility:** Classic modules (B/X, OSE, BFRPG) work as-is. 1 GP = 1 XP. No conversion required.

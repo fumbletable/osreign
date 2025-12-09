@@ -554,6 +554,52 @@ Earlier drafts used 4-hour watches (six per day). We switched to 6-hour watches 
 
 ---
 
+## Why Banking Has Fees?
+
+Gold is heavy (100 coins = 1 slot). Players can't carry their wealth. Banking provides security but takes a cut—another gold sink that scales with success.
+
+**The one-month rule:** Withdraw within a month, pay 10%. Leave it longer, withdraw free. This encourages adventuring over constant trips to the bank. Deposit your loot, go explore, come back when you need it.
+
+---
+
+## Why Temple Healing Costs Money?
+
+Divine magic isn't free. Temple healing costs exist for several reasons:
+
+1. **HP attrition stays meaningful.** If healing is cheap, damage doesn't matter—you just pay a few coins and you're fresh. Expensive healing means getting hurt has lasting consequences.
+
+2. **Clerics in the party are valuable.** When temple healing costs 50-150 gp, a Cleric who can heal for free is a major asset. This creates party composition incentives.
+
+3. **Gold sink that scales.** Early characters might scrape together 50 gp for minor healing. High-level characters dropping 5,000 gp to raise the dead is still significant.
+
+4. **Prevents the heal-and-return loop.** If adventurers could cheaply heal up and head straight back to the dungeon, the Safe Haven rest system loses its teeth. Expensive healing encourages proper recovery time.
+
+---
+
+## Why Cleric Tithes?
+
+Magic-Users pay for every spell (100+ gp each). Without an equivalent cost, Clerics would have a massive economic advantage. The 10% tithe creates a comparable gold sink that scales with success—and fits the fiction of divine service.
+
+**Hallowed vs Druidic:** Same mechanical effect, different fiction. Hallowed Clerics give to their temple. Druidic Clerics return wealth to nature—offerings at sacred sites, releasing animals, feasting communities. The treasure goes *back* rather than to an institution.
+
+---
+
+## Why Pious Offerings?
+
+It's the Cleric alternative to carousing. Fighters drink; Clerics pray. Same mechanical effect (gold → XP), different fiction.
+
+Clerics who want to carouse still can—Pious Offerings is an option, not a requirement. But it gives divine characters a thematic way to convert wealth to advancement without rolling on the mishap table.
+
+---
+
+## Why 100 gp/day for Magic?
+
+Simple, memorable, scales naturally with time. A week of research = 7 days = 700 gp. No lookup tables needed.
+
+This also makes finding spells in the world more valuable. Copying from a found scroll (100 gp/tier) is much cheaper than researching from scratch (700 gp/week + INT check). The economy rewards exploration.
+
+---
+
 ## Feedback Welcome
 
 This is an alpha. Things will change. If something doesn't work at your table, I want to know.

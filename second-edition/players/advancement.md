@@ -9,7 +9,7 @@ has_children: true
 
 # Advancement
 
-OSwR characters advance from level 1 to 12. Each level grants new abilities, and higher levels open access to feats and spell tiers—but these must be earned through training and research.
+OSwR characters advance from level 1 to 12. This is a game about adventurers, not superheroes—even at high levels, a sword to the gut is dangerous and caution keeps you alive.
 
 ---
 
@@ -31,22 +31,9 @@ Monsters grant XP using the formula: **HD² × 10**
 
 "Overcome" includes defeating, outsmarting, driving off, or otherwise neutralising the threat. You don't have to kill it—you have to deal with it.
 
-| HD | XP |
-|---:|---:|
-| 1 | 10 |
-| 2 | 40 |
-| 3 | 90 |
-| 4 | 160 |
-| 5 | 250 |
-| 6 | 360 |
-| 8 | 640 |
-| 10 | 1,000 |
-
-Add **+10 XP per special ability** for monsters with unusual powers.
-
 ### Dividing XP
 
-Divide all XP evenly among surviving party members, including retainers who fought alongside you (they typically receive a half share).
+Divide all XP evenly among surviving party members, including [retainers](hiring-help) who fought alongside you (they typically receive a half share).
 
 ---
 
@@ -67,8 +54,6 @@ Divide all XP evenly among surviving party members, including retainers who foug
 | 11 | 75,000 | 300,000 |
 | 12 | 75,000 | 375,000 |
 
-**Level cap:** OSwR ends at level 12. Beyond this, characters enter domain play—land, titles, strongholds, and influence.
-
 ---
 
 ## Unified Cadence
@@ -82,7 +67,7 @@ All classes follow the same advancement pattern:
   - Magic-User → unlocks next spell tier (1–6)
 - **Even levels (2, 4, 6, 8, 10, 12):** +1 General Feat
 - **Levels 4, 8, 12:** +1 to any ability modifier (maximum +5)
-- **Multiclassing:** May only add a new class at odd levels *(see [Multiclassing](#multiclassing) below — section needs expansion)*
+- **Multiclassing:** May only add a new class at odd levels (see [Multiclassing](#multiclassing) below)
 
 ---
 
@@ -124,14 +109,22 @@ Ability increases at levels 4, 8, and 12 are **free**—no gold or time required
 
 ---
 
-## Converting Old Modules
+## Multiclassing
 
-OSwR is designed to work with classic modules (B/X, OSE, BFRPG) with minimal conversion:
+You can take levels in multiple classes, gaining their abilities at the cost of slower progression in each.
 
-- **Treasure:** Use as written. 1 GP = 1 XP.
-- **Monster XP:** Use OSwR formula (HD² × 10) instead of listed values.
+### Rules
 
-For 5e modules, treasure values are typically lower—adjust as needed or treat magic item values as treasure.
+- **Odd levels only:** You may only switch to a different class at odd character levels (3, 5, 7, 9, 11). This means you commit to at least two levels before you can switch again.
+- **Proficiency Bonus:** Your PB is based on your total adventurer level, not individual class levels.
+- **Proficiencies:** You gain all proficiencies (weapons, armour, saves) of your new class. However, proficiency doesn't override class restrictions—a Magic-User who takes Fighter levels gains armour proficiency but still can't cast spells in armour without the Armoured Caster feat.
+- **Hit Dice:** Your Hit Dice pool is the sum of all dice gained from your class levels. You can spend these dice in any combination when resting or using abilities that require Hit Dice.
+- **Spell tiers:** You unlock spell tiers based on your levels in each casting class separately. Three Cleric levels unlocks Tier 2 divine spells; two Magic-User levels only unlocks Tier 1 arcane spells.
+- **Spell slots:** Each casting class has its own spell slot progression based on your levels in that class. They don't combine.
+
+### Example
+
+*Aldric starts as a Fighter. At level 3, he switches to Magic-User. At level 5, he continues as Magic-User. He's now a 5th-level adventurer with 2d8 + 3d4 Hit Dice, two Fighter Feats, one General Feat, and access to Tier 2 arcane spells. He has all Fighter weapon and armour proficiencies—but can't cast spells while wearing armour unless he takes the Armoured Caster feat.*
 
 ---
 

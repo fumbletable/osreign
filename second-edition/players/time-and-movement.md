@@ -18,7 +18,7 @@ How long things take and how far you can go.
 |---------|----------|-----|
 | **Round** | 6 seconds | Combat actions |
 | **Turn** | 10 minutes | Dungeon exploration |
-| **Watch** | 6 hours | Wilderness travel, marching, or rest |
+| **Watch** | 6 hours | Wilderness travel, marching, or rest (4 watches = 1 day) |
 | **Day** | 24 hours | Downtime, recovery, overland travel |
 
 ---
@@ -35,9 +35,11 @@ How long things take and how far you can go.
 - **Normal:** Average travelling pace.
 - **Fast:** Urgent or reckless movement.
 
+**Dash:** In combat, you can use your action to Dash—move again at your full Speed. See [Combat Actions](combat#combat-actions).
+
 **Turn speed** (dungeon) = 3× base speed in yards. Assumes cautious exploration — watching footing, checking for danger, mapping.
 
-**Watch speed** (wilderness) = distance covered in 6 hours of marching with gear. See *Wilderness Exploration* for terrain modifiers.
+**Watch speed** (wilderness) = distance covered in 6 hours of marching with gear. Two watches is the safe daily maximum—pushing beyond risks [Fatigue](rests-recovery-fatigue). See [Wilderness Exploration](../refereeing/wilderness-exploration) for terrain modifiers and forced march rules.
 
 ---
 
@@ -71,7 +73,7 @@ How long things take and how far you can go.
 Movement is reduced by one step (Fast → Normal, Normal → Slow) unless the creature has a climbing or swimming speed.
 
 - **Slippery or difficult surfaces:** STR check, DC set by conditions.
-- **Rough water:** STR check to make progress.
+- **Rough water:** STR check to make progress. Failure = 1 [Fatigue](rests-recovery-fatigue) and no forward movement that round.
 
 ---
 
@@ -80,6 +82,8 @@ Movement is reduced by one step (Fast → Normal, Normal → Slow) unless the cr
 **Long Jump:** 10 + STR feet (with 10 ft run-up). Standing long jump = half that.
 
 **High Jump:** 3 + STR feet (with 10 ft run-up). Standing high jump = half that.
+
+*Remember: STR is your ability value (−4 to +4), not a traditional ability score.*
 
 Difficult landings or obstacles may require a STR or DEX check.
 
@@ -100,3 +104,5 @@ Take **1d6 cumulative damage** for every 10 ft fallen. Land prone.
 A creature can hold its breath for **1 + CON** minutes (minimum 30 seconds).
 
 When out of breath, survive for **CON** rounds (minimum 1). At the start of the next turn after that, drop to 0 HP and begin dying. Cannot be stabilized until breathing again.
+
+*CON is your ability value (−4 to +4). A character with CON +2 holds their breath for 3 minutes.*
