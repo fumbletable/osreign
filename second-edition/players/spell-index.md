@@ -41,7 +41,7 @@ Spells are divided into 6 Tiers. Each Tier contains **Cleric, Magic-User, and Dr
 ---
 
 ## Tier 5
-- **Cleric:** Commune, Cure Critical Wounds, Dispel Evil, Insect Plague, Quest, Raise Dead, True Seeing
+- **Cleric:** Commune, Dispel Evil, Insect Plague, Mass Cure Wounds, Quest, Raise Dead, True Seeing
 - **Magic-User:** Animate Dead, Cloudkill, Conjure Elemental, Contact Other Plane, Feeblemind, Hold Monster, Magic Jar, Passwall, Telekinesis, Teleport, Wall of Iron, Wall of Stone
 - **Druid:** Animal Summoning II, Commune with Nature, Control Winds, Insect Plague, Transmute Rock to Mud, Wall of Fire (greater)
 

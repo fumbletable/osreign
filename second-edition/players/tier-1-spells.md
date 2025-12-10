@@ -26,8 +26,8 @@ nav_order: 3
 - **Casting Time:** 1 Action
 - **Range:** Touch
 - **Duration:** Instant
-- **Effect:** Heal 1 creature for 1d8 HP.
-- **Boost:** Heal an additional +1d4 HP.
+- **Effect:** Heal 1 creature for 1d6 + PB HP.
+- **Boost:** +1d6 HP.
 
 ## Detect Evil
 - **Casting Time:** 1 Action

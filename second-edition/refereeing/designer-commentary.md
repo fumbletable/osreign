@@ -150,7 +150,7 @@ A goblin (HD 1) is worth 10 XP. A dragon (HD 10) is worth 1,000 XP. But the drag
 
 ## Why Research Is Expensive?
 
-Spell research costs 700 gp per week and requires an INT check. Failed weeks lose time AND half the gold. This is intentionally harsh.
+Spell research costs 700 gp per week and requires an INT check at the end of the full research period to finalise the spell. Failure costs another week of work (700 gp) before you can attempt finalisation again.
 
 **The world is the better deal.** Finding a scroll in a dungeon costs only the copying fee (100 gp/tier). Research is the fallback when you can't find what you need. This encourages exploration and rewards player resourcefulness.
 

@@ -15,12 +15,12 @@ nav_order: 7
 - **Effect:** Ask your deity 3 yes/no questions. Answers may be cryptic. {Ritual}
 - **Boost:** +1 question.
 
-## Cure Critical Wounds
+## Mass Cure Wounds
 - **Casting Time:** 1 Action
-- **Range:** Touch
+- **Range:** Near (30 ft)
 - **Duration:** Instant
-- **Effect:** Heals 3d6+3 HP.
-- **Boost:** +1d6 HP.
+- **Effect:** Heal up to PB creatures within range for 1d6 + PB HP each.
+- **Boost:** +1 target or +1d6 to all targets.
 
 ## Dispel Evil
 - **Casting Time:** 1 Action

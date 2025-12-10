@@ -14,19 +14,19 @@ Magic in OSwR uses **spell slots**. Each time you cast a spell, you expend one s
 ---
 
 ## Casting Basics
-- **Caster stat:** Cleric/Druid → WIS · Magic-User → INT
-- **Save DC:** `8 + PB + caster stat modifier`
-- **Focus:** Cleric → holy symbol · Magic-User → arcane focus · Druid → natural focus (mistletoe, staff, etc.)
+- **Caster stat:** Cleric → WIS · Magic-User → INT
+- **Save DC:** 8 + PB + WIS or INT
+- **Focus:** Cleric → holy symbol (Hallowed) or natural focus (Druidic) · Magic-User → arcane focus
 
 ---
 
 ## Preparing Spells
 
-**Clerics & Druids** pray for their spells. They have access to all spells on their class list and choose which to prepare each day.
+**Clerics** pray for their spells. They have access to all spells on their oath's spell list (Hallowed or Druidic) and choose which to prepare each day.
 
 **Magic-Users** study their spellbook. They can only prepare spells they have recorded in their book.
 
-- After a **Night's Rest** or at a **Safe Haven**, prepare spells equal to `level + caster stat modifier`.
+- After a **Night's Rest** or at a **Safe Haven**, prepare spells equal to **level + WIS or INT**.
 - Prepared spells form your *daily list*; you may cast any from that list while slots remain.
 - You don't need to prepare duplicates — one prep allows multiple casts.
 - Changing your list requires another rest.
@@ -37,8 +37,8 @@ Magic in OSwR uses **spell slots**. Each time you cast a spell, you expend one s
 
 ## Casting
 - **Spend a slot** of that spell's tier or higher; the slot is lost, the spell remains prepared.
-- **Boostable:** You may spend a **Boost Die** to heighten a spell's effect (extra missile, extra healing, stronger duration, etc.).
-- **Components:** All spells require **words and gestures**. You cannot cast if gagged, bound, or unable to move/speak freely.
+- **Boostable:** Some spells can be enhanced by spending a Boost Die. See individual spell descriptions.
+- All spells require **words and gestures**. You cannot cast if gagged, bound, or unable to move/speak freely.
 - **Concentration:** If maintaining a spell, any damage or significant disturbance (Referee's call) forces a **CON save (DC 12)** or the spell ends.
 
 ---
@@ -71,12 +71,12 @@ Magic in OSwR uses **spell slots**. Each time you cast a spell, you expend one s
 
 ## Ritual Casting
 
-Spells marked with **{Ritual}** can be cast without expending a slot:
+Spells marked with **{Ritual}** can be cast without preparing them first:
+- Cast directly from your spellbook (Magic-Users) or prayer (Clerics)
 - Add **10 minutes** to the casting time
-- The spell does **not** need to be prepared (the ritual IS the preparation)
-- The spell slot is **not** consumed
+- Still **consumes a spell slot**
 
-Ritual casting is slower but conserves resources for exploration and utility magic.
+Ritual casting gives flexibility - you can cast spells you didn't prepare that day, but it costs time.
 
 ---
 

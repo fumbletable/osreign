@@ -19,7 +19,7 @@ nav_order: 6
 - **Casting Time:** 1 Action
 - **Range:** Touch
 - **Duration:** Instant
-- **Effect:** Heals 2d6+2 HP.
+- **Effect:** Heals PB×d6 + PB HP.
 - **Boost:** +1d6 HP.
 
 ## Neutralize Poison
