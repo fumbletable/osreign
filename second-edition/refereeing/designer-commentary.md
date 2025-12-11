@@ -604,6 +604,42 @@ This also makes finding spells in the world more valuable. Copying from a found 
 
 ---
 
+## Why This Stat Block Format?
+
+Monster stat blocks went through several iterations. The final format prioritises GM usability at the table while preserving flavour for prep.
+
+**The structure:**
+
+```
+## Monster Name
+**HD X | AC Y | HP Z** | [combat-critical tags]
+Atk attacks (damage) | Mv Speed | Ml # | XP ##
+Special abilities (what it does).
+Flavour text (what it is).
+```
+
+**Line 1 - Survival trio first.** HD, AC, HP are bolded and lead. These answer the immediate combat questions: "How tough is this?" Everything else flows from HD anyway (attack bonus, saves, damage scaling).
+
+**Line 1 continued - Combat-critical tags inline.** Darkvision, Blindsight, Regenerate, Immune—things that change how you fight it. These sit right after the survival stats because they matter the moment initiative is rolled.
+
+**Line 2 - What it does to you.** Attacks and damage first (the threat), then logistics (movement, morale, XP). Morale and XP are bookkeeping—important, but not mid-swing.
+
+**Line 3 - Mechanics.** Special abilities, saves, conditions—the unique rules this creature brings. Written as plain English with save type and DC.
+
+**Line 4 - Flavour.** What it looks like, where it lives, how it behaves. GMs can skip this line during combat, but it's there for prep and player questions ("What do I know about trolls?").
+
+**Why separate mechanics from flavour?** Earlier drafts merged them. But at the table, you need different information at different times. During initiative: "It regenerates 3 HP/round." During roleplay: "Rubbery green flesh, long arms, remembers everyone who hurt it." Keeping them on separate lines lets GMs scan efficiently.
+
+**What we cut:**
+
+- **Flavour tags** like [Undead], [Mindless], [Cowardly]. If the description says "walking dead, tireless, hungry"—you don't need a tag saying [Undead]. Morale 12 means fearless; you don't need [Fearless].
+- **Redundant immunities.** Undead immunity to poison/charm/sleep is standard. Only note exceptions or unusual immunities.
+- **Excessive detail.** A basilisk doesn't need three sentences on petrification mechanics. "Petrifying gaze (CON 12 or stone)" is enough.
+
+**The rhythm.** Each entry has the same beat: name, survival, attacks, mechanics, flavour. Once you've read a few, you know exactly where to look for any piece of information. Consistency aids usability more than any individual formatting choice.
+
+---
+
 ## Feedback Welcome
 
 This is an alpha. Things will change. If something doesn't work at your table, I want to know.

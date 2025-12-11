@@ -13,13 +13,18 @@ nav_order: 1
 ## Stat Block Format
 
 ```
-**Monster Name** (HD X) | XP ##
-AC ## | HP ## | Mv Speed | Ml #
-Atk attacks (damage)
-[Tags]
-Special abilities (STAT DC).
-Flavour - one or two evocative lines.
+## Monster Name
+**HD X | AC Y | HP Z** | [combat-critical tags]<br>
+Atk attacks (damage) | Mv Speed | Ml # | XP ##<br>
+Special abilities (STAT DC).<br>
+Flavour text—what it looks like, where it lives, how it behaves.
 ```
+
+**Line 1:** Name as heading (linkable anchor)
+**Line 2:** The survival trio—HD, AC, HP—bolded. Combat-critical tags (Darkvision, Immune, Regenerate, Incorporeal) follow.
+**Line 3:** What it does to you (attacks), then secondary info (movement, morale, XP).
+**Line 4:** Special abilities—the mechanics a GM needs mid-combat.
+**Line 5:** Flavour—what it is. GMs can skip this line during combat, but it's there for prep and player questions.
 
 ---
 
@@ -109,19 +114,29 @@ Fleeing creatures may lead pursuers into traps, ambushes, or their lair.
 
 ## Tags
 
-Tags are shorthand. Most are self-explanatory. Tags with universal rules:
+Tags appear on the stat line only when they affect combat decisions. Flavour tags (Mindless, Cowardly, Undead) are implied by the description or handled in special abilities.
+
+### Combat-Critical Tags
 
 | Tag | Rule |
 |-----|------|
-| **[Undead]** | Immune to poison, charm, sleep, fear |
-| **[Mindless]** | Mental saves = 0 |
-| **[Incorporeal]** | Only harmed by silver or magic |
-| **[Swarm]** | Half damage from single-target attacks |
-| **[Regenerate X]** | Recovers X HP per round |
+| **Darkvision** | Sees in darkness |
+| **Blindsight** | Senses without sight (vibration, echolocation) |
+| **Tremorsense** | Detects movement through ground |
+| **Incorporeal** | Only harmed by silver or magic |
+| **Regenerate X** | Recovers X HP per round |
+| **Immune: X** | Takes no damage from X |
+| **Resist: X** | Half damage from X |
+| **Shapechanger** | Can alter form |
 
-Descriptive tags need no rule: [Darkvision], [Cowardly], [Territorial], [Greedy], etc.
+### Tags Implied by Description
 
-Parameterised tags: [Immune: Fire], [Resist: Cold], [Vulnerable: Fire]
+These don't need a tag line—the description handles them:
+
+- **Undead** — Immune to poison, charm, sleep, fear (mentioned in abilities if relevant)
+- **Mindless** — Can't be reasoned with (obvious from behaviour)
+- **Cowardly/Fearless** — Reflected in Morale score
+- **Swarm** — Half damage from single-target attacks (noted in abilities)
 
 ---
 
@@ -142,53 +157,48 @@ That's it. No other conversion needed.
 
 ## Example Stat Blocks
 
-**Goblin** (HD 1) | XP 10
-AC 13 | HP 4 | Mv Normal | Ml 7
-Atk weapon (d6)
-[Darkvision] [Cowardly]
+## Goblin
+**HD 1 | AC 13 | HP 4** | Darkvision<br>
+Atk weapon (d6) | Mv Normal | Ml 7 | XP 10<br>
+Sunlight Sensitivity: SETBACK in bright light.<br>
 Small green-skinned raiders. Attack in swarms, flee when outmatched.
 
 ---
 
-**Ghoul** (HD 2) | XP 40
-AC 13 | HP 8 | Mv Normal | Ml 9
-Atk 2 claws (d3), bite (d3)
-[Undead] [Darkvision]
-Paralyzing touch (CON 8, 2d4 rounds). Elves immune.
+## Ghoul
+**HD 2 | AC 13 | HP 8** | Darkvision<br>
+Atk 2 claws (d3), bite (d4) | Mv Normal | Ml 9 | XP 40<br>
+Paralysing touch (STR 8, 3d6×10 minutes). Elves immune.<br>
 Grave-stench and too-long fingers. Once human, now endlessly hungry.
 
 ---
 
-**Basilisk** (HD 6) | XP 360
-AC 15 | HP 24 | Mv Slow | Ml 9
-Atk bite (d10)
-[Darkvision]
-Petrifying gaze (CON 12 or stone). Fighting blind = SETBACK.
+## Basilisk
+**HD 6 | AC 15 | HP 24** | Darkvision<br>
+Atk bite (d10) | Mv Slow | Ml 9 | XP 360<br>
+Petrifying gaze (CON 12 or stone). Fighting blind = SETBACK.<br>
 Eight-legged reptile with dead white eyes. Lairs in ruins, surrounded by statues of the unfortunate.
 
 ---
 
-**Troll** (HD 6) | XP 360
-AC 15 | HP 24 | Mv Normal | Ml 10
-Atk 2 claws (d6), bite (d10)
-[Darkvision] [Regenerate 3]
-Fire or acid stops regeneration.
+## Troll
+**HD 6 | AC 15 | HP 24** | Darkvision | Regenerate 3<br>
+Atk 2 claws (d6), bite (d10) | Mv Normal | Ml 10 | XP 360<br>
+Fire or acid stops regeneration.<br>
 Rubbery green flesh, long arms, black eyes. Remembers everyone who hurt it.
 
 ---
 
-**Rust Monster** (HD 5) | XP 250
-AC 17 | HP 20 | Mv Normal | Ml 7
-Atk antennae (special)
-[Darkvision]
-Touch rusts metal instantly. Magic items: save or destroyed.
+## Rust Monster
+**HD 5 | AC 17 | HP 20** | Darkvision<br>
+Atk antennae (special) | Mv Normal | Ml 7 | XP 250<br>
+Touch rusts metal instantly. Magic items: save or destroyed (10% per +1 bonus to resist).<br>
 Lobster-like scavenger. Loves the taste of iron. Harmless if you're naked.
 
 ---
 
-**Dragon** (HD 10) | XP 1000
-AC 19 | HP 40 | Mv Normal, Fly Fast | Ml 10
-Atk 2 claws (d8), bite (3d6)
-[Darkvision]
-Breath weapon (DEX 16, fire, 90' cone, HD damage). [Immune: Fire]
+## Dragon
+**HD 10 | AC 19 | HP 40** | Darkvision | Immune: Fire<br>
+Atk 2 claws (d8), bite (3d6) | Mv Normal, Fly Fast | Ml 10 | XP 1000<br>
+Breath weapon (DEX 16, fire, 90' cone, HD damage).<br>
 Ancient, cunning, and endlessly greedy. Enjoys flattery almost as much as gold.

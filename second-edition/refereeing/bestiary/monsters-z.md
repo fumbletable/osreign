@@ -10,9 +10,8 @@ nav_order: 26
 
 ---
 
-**Zombie** (HD 1) | XP 10
-AC 11 | HP 4 | Mv Slow | Ml 12
-Atk claw/bite (d8)
-[Undead] [Mindless] [Darkvision]
-Immune to sleep and charm.
-Walking dead. Slow, tireless, hungry. Usually under evil control.
+## Zombie
+**HD 1 | AC 11 | HP 4** | Darkvision | Immune: sleep, charm<br>
+Atk claw/bite (d8) | Mv Slow | Ml 12 | XP 10<br>
+Walking dead. Slow, tireless, hungry.<br>
+Usually under evil control.

@@ -10,14 +10,9 @@ nav_order: 22
 
 ---
 
-**Vampire** (HD 7-9) | XP varies
-AC 17 | HP HD×4 | Mv Normal, Fly Fast | Ml 11
-Atk bite (d10 + level drain)
-[Undead] [Darkvision] [Regenerate 3]
-[Immune: non-magical weapons]
-Shapechanger: Gaseous form or giant bat at will.
-Summon: Horde of bats or 3d6 wolves.
-Gaze: CHA save or charmed.
-Energy Drain: Bite drains 2 levels. Killed victims become vampires.
-Weaknesses: Running water, sunlight, wooden stake through heart (all destroy). Garlic, mirrors, holy symbols repel.
-Can only be killed in coffin or by weaknesses. Ancient, cunning, seductive, evil.
+## Vampire
+**HD 7-9 | AC 17 | HP HD×4** | Darkvision | Regenerate 3 | Shapechanger | Immune: non-magical weapons<br>
+Atk bite (d10 + level drain) | Mv Normal, Fly Fast | Ml 11 | XP varies<br>
+Shapechanger: Gaseous form or giant bat at will. Summon horde of bats or 3d6 wolves. Gaze: CHA 12 or charmed. Energy Drain: Bite drains 2 levels. Killed victims become vampires.<br>
+Weaknesses: Running water, sunlight, wooden stake (all destroy). Garlic, mirrors, holy symbols repel. Can only be killed in coffin or by weaknesses.<br>
+Ancient, cunning, seductive, evil.
