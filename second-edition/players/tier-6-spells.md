@@ -34,7 +34,7 @@ nav_order: 8
 - **Range:** Touch
 - **Duration:** Instant
 - **Effect:** Restores all HP, removes blindness, disease, fatigue, poison.
-- **Boost:** Also cures 1 Major Injury.
+- **Boost:** +1 target.
 
 ## Part Water
 - **Casting Time:** 1 Action
@@ -55,7 +55,6 @@ nav_order: 8
 - **Range:** Touch
 - **Duration:** Instant
 - **Effect:** Removes one negative level caused by energy drain, or restores 1d4 points to a single ability score drained by magic or monsters.
-- **Boost:** Remove an additional negative level or restore +1d4 ability points.
 
 ## Stone Tell
 - **Casting Time:** 1 Action
@@ -93,21 +92,21 @@ nav_order: 8
 - **Casting Time:** 1 Action
 - **Range:** Far (120 ft)
 - **Duration:** Instant
-- **Effect:** Instantly kills 3d6 creatures ≤7 HD. Stronger creatures take 3d6 damage instead.
-- **Boost:** +1d6 creatures affected.
+- **Effect:** Kills up to 3d12 HD of creatures (8+ HD immune). CON spell save resists.
+- **Boost:** +1d6 HD affected.
 
 ## Disintegrate
 - **Casting Time:** 1 Action
 - **Range:** Far (120 ft)
 - **Duration:** Instant
-- **Effect:** One target turns to dust. CON save (12) negates. If object, destroyed.
+- **Effect:** One target turns to dust. CON spell save negates. If object, destroyed.
 - **Boost:** Target suffers SETBACK on save.
 
 ## Geas
 - **Casting Time:** 1 Action
 - **Range:** Near (30 ft)
 - **Duration:** Until fulfilled
-- **Effect:** Command one creature to complete a task. WIS save (12) resists. Breaking command causes 2d6 damage/day.
+- **Effect:** Command one creature to complete a task. WIS spell save resists. Breaking command causes 2d6 damage/day.
 - **Boost:** Target has SETBACK on save.
 
 ## Invisible Stalker
@@ -142,32 +141,21 @@ nav_order: 8
 - **Casting Time:** 1 Turn
 - **Range:** Touch
 - **Duration:** Instant
-- **Effect:** Dead creature returns in a new body. Roll d10: 1-7 = character class (roll d6 for level, max = old level), 8-10 = creature based on alignment. Returns at 1 HP, 2 Fatigue.
+- **Effect:** Dead creature returns in a new body. Spirit must be willing. Body forms over 1 hour. Roll d6 for new race: 1 Dwarf, 2 Elf, 3 Halfling, 4-6 Human. Returns at 1 HP, 2 Fatigue.
 - **Boost:** Reroll once on table.
-
-**Reincarnation by Alignment (d6):**
-
-| Roll | Lawful | Neutral | Chaotic |
-|------|--------|---------|---------|
-| 1 | Gnome | Pixie | Goblin |
-| 2 | Neanderthal | Lizard Man | Hobgoblin |
-| 3 | Pegasus | Rock Baboon | Orc |
-| 4 | Blink Dog | Centaur | Bugbear |
-| 5 | Unicorn | Werebear | Werewolf |
-| 6 | Roc | Treant | Minotaur |
 
 ## Stone to Flesh
 - **Casting Time:** 1 Action
 - **Range:** Near (30 ft)
 - **Duration:** Instant
-- **Effect:** Restores petrified creature; or turns stone into flesh (1 HD lump).
-- **Boost:** Affect +1 target/object.
+- **Effect:** Restores one petrified creature to life.
+- **Boost:** +1 target.
 
 ## Wall of Ice
 - **Casting Time:** 1 Action
 - **Range:** Near (30 ft)
 - **Duration:** Concentration, 1 Turn
-- **Effect:** 30-ft wall of ice blocks movement. Shattering deals 5d6 cold damage to adjacent creatures (DEX save 12 half).
+- **Effect:** 30-ft wall of ice blocks movement. Shattering deals 6d6 cold damage to adjacent creatures (DEX spell save for half).
 - **Boost:** Wall extends 10 ft.
 
 ---
@@ -189,17 +177,17 @@ nav_order: 8
 - **Boost:** Elemental gains +2 HD.
 
 ## Control Weather
-- Same as Magic-User version.
+- Same as [Magic-User version](#control-weather).
 
 ## Earthquake
 - **Casting Time:** 1 Action
 - **Range:** Far (120 ft)
 - **Duration:** Instant
-- **Effect:** 60-ft radius quake collapses structures, opens fissures, deals 6d6 damage (DEX save 12 half).
+- **Effect:** 60-ft radius quake collapses structures, opens fissures, deals 6d6 damage (DEX spell save for half).
 - **Boost:** Radius expands to 80 ft.
 
 ## Reincarnation
-- Same as Magic-User version.
+- Same as [Magic-User version](#reincarnation).
 
 ## Transport via Plants
 - **Casting Time:** 1 Action

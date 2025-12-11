@@ -57,6 +57,13 @@ nav_order: 4
 - **Effect:** Communicate simple ideas with animals.
 - **Boost:** +1 Turn duration.
 
+## Augury
+- **Casting Time:** 1 Turn or Ritual
+- **Range:** Self
+- **Duration:** Instant
+- **Effect:** Ask your deity about a specific course of action you plan to take within the next hour. Receive one of four answers: *weal* (good result), *woe* (bad result), *weal and woe* (both), or *nothing* (unclear/irrelevant).
+- **Boost:** Ask about a second action.
+
 ---
 
 # Magic-User Spells — Tier 2
@@ -182,6 +189,13 @@ nav_order: 4
 
 ## Resist Elements
 - Same as Cleric version.
+
+## Produce Flame
+- **Casting Time:** 1 Action
+- **Range:** Self
+- **Duration:** 1 Turn
+- **Effect:** A flame appears in your hand (sheds light as torch). Can be thrown (Near range, 1d6 fire damage, ends spell) or held for duration.
+- **Boost:** Damage increases to 2d6 when thrown.
 
 ## Warp Wood
 - **Casting Time:** 1 Action

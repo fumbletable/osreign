@@ -178,6 +178,20 @@ nav_order: 3
 - **Effect:** Outline creatures/objects in light. Attacks vs outlined targets gain EDGE.
 - **Boost:** Duration +1 Turn.
 
+## Pass Without Trace
+- **Casting Time:** 1 Action or Ritual
+- **Range:** Touch
+- **Duration:** 1 Turn
+- **Effect:** Up to PB creatures leave no tracks, scent, or trail. Tracking attempts automatically fail.
+- **Boost:** Duration +1 Turn.
+
+## Shillelagh
+- **Casting Time:** 1 Action
+- **Range:** Touch
+- **Duration:** 1 Turn
+- **Effect:** A wooden club or staff becomes magical (+1 to hit, deals 1d8 damage).
+- **Boost:** Duration +1 Turn.
+
 ## Speak with Animals
 - **Casting Time:** 1 Action or Ritual
 - **Range:** Self (Near)

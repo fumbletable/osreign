@@ -146,6 +146,14 @@ Aggressive hunters with webs of steel-strong silk.
 
 ---
 
+## Satyr
+**HD 2 | AC 13 | HP 8** | Darkvision<br>
+Atk ram horns (d6) or short bow (d6) | Mv Fast | Ml 7 | XP 40<br>
+Charm Music: Pan pipes charm listeners (WIS spell save or dance/follow for 1 Turn).<br>
+Goat-legged revelers of the deep woods. Love wine, music, and mischief.
+
+---
+
 ## Sprite
 **HD 1/2 | AC 14 | HP 2** | Darkvision | Invisible<br>
 Atk tiny sword (d4) or curse arrow | Mv Normal, Fly Fast | Ml 7 | XP 5<br>

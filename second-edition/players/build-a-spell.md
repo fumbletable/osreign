@@ -130,7 +130,7 @@ Not every damage spell fits the artillery pattern. Single-target damage, damage-
 | Instant | Damage, healing, teleportation |
 | 1 round | Single-action control (Command) |
 | 1 Turn (10 min) | Combat buffs, exploration utility |
-| 1 hour | Extended utility (Infravision, Water Breathing) |
+| 1 hour | Extended utility (Darkvision, Water Breathing) |
 | Concentration | Ongoing effects requiring attention |
 | Permanent | Terrain changes, walls, transformations |
 | Until dispelled/broken | Charms, invisibility, curses |
@@ -349,6 +349,23 @@ When creating or converting a spell:
 - ✓ Regenerate (T6 Cleric) - regrows limbs, heals 3d6
 - ✓ Restoration (T6 Cleric) - removes negative levels or restores drained ability scores
 - ✓ Remove Fear (T1 Cleric) - calms frightened creatures, new save with EDGE vs magical fear
+- ✓ Augury (T2 Cleric) - weal/woe divination for planned actions
+- ✓ Divination (T4 Cleric) - 1-2 sentence truthful answer about events within one week
+- ✓ Animate Dead (T4 Cleric) - weaker version with control limit (PB × 2 HD)
+- ✓ Flame Strike (T5 Cleric) - divine artillery (caster level × d6, half fire/half divine)
+- ✓ Pass Without Trace (T1 Druid) - no tracks/scent, tracking fails
+- ✓ Shillelagh (T1 Druid) - magical staff (+1/1d8)
+- ✓ Produce Flame (T2 Druid) - torch + throwable 1d6 fire
+- ✓ Summon Swarm (T3 Druid) - 1d6/round + SETBACK in 10-ft radius
+- ✓ Hold Animal (T3 Druid) - paralysis for up to 3 animals
+
+**Spell count balancing (DONE):**
+- ✓ Cleric brought to 8+ spells per tier (was light at T2, T4, T5)
+- ✓ Druid classic spells added (Pass Without Trace, Shillelagh, Produce Flame, Summon Swarm, Hold Animal)
+- ✓ Summon Swarm moved T2→T3 (battlefield control power level)
+- ✓ Final counts: Cleric 50, Magic-User 72, Druid 43
+- ✓ Cleric divination progression: Augury (T2) → Divination (T4) → Commune (T5)
+- ✓ Druid swarm progression: Summon Swarm (T3) → Insect Plague (T5)
 
 **Tier 1 editorial pass (DONE):**
 - ✓ All saves changed to "spell save" (not fixed DC 12)
@@ -404,11 +421,13 @@ This process caught important design issues in Tier 2 (Heat Metal armour rules, 
 - **Repeat saves:** Control spells (Hold Person, Web) should allow repeat saves each round
 - **Narrative first:** When saves feel wrong mechanically, ask "what's actually happening?" (e.g., Warp Wood targets object not person → no save; Heat Metal burns you regardless of willpower → STR to tear off, not CON to resist)
 
-**Remaining tiers:**
-- [ ] Tier 3 spells - review wording, saves, durations
-- [ ] Tier 4 spells - review wording, saves, durations
-- [ ] Tier 5 spells - review wording, saves, durations
-- [ ] Tier 6 spells - review wording, saves, durations
+**Completed tiers:**
+- [x] Tier 1 spells - full editorial pass (spell saves, ritual format, PB scaling)
+- [x] Tier 2 spells - full editorial pass (Heat Metal/Warp Wood redesign, Know Alignment removed)
+- [x] Tier 3 spells - full editorial pass (Hold Animal, Summon Swarm added for Druid)
+- [x] Tier 4 spells - full editorial pass (Animate Dead, Dispel Magic, Divination added for Cleric)
+- [x] Tier 5 spells - full editorial pass (Flame Strike added for Cleric)
+- [x] Tier 6 spells - full editorial pass (Regenerate, Restoration added for Cleric)
 
 **Other issues to review:**
 - [ ] Continual Light (T2 Magic-User, T3 Cleric) - should these match?

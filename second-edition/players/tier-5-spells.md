@@ -11,8 +11,8 @@ nav_order: 7
 ## Commune
 - **Casting Time:** 1 Turn
 - **Range:** Self
-- **Duration:** 3 questions
-- **Effect:** Ask your deity 3 yes/no questions. Answers may be cryptic. {Ritual}
+- **Duration:** PB questions
+- **Effect:** Ask your deity yes/no questions. Answers may be cryptic.
 - **Boost:** +1 question.
 
 ## Mass Cure Wounds
@@ -40,22 +40,29 @@ nav_order: 7
 - **Casting Time:** 1 Action
 - **Range:** Near (30 ft)
 - **Duration:** Until completed
-- **Effect:** One creature must undertake a quest; WIS save (12) resists.
+- **Effect:** One creature must undertake a quest; WIS spell save resists.
 - **Boost:** Target suffers SETBACK on save.
 
 ## Raise Dead
 - **Casting Time:** 1 Turn
 - **Range:** Touch
 - **Duration:** Instant
-- **Effect:** Revives 1 dead creature (body mostly intact). Returns at 1 HP, 2 Fatigue.
+- **Effect:** Revives 1 creature dead no more than caster level days (body mostly intact). Target permanently loses 1 level. Returns at 1 HP, 2 Fatigue.
 - **Boost:** Heal extra 2d6 HP on return.
 
 ## True Seeing
 - **Casting Time:** 1 Action
-- **Range:** Self
+- **Range:** Touch
 - **Duration:** 1 Turn
 - **Effect:** See things as they truly are (illusions, invisibility, polymorph).
 - **Boost:** Duration +1 Turn.
+
+## Flame Strike
+- **Casting Time:** 1 Action
+- **Range:** Far (120 ft)
+- **Duration:** Instant
+- **Effect:** A 10-ft radius column of divine fire strikes from above. Creatures in the area take caster level × d6 damage (half fire, half divine - unaffected by fire resistance). DEX spell save for half.
+- **Boost:** +1d6 damage.
 
 ---
 
@@ -72,7 +79,7 @@ nav_order: 7
 - **Casting Time:** 1 Action
 - **Range:** Far (120 ft)
 - **Duration:** Concentration, 1 Turn
-- **Effect:** 30-ft moving cloud; living creatures ≤4 HD die, others take 2d6 poison damage.
+- **Effect:** 30-ft moving cloud; living creatures ≤4 HD die (no save). Creatures above 4 HD take 2d6 poison damage (CON spell save for half).
 - **Boost:** Radius expands to 40 ft.
 
 ## Conjure Elemental
@@ -85,29 +92,29 @@ nav_order: 7
 ## Contact Other Plane
 - **Casting Time:** 1 Turn
 - **Range:** Self
-- **Duration:** 1 question per 2 tiers
-- **Effect:** Contact an otherworldly entity for answers. Ask one yes/no question per 2 caster tiers. Each question risks madness: INT save or be confused for 1d6 weeks (no spellcasting).
+- **Duration:** PB questions
+- **Effect:** Contact an otherworldly entity for answers. Each question risks madness: INT spell save or be confused for 1d6 weeks (no spellcasting).
 - **Boost:** One question is answered without risk.
 
 ## Feeblemind
 - **Casting Time:** 1 Action
 - **Range:** Near (30 ft)
 - **Duration:** Permanent until cured
-- **Effect:** One caster target INT save (12) or INT reduced to 1, cannot cast spells.
+- **Effect:** One caster target INT spell save or INT reduced to 1, cannot cast spells.
 - **Boost:** Target suffers SETBACK on save.
 
 ## Hold Monster
 - **Casting Time:** 1 Action
 - **Range:** Near (30 ft)
 - **Duration:** 1 Turn
-- **Effect:** Up to 3 creatures paralyzed unless WIS save (12).
+- **Effect:** Up to 3 creatures paralyzed unless WIS spell save. Target may repeat save at end of each round.
 - **Boost:** Affect +1 target.
 
 ## Magic Jar
 - **Casting Time:** 1 Action
 - **Range:** Near (30 ft)
 - **Duration:** Special
-- **Effect:** Soul transfers to container (body falls inert). From jar, may possess creature within Far (WIS save resists). If jar destroyed while occupied, caster dies. If possessed body dies, soul returns to jar.
+- **Effect:** Soul transfers to container (body falls inert). From jar, may possess creature within Far (WIS spell save resists). If jar destroyed while occupied, caster dies. If possessed body dies, soul returns to jar.
 - **Boost:** Possessed body gains +2 to all saves.
 
 ## Passwall
@@ -149,18 +156,18 @@ nav_order: 7
 
 # Druid Spells — Tier 5
 
-## Animal Summoning II
+## Animal Summoning
 - **Casting Time:** 1 Action
 - **Range:** Near (30 ft)
 - **Duration:** 1 Turn
-- **Effect:** Summons 2d6 animals of 4 HD or less (Referee decides).
+- **Effect:** Summons 2d6 animals of 4 HD or less (Referee decides). See also [Call Woodland Beings](tier-4-spells#call-woodland-beings) for fey creatures.
 - **Boost:** +1d6 animals.
 
 ## Commune with Nature
-- **Casting Time:** 1 Turn
+- **Casting Time:** 1 Turn or Ritual
 - **Range:** Self
-- **Duration:** 3 questions
-- **Effect:** Ask the land/spirits about terrain, animals, plants, or dangers within 1 mile. {Ritual}
+- **Duration:** PB questions
+- **Effect:** Ask the land/spirits about terrain, animals, plants, or dangers within 1 mile.
 - **Boost:** +1 question.
 
 ## Control Winds
@@ -171,7 +178,7 @@ nav_order: 7
 - **Boost:** Radius increases to 60 ft.
 
 ## Insect Plague
-- Same as Cleric version.
+- Same as [Cleric version](#insect-plague).
 
 ## Transmute Rock to Mud
 - **Casting Time:** 1 Action
@@ -184,5 +191,5 @@ nav_order: 7
 - **Casting Time:** 1 Action
 - **Range:** Near (30 ft)
 - **Duration:** Concentration, 1 Turn
-- **Effect:** 20-ft wall inflicts 4d6 fire damage crossing/adjacent (CON save 12 half).
+- **Effect:** 20-ft long, 10-ft high wall inflicts 4d6 fire damage crossing/adjacent (CON spell save for half).
 - **Boost:** +1d6 damage or extend wall 10 ft.
