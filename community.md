@@ -32,4 +32,4 @@ Second Edition is in active development. Your feedback shapes the game.
 
 Olde Swords Reign by **Damien Fegan** ([Fumble Table](https://www.youtube.com/@fumbletable))
 
-Built on the shoulders of giants: OD&D, B/X, OSE, BFRPG, Knave, Cairn, and countless others in the OSR tradition.
+Built on the shoulders of giants: 5e, OD&D, B/X, OSE, BFRPG, Knave, Cairn, and countless others.

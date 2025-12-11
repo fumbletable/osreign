@@ -22,15 +22,7 @@ The goal: a game where 5e players feel mechanically at home but discover a compl
 
 ---
 
-## Why Four Classes?
-
-Classic D&D had fighters, magic-users, clerics, and thieves. OSwR has Fighter, Magic-User, Cleric, and Expert.
-
-**Why not more?** Every additional class creates overlap, edge cases, and balance concerns. Four classes can cover any character concept when combined with backgrounds, feats, and multiclassing.
-
-**Why "Expert" instead of "Thief"?** Thief implies criminality. Expert implies competence. A scout, diplomat, or artisan is an Expert. So is a thief. The name doesn't constrain the fiction.
-
----
+# Character Foundations
 
 ## Why Abilities (Not Scores + Modifiers)
 
@@ -44,37 +36,6 @@ In classic D&D and 5e, you roll 3d6 for a score (3-18), then look up a modifier 
 
 ---
 
-## Why EDGE/SETBACK (Not Advantage/Disadvantage)
-
-5e's advantage system is elegant but binary: roll 2d20, take best/worst. You either have it or you don't, and multiple sources don't stack. That binary nature creates problems—if you have advantage from one source, additional advantages are worthless. Stacking circumstantial bonuses should *matter*.
-
-**EDGE and SETBACK use 1d6.** EDGE adds 1d6 to your roll. SETBACK subtracts 1d6. They cancel one-for-one, but they also *stack*. Two sources of EDGE means +2d6. Being really well-prepared matters more than being slightly prepared.
-
-**Why d6?** It feels different from the core d20. Rolling a d6 alongside your d20 has a tactile, additive quality that 2d20-keep-best lacks. The language is natural too: "take an edge" makes intuitive sense at the table.
-
-**Classic divergence:** OSE has no advantage system. OSwR uses EDGE/SETBACK for situational modifiers that stack.
-
----
-
-## Why Boost Dice?
-
-Boost Dice started as physical d6s handed to players for doing cool things. The origin was simple: reward players at the table with something tangible they can immediately use.
-
-**Reset each session.** You start with half your Proficiency Bonus in Boost Dice (minimum 1). They don't carry over—use them or lose them. This encourages spending rather than hoarding.
-
-**The Referee gives more.** Play up your hindrances? Boost Die. Do something memorable? Boost Die. This creates a feedback loop: players engage with their characters, Referee rewards it, everyone has fun.
-
-**Class-specific uses.** Each class spends Boost Dice differently:
-- **Fighter:** Extra attack (aggressive, combat-focused)
-- **Expert:** Roll 2d6 keep best (precision, reliability)
-- **Cleric/Magic-User:** Trigger Boostable spell effects (resource multiplication)
-
-**Why separate from EDGE?** EDGE is situational—the environment or circumstances give it to you. Boost Dice are earned through play and spent deliberately. They're a player resource, not a Referee ruling.
-
-**Classic divergence:** This replaces 5e's Inspiration (which nobody remembers to use) with something visible, tactile, and tied to character identity.
-
----
-
 ## Why Ancestry (Not Race)
 
 Simple: "race" carries baggage. "Ancestry" describes what it actually is - where you come from, what you inherited.
@@ -85,137 +46,13 @@ Simple: "race" carries baggage. "Ancestry" describes what it actually is - where
 
 ---
 
-## Divergences from OSE/Classic
+## Why Four Classes?
 
-Beyond the philosophical changes, here are specific mechanical divergences from Old-School Essentials and B/X:
+Classic D&D had fighters, magic-users, clerics, and thieves. OSwR has Fighter, Magic-User, Cleric, and Expert.
 
-**Saves:** OSE has 5 save categories (Death, Wands, Paralysis, Breath, Spells). OSwR uses 6 ability-based saves with proficiency, matching 5e's structure.
+**Why not more?** Every additional class creates overlap, edge cases, and balance concerns. Four classes can cover any character concept when combined with backgrounds, feats, and multiclassing.
 
-**Thief Skills:** OSE Thieves have percentage-based skills (Pick Locks 15%, Hide in Shadows 10%). OSwR Experts use feats - you either have the ability or you don't, with EDGE when applicable.
-
-**Turn Undead:** OSE uses a 2d6 table cross-referenced by Cleric level and undead HD. OSwR uses a flat DC 12 check with HD thresholds for effect.
-
-**AC System:** OSE uses descending AC (lower is better) or ascending as an option. OSwR uses ascending AC exclusively, matching 5e.
-
-**Spell Slots vs Memorization:** OSE Magic-Users prepare specific spells into slots (two Sleep means casting Sleep twice). OSwR uses 5e-style slots - prepare a list, spend slots flexibly.
-
-**Hit Dice for HP:** OSE rolls HD at each level (d8 for Fighter). OSwR does the same but offers the option to take the average, reducing variance.
-
-**Multiclassing:** OSE doesn't have multiclassing (demihumans were the multi-role option). OSwR allows multiclassing at odd levels, closer to AD&D's approach.
-
----
-
-## Why Feats Cost Gold?
-
-In 5e, you level up and get your features automatically. In OSwR, levelling grants the *capacity* for new abilities - you must still pay gold and spend time to unlock them.
-
-**The reasoning:**
-
-1. **Gold sinks matter.** Without ways to spend treasure, gold piles up pointlessly. Training costs keep gold valuable at every level.
-
-2. **Fiction follows.** Your Fighter didn't just wake up knowing Shield Master. They spent a week drilling, bought practice equipment, maybe hired a sparring partner. The gold represents that.
-
-3. **Different classes, different pressures.** Magic-Users spend gold on spell research. Fighters spend it on feats. The system naturally creates different economic priorities without forcing it.
-
-4. **Party dynamics.** A Fighter who carouses (spending gold for XP) might level faster than a Magic-User saving for research. That's fine - the Fighter becomes a better bodyguard for the squishy wizard. Everyone benefits.
-
----
-
-## Why 1 GP = 1 XP?
-
-This is the classic OSR ratio, and it's not arbitrary.
-
-**Emergent gameplay.** When treasure is the primary XP source, players pursue treasure. They sneak past the dragon because fighting is risky and the hoard is what matters. They negotiate with goblins because dead goblins don't lead to treasure rooms. The *system* rewards clever play - the Referee doesn't have to decide what counts as "clever."
-
-**Player-driven.** With milestone or story XP, the Referee controls advancement. With treasure XP, the players control it. Find more treasure, level faster. The world contains the rewards; players decide how to get them.
-
-**Module compatibility.** Decades of published adventures have treasure placed assuming 1 GP = 1 XP. OSwR can use those adventures unchanged.
-
----
-
-## Why Monster XP = HD² × 10?
-
-This creates a smooth curve where tougher monsters are worth significantly more, but treasure remains the primary XP source.
-
-| HD | XP |
-|---:|---:|
-| 1 | 10 |
-| 3 | 90 |
-| 5 | 250 |
-| 10 | 1,000 |
-
-A goblin (HD 1) is worth 10 XP. A dragon (HD 10) is worth 1,000 XP. But the dragon's *hoard* might be worth 10,000+ XP. The maths reinforce the play philosophy: treasure matters more than kills.
-
----
-
-## Why Research Is Expensive?
-
-Spell research costs 700 gp per week and requires an INT check at the end of the full research period to finalise the spell. Failure costs another week of work (700 gp) before you can attempt finalisation again.
-
-**The world is the better deal.** Finding a scroll in a dungeon costs only the copying fee (100 gp/tier). Research is the fallback when you can't find what you need. This encourages exploration and rewards player resourcefulness.
-
-**Magic-Users are powerful.** By tier 5-6, spells reshape reality. That power should be earned through adventure, not bought in a library. Research exists so wizards always have a path forward - but it shouldn't be the easy path.
-
----
-
-## Why Carousing?
-
-Carousing lets players convert gold directly to XP by spending it on revelry. This solves several problems:
-
-1. **Gold accumulation.** Without spending, treasure becomes meaningless numbers. Carousing gives it somewhere to go.
-
-2. **Different advancement strategies.** A Fighter who carouses and a Magic-User who saves for research will level at different rates. This is intentional—it creates party dynamics. The Fighter becomes a better bodyguard for the squishy wizard. Everyone benefits.
-
-3. **Story generation.** The mishap table creates situations. Gambling debts, new enemies, embarrassing tattoos, unexpected windfalls. Carousing turns downtime into adventure hooks.
-
-4. **The mishap curve.** The 2d6 table means hangover (7) is most common—roughly 17% of failed saves. The dramatic results (jail, windfalls) are rare but memorable. Most nights out end with a headache, not a crisis.
-
-**Limits by settlement size.** You can only spend what the local economy can absorb. A village tavern can't handle 2,000 gp of revelry. This also encourages returning to larger towns—and creates reasons to explore the world.
-
----
-
-## Why Cleric Tithes?
-
-Magic-Users pay for every spell - 100 gp to copy, 700+ gp to research. Clerics receive their spells through divine connection. Without an equivalent cost, Clerics would have a massive economic advantage.
-
-**The solution:** Clerics must tithe 10% of all treasure to maintain divine favour. This creates a gold sink that scales with success and fits the fiction of divine service.
-
-**Hallowed vs Druidic:** Hallowed Clerics give to their temple. Druidic Clerics return wealth to nature - offerings at sacred sites, releasing animals, burning sacrifices, feasting communities. Same mechanical effect, different fiction.
-
----
-
-## Why "Overcome" Instead of "Kill"?
-
-Monster XP is earned when you "overcome" a threat - which includes defeating, outsmarting, driving off, or otherwise neutralising it.
-
-**Combat is not the only solution.** Tricking the ogre into leaving, negotiating safe passage with the bandits, or locking the gelatinous cube in a room all count as overcoming the threat. The XP reward is the same.
-
-**This matches the play philosophy.** If we only rewarded kills, players would fight everything. But OSwR wants players to think, negotiate, and avoid unnecessary risks. The XP rules support that.
-
----
-
-## On Bounded Accuracy
-
-OSwR uses the 5e principle of bounded accuracy: numbers stay small, bonuses don't inflate wildly with level, and a +1 always matters.
-
-**Why keep it?** It works. Low-level threats remain relevant. High-level characters are powerful but not invincible. The maths are simple and the probability curves are intuitive.
-
-**The trade-off:** Characters don't feel superheroic at high levels the way they do in 5e. That's intentional. OSwR is about dangerous adventures, not power fantasies.
-
----
-
-## On The Four Tiers
-
-OSwR roughly divides play into tiers:
-
-| Tier | Levels | Play Style |
-|------|--------|------------|
-| Novice | 1-3 | Fragile, local, learning the world |
-| Journeyman | 4-6 | Competent, regional, taking on serious threats |
-| Veteran | 7-9 | Powerful, famous, shaping events |
-| Name Level | 10-12 | Domain play, legacy, shaping the world |
-
-This isn't explicit in the rules, but it's implicit in the pacing and costs. The game shifts as characters grow - from "survive the dungeon" to "what kind of lord will you be?"
+**Why "Expert" instead of "Thief"?** Thief implies criminality. Expert implies competence. A scout, diplomat, or artisan is an Expert. So is a thief. The name doesn't constrain the fiction.
 
 ---
 
@@ -241,63 +78,7 @@ Brawler grants unarmed damage that scales: 1d4 → 1d6 (level 5) → 1d8 (level 
 
 ---
 
-## Why Turn Undead Uses a Flat DC
-
-Turn Undead requires a Normal (DC 12) WIS check. The power scales through HD thresholds, not DC increases.
-
-**The design:**
-- Affect up to 2d6 + PB Hit Dice of undead
-- Destroy if HD ≤ level − 3
-- Turn if HD ≤ level + 1
-- No effect if HD > level + 1
-
-**Why flat DC?** Simplicity. Players remember "DC 12" easily. The HD thresholds handle scaling - a level 1 Cleric can turn weak undead, a level 10 Cleric destroys them and turns stronger ones.
-
-**Why level − 3 for destroy?** Destroying undead should feel earned. A level 1 Cleric shouldn't instantly vaporise skeletons. At level 4, they can destroy 1 HD undead. This creates a meaningful progression.
-
----
-
-## What's Still Being Figured Out
-
-**Multiclassing rules.** We know it happens at odd levels, but the full rules (HP calculation, save proficiencies, spell slot stacking) need writing.
-
-**Domain play.** Stronghold costs, army management, domain income. The bones are there; the flesh isn't.
-
----
-
-## Sections To Write
-
-*These placeholders ensure every major system gets explained. Fill in during editing passes.*
-
-### Character Creation
-- [ ] **Why Backgrounds Work This Way** - Skills as narrative, not mechanical lists
-- [ ] **Why Hindrances?** - Optional flaws for bonus feats
-
-### Equipment & Resources
-- [x] **Why Weapon Tags?** - See below
-- [x] **Why Armor Works This Way?** - See below
-- [ ] **Why Slot-Based Encumbrance?** - Simplicity over pound-counting
-- [x] **Why Supply (Not Rations)?** - See below
-- [ ] **Why Equipment Kits?** - Speed up character creation
-
----
-
-## Why Supply (Not Rations)?
-
-OSwR uses "Supply" as an abstract resource rather than tracking individual rations, waterskins, and bandages.
-
-**What Supply represents:** Food, water, basic medical supplies, and general consumables. One unit covers a day of sustenance or one use of healing/recovery.
-
-**Why abstract?** Tracking 14 rations, 3 waterskins, and 6 torches is bookkeeping without decisions. Supply simplifies: you have X uses, spend them as needed. The decision is when to use them, not whether you remembered to buy the right type.
-
-**Where it's spent:**
-- Breathers (1 Supply to heal or shake off Fatigue)
-- Stabilizing dying allies (1 Supply)
-- Daily sustenance (on wilderness expeditions)
-
-**Why not "Provisions"?** We changed the name. "Provisions" sounds like food only. "Supply" better captures the abstraction—it's whatever consumable the situation demands.
-
----
+# Equipment & Resources
 
 ## Why Weapon Tags?
 
@@ -331,14 +112,96 @@ At AC 18, Plate is definitively the highest AC in the game. You pay for it (300 
 
 **Shield Sunder:** When you take damage, you can destroy your shield to reduce that damage to 0. This is a meaningful defensive choice - spend your shield to survive a big hit. Shields are cheap (7 gp), so it's not about resource hoarding. It's about dramatic moments: "The ogre's club crashes down - you raise your shield, which explodes into splinters, but you're alive."
 
-### Combat
-- [x] **Why Side-Based Initiative?** - See below
-- [x] **Why Death & Dying Uses Fatigue?** - See below
-- [x] **Why Opportunity Attacks Work This Way?** - See below
-- [x] **Why Disengage Lets You Dash?** - See below
-- [x] **Why DEX Doesn't Add to Ranged Damage?** - See below
+---
+
+## Why Supply (Not Rations)?
+
+OSwR uses "Supply" as an abstract resource rather than tracking individual rations, waterskins, and bandages.
+
+**What Supply represents:** Food, water, basic medical supplies, and general consumables. One unit covers a day of sustenance or one use of healing/recovery.
+
+**Why abstract?** Tracking 14 rations, 3 waterskins, and 6 torches is bookkeeping without decisions. Supply simplifies: you have X uses, spend them as needed. The decision is when to use them, not whether you remembered to buy the right type.
+
+**Where it's spent:**
+- Breathers (1 Supply to heal or shake off Fatigue)
+- Stabilizing dying allies (1 Supply)
+- Daily sustenance (on wilderness expeditions)
+
+**Why not "Provisions"?** We changed the name. "Provisions" sounds like food only. "Supply" better captures the abstraction—it's whatever consumable the situation demands.
 
 ---
+
+# Core Mechanics
+
+## Why EDGE/SETBACK (Not Advantage/Disadvantage)
+
+5e's advantage system is elegant but binary: roll 2d20, take best/worst. You either have it or you don't, and multiple sources don't stack. That binary nature creates problems—if you have advantage from one source, additional advantages are worthless. Stacking circumstantial bonuses should *matter*.
+
+**EDGE and SETBACK use 1d6.** EDGE adds 1d6 to your roll. SETBACK subtracts 1d6. They cancel one-for-one, but they also *stack*. Two sources of EDGE means +2d6. Being really well-prepared matters more than being slightly prepared.
+
+**Why d6?** It feels different from the core d20. Rolling a d6 alongside your d20 has a tactile, additive quality that 2d20-keep-best lacks. The language is natural too: "take an edge" makes intuitive sense at the table.
+
+**Classic divergence:** OSE has no advantage system. OSwR uses EDGE/SETBACK for situational modifiers that stack.
+
+---
+
+## Why Boost Dice?
+
+Boost Dice started as physical d6s handed to players for doing cool things. The origin was simple: reward players at the table with something tangible they can immediately use.
+
+**Reset each session.** You start with half your Proficiency Bonus in Boost Dice (minimum 1). They don't carry over—use them or lose them. This encourages spending rather than hoarding.
+
+**The Referee gives more.** Play up your hindrances? Boost Die. Do something memorable? Boost Die. This creates a feedback loop: players engage with their characters, Referee rewards it, everyone has fun.
+
+**Class-specific uses.** Each class spends Boost Dice differently:
+- **Fighter:** Extra attack (aggressive, combat-focused)
+- **Expert:** Roll 2d6 keep best (precision, reliability)
+- **Cleric/Magic-User:** Trigger Boostable spell effects (resource multiplication)
+
+**Why separate from EDGE?** EDGE is situational—the environment or circumstances give it to you. Boost Dice are earned through play and spent deliberately. They're a player resource, not a Referee ruling.
+
+**Classic divergence:** This replaces 5e's Inspiration (which nobody remembers to use) with something visible, tactile, and tied to character identity.
+
+---
+
+## On Bounded Accuracy
+
+OSwR uses the 5e principle of bounded accuracy: numbers stay small, bonuses don't inflate wildly with level, and a +1 always matters.
+
+**Why keep it?** It works. Low-level threats remain relevant. High-level characters are powerful but not invincible. The maths are simple and the probability curves are intuitive.
+
+**The trade-off:** Characters don't feel superheroic at high levels the way they do in 5e. That's intentional. OSwR is about dangerous adventures, not power fantasies.
+
+---
+
+## On The Four Tiers
+
+OSwR roughly divides play into tiers:
+
+| Tier | Levels | Play Style |
+|------|--------|------------|
+| Novice | 1-3 | Fragile, local, learning the world |
+| Journeyman | 4-6 | Competent, regional, taking on serious threats |
+| Veteran | 7-9 | Powerful, famous, shaping events |
+| Name Level | 10-12 | Domain play, legacy, shaping the world |
+
+This isn't explicit in the rules, but it's implicit in the pacing and costs. The game shifts as characters grow - from "survive the dungeon" to "what kind of lord will you be?"
+
+---
+
+## Why No Passive Checks?
+
+5e has passive Perception (10 + modifier) for "always-on" awareness. We cut it.
+
+**The problem:** Passive checks give the illusion of a system while the Referee is really just deciding. If your passive is 12 and the DC is 12, you notice. If the DC is 13, you don't. The Referee sets both numbers—they're deciding the outcome with extra steps.
+
+**OSR philosophy:** If you don't say you're looking, you don't find it. Player engagement matters. "I search the room" should prompt description and decisions, not a number comparison.
+
+**What replaces it:** Referee judgment. If the trap is obvious and the players are being careful, they notice. If it's hidden and they're rushing, they trigger it. If it's uncertain, call for a roll. No passive score needed.
+
+---
+
+# Combat
 
 ## Why Side-Based Initiative?
 
@@ -363,32 +226,6 @@ OSwR uses side-based combat with declare-then-resolve. This is inspired by Cairn
 **The first-contact check.** The DEX check at the start determines whether you get a free swing before enemies act. Pass and your side gets a full action before any enemy moves. Fail and enemies go first—but then you join in with the other heroes. You don't "miss a turn"; the flow just starts with enemies instead of heroes.
 
 **Classic divergence:** This matches Cairn's approach more than 5e's. OSE uses d6 group initiative (rerolled each round). OSwR's single first-contact check is simpler—one roll at the fight's start, then pure alternation.
-
----
-
-## Why Death & Dying Uses Fatigue?
-
-5e's death saves are boring. Roll a d20, pass or fail, three strikes either way. There's no tension after the first roll—just waiting to see which side hits three first.
-
-OSwR's death system uses 2d6 minus your Fatigue:
-
-| Roll | What happens |
-|------|--------------|
-| 11+ | Back up with HP equal to CON or one Hit Die (your choice) |
-| 10 | Stable—wake next turn at 1 HP |
-| 5–9 | Still dying—roll again next round |
-| 4 | Dead, but you get one heroic action first |
-| 3– | Dead outright |
-
-**Why this works:**
-
-1. **Instant tension.** Every roll matters. You could die on your first death check—or heroically spring back up. No three-strike countdown.
-
-2. **Fatigue integration.** The more battered you are, the harder it is to survive. A fresh character rolling 2d6 has good odds. A character at Fatigue 3 rolling 2d6−3? Much worse. This ties the death system to the rest of the game's attrition mechanics.
-
-3. **The heroic death.** Rolling exactly 4 is rare, but it creates memorable moments. "You're dead, but you get one last action." That's the stuff stories are made of.
-
-4. **Player choice on recovery.** When you roll 11+, you choose: CON (predictable) or Hit Die roll (potentially better, potentially worse). Even in recovery, there's a decision.
 
 ---
 
@@ -451,12 +288,35 @@ In OSwR, DEX adds to ranged attack rolls but NOT damage. Only melee (STR) and fi
 
 **Future consideration:** A feat that adds DEX to ranged damage could work for dedicated archers (Fighter or Expert). This would be an opt-in specialisation rather than a default, preserving the base design while rewarding the archetype.
 
-### Rests & Recovery
-- [x] **Why Three Rest Types?** - See below
-- [x] **Why Fatigue Has Five Levels?** - See below
-- [x] **Why Dropping to 0 HP Causes Fatigue?** - See below
+---
+
+## Why Death & Dying Uses Fatigue?
+
+5e's death saves are boring. Roll a d20, pass or fail, three strikes either way. There's no tension after the first roll—just waiting to see which side hits three first.
+
+OSwR's death system uses 2d6 minus your Fatigue:
+
+| Roll | What happens |
+|------|--------------|
+| 11+ | Back up with HP equal to CON or one Hit Die (your choice) |
+| 10 | Stable—wake next turn at 1 HP |
+| 5–9 | Still dying—roll again next round |
+| 4 | Dead, but you get one heroic action first |
+| 3– | Dead outright |
+
+**Why this works:**
+
+1. **Instant tension.** Every roll matters. You could die on your first death check—or heroically spring back up. No three-strike countdown.
+
+2. **Fatigue integration.** The more battered you are, the harder it is to survive. A fresh character rolling 2d6 has good odds. A character at Fatigue 3 rolling 2d6−3? Much worse. This ties the death system to the rest of the game's attrition mechanics.
+
+3. **The heroic death.** Rolling exactly 4 is rare, but it creates memorable moments. "You're dead, but you get one last action." That's the stuff stories are made of.
+
+4. **Player choice on recovery.** When you roll 11+, you choose: CON (predictable) or Hit Die roll (potentially better, potentially worse). Even in recovery, there's a decision.
 
 ---
+
+# Rests & Recovery
 
 ## Why Three Rest Types?
 
@@ -499,13 +359,9 @@ In OSwR, dropping to 0 HP triggers a CON save (DC 12) when you get back up—fai
 3. **Teamwork helps.** If an ally spends their Breather tending to you, you can do both.
 4. **Attrition pressure.** Multiple knockdowns in a dungeon stack up, pushing parties toward retreat.
 
-### Exploration
-- [x] **Why 6-Hour Watches?** - See below
-- [ ] **Why Turns & Rounds?** - Time as resource
-- [ ] **Why Random Encounters?** - Pressure that drives decisions
-- [ ] **Why Light Rules Matter?** - Darkness as gameplay
-
 ---
+
+# Exploration
 
 ## Why 6-Hour Watches?
 
@@ -525,32 +381,112 @@ Earlier drafts used 4-hour watches (six per day). We switched to 6-hour watches 
 
 **The trade-off was worth it.** The precision rarely mattered in play, but the complexity always cost attention. Four watches keeps the resource pressure while simplifying the tracking.
 
-### Magic
-- [ ] **Why Spell Slots (Not Points)?** - Flexibility vs Vancian
-- [ ] **Why Six Spell Tiers?** - Pacing power growth
-- [ ] **Why Spellbooks Cost Gold?** - Knowledge as treasure
-- [ ] **Why Boostable Spells?** - Resource decisions for casters
+---
 
-### Social & Hirelings
-- [ ] **Why 2d6 Reaction Rolls?** - Bell curve social encounters
-- [ ] **Why Morale Checks?** - Monsters that flee
-- [ ] **Why Retainer Rules?** - Henchmen as gameplay
+# Economy & Advancement
 
-### Referee Tools
-- [ ] **Why These Difficulty Tiers?** - Easy/Normal/Hard at 8/12/16
-- [x] **Why No Passive Checks?** - See below
+## Why 1 GP = 1 XP?
+
+This is the classic OSR ratio, and it's not arbitrary.
+
+**Emergent gameplay.** When treasure is the primary XP source, players pursue treasure. They sneak past the dragon because fighting is risky and the hoard is what matters. They negotiate with goblins because dead goblins don't lead to treasure rooms. The *system* rewards clever play - the Referee doesn't have to decide what counts as "clever."
+
+**Player-driven.** With milestone or story XP, the Referee controls advancement. With treasure XP, the players control it. Find more treasure, level faster. The world contains the rewards; players decide how to get them.
+
+**Module compatibility.** Decades of published adventures have treasure placed assuming 1 GP = 1 XP. OSwR can use those adventures unchanged.
 
 ---
 
-## Why No Passive Checks?
+## Why Monster XP = HD² × 10?
 
-5e has passive Perception (10 + modifier) for "always-on" awareness. We cut it.
+This creates a smooth curve where tougher monsters are worth significantly more, but treasure remains the primary XP source.
 
-**The problem:** Passive checks give the illusion of a system while the Referee is really just deciding. If your passive is 12 and the DC is 12, you notice. If the DC is 13, you don't. The Referee sets both numbers—they're deciding the outcome with extra steps.
+| HD | XP |
+|---:|---:|
+| 1 | 10 |
+| 3 | 90 |
+| 5 | 250 |
+| 10 | 1,000 |
 
-**OSR philosophy:** If you don't say you're looking, you don't find it. Player engagement matters. "I search the room" should prompt description and decisions, not a number comparison.
+A goblin (HD 1) is worth 10 XP. A dragon (HD 10) is worth 1,000 XP. But the dragon's *hoard* might be worth 10,000+ XP. The maths reinforce the play philosophy: treasure matters more than kills.
 
-**What replaces it:** Referee judgment. If the trap is obvious and the players are being careful, they notice. If it's hidden and they're rushing, they trigger it. If it's uncertain, call for a roll. No passive score needed.
+---
+
+## Why "Overcome" Instead of "Kill"?
+
+Monster XP is earned when you "overcome" a threat - which includes defeating, outsmarting, driving off, or otherwise neutralising it.
+
+**Combat is not the only solution.** Tricking the ogre into leaving, negotiating safe passage with the bandits, or locking the gelatinous cube in a room all count as overcoming the threat. The XP reward is the same.
+
+**This matches the play philosophy.** If we only rewarded kills, players would fight everything. But OSwR wants players to think, negotiate, and avoid unnecessary risks. The XP rules support that.
+
+---
+
+## Why Feats Cost Gold?
+
+In 5e, you level up and get your features automatically. In OSwR, levelling grants the *capacity* for new abilities - you must still pay gold and spend time to unlock them.
+
+**The reasoning:**
+
+1. **Gold sinks matter.** Without ways to spend treasure, gold piles up pointlessly. Training costs keep gold valuable at every level.
+
+2. **Fiction follows.** Your Fighter didn't just wake up knowing Shield Master. They spent a week drilling, bought practice equipment, maybe hired a sparring partner. The gold represents that.
+
+3. **Different classes, different pressures.** Magic-Users spend gold on spell research. Fighters spend it on feats. The system naturally creates different economic priorities without forcing it.
+
+4. **Party dynamics.** A Fighter who carouses (spending gold for XP) might level faster than a Magic-User saving for research. That's fine - the Fighter becomes a better bodyguard for the squishy wizard. Everyone benefits.
+
+---
+
+## Why Research Is Expensive?
+
+Spell research costs 700 gp per week and requires an INT check at the end of the full research period to finalise the spell. Failure costs another week of work (700 gp) before you can attempt finalisation again.
+
+**The world is the better deal.** Finding a scroll in a dungeon costs only the copying fee (100 gp/tier). Research is the fallback when you can't find what you need. This encourages exploration and rewards player resourcefulness.
+
+**Magic-Users are powerful.** By tier 5-6, spells reshape reality. That power should be earned through adventure, not bought in a library. Research exists so wizards always have a path forward - but it shouldn't be the easy path.
+
+---
+
+## Why 100 gp/day for Magic?
+
+Simple, memorable, scales naturally with time. A week of research = 7 days = 700 gp. No lookup tables needed.
+
+This also makes finding spells in the world more valuable. Copying from a found scroll (100 gp/tier) is much cheaper than researching from scratch (700 gp/week + INT check). The economy rewards exploration.
+
+---
+
+## Why Carousing?
+
+Carousing lets players convert gold directly to XP by spending it on revelry. This solves several problems:
+
+1. **Gold accumulation.** Without spending, treasure becomes meaningless numbers. Carousing gives it somewhere to go.
+
+2. **Different advancement strategies.** A Fighter who carouses and a Magic-User who saves for research will level at different rates. This is intentional—it creates party dynamics. The Fighter becomes a better bodyguard for the squishy wizard. Everyone benefits.
+
+3. **Story generation.** The mishap table creates situations. Gambling debts, new enemies, embarrassing tattoos, unexpected windfalls. Carousing turns downtime into adventure hooks.
+
+4. **The mishap curve.** The 2d6 table means hangover (7) is most common—roughly 17% of failed saves. The dramatic results (jail, windfalls) are rare but memorable. Most nights out end with a headache, not a crisis.
+
+**Limits by settlement size.** You can only spend what the local economy can absorb. A village tavern can't handle 2,000 gp of revelry. This also encourages returning to larger towns—and creates reasons to explore the world.
+
+---
+
+## Why Pious Offerings?
+
+It's the Cleric alternative to carousing. Fighters drink; Clerics pray. Same mechanical effect (gold → XP), different fiction.
+
+Clerics who want to carouse still can—Pious Offerings is an option, not a requirement. But it gives divine characters a thematic way to convert wealth to advancement without rolling on the mishap table.
+
+---
+
+## Why Cleric Tithes?
+
+Magic-Users pay for every spell - 100 gp to copy, 700+ gp to research. Clerics receive their spells through divine connection. Without an equivalent cost, Clerics would have a massive economic advantage.
+
+**The solution:** Clerics must tithe 10% of all treasure to maintain divine favour. This creates a gold sink that scales with success and fits the fiction of divine service.
+
+**Hallowed vs Druidic:** Hallowed Clerics give to their temple. Druidic Clerics return wealth to nature - offerings at sacred sites, releasing animals, burning sacrifices, feasting communities. Same mechanical effect, different fiction.
 
 ---
 
@@ -580,29 +516,25 @@ Divine magic isn't free. Temple healing costs exist for several reasons:
 
 ---
 
-## Why Cleric Tithes?
+# Class-Specific Design
 
-Magic-Users pay for every spell (100+ gp each). Without an equivalent cost, Clerics would have a massive economic advantage. The 10% tithe creates a comparable gold sink that scales with success—and fits the fiction of divine service.
+## Why Turn Undead Uses a Flat DC
 
-**Hallowed vs Druidic:** Same mechanical effect, different fiction. Hallowed Clerics give to their temple. Druidic Clerics return wealth to nature—offerings at sacred sites, releasing animals, feasting communities. The treasure goes *back* rather than to an institution.
+Turn Undead requires a Normal (DC 12) WIS check. The power scales through HD thresholds, not DC increases.
 
----
+**The design:**
+- Affect up to 2d6 + PB Hit Dice of undead
+- Destroy if HD ≤ level − 3
+- Turn if HD ≤ level + 1
+- No effect if HD > level + 1
 
-## Why Pious Offerings?
+**Why flat DC?** Simplicity. Players remember "DC 12" easily. The HD thresholds handle scaling - a level 1 Cleric can turn weak undead, a level 10 Cleric destroys them and turns stronger ones.
 
-It's the Cleric alternative to carousing. Fighters drink; Clerics pray. Same mechanical effect (gold → XP), different fiction.
-
-Clerics who want to carouse still can—Pious Offerings is an option, not a requirement. But it gives divine characters a thematic way to convert wealth to advancement without rolling on the mishap table.
-
----
-
-## Why 100 gp/day for Magic?
-
-Simple, memorable, scales naturally with time. A week of research = 7 days = 700 gp. No lookup tables needed.
-
-This also makes finding spells in the world more valuable. Copying from a found scroll (100 gp/tier) is much cheaper than researching from scratch (700 gp/week + INT check). The economy rewards exploration.
+**Why level − 3 for destroy?** Destroying undead should feel earned. A level 1 Cleric shouldn't instantly vaporise skeletons. At level 4, they can destroy 1 HD undead. This creates a meaningful progression.
 
 ---
+
+# Referee Tools
 
 ## Why This Stat Block Format?
 
@@ -637,6 +569,67 @@ Flavour text (what it is).
 - **Excessive detail.** A basilisk doesn't need three sentences on petrification mechanics. "Petrifying gaze (CON 12 or stone)" is enough.
 
 **The rhythm.** Each entry has the same beat: name, survival, attacks, mechanics, flavour. Once you've read a few, you know exactly where to look for any piece of information. Consistency aids usability more than any individual formatting choice.
+
+---
+
+# Divergences from OSE/Classic
+
+Beyond the philosophical changes, here are specific mechanical divergences from Old-School Essentials and B/X:
+
+**Saves:** OSE has 5 save categories (Death, Wands, Paralysis, Breath, Spells). OSwR uses 6 ability-based saves with proficiency, matching 5e's structure.
+
+**Thief Skills:** OSE Thieves have percentage-based skills (Pick Locks 15%, Hide in Shadows 10%). OSwR Experts use feats - you either have the ability or you don't, with EDGE when applicable.
+
+**Turn Undead:** OSE uses a 2d6 table cross-referenced by Cleric level and undead HD. OSwR uses a flat DC 12 check with HD thresholds for effect.
+
+**AC System:** OSE uses descending AC (lower is better) or ascending as an option. OSwR uses ascending AC exclusively, matching 5e.
+
+**Spell Slots vs Memorization:** OSE Magic-Users prepare specific spells into slots (two Sleep means casting Sleep twice). OSwR uses 5e-style slots - prepare a list, spend slots flexibly.
+
+**Hit Dice for HP:** OSE rolls HD at each level (d8 for Fighter). OSwR does the same but offers the option to take the average, reducing variance.
+
+**Multiclassing:** OSE doesn't have multiclassing (demihumans were the multi-role option). OSwR allows multiclassing at odd levels, closer to AD&D's approach.
+
+---
+
+# Still Being Figured Out
+
+**Multiclassing rules.** We know it happens at odd levels, but the full rules (HP calculation, save proficiencies, spell slot stacking) need writing.
+
+**Domain play.** Stronghold costs, army management, domain income. The bones are there; the flesh isn't.
+
+---
+
+# Sections To Write
+
+*These placeholders track which commentary sections still need writing.*
+
+### Character Creation
+- [ ] **Why Backgrounds Work This Way** - Skills as narrative, not mechanical lists
+- [ ] **Why Hindrances?** - Optional flaws for bonus feats
+
+### Equipment & Resources
+- [ ] **Why Slot-Based Encumbrance?** - Simplicity over pound-counting
+- [ ] **Why Equipment Kits?** - Speed up character creation
+
+### Exploration
+- [ ] **Why Turns & Rounds?** - Time as resource
+- [ ] **Why Random Encounters?** - Pressure that drives decisions
+- [ ] **Why Light Rules Matter?** - Darkness as gameplay
+
+### Magic
+- [ ] **Why Spell Slots (Not Points)?** - Flexibility vs Vancian
+- [ ] **Why Six Spell Tiers?** - Pacing power growth
+- [ ] **Why Spellbooks Cost Gold?** - Knowledge as treasure
+- [ ] **Why Boostable Spells?** - Resource decisions for casters
+
+### Social & Hirelings
+- [ ] **Why 2d6 Reaction Rolls?** - Bell curve social encounters
+- [ ] **Why Morale Checks?** - Monsters that flee
+- [ ] **Why Retainer Rules?** - Henchmen as gameplay
+
+### Referee Tools
+- [ ] **Why These Difficulty Tiers?** - Easy/Normal/Hard at 8/12/16
 
 ---
 
