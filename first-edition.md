@@ -4,9 +4,9 @@ layout: default
 nav_order: 2
 ---
 
-# First Edition (2021)
+# First Edition
 
-The original Olde Swords Reign, released in 2021.
+The original Olde Swords Reign book.
 
 ---
 
@@ -15,7 +15,7 @@ The original Olde Swords Reign, released in 2021.
 OSwR has had three versions:
 
 1. **Scott Myers' Original** — Scott designed the first Olde Swords Reign and released it publicly. It's no longer available, but it's where everything started.
-2. **First Edition (2021)** — I took Scott's design, expanded it, and released it as a full book. This is what's available below.
+2. **First Edition** — I took Scott's design, expanded it, and released it as a full book. This is what's available below.
 3. **Second Edition** — The current version on this site. A complete rewrite incorporating lessons learned from years of play.
 
 [Read more about Scott and the other influences on OSwR](acknowledgements).
