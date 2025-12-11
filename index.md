@@ -50,12 +50,16 @@ You'll learn OSwR in one session. You'll still be finding new angles a year late
 
 <div class="navigation-cards">
 
-[**Second Edition**](second-edition.md) - Read the full rules online (free)
+[**Second Edition**](second-edition) - Read the full rules online (free)
 
-[**First Edition**](first-edition.md) - Purchase the original 2021 release
+[**First Edition**](first-edition) - The original 2021 release
 
-[**Resources**](resources.md) - Character sheets and quick reference
+[**Resources**](resources) - Character sheets and downloads
 
-[**Community**](community.md) - Join the Discord
+[**Community**](community) - Join the Discord
 
 </div>
+
+---
+
+OSwR wouldn't exist without the games and people that came before it. [Read the acknowledgements](acknowledgements).

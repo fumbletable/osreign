@@ -22,7 +22,7 @@ aux_links:
 aux_links_new_tab: true
 
 # Footer
-footer_content: "Olde Swords Reign is licensed under <a href=\"https://opengamingfoundation.org/ogl.html\">OGL 1.0a</a>. Built with <a href=\"https://just-the-docs.com\">Just the Docs</a>."
+footer_content: "Olde Swords Reign is licensed under <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">CC BY-SA 4.0</a>. Built with <a href=\"https://just-the-docs.com\">Just the Docs</a>."
 
 # Back to top link
 back_to_top: true
