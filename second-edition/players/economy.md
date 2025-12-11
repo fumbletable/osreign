@@ -132,19 +132,18 @@ Non-Clerics may donate to temples, but don't gain XP - they're patrons, not fait
 
 Temples offer healing and other services—for a price. Divine magic isn't free; these costs support the temple and its works.
 
-| Service | Cost | Notes |
-|---------|------|-------|
-| Cure minor wounds | 50 gp | Heal 1d8 HP |
-| Cure serious wounds | 150 gp | Heal 2d8+2 HP |
-| Cure disease | 500 gp | Removes one disease |
-| Cure poison | 500 gp | Neutralises one poison |
-| Remove curse | 1,000 gp | May require quest for powerful curses |
-| Raise dead | 5,000 gp+ | If available at all. Rare. |
-| Divination | 200-1,000 gp | Varies by complexity |
+| Tier | Base Cost | Example Services |
+|------|-----------|------------------|
+| 1 | 100 gp | Cure Light Wounds, Bless, Detect Evil |
+| 2 | 200 gp | Hold Person, Resist Elements, Silence |
+| 3 | 500 gp | Cure Disease, Remove Curse, Dispel Magic |
+| 4 | 1,000 gp | Cure Serious Wounds, Neutralize Poison |
+| 5 | 2,500 gp | Raise Dead, Commune, True Seeing |
+| 6 | 5,000 gp | Heal, Regenerate, Restoration |
 
-**Discounts:** Temples may reduce fees for faithful members, those who have done service, or adventurers pursuing the temple's goals.
+**Prices vary.** These are base costs. Actual prices depend on temple relationships, local demand, the recipient's standing with the faith, and circumstances. Faithful members, those who have done service, or adventurers pursuing the temple's goals may receive discounts. Strangers or those of opposing faiths may pay more—or be refused entirely.
 
-**Unavailable:** Not all temples offer all services. Small village shrines may only provide basic healing. Raising the dead requires a major temple and a high-level priest—if the temple permits it at all.
+**Unavailable:** Not all temples offer all services. Small village shrines may only provide Tier 1-2 spells. Higher-tier magic requires a major temple and a high-level priest—if the temple permits it at all.
 
 ---
 

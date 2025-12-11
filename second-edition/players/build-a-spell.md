@@ -27,6 +27,26 @@ Tiers represent power level and access. Higher tiers unlock at higher caster lev
 
 ---
 
+## Effect Types by Tier
+
+Use this table to determine what tier a spell should be based on what it does.
+
+| Tier | Effect Types |
+|-----:|--------------|
+| 1 | Single-target buffs, minor healing (1d6+PB), detection, light/darkness, basic control (Sleep, Command), cantrip-level utility |
+| 2 | Resistances, invisibility (single), levitation, illusions, hold person (humanoids only), ESP, locks/barriers |
+| 3 | Flight, artillery damage (Level×d6), group invisibility, haste/slow, disease/blindness cure, protection radius effects |
+| 4 | Polymorph, dimension door (short teleport), serious healing (PB×d6+PB), wall spells (2d6 damage), small summons, charm monster |
+| 5 | Raise dead, teleport (long range), permanent walls, elementals (8 HD), mass effects, conditional instant death, contact other planes |
+| 6 | Full heal/restoration, disintegrate, geas, weather control, reincarnation, limb regeneration, reality-altering effects |
+
+**Using this table:** If you're converting or creating a spell, find the effect type that best matches. That's your starting tier. Then adjust based on:
+- **Limitations** (touch only, concentration, rare components) → might lower tier
+- **Power creep** (better than existing spells at that tier) → raise tier
+- **Niche utility** (very situational) → might lower tier
+
+---
+
 ## Scaling Patterns
 
 OSwR spells use three distinct scaling patterns depending on spell type. This creates variety while keeping the system coherent.
@@ -37,7 +57,7 @@ OSwR spells use three distinct scaling patterns depending on spell type. This cr
 
 **Formula: Caster Level × d6, save for half**
 
-The big damage spells scale with character level, following OSR tradition. The constraint isn't damage - it's slot availability. A level 5 caster has ONE Tier 3 slot. Fireball is their big gun, and it should feel like it.
+The big damage spells scale with caster level (not total character level), following OSR tradition. A Fighter 5/Magic-User 5 casts Fireball as a 5th-level caster, not 10th. The constraint isn't damage - it's slot availability. A level 5 caster has ONE Tier 3 slot. Fireball is their big gun, and it should feel like it.
 
 | Level | Damage | Average |
 |------:|-------:|--------:|
@@ -318,29 +338,81 @@ When creating or converting a spell:
 
 ### Completed
 
-**Healing spells (DONE):**
-- ✓ Cure Light Wounds - 1d6 + PB (tier-1-spells.md)
-- ✓ Cure Serious Wounds - PB×d6 + PB (tier-4-spells.md)
-- ✓ Cure Critical Wounds - REMOVED
-- ✓ Mass Cure Wounds - NEW T5 spell: 1d6 + PB to up to PB targets (tier-5-spells.md)
+**Scaling patterns (DONE):**
+- ✓ Artillery spells now use caster level × d6 (Fireball, Lightning Bolt, Ice Storm)
+- ✓ Magic Missile now fires PB darts × (1d4+1)
+- ✓ Healing: Cure Light Wounds 1d6+PB, Cure Serious Wounds PB×d6+PB
 
-### Next Session: Update Remaining Spells
+**New spells added:**
+- ✓ Resist Elements (T2 Cleric/Druid) - choose fire or cold when preparing
+- ✓ Spiritual Hammer (T2 Cleric) - 1d6+PB force damage
+- ✓ Regenerate (T6 Cleric) - regrows limbs, heals 3d6
+- ✓ Restoration (T6 Cleric) - removes negative levels or restores drained ability scores
+- ✓ Remove Fear (T1 Cleric) - calms frightened creatures, new save with EDGE vs magical fear
 
-**Artillery spells (update to Level × d6):**
-- [ ] Fireball (tier-3-spells.md) - currently 5d6 fixed
-- [ ] Lightning Bolt (tier-3-spells.md) - currently 5d6 fixed
-- [ ] Call Lightning (tier-3-spells.md) - review scaling
-- [ ] Ice Storm (tier-4-spells.md) - currently 5d6 fixed
+**Tier 1 editorial pass (DONE):**
+- ✓ All saves changed to "spell save" (not fixed DC 12)
+- ✓ Ritual format standardized to "1 Action or Ritual"
+- ✓ Detect Evil/Detect Magic/Protection from Evil → PB Turns duration
+- ✓ Floating Disc/Light → 1 hour duration
+- ✓ Sleep: added "5+ HD immune", duration "1 Turn or until harmed/shaken"
+- ✓ Command: duration "PB rounds"
 
-**Missile spells (update to PB missiles):**
-- [ ] Magic Missile (tier-1-spells.md) - currently 1 dart (1d4+1), change to PB missiles × (1d4+1)
+**Tier 2 editorial pass (DONE):**
+- ✓ All saves changed to "spell save" (not fixed DC 12)
+- ✓ Ritual format standardized to "1 Action or Ritual"
+- ✓ Find Traps, Speak with Animals, Speak with Plants → PB Turns duration
+- ✓ Detect Invisibility, Locate Object → PB Turns duration
+- ✓ Continual Light → Ritual tag added
+- ✓ Know Alignment → removed (no alignments in OSwR)
+- ✓ Hold Person → repeat save each round
+- ✓ Web → 15-ft cube, repeat save allows 5 ft movement
+- ✓ Phantasmal Force → full illusion rules (AC 11, psychosomatic damage)
+- ✓ Heat Metal → 2d6 initial, 1d6/round ongoing, STR DC 12 to tear off armour (destroys it)
+- ✓ Warp Wood → no save (spell just works)
+- ✓ Levitate → 15 ft per round (movement consistency)
+- ✓ Knock boost → range extends to Far (was +1 lock)
 
-### Other Issues to Review
+### Next Session: Tier 3-6 Editorial Pass
 
+**HOW TO CONTINUE THIS WORK:**
+
+⚠️ **CRITICAL: This is a collaborative 2-way review, NOT a bulk edit task.**
+
+DO NOT read the file and start making changes. Instead:
+1. Present each spell with your observations and suggestions
+2. WAIT for Damien to respond with approval, modifications, or rejection
+3. Only then make the agreed edits
+4. Damien may disagree, offer alternative approaches, or ask questions - that's the point
+
+This process caught important design issues in Tier 2 (Heat Metal armour rules, Warp Wood save logic) that would have been missed in a bulk pass.
+
+**Process for each tier:**
+1. Read the tier file (tier-3-spells.md, etc.)
+2. Read BFRPG reference at `D:\Downloads\bfrpg spells.txt` for comparison
+3. Go through each spell, presenting suggestions for Damien to approve/modify/reject
+4. Make edits only after agreement
+5. Update this status section when complete
+
+**Patterns established (apply consistently):**
+- **Saves:** Use "WIS/DEX/CON spell save" (not fixed DC 12). Exception: physical checks like Heat Metal's STR check use "DC 12"
+- **Rituals:** Format as "1 Action or Ritual" in Casting Time. Detection, communication, and divination spells get ritual tag
+- **Duration scaling:** Detection/protection/communication spells → "PB Turns". Pure utility (Light) → "1 hour". Combat spells → "1 Turn"
+- **Movement:** Use 15 ft increments to match movement ranges
+- **Area sizes:** Use 15-ft cube/sphere to match movement (not 20-ft)
+- **Boosts:** Follow standard patterns (+1 die, +1 target, +1 Turn duration, range extends)
+- **Repeat saves:** Control spells (Hold Person, Web) should allow repeat saves each round
+- **Narrative first:** When saves feel wrong mechanically, ask "what's actually happening?" (e.g., Warp Wood targets object not person → no save; Heat Metal burns you regardless of willpower → STR to tear off, not CON to resist)
+
+**Remaining tiers:**
+- [ ] Tier 3 spells - review wording, saves, durations
+- [ ] Tier 4 spells - review wording, saves, durations
+- [ ] Tier 5 spells - review wording, saves, durations
+- [ ] Tier 6 spells - review wording, saves, durations
+
+**Other issues to review:**
 - [ ] Continual Light (T2 Magic-User, T3 Cleric) - should these match?
-- [ ] Review all detection and communication spells for {Ritual} tags
-- [ ] Ensure all boosts follow standard patterns (+1 die or +1 target)
-- [ ] Review all spell tiers against Build-a-Spell guidelines
+- [ ] Ensure all boosts follow standard patterns
 
 ---
 

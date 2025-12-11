@@ -13,13 +13,13 @@ nav_order: 3
 - **Range:** Near (30 ft)
 - **Duration:** 1 Turn (10 minutes)
 - **Effect:** Allies in area gain +1 to attack rolls and saves vs fear.
-- **Boost:** Affect an additional group within Near.
+- **Boost:** Bonuses increase to +2.
 
 ## Command
 - **Casting Time:** 1 Action
 - **Range:** Near (30 ft)
-- **Duration:** 1 round
-- **Effect:** Speak one word; target obeys if WIS save (12) fails. Examples: *Halt, Flee, Drop, Approach*.
+- **Duration:** PB rounds
+- **Effect:** Speak one word; target obeys if it fails a WIS spell save. Examples: *Halt, Flee, Drop, Approach*.
 - **Boost:** Target suffers SETBACK on save.
 
 ## Cure Light Wounds
@@ -30,38 +30,45 @@ nav_order: 3
 - **Boost:** +1d6 HP.
 
 ## Detect Evil
-- **Casting Time:** 1 Action
-- **Range:** Self (cone, Near)
-- **Duration:** 1 Turn (10 minutes)
-- **Effect:** Sense hostile intent, unholy creatures, or cursed items within area. {Ritual}
+- **Casting Time:** 1 Action or Ritual
+- **Range:** Self (Near radius)
+- **Duration:** PB Turns
+- **Effect:** Sense hostile intent, unholy creatures, or cursed items within area.
 - **Boost:** Duration +1 Turn.
 
 ## Detect Magic
-- **Casting Time:** 1 Action
-- **Range:** Self (cone, Near)
-- **Duration:** 1 Turn (10 minutes)
-- **Effect:** Magical items, spells, or glyphs glow faintly. {Ritual}
+- **Casting Time:** 1 Action or Ritual
+- **Range:** Self (Near radius)
+- **Duration:** PB Turns
+- **Effect:** Magical items, spells, or glyphs glow faintly.
 - **Boost:** Duration +1 Turn.
 
 ## Light
-- **Casting Time:** 1 Action
+- **Casting Time:** 1 Action or Ritual
 - **Range:** Near (30 ft)
-- **Duration:** 1 Turn (10 minutes)
-- **Effect:** Cast on object: glows like a torch. Cast on creature's eyes: blinds if save fails. {Ritual}
-- **Boost:** Duration +1 Turn.
+- **Duration:** 1 hour
+- **Effect:** Cast on object: glows like a torch. Cast on creature's eyes: blinds if it fails a CON spell save.
+- **Boost:** Duration +1 hour.
 
 ## Protection from Evil
 - **Casting Time:** 1 Action
 - **Range:** Touch
-- **Duration:** 1 Turn (10 minutes)
+- **Duration:** PB Turns
 - **Effect:** Target gains +1 AC and saves vs evil creatures; cannot be magically charmed/controlled.
 - **Boost:** Affect 1 additional ally.
 
-## Purify Food & Drink
+## Remove Fear
 - **Casting Time:** 1 Action
 - **Range:** Touch
 - **Duration:** Instant
-- **Effect:** Cleanse food/drink for up to 1 day's Supply per tier. Spoiled or poisoned items become safe. {Ritual}
+- **Effect:** Calms one frightened creature. If target is under magical fear, they get a new save with EDGE.
+- **Boost:** Affect +1 creature.
+
+## Purify Food & Drink
+- **Casting Time:** 1 Action or Ritual
+- **Range:** Touch
+- **Duration:** Instant
+- **Effect:** Cleanse food/drink for up to PB creatures for one day. Spoiled or poisoned items become safe.
 - **Boost:** Double the amount affected.
 
 ---
@@ -72,7 +79,7 @@ nav_order: 3
 - **Casting Time:** 1 Action
 - **Range:** Near (30 ft)
 - **Duration:** Special (see below)
-- **Effect:** One humanoid WIS save (12) or is charmed: regards caster as trusted ally. Hostile acts end effect. Target repeats save: daily (INT 13+), weekly (INT 9-12), or monthly (INT 8-).
+- **Effect:** One humanoid that fails a WIS spell save regards caster as trusted ally. Hostile acts end effect. Target repeats save: daily (INT 13+), weekly (INT 9-12), or monthly (INT 8-).
 - **Boost:** Target has SETBACK on initial save.
 
 ## Detect Magic
@@ -81,9 +88,9 @@ nav_order: 3
 ## Floating Disc
 - **Casting Time:** 1 Action
 - **Range:** Self
-- **Duration:** 1 Turn (10 minutes)
+- **Duration:** 1 hour
 - **Effect:** A 3-ft disc follows caster, carrying up to 500 lb. Moves at walking pace.
-- **Boost:** Duration +1 Turn.
+- **Boost:** Duration +1 hour.
 
 ## Hold Portal
 - **Casting Time:** 1 Action
@@ -99,24 +106,24 @@ nav_order: 3
 - **Casting Time:** 1 Action
 - **Range:** Far (120 ft)
 - **Duration:** Instant
-- **Effect:** Fire 1 dart of force dealing 1d4+1 damage (auto-hit).
+- **Effect:** Fire PB darts of force, each dealing 1d4+1 damage (auto-hit). Darts can target one creature or several.
 - **Boost:** +1 dart.
 
 ## Protection from Evil
 - Same as Cleric version.
 
 ## Read Languages
-- **Casting Time:** 1 Action
+- **Casting Time:** 1 Action or Ritual
 - **Range:** Self
 - **Duration:** 1 Turn (10 minutes)
-- **Effect:** Understand simple written languages (not magical script). {Ritual}
+- **Effect:** Understand written languages (not magical script).
 - **Boost:** Duration +1 Turn.
 
 ## Read Magic
-- **Casting Time:** 1 Action
+- **Casting Time:** 1 Action or Ritual
 - **Range:** Self
 - **Duration:** 1 Turn (10 minutes)
-- **Effect:** Read scrolls, glyphs, or spellbooks. Required to learn spells. {Ritual}
+- **Effect:** Read scrolls, glyphs, or spellbooks. Required to learn spells.
 - **Boost:** Duration +1 Turn.
 
 ## Shield
@@ -129,8 +136,8 @@ nav_order: 3
 ## Sleep
 - **Casting Time:** 1 Action
 - **Range:** Near (30 ft)
-- **Duration:** 1 min or until harmed/shaken
-- **Effect:** Puts creatures with total HD = 2d8 to sleep (lowest HD first). No save.
+- **Duration:** 1 Turn or until harmed/shaken
+- **Effect:** Puts creatures with total HD = 2d8 to sleep (lowest HD first). Creatures with 5+ HD are immune. No save.
 - **Boost:** +1d4 HD affected.
 
 ## Ventriloquism
@@ -148,7 +155,7 @@ nav_order: 3
 - **Casting Time:** 1 Action
 - **Range:** Near (30 ft)
 - **Duration:** Until broken
-- **Effect:** One natural animal WIS save (12) or becomes friendly, obeying simple requests. Bond lasts until caster mistreats the animal.
+- **Effect:** One natural animal that fails a WIS spell save becomes friendly, obeying simple requests. Bond lasts until caster mistreats the animal.
 - **Boost:** Affect 1 additional animal.
 
 ## Cure Light Wounds
@@ -160,8 +167,8 @@ nav_order: 3
 ## Entangle
 - **Casting Time:** 1 Action
 - **Range:** Near (30 ft)
-- **Duration:** 1 minute (Concentration)
-- **Effect:** Plants restrain creatures in a 20-ft area. DEX save (12) or Speed = 0.
+- **Duration:** Concentration, 1 Turn
+- **Effect:** Plants restrain creatures in a 20-ft area. DEX spell save or Speed = 0.
 - **Boost:** Expand to 30 ft or add SETBACK to escape.
 
 ## Faerie Fire
@@ -172,8 +179,8 @@ nav_order: 3
 - **Boost:** Duration +1 Turn.
 
 ## Speak with Animals
-- **Casting Time:** 1 Action
+- **Casting Time:** 1 Action or Ritual
 - **Range:** Self (Near)
 - **Duration:** 1 Turn (10 minutes)
-- **Effect:** Communicate simple ideas with beasts. {Ritual}
+- **Effect:** Communicate simple ideas with beasts.
 - **Boost:** Duration +1 Turn.

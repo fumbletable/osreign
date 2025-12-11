@@ -43,6 +43,20 @@ nav_order: 8
 - **Effect:** Opens a 30-ft path through water, holding it back.
 - **Boost:** Path expands to 50 ft.
 
+## Regenerate
+- **Casting Time:** 1 Action
+- **Range:** Touch
+- **Duration:** Instant
+- **Effect:** Regrows severed limbs, mends broken bones, and restores ruined organs. Also heals 3d6 HP. Does not affect undead or constructs.
+- **Boost:** Heal +2d6 HP.
+
+## Restoration
+- **Casting Time:** 1 Action
+- **Range:** Touch
+- **Duration:** Instant
+- **Effect:** Removes one negative level caused by energy drain, or restores 1d4 points to a single ability score drained by magic or monsters.
+- **Boost:** Remove an additional negative level or restore +1d4 ability points.
+
 ## Stone Tell
 - **Casting Time:** 1 Action
 - **Range:** Touch

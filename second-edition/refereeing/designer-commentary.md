@@ -568,11 +568,15 @@ Divine magic isn't free. Temple healing costs exist for several reasons:
 
 1. **HP attrition stays meaningful.** If healing is cheap, damage doesn't matter—you just pay a few coins and you're fresh. Expensive healing means getting hurt has lasting consequences.
 
-2. **Clerics in the party are valuable.** When temple healing costs 50-150 gp, a Cleric who can heal for free is a major asset. This creates party composition incentives.
+2. **Clerics in the party are valuable.** When temple healing costs 100+ gp, a Cleric who can heal for free is a major asset. This creates party composition incentives.
 
-3. **Gold sink that scales.** Early characters might scrape together 50 gp for minor healing. High-level characters dropping 5,000 gp to raise the dead is still significant.
+3. **Gold sink that scales.** Early characters might scrape together 100 gp for minor healing. High-level characters dropping 5,000 gp to raise the dead is still significant.
 
 4. **Prevents the heal-and-return loop.** If adventurers could cheaply heal up and head straight back to the dungeon, the Safe Haven rest system loses its teeth. Expensive healing encourages proper recovery time.
+
+**The pricing curve:** Base costs roughly follow Tier² × 100 gp (T1 = 100, T2 = 400, T3 = 900...), but we rounded to memorable numbers: 100, 200, 500, 1,000, 2,500, 5,000. The curve accelerates at higher tiers because world-altering magic *should* be expensive. Raising the dead at 2,500 gp is still a fortune for most parties; full restoration at 5,000 gp represents a major investment.
+
+**Referees adjusting prices:** If you want stricter economics, the Tier² × 100 formula gives you a baseline. Double it for rare services or hostile temples. Halve it for faithful members or temples in the party's debt.
 
 ---
 

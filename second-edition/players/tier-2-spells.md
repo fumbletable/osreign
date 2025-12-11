@@ -9,39 +9,39 @@ nav_order: 4
 # Cleric Spells — Tier 2
 
 ## Bless Water
-- **Casting Time:** 1 Turn (10 minutes)
+- **Casting Time:** 1 Turn (10 minutes) or Ritual
 - **Range:** Touch
 - **Duration:** Permanent
 - **Effect:** Convert 1 flask of water into holy water.
-- **Boost:** Create +1 extra flask.
+- **Boost:** +1 flask.
 
 ## Find Traps
-- **Casting Time:** 1 Action
+- **Casting Time:** 1 Action or Ritual
 - **Range:** Self (cone, Near)
-- **Duration:** 1 Turn (10 minutes)
-- **Effect:** Detects traps (mechanical or magical) in area. Exact nature not revealed. {Ritual}
-- **Boost:** Duration +1 Turn.
+- **Duration:** PB Turns
+- **Effect:** Detects traps (mechanical or magical) in area. Exact nature not revealed.
+- **Boost:** +1 Turn duration.
 
 ## Hold Person
 - **Casting Time:** 1 Action
 - **Range:** Near (30 ft)
 - **Duration:** 1 Turn (10 minutes)
-- **Effect:** Up to 3 humanoids must WIS save (12) or be paralyzed.
-- **Boost:** Affect +1 target.
+- **Effect:** Up to 3 humanoids must make a WIS spell save or be paralysed. Target may repeat save at end of each round.
+- **Boost:** +1 target.
 
-## Know Alignment
-- **Casting Time:** 1 Action
-- **Range:** Near (30 ft)
-- **Duration:** Instant
-- **Effect:** Reveals the alignment of one creature or object.
-- **Boost:** Affect +1 target.
-
-## Resist Fire
+## Resist Elements
 - **Casting Time:** 1 Action
 - **Range:** Touch
 - **Duration:** 1 Turn (10 minutes)
-- **Effect:** Target gains EDGE on saves vs fire and takes half fire damage.
+- **Effect:** Choose fire or cold when preparing this spell. Target gains EDGE on saves against that element and takes half damage from it.
 - **Boost:** Affect +1 additional creature.
+
+## Spiritual Hammer
+- **Casting Time:** 1 Action
+- **Range:** Near (30 ft)
+- **Duration:** Concentration, 1 Turn (10 minutes)
+- **Effect:** A spectral weapon of divine force appears and attacks one target per round. Uses caster's attack bonus, deals 1d6+PB force damage. Counts as magical.
+- **Boost:** +1d6 damage on one hit.
 
 ## Silence, 15 ft Radius
 - **Casting Time:** 1 Action
@@ -51,21 +51,21 @@ nav_order: 4
 - **Boost:** Radius increases to 20 ft.
 
 ## Speak with Animals
-- **Casting Time:** 1 Action
+- **Casting Time:** 1 Action or Ritual
 - **Range:** Self (Near)
-- **Duration:** 1 Turn (10 minutes)
-- **Effect:** Communicate simple ideas with animals. {Ritual}
-- **Boost:** Duration +1 Turn.
+- **Duration:** PB Turns
+- **Effect:** Communicate simple ideas with animals.
+- **Boost:** +1 Turn duration.
 
 ---
 
 # Magic-User Spells — Tier 2
 
 ## Continual Light
-- **Casting Time:** 1 Action
+- **Casting Time:** 1 Action or Ritual
 - **Range:** Near (30 ft)
 - **Duration:** Permanent until dispelled
-- **Effect:** Object shines like daylight (Far radius). Can blind a creature if CON save (12) fails.
+- **Effect:** Object shines like daylight (Far radius). Can blind a creature if CON spell save fails.
 - **Boost:** Affects 2 objects.
 
 ## Darkness, 15 ft Radius
@@ -81,16 +81,16 @@ nav_order: 4
 ## Detect Invisibility
 - **Casting Time:** 1 Action
 - **Range:** Self
-- **Duration:** 1 Turn (10 minutes)
+- **Duration:** PB Turns
 - **Effect:** Invisible creatures/objects within Near glow faintly.
-- **Boost:** Duration +1 Turn.
+- **Boost:** +1 Turn duration.
 
 ## ESP
 - **Casting Time:** 1 Action
 - **Range:** Near (30 ft)
 - **Duration:** Concentration, up to 1 Turn
-- **Effect:** Read surface thoughts of 1 creature. WIS save (12) resists.
-- **Boost:** Affect +1 creature.
+- **Effect:** Read surface thoughts of 1 creature. WIS spell save resists.
+- **Boost:** +1 creature.
 
 ## Invisibility
 - **Casting Time:** 1 Action
@@ -104,20 +104,20 @@ nav_order: 4
 - **Range:** Near (30 ft)
 - **Duration:** Instant
 - **Effect:** Opens 1 locked/stuck door, chest, or portal.
-- **Boost:** Affect +1 additional lock.
+- **Boost:** Range extends to Far.
 
 ## Levitate
 - **Casting Time:** 1 Action
 - **Range:** Near (30 ft)
 - **Duration:** 1 Turn (10 minutes)
-- **Effect:** Caster or 1 creature rises/descends 20 ft per round. Cannot move horizontally.
-- **Boost:** Duration +1 Turn.
+- **Effect:** Caster or 1 creature rises/descends 15 ft per round. Cannot move horizontally.
+- **Boost:** +1 Turn duration.
 
 ## Locate Object
-- **Casting Time:** 1 Action
+- **Casting Time:** 1 Action or Ritual
 - **Range:** Self
-- **Duration:** Concentration, 1 Turn (10 minutes)
-- **Effect:** Sense direction of a familiar object within 60 ft. {Ritual}
+- **Duration:** Concentration, PB Turns
+- **Effect:** Sense direction of a familiar object within 60 ft.
 - **Boost:** Range doubles.
 
 ## Mirror Image
@@ -131,14 +131,14 @@ nav_order: 4
 - **Casting Time:** 1 Action
 - **Range:** Near (30 ft)
 - **Duration:** Concentration, up to 1 Turn
-- **Effect:** Creates convincing illusion. Interaction/WIS save (12) disbelieves.
-- **Boost:** Affect a larger area (20 ft radius).
+- **Effect:** Creates visual illusion up to 15-ft cube. No sound, smell, or texture. Illusory creatures have AC 11 and vanish if hit. "Damage" is psychosomatic: victims collapse unconscious but wake unharmed after 1d4 Turns. WIS spell save to disbelieve on interaction.
+- **Boost:** Expand to 30-ft cube.
 
 ## Web
 - **Casting Time:** 1 Action
 - **Range:** Near (30 ft)
 - **Duration:** 1 Turn (10 minutes)
-- **Effect:** Fill 20-ft cube with sticky webs. DEX save (12) or Speed = 0. Fire destroys webs instantly.
+- **Effect:** Fill 15-ft cube with sticky webs. DEX spell save or Speed = 0. Restrained creatures may repeat save at start of turn; success allows 5 ft movement. Fire destroys webs instantly.
 - **Boost:** Expand to 30-ft cube.
 
 ---
@@ -163,8 +163,8 @@ nav_order: 4
 - **Casting Time:** 1 Action
 - **Range:** Near (30 ft)
 - **Duration:** Concentration, 1 Turn
-- **Effect:** 1 metal object glows red-hot. CON save (12) or take 2d6 damage; drop item if possible.
-- **Boost:** Affect +1 item.
+- **Effect:** 1 metal object glows red-hot. Creature holding/wearing it takes 2d6 fire damage initially, then 1d6 each round. Held items can be dropped freely. Worn armour: STR check (DC 12) to tear it off (armour destroyed).
+- **Boost:** +1 item.
 
 ## Obscuring Mist
 - **Casting Time:** 1 Action
@@ -174,15 +174,18 @@ nav_order: 4
 - **Boost:** Duration +1 Turn.
 
 ## Speak with Plants
-- **Casting Time:** 1 Action
+- **Casting Time:** 1 Action or Ritual
 - **Range:** Self (Near)
-- **Duration:** 1 Turn (10 minutes)
-- **Effect:** Communicate simple ideas with plants. Learn about terrain, water, or dangers. {Ritual}
-- **Boost:** Duration +1 Turn.
+- **Duration:** PB Turns
+- **Effect:** Communicate simple ideas with plants. Learn about terrain, water, or dangers.
+- **Boost:** +1 Turn duration.
+
+## Resist Elements
+- Same as Cleric version.
 
 ## Warp Wood
 - **Casting Time:** 1 Action
 - **Range:** Near (30 ft)
 - **Duration:** Instant
-- **Effect:** Warps wooden object (door, spear, bow) into useless shape. STR save (12) negates for carried items.
-- **Boost:** Affect +1 object.
+- **Effect:** Warps wooden object (door, spear, bow) into useless shape.
+- **Boost:** +1 object.

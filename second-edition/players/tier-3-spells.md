@@ -79,7 +79,7 @@ nav_order: 5
 - **Casting Time:** 1 Action
 - **Range:** Far (120 ft)
 - **Duration:** Instant
-- **Effect:** 20-ft radius blast, 5d6 fire damage (DEX save 12 for half).
+- **Effect:** 20-ft radius blast deals caster level × d6 fire damage (DEX save 12 for half).
 - **Boost:** +1d6 damage.
 
 ## Fly
@@ -117,7 +117,7 @@ nav_order: 5
 - **Casting Time:** 1 Action
 - **Range:** Far (120 ft line, 60 ft long, 5 ft wide)
 - **Duration:** Instant
-- **Effect:** Deals 5d6 lightning damage (DEX save 12 half).
+- **Effect:** Deals caster level × d6 lightning damage (DEX save 12 for half).
 - **Boost:** +1d6 damage.
 
 ## Protection from Evil, 10 ft Radius

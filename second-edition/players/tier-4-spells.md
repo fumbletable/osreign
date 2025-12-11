@@ -165,7 +165,7 @@ nav_order: 6
 - **Casting Time:** 1 Action
 - **Range:** Far (120 ft)
 - **Duration:** Instant
-- **Effect:** 20-ft radius hailstorm deals 5d6 damage (half bludgeoning, half cold). DEX save (12) half.
+- **Effect:** 20-ft radius hailstorm deals caster level × d6 damage (half bludgeoning, half cold). DEX save (12) for half.
 - **Boost:** +1d6 damage.
 
 ## Wall of Thorns
