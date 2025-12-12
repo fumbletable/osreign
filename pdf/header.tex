@@ -1,9 +1,4 @@
 % Custom heading fonts for Olde Swords Reign PDF
-% Use IM Fell English SC for section headings
-
-\usepackage{titlesec}
-\newfontfamily\headingfont{IM Fell English SC}
-
-\titleformat{\section}{\headingfont\Large\bfseries}{\thesection}{1em}{}
-\titleformat{\subsection}{\headingfont\large\bfseries}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}{\headingfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+% Use sectsty to apply IM Fell English SC to all section headings
+\usepackage{sectsty}
+\allsectionsfont{\fontspec{IM Fell English SC}}
