@@ -1,0 +1,169 @@
+// OSwR Custom Typography
+// Based on Scott's style guide - see /style-guide.md
+//
+// Fonts:
+// - Rubik Distressed: Chapter/page titles
+// - IM Fell English SC: Headings (small caps)
+// - Crimson Text: Body text
+
+// =============================================================================
+// TYPOGRAPHY
+// =============================================================================
+
+// Body text - Crimson Text
+.main-content,
+.main-content p,
+.main-content li,
+.main-content td {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 1.125rem; // ~18px for screen readability (larger than 12pt print)
+  line-height: 1.6;
+}
+
+// H1 - Chapter/Page titles - Rubik Distressed
+.main-content h1,
+h1.page-title {
+  font-family: 'Rubik Distressed', cursive;
+  font-weight: 400;
+  font-size: 2.5rem;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+// H2 - Section headings - IM Fell English SC, ALL CAPS
+.main-content h2 {
+  font-family: 'IM Fell English SC', serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+// H3 - Subsection headings - IM Fell English SC, Title Case
+.main-content h3 {
+  font-family: 'IM Fell English SC', serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  text-transform: none;
+  letter-spacing: 0.03em;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+// H4 and below - IM Fell English SC, smaller
+.main-content h4,
+.main-content h5,
+.main-content h6 {
+  font-family: 'IM Fell English SC', serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+// =============================================================================
+// NAVIGATION & SITE CHROME
+// =============================================================================
+
+// Site title in sidebar
+.site-title {
+  font-family: 'Rubik Distressed', cursive;
+  font-weight: 400;
+  font-size: 1.5rem !important;
+}
+
+// Navigation links - IM Fell English SC
+.nav-list-link,
+.nav-list .nav-list-item {
+  font-family: 'IM Fell English SC', serif;
+}
+
+// Breadcrumbs
+.breadcrumb-nav-list-item {
+  font-family: 'IM Fell English SC', serif;
+}
+
+// =============================================================================
+// SIDEBARS / CALLOUTS (Blockquotes)
+// =============================================================================
+
+// Use blockquotes as styled sidebars
+.main-content blockquote {
+  font-family: 'IM Fell English SC', serif;
+  font-size: 1rem;
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+  border-left: none;
+  border-radius: 4px;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.main-content blockquote p {
+  font-family: 'IM Fell English SC', serif;
+  color: #f0f0f0;
+}
+
+// Bold text in blockquotes = sidebar headers
+.main-content blockquote strong {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+// =============================================================================
+// TABLES
+// =============================================================================
+
+.main-content table {
+  font-family: 'Crimson Text', Georgia, serif;
+}
+
+.main-content th {
+  font-family: 'IM Fell English SC', serif;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+// =============================================================================
+// CODE & DICE NOTATION
+// =============================================================================
+
+// Inline code for dice notation, stats, etc.
+.main-content code {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
+
+// Code blocks (for actual code/tables)
+.main-content pre code {
+  font-family: monospace;
+  font-weight: 400;
+}
+
+// =============================================================================
+// DARK THEME ADJUSTMENTS
+// =============================================================================
+
+// Ensure good contrast in dark mode
+@media (prefers-color-scheme: dark) {
+  .main-content blockquote {
+    background-color: #2a2a2a;
+  }
+}
+
+// Just-the-docs dark scheme overrides
+.site-nav,
+.main,
+.side-bar {
+  // Inherits from theme - no changes needed
+}
