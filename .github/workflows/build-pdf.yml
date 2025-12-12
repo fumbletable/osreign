@@ -122,10 +122,19 @@ jobs:
           path: Olde-Swords-Reign-Alpha.pdf
           retention-days: 30
 
-      - name: Create Release (on tag)
-        if: startsWith(github.ref, 'refs/tags/')
+      - name: Update Alpha Release
         uses: softprops/action-gh-release@v1
         with:
+          tag_name: alpha-latest
+          name: Alpha (Latest Build)
+          body: |
+            **Automatically updated on every push to main.**
+
+            This is the latest alpha build of Olde Swords Reign Second Edition.
+
+            Built: ${{ github.event.head_commit.timestamp }}
+            Commit: ${{ github.sha }}
           files: Olde-Swords-Reign-Alpha.pdf
+          prerelease: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

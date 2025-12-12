@@ -12,7 +12,7 @@ Downloads and reference materials for Olde Swords Reign.
 
 ## Alpha PDF Download
 
-**[Download the Alpha PDF](https://github.com/fumbletable/osreign/releases/latest/download/Olde-Swords-Reign-Alpha.pdf)**
+**[Download the Alpha PDF](https://github.com/fumbletable/osreign/releases/download/alpha-latest/Olde-Swords-Reign-Alpha.pdf)**
 
 The Second Edition rules compiled into a single PDF for offline reading and printing.
 
