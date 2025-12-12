@@ -45,14 +45,12 @@ jobs:
       - name: Create LaTeX header for custom heading fonts
         run: |
           mkdir -p build
-          cat > build/header.tex << 'EOF'
-% Use IM Fell English SC for section headings
-\usepackage{titlesec}
-\newfontfamily\headingfont{IM Fell English SC}
-\titleformat{\section}{\headingfont\Large\bfseries}{\thesection}{1em}{}
-\titleformat{\subsection}{\headingfont\large\bfseries}{\thesubsection}{1em}{}
-\titleformat{\subsubsection}{\headingfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
-EOF
+          echo '% Use IM Fell English SC for section headings' > build/header.tex
+          echo '\usepackage{titlesec}' >> build/header.tex
+          echo '\newfontfamily\headingfont{IM Fell English SC}' >> build/header.tex
+          echo '\titleformat{\section}{\headingfont\Large\bfseries}{\thesection}{1em}{}' >> build/header.tex
+          echo '\titleformat{\subsection}{\headingfont\large\bfseries}{\thesubsection}{1em}{}' >> build/header.tex
+          echo '\titleformat{\subsubsection}{\headingfont\normalsize\bfseries}{\thesubsubsection}{1em}{}' >> build/header.tex
 
       - name: Strip Jekyll frontmatter and build file list
         run: |
