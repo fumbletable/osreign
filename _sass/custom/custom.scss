@@ -68,11 +68,11 @@ a {
 h1.page-title {
   font-family: 'Rubik Distressed', cursive;
   font-weight: 400;
-  font-size: 2.5rem;
+  font-size: 3rem;  // Larger for more impact
   text-transform: none;
   letter-spacing: 0.02em;
   margin-top: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
 }
 
 // H2 - Section headings - IM Fell English SC, ALL CAPS
@@ -131,6 +131,7 @@ h1.page-title {
   font-family: 'Crimson Text', Georgia, serif !important;
   color: var(--oswr-text);
   font-size: 0.95rem;
+  font-weight: 500;  // Slightly bolder for better readability
 }
 
 // Active nav item
@@ -152,6 +153,33 @@ h1.page-title {
   font-family: 'Crimson Text', Georgia, serif;
   background-color: var(--oswr-bg) !important;
   border-color: var(--oswr-border) !important;
+}
+
+// Top header bar (Discord, GitHub links)
+.main-header,
+.aux-nav {
+  background-color: var(--oswr-bg) !important;
+}
+
+.aux-nav .aux-nav-list-item a {
+  font-family: 'Crimson Text', Georgia, serif;
+  color: var(--oswr-text-muted) !important;
+
+  &:hover {
+    color: var(--oswr-link) !important;
+  }
+}
+
+// Breadcrumb area background
+.breadcrumb-nav {
+  background-color: var(--oswr-bg) !important;
+}
+
+// Horizontal rules - softer, warmer colour
+.main-content hr {
+  border: none;
+  border-top: 1px solid var(--oswr-border);
+  margin: 2rem 0;
 }
 
 // =============================================================================
