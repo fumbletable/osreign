@@ -7,6 +7,49 @@
 // - Crimson Text: Body text
 
 // =============================================================================
+// COLOUR PALETTE - Parchment/Old Book Feel
+// =============================================================================
+
+// Light theme overrides - softer than pure white
+:root {
+  --oswr-bg: #f8f5f0;           // Warm cream background
+  --oswr-bg-sidebar: #f0ebe4;   // Slightly darker for sidebar
+  --oswr-text: #2c2416;         // Dark brown-black for text
+  --oswr-text-muted: #5c5347;   // Muted brown for secondary text
+  --oswr-border: #d4cdc2;       // Subtle warm border
+  --oswr-link: #6b4423;         // Brown links
+  --oswr-link-hover: #8b5a2b;   // Lighter brown on hover
+}
+
+// Apply parchment background
+body,
+.main,
+.main-content-wrap {
+  background-color: var(--oswr-bg) !important;
+}
+
+// Sidebar slightly darker
+.side-bar {
+  background-color: var(--oswr-bg-sidebar) !important;
+  border-right: 1px solid var(--oswr-border);
+}
+
+// Text colours
+.main-content {
+  color: var(--oswr-text);
+}
+
+// Links
+.main-content a,
+a {
+  color: var(--oswr-link);
+
+  &:hover {
+    color: var(--oswr-link-hover);
+  }
+}
+
+// =============================================================================
 // TYPOGRAPHY
 // =============================================================================
 
@@ -71,20 +114,44 @@ h1.page-title {
 
 // Site title in sidebar
 .site-title {
-  font-family: 'Rubik Distressed', cursive;
-  font-weight: 400;
+  font-family: 'Rubik Distressed', cursive !important;
+  font-weight: 400 !important;
   font-size: 1.5rem !important;
+  color: var(--oswr-text) !important;
 }
 
-// Navigation links - IM Fell English SC
+// Navigation links - Crimson Text (readable at small sizes)
+// IM Fell English SC is too decorative for nav - save it for headings
+.site-nav,
+.nav-list,
+.nav-list-item,
 .nav-list-link,
-.nav-list .nav-list-item {
-  font-family: 'IM Fell English SC', serif;
+.nav-list .nav-list-item a,
+.nav-list .nav-list-item .nav-list-link {
+  font-family: 'Crimson Text', Georgia, serif !important;
+  color: var(--oswr-text);
+  font-size: 0.95rem;
+}
+
+// Active nav item
+.nav-list-item.active > .nav-list-link {
+  color: var(--oswr-link) !important;
+  font-weight: 600;
 }
 
 // Breadcrumbs
-.breadcrumb-nav-list-item {
-  font-family: 'IM Fell English SC', serif;
+.breadcrumb-nav,
+.breadcrumb-nav-list-item,
+.breadcrumb-nav-list-item a {
+  font-family: 'Crimson Text', Georgia, serif !important;
+  color: var(--oswr-text-muted);
+}
+
+// Search input
+.search-input {
+  font-family: 'Crimson Text', Georgia, serif;
+  background-color: var(--oswr-bg) !important;
+  border-color: var(--oswr-border) !important;
 }
 
 // =============================================================================
