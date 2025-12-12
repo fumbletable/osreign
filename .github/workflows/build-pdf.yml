@@ -7,7 +7,7 @@ on:
       - 'second-edition/**'
       - 'pdf/**'
       - '.github/workflows/build-pdf.yml'
-  workflow_dispatch:  # Allow manual trigger
+  workflow_dispatch:
 
 jobs:
   build:
@@ -25,63 +25,32 @@ jobs:
       - name: Install Google Fonts
         run: |
           mkdir -p ~/.local/share/fonts
-
-          # Clone Google Fonts repository (sparse checkout for speed)
           git clone --filter=blob:none --sparse https://github.com/google/fonts.git google-fonts
           cd google-fonts
-          git sparse-checkout set ofl/crimsontext ofl/imfellenglishsc ofl/rubikdistressed
-
-          # Copy font files
+          git sparse-checkout set ofl/crimsontext ofl/imfellenglishsc
           cp ofl/crimsontext/*.ttf ~/.local/share/fonts/
           cp ofl/imfellenglishsc/*.ttf ~/.local/share/fonts/
-          cp ofl/rubikdistressed/*.ttf ~/.local/share/fonts/
-
           cd ..
           rm -rf google-fonts
-
-          # Refresh font cache
           fc-cache -f -v
-
-      - name: Create LaTeX header for custom heading fonts
-        run: |
-          mkdir -p build
-          echo '% Use IM Fell English SC for section headings' > build/header.tex
-          echo '\usepackage{titlesec}' >> build/header.tex
-          echo '\newfontfamily\headingfont{IM Fell English SC}' >> build/header.tex
-          echo '\titleformat{\section}{\headingfont\Large\bfseries}{\thesection}{1em}{}' >> build/header.tex
-          echo '\titleformat{\subsection}{\headingfont\large\bfseries}{\thesubsection}{1em}{}' >> build/header.tex
-          echo '\titleformat{\subsubsection}{\headingfont\normalsize\bfseries}{\thesubsubsection}{1em}{}' >> build/header.tex
 
       - name: Strip Jekyll frontmatter and build file list
         run: |
-          # Read book order, skip comments and empty lines
+          mkdir -p build
           while IFS= read -r file || [ -n "$file" ]; do
-            # Skip comments and empty lines
             [[ "$file" =~ ^#.*$ ]] && continue
             [[ -z "$file" ]] && continue
-
             if [ -f "$file" ]; then
-              # Strip YAML frontmatter (everything between --- markers)
               sed '1{/^---$/!q;};1,/^---$/d' "$file" >> build/combined.md
               echo -e "\n\n" >> build/combined.md
             fi
           done < pdf/book-order.txt
-
-      - name: Debug - Show combined file info
-        run: |
-          echo "=== Combined file size ==="
-          wc -l build/combined.md
-          echo "=== First 100 lines ==="
-          head -100 build/combined.md
-          echo "=== Checking for problematic characters ==="
-          grep -n '[│┌┐└┘├┤┬┴┼]' build/combined.md || echo "No box-drawing characters found"
 
       - name: Generate PDF
         run: |
           pandoc build/combined.md \
             -o "Olde-Swords-Reign-Alpha.pdf" \
             --pdf-engine=xelatex \
-            --include-in-header=build/header.tex \
             -V mainfont="Crimson Text" \
             -V monofont="DejaVu Sans Mono" \
             -V fontsize=11pt \
@@ -93,23 +62,7 @@ jobs:
             -V toc-title="Table of Contents" \
             --metadata title="Olde Swords Reign" \
             --metadata subtitle="Alpha Playtest Document" \
-            --highlight-style=tango \
-            --verbose 2>&1 | tail -200 || true
-
-          # Check if PDF was created
-          if [ -f "Olde-Swords-Reign-Alpha.pdf" ]; then
-            echo "PDF generated successfully!"
-            ls -la Olde-Swords-Reign-Alpha.pdf
-          else
-            echo "PDF generation failed. Trying with simpler options..."
-            pandoc build/combined.md \
-              -o "Olde-Swords-Reign-Alpha.pdf" \
-              --pdf-engine=xelatex \
-              -V fontsize=11pt \
-              -V geometry:margin=1in \
-              --toc \
-              --metadata title="Olde Swords Reign"
-          fi
+            --highlight-style=tango
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
