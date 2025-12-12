@@ -59,6 +59,15 @@ jobs:
             fi
           done < pdf/book-order.txt
 
+      - name: Debug - Show combined file info
+        run: |
+          echo "=== Combined file size ==="
+          wc -l build/combined.md
+          echo "=== First 100 lines ==="
+          head -100 build/combined.md
+          echo "=== Checking for problematic characters ==="
+          grep -n '[│┌┐└┘├┤┬┴┼]' build/combined.md || echo "No box-drawing characters found"
+
       - name: Generate PDF
         run: |
           pandoc build/combined.md \
@@ -76,7 +85,23 @@ jobs:
             -V toc-title="Table of Contents" \
             --metadata title="Olde Swords Reign" \
             --metadata subtitle="Alpha Playtest Document" \
-            --highlight-style=tango
+            --highlight-style=tango \
+            --verbose 2>&1 | tail -200 || true
+
+          # Check if PDF was created
+          if [ -f "Olde-Swords-Reign-Alpha.pdf" ]; then
+            echo "PDF generated successfully!"
+            ls -la Olde-Swords-Reign-Alpha.pdf
+          else
+            echo "PDF generation failed. Trying with simpler options..."
+            pandoc build/combined.md \
+              -o "Olde-Swords-Reign-Alpha.pdf" \
+              --pdf-engine=xelatex \
+              -V fontsize=11pt \
+              -V geometry:margin=1in \
+              --toc \
+              --metadata title="Olde Swords Reign"
+          fi
 
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v4
