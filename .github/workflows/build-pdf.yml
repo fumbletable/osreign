@@ -47,13 +47,11 @@ jobs:
           mkdir -p build
           cat > build/header.tex << 'EOF'
 % Use IM Fell English SC for section headings
-\usepackage{sectsty}
-\allsectionsfont{\fontspec{IM Fell English SC}}
-
-% Use Rubik Distressed for the document title
-\usepackage{titling}
-\pretitle{\begin{center}\fontspec{Rubik Distressed}\Huge}
-\posttitle{\end{center}\vskip 0.5em}
+\usepackage{titlesec}
+\newfontfamily\headingfont{IM Fell English SC}
+\titleformat{\section}{\headingfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\headingfont\large\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}{\headingfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
 EOF
 
       - name: Strip Jekyll frontmatter and build file list
