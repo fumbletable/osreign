@@ -1,2 +1,7 @@
-% No custom LaTeX - headings use default styling
-% Font customization handled via pandoc variables only
+% Apply sans font (IM Fell English SC) to section headings
+\let\oldsection\section
+\renewcommand{\section}[1]{\oldsection{\textsf{#1}}}
+\let\oldsubsection\subsection
+\renewcommand{\subsection}[1]{\oldsubsection{\textsf{#1}}}
+\let\oldsubsubsection\subsubsection
+\renewcommand{\subsubsection}[1]{\oldsubsubsection{\textsf{#1}}}

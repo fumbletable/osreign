@@ -56,6 +56,7 @@ jobs:
             --pdf-engine=xelatex \
             --include-in-header=pdf/header.tex \
             -V mainfont="Crimson Text" \
+            -V sansfont="IM Fell English SC" \
             -V monofont="DejaVu Sans Mono" \
             -V fontsize=11pt \
             -V geometry:margin=1in \
