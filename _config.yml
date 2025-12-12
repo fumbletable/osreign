@@ -7,7 +7,7 @@ baseurl: "/osreign"
 remote_theme: just-the-docs/just-the-docs
 
 # Colour scheme (light/dark)
-color_scheme: dark
+color_scheme: light
 
 # Logo (optional - add later)
 # logo: "/assets/images/logo.png"
