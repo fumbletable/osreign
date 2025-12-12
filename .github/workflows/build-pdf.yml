@@ -54,6 +54,7 @@ jobs:
           pandoc build/combined.md \
             -o "Olde-Swords-Reign-Alpha.pdf" \
             --pdf-engine=xelatex \
+            --include-in-header=pdf/header.tex \
             -V mainfont="Crimson Text" \
             -V monofont="DejaVu Sans Mono" \
             -V fontsize=11pt \
