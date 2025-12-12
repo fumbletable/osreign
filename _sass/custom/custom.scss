@@ -19,6 +19,8 @@
   --oswr-border: #d4cdc2;       // Subtle warm border
   --oswr-link: #6b4423;         // Brown links
   --oswr-link-hover: #8b5a2b;   // Lighter brown on hover
+  --oswr-accent: #8b1a1a;       // Deep crimson for game terms
+  --oswr-table-header: #3d3428; // Dark brown for table headers
 }
 
 // Apply parchment background
@@ -68,7 +70,7 @@ a {
 h1.page-title {
   font-family: 'Rubik Distressed', cursive;
   font-weight: 400;
-  font-size: 3rem;  // Larger for more impact
+  font-size: 3.5rem;  // Big and bold for impact
   text-transform: none;
   letter-spacing: 0.02em;
   margin-top: 1.5rem;
@@ -218,12 +220,32 @@ h1.page-title {
 
 .main-content table {
   font-family: 'Crimson Text', Georgia, serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5rem 0;
 }
 
 .main-content th {
   font-family: 'IM Fell English SC', serif;
   text-transform: uppercase;
   letter-spacing: 0.03em;
+  background-color: var(--oswr-table-header);
+  color: #f0ebe4;
+  padding: 0.6rem 1rem;
+  text-align: left;
+}
+
+.main-content td {
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid var(--oswr-border);
+}
+
+.main-content tbody tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.main-content tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.06);
 }
 
 // =============================================================================
@@ -243,6 +265,24 @@ h1.page-title {
 .main-content pre code {
   font-family: monospace;
   font-weight: 400;
+}
+
+// =============================================================================
+// GAME TERMS & HIGHLIGHTS
+// =============================================================================
+
+// Use for important game terms like "+1 Feat", ability names, etc.
+// Usage: <span class="game-term">+1 Feat</span> or **+1 Feat**{:.game-term}
+.game-term,
+.main-content .game-term {
+  color: var(--oswr-accent);
+  font-weight: 600;
+}
+
+// Strong text within specific contexts can auto-highlight
+.main-content li strong,
+.main-content p strong {
+  color: var(--oswr-text);  // Keep default, use .game-term for accent
 }
 
 // =============================================================================
