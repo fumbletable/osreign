@@ -1,0 +1,93 @@
+name: Build PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'second-edition/**'
+      - 'pdf/**'
+      - '.github/workflows/build-pdf.yml'
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Pandoc and LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-extra
+
+      - name: Install Google Fonts
+        run: |
+          mkdir -p ~/.local/share/fonts
+
+          # Crimson Text
+          wget -q "https://fonts.google.com/download?family=Crimson%20Text" -O crimson.zip
+          unzip -q crimson.zip -d ~/.local/share/fonts/
+
+          # IM Fell English SC
+          wget -q "https://fonts.google.com/download?family=IM%20Fell%20English%20SC" -O imfell.zip
+          unzip -q imfell.zip -d ~/.local/share/fonts/
+
+          # Rubik Distressed
+          wget -q "https://fonts.google.com/download?family=Rubik%20Distressed" -O rubik.zip
+          unzip -q rubik.zip -d ~/.local/share/fonts/
+
+          # Refresh font cache
+          fc-cache -f -v
+
+      - name: Strip Jekyll frontmatter and build file list
+        run: |
+          mkdir -p build
+
+          # Read book order, skip comments and empty lines
+          while IFS= read -r file || [ -n "$file" ]; do
+            # Skip comments and empty lines
+            [[ "$file" =~ ^#.*$ ]] && continue
+            [[ -z "$file" ]] && continue
+
+            if [ -f "$file" ]; then
+              # Strip YAML frontmatter (everything between --- markers)
+              sed '1{/^---$/!q;};1,/^---$/d' "$file" >> build/combined.md
+              echo -e "\n\n" >> build/combined.md
+            fi
+          done < pdf/book-order.txt
+
+      - name: Generate PDF
+        run: |
+          pandoc build/combined.md \
+            -o "Olde-Swords-Reign-Alpha.pdf" \
+            --pdf-engine=xelatex \
+            -V mainfont="Crimson Text" \
+            -V sansfont="IM Fell English SC" \
+            -V monofont="DejaVu Sans Mono" \
+            -V fontsize=11pt \
+            -V geometry:margin=1in \
+            -V linkcolor=black \
+            -V urlcolor=black \
+            --toc \
+            --toc-depth=2 \
+            -V toc-title="Table of Contents" \
+            --metadata title="Olde Swords Reign" \
+            --metadata subtitle="Alpha Playtest Document" \
+            --highlight-style=tango
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: oswr-alpha-pdf
+          path: Olde-Swords-Reign-Alpha.pdf
+          retention-days: 30
+
+      - name: Create Release (on tag)
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v1
+        with:
+          files: Olde-Swords-Reign-Alpha.pdf
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

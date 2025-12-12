@@ -1,0 +1,118 @@
+# OSwR PDF Book Order
+# Lines starting with # are comments
+# This defines the chapter order for PDF generation
+
+# ============================================
+# PLAYERS GUIDE
+# ============================================
+
+# Introduction
+second-edition/players.md
+
+# Character Creation
+second-edition/players/character.md
+second-edition/players/character-creation.md
+second-edition/players/ancestry.md
+second-edition/players/build-an-ancestry.md
+second-edition/players/backgrounds.md
+second-edition/players/hindrances.md
+
+# Classes
+second-edition/players/classes.md
+second-edition/players/fighter.md
+second-edition/players/expert.md
+second-edition/players/cleric.md
+second-edition/players/magic-user.md
+
+# Feats
+second-edition/players/feats.md
+second-edition/players/general-feats.md
+second-edition/players/fighter-feats.md
+second-edition/players/expert-feats.md
+
+# Equipment
+second-edition/players/equipment.md
+second-edition/players/weapons.md
+second-edition/players/armor.md
+second-edition/players/adventuring-gear.md
+second-edition/players/encumbrance.md
+
+# Rules
+second-edition/players/rules.md
+second-edition/players/rolling-dice.md
+second-edition/players/combat.md
+second-edition/players/rests-recovery-fatigue.md
+second-edition/players/exploration.md
+second-edition/players/time-and-movement.md
+second-edition/players/hiring-help.md
+
+# Magic
+second-edition/players/magic.md
+second-edition/players/spellbooks-and-research.md
+second-edition/players/spell-index.md
+second-edition/players/build-a-spell.md
+second-edition/players/tier-1-spells.md
+second-edition/players/tier-2-spells.md
+second-edition/players/tier-3-spells.md
+second-edition/players/tier-4-spells.md
+second-edition/players/tier-5-spells.md
+second-edition/players/tier-6-spells.md
+
+# Advancement
+second-edition/players/advancement.md
+second-edition/players/economy.md
+second-edition/players/carousing.md
+
+# ============================================
+# REFEREE'S GUIDE
+# ============================================
+
+second-edition/refereeing.md
+second-edition/refereeing/principles.md
+second-edition/refereeing/reaction-rolls.md
+second-edition/refereeing/retainers.md
+
+# Exploration
+second-edition/refereeing/dungeon-exploration.md
+second-edition/refereeing/wilderness-exploration.md
+second-edition/refereeing/doors-and-barriers.md
+second-edition/refereeing/traps-and-hazards.md
+
+# Treasure
+second-edition/refereeing/treasure.md
+second-edition/refereeing/treasure/treasure-tables.md
+
+# Bestiary
+second-edition/refereeing/bestiary.md
+second-edition/refereeing/bestiary/monster-rules.md
+second-edition/refereeing/bestiary/monsters-a.md
+second-edition/refereeing/bestiary/monsters-b.md
+second-edition/refereeing/bestiary/monsters-c.md
+second-edition/refereeing/bestiary/monsters-d.md
+second-edition/refereeing/bestiary/monsters-e.md
+second-edition/refereeing/bestiary/monsters-f.md
+second-edition/refereeing/bestiary/monsters-g.md
+second-edition/refereeing/bestiary/monsters-h.md
+second-edition/refereeing/bestiary/monsters-i.md
+second-edition/refereeing/bestiary/monsters-j.md
+second-edition/refereeing/bestiary/monsters-k.md
+second-edition/refereeing/bestiary/monsters-l.md
+second-edition/refereeing/bestiary/monsters-m.md
+second-edition/refereeing/bestiary/monsters-n.md
+second-edition/refereeing/bestiary/monsters-o.md
+second-edition/refereeing/bestiary/monsters-p.md
+second-edition/refereeing/bestiary/monsters-r.md
+second-edition/refereeing/bestiary/monsters-s.md
+second-edition/refereeing/bestiary/monsters-t.md
+second-edition/refereeing/bestiary/monsters-u.md
+second-edition/refereeing/bestiary/monsters-v.md
+second-edition/refereeing/bestiary/monsters-w.md
+second-edition/refereeing/bestiary/monsters-x.md
+second-edition/refereeing/bestiary/monsters-y.md
+second-edition/refereeing/bestiary/monsters-z.md
+
+# Domain Play
+second-edition/refereeing/domain-play.md
+
+# Designer Commentary
+second-edition/refereeing/designer-commentary.md
