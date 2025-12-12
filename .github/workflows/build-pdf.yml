@@ -42,10 +42,22 @@ jobs:
           # Refresh font cache
           fc-cache -f -v
 
-      - name: Strip Jekyll frontmatter and build file list
+      - name: Create LaTeX header for custom heading fonts
         run: |
           mkdir -p build
+          cat > build/header.tex << 'EOF'
+          % Use IM Fell English SC for section headings
+          \usepackage{sectsty}
+          \allsectionsfont{\fontspec{IM Fell English SC}}
 
+          % Use Rubik Distressed for the document title
+          \usepackage{titling}
+          \pretitle{\begin{center}\fontspec{Rubik Distressed}\Huge}
+          \posttitle{\end{center}\vskip 0.5em}
+          EOF
+
+      - name: Strip Jekyll frontmatter and build file list
+        run: |
           # Read book order, skip comments and empty lines
           while IFS= read -r file || [ -n "$file" ]; do
             # Skip comments and empty lines
@@ -73,8 +85,8 @@ jobs:
           pandoc build/combined.md \
             -o "Olde-Swords-Reign-Alpha.pdf" \
             --pdf-engine=xelatex \
+            --include-in-header=build/header.tex \
             -V mainfont="Crimson Text" \
-            -V sansfont="IM Fell English SC" \
             -V monofont="DejaVu Sans Mono" \
             -V fontsize=11pt \
             -V geometry:margin=1in \
