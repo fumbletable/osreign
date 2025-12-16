@@ -1699,6 +1699,30 @@ function updateCharacterField(char, fieldPath, value) {
     obj[lastPart] = value;
   }
 
+  // Recalculate derived stats when level changes
+  if (fieldPath === 'level') {
+    const classData = CLASSES.find(c => c.name === char.className);
+    const hd = classData?.hd || 8;
+    const conMod = char.finalAbilities?.CON || 0;
+    const newLevel = char.level || 1;
+
+    // Recalculate max HP: HD + CON at level 1, then average roll + CON per level
+    // Average roll = (HD/2 + 0.5) rounded down = HD/2 for simplicity
+    const avgRoll = Math.floor(hd / 2) + 1;
+    const oldMaxHp = char.maxHp;
+    char.maxHp = Math.max(1, hd + conMod + (newLevel - 1) * Math.max(1, avgRoll + conMod));
+
+    // Adjust current HP proportionally if max changed
+    if (oldMaxHp && oldMaxHp !== char.maxHp) {
+      const hpRatio = char.currentHp / oldMaxHp;
+      char.currentHp = Math.max(1, Math.round(hpRatio * char.maxHp));
+    }
+
+    saveCurrentCharacter();
+    renderEditableSheet(char);
+    return;
+  }
+
   saveCurrentCharacter();
 }
 
