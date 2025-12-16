@@ -540,51 +540,167 @@ Create characters and manage them during play. Characters auto-save to your brow
     padding: 2px;
   }
 
-  /* Prepared spells */
-  .prepared-spells-list {
-    margin: 0.5rem 0;
+  /* Spellbook section */
+  .spellbook-section {
+    margin: 0.75rem 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0.75rem;
+    background: #fafafa;
   }
-  .prepared-spell {
+  .spellbook-section h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.95rem;
+    color: #2c5282;
+  }
+  .spellbook-tier {
+    margin-bottom: 0.75rem;
+  }
+  .spellbook-tier-header {
+    font-weight: bold;
+    font-size: 0.85rem;
+    color: #555;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.25rem;
+  }
+  .spellbook-spell {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.25rem 0;
-    border-bottom: 1px solid #eee;
-  }
-  .prepared-spell .spell-tier-badge {
-    background: #2c5282;
-    color: white;
-    padding: 0.1rem 0.4rem;
+    padding: 0.25rem 0.5rem;
     border-radius: 3px;
-    font-size: 0.7rem;
-    font-weight: bold;
-    min-width: 20px;
-    text-align: center;
+    cursor: help;
+    position: relative;
   }
-  .prepared-spell .spell-name {
+  .spellbook-spell:hover {
+    background: #e8f0fe;
+  }
+  .spellbook-spell input[type="checkbox"] {
+    margin: 0;
+    cursor: pointer;
+  }
+  .spellbook-spell .spell-name {
     flex: 1;
+    font-size: 0.9rem;
   }
-  .prepared-spell .remove-spell {
+  .spellbook-spell .spell-name.prepared {
+    font-weight: bold;
+    color: #2c5282;
+  }
+  .spellbook-spell .remove-known-spell {
     color: #c44;
     cursor: pointer;
+    font-size: 0.8rem;
     padding: 0 0.25rem;
+    opacity: 0.6;
   }
-  .add-spell-row {
+  .spellbook-spell .remove-known-spell:hover {
+    opacity: 1;
+    background: #fee;
+  }
+
+  /* Spell tooltips */
+  .spellbook-spell .spell-tooltip {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 100;
+    background: #333;
+    color: #fff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    width: max-content;
+    max-width: 350px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    margin-top: 4px;
+    line-height: 1.4;
+    font-weight: normal;
+  }
+  .spellbook-spell:hover .spell-tooltip {
+    display: block;
+  }
+  .spellbook-spell .spell-tooltip::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 12px;
+    border: 6px solid transparent;
+    border-bottom-color: #333;
+  }
+
+  /* Add spell to spellbook */
+  .add-spellbook-row {
     margin-top: 0.5rem;
     display: flex;
     gap: 0.5rem;
     align-items: center;
+    flex-wrap: wrap;
   }
-  .add-spell-row input {
+  .add-spellbook-row select {
     padding: 0.25rem 0.5rem;
     border: 1px solid #ccc;
     border-radius: 3px;
+    font-size: 0.9rem;
+  }
+  .add-spellbook-row select.spell-tier-select {
+    width: 80px;
+  }
+  .add-spellbook-row select.spell-name-select {
     width: 180px;
   }
-  .add-spell-row select {
-    padding: 0.25rem;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+
+  /* Prepared count badge */
+  .prepared-count {
+    font-size: 0.85rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    margin-left: 0.5rem;
+  }
+  .prepared-count.at-limit {
+    background: #c44;
+    color: white;
+  }
+  .prepared-count.under-limit {
+    background: #4a7c23;
+    color: white;
+  }
+
+  /* Class feature tooltips */
+  .class-feature {
+    position: relative;
+    cursor: help;
+  }
+  .class-feature .feature-tooltip {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 100;
+    background: #333;
+    color: #fff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    width: max-content;
+    max-width: 350px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    margin-top: 4px;
+    line-height: 1.4;
+    font-weight: normal;
+  }
+  .class-feature:hover .feature-tooltip {
+    display: block;
+  }
+  .class-feature .feature-tooltip::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 12px;
+    border: 6px solid transparent;
+    border-bottom-color: #333;
   }
 
   /* Editable feats */
@@ -1036,6 +1152,218 @@ const WEAPONS = {
   "Staff (Arcane)": { damage: "1d6", stat: "STR", tags: ["Versatile (1d8)", "Focus"] }
 };
 
+// Class feature descriptions
+const CLASS_FEATURE_DESCRIPTIONS = {
+  "Turn Undead": "As an action, present your holy symbol. Undead within NEAR must make a WIS save (DC = your Spell DC) or flee for 1 Turn. Undead with HD ≤ half your level (round down) are destroyed instead. You can use this a number of times equal to your PB per long rest.",
+  "Wild Shape": "As an action, transform into a beast you have seen with HD ≤ half your level (minimum 1). You gain the beast's physical stats and abilities but retain your mental stats. You can stay in beast form for 1 hour per level. When you drop to 0 HP in beast form, you revert to your normal form. You can use this PB times per long rest.",
+  "Cantrips (Wizard Bolt, Prestidigitation)": "Wizard Bolt: As an action, make a ranged spell attack (Far range). On hit, deal 1d6 force damage (+1d6 at levels 5 and 9). Prestidigitation: Minor magical tricks—light a candle, clean an object, create a small illusion, etc. No combat effect."
+};
+
+// Spell descriptions database - organized by class type
+const SPELL_DESCRIPTIONS = {
+  // ========== CLERIC SPELLS ==========
+  // Tier 1
+  "Bless": "1 Action, Near, 1 Turn. Allies in area gain +1 to attack rolls and saves vs fear. Boost: +2 bonuses.",
+  "Command": "1 Action, Near, PB rounds. Speak one word; target obeys if WIS save fails. Examples: Halt, Flee, Drop. Boost: SETBACK on save.",
+  "Cure Light Wounds": "1 Action, Touch, Instant. Heal 1 creature for 1d6 + PB HP. Boost: +1d6 HP.",
+  "Detect Evil": "1 Action/Ritual, Self (Near), PB Turns. Sense hostile intent, unholy creatures, or cursed items. Boost: +1 Turn.",
+  "Detect Magic": "1 Action/Ritual, Self (Near), PB Turns. Magical items, spells, or glyphs glow faintly. Boost: +1 Turn.",
+  "Light": "1 Action/Ritual, Near, 1 hour. Object glows like torch, OR blinds creature (CON save). Boost: +1 hour.",
+  "Protection from Evil": "1 Action, Touch, PB Turns. +1 AC/saves vs evil; immune to charm/control. Boost: +1 ally.",
+  "Remove Fear": "1 Action, Touch, Instant. End fear on one creature. Magical fear: new save with EDGE. Boost: +1 creature.",
+  "Purify Food & Drink": "1 Action/Ritual, Touch, Instant. Cleanse food/drink for PB creatures. Boost: Double amount.",
+  // Tier 2
+  "Bless Water": "1 Turn/Ritual, Touch, Permanent. Convert 1 flask to holy water. Boost: +1 flask.",
+  "Find Traps": "1 Action/Ritual, Self (Near cone), PB Turns. Detect traps in area. Boost: +1 Turn.",
+  "Hold Person": "1 Action, Near, 1 Turn. Up to 3 humanoids paralyzed (WIS save). Repeat save each round. Boost: +1 target.",
+  "Resist Elements": "1 Action, Touch, 1 Turn. Choose fire/cold when preparing. EDGE on saves, half damage. Boost: +1 creature.",
+  "Spiritual Hammer": "1 Action, Near, Conc 1 Turn. Spectral weapon attacks once/round, 1d6+PB force. Boost: +1d6 on one hit.",
+  "Silence, 15 ft Radius": "1 Action, Near, 1 Turn. 15-ft sphere of silence. No sound or spellcasting. Boost: 20 ft radius.",
+  "Speak with Animals": "1 Action/Ritual, Self (Near), PB Turns. Communicate simple ideas with beasts. Boost: +1 Turn.",
+  "Augury": "1 Turn/Ritual, Self, Instant. Ask deity about action in next hour: weal, woe, both, or nothing. Boost: Ask about second action.",
+  // Tier 3
+  "Continual Light": "1 Action/Ritual, Near, Permanent. Object glows like daylight. Can blind (CON save). Boost: +1 object.",
+  "Cure Disease": "1 Action, Touch, Instant. End one disease or poison. Boost: Heal 1d6 HP.",
+  "Locate Object": "1 Action/Ritual, Far, Conc PB Turns. Sense direction of familiar object. Boost: Double range.",
+  "Prayer": "1 Action, Near, 1 Turn. Allies +1 attacks/saves; enemies -1. Boost: +1 Turn.",
+  "Protection from Evil, 10 ft Radius": "1 Action, Self, PB Turns. Allies within 10 ft: +1 AC/saves vs evil, immune to charm. Boost: 15 ft.",
+  "Remove Curse": "1 Action, Touch, Instant. Lift 1 curse from creature or object. Boost: +1 target.",
+  "Speak with Dead": "1 Action/Ritual, Near, PB questions. Ask corpse questions (limited by what it knew). Boost: +1 question.",
+  "Striking": "1 Action, Touch, 1 Turn. Weapon becomes magical: +1 to hit/damage. Boost: +1 Turn.",
+  // Tier 4
+  "Create Food & Water": "1 Turn, Self, Instant. Food & water for 12 people for 1 day. Boost: Double amount.",
+  "Cure Serious Wounds": "1 Action, Touch, Instant. Heal PB×d6 + PB HP. Boost: +1d6 HP.",
+  "Neutralize Poison": "1 Action, Touch, Instant. End poison on 1 creature/object. Boost: +1d6 HP.",
+  "Tongues": "1 Action/Ritual, Self, 1 Turn. Speak and understand any language. Boost: +1 Turn.",
+  "Animate Dead": "1 Turn, Near, Permanent. Raise 1d6 skeletons or 1d4 zombies. Control up to PB×2 HD. Boost: +1d4 creatures.",
+  "Dispel Magic": "1 Action, Near, Instant. End 1 ongoing spell or magical effect. Boost: +1 target.",
+  "Divination": "1 Turn/Ritual, Self, Instant. Ask deity about event within 1 week. Short truthful answer. Boost: More detail.",
+  // Tier 5
+  "Commune": "1 Turn, Self, PB questions. Ask deity yes/no questions. Answers may be cryptic. Boost: +1 question.",
+  "Mass Cure Wounds": "1 Action, Near, Instant. Heal PB creatures for 1d6 + PB HP each. Boost: +1 target or +1d6 to all.",
+  "Dispel Evil": "1 Action, Near, 1 Turn. End possession/charm, banish extraplanar creatures. Boost: +1 target.",
+  "Insect Plague": "1 Action, Far, Conc 1 Turn. 30-ft swarm causes fear and 2d6 damage/round. Boost: 40 ft radius.",
+  "Quest": "1 Action, Near, Until completed. One creature must undertake quest (WIS save). Boost: SETBACK on save.",
+  "Raise Dead": "1 Turn, Touch, Instant. Revive creature dead ≤ level days. Loses 1 level. Returns at 1 HP, 2 Fatigue. Boost: +2d6 HP.",
+  "True Seeing": "1 Action, Touch, 1 Turn. See through illusions, invisibility, polymorph. Boost: +1 Turn.",
+  "Flame Strike": "1 Action, Far, Instant. 10-ft column: level×d6 damage (half fire, half divine). DEX half. Boost: +1d6.",
+  // Tier 6
+  "Animate Object": "1 Action, Near, Conc 1 Turn. Animate 1d6 objects as allies (HD by size). Boost: +1 object.",
+  "Blade Barrier": "1 Action, Near, Conc 1 Turn. 20-ft barrier of blades: 6d6 damage to pass. Boost: 30 ft radius.",
+  "Find the Path": "1 Turn, Self, Conc 1 Turn. Reveals most direct route to known location. Boost: +1 Turn.",
+  "Heal": "1 Action, Touch, Instant. Restore all HP, remove blindness, disease, fatigue, poison. Boost: +1 target.",
+  "Part Water": "1 Action, Near, Conc 1 Turn. Open 30-ft path through water. Boost: 50 ft path.",
+  "Regenerate": "1 Action, Touch, Instant. Regrow limbs, mend bones, restore organs. Heal 3d6 HP. Boost: +2d6 HP.",
+  "Restoration": "1 Action, Touch, Instant. Remove negative level or restore 1d4 ability points.",
+  "Stone Tell": "1 Action, Touch, 1 Turn. Speak with stone about past events, builders, creatures. Boost: +1 Turn.",
+  "Word of Recall": "1 Action, Self, Instant. Teleport to sanctified location. Boost: +1 ally.",
+
+  // ========== MAGIC-USER SPELLS ==========
+  // Tier 1
+  "Charm Person": "1 Action, Near, Special. Humanoid (WIS save) regards you as ally. Hostile acts end it. Repeat save based on INT. Boost: SETBACK on save.",
+  "Floating Disc": "1 Action, Self, 1 hour. 3-ft disc follows, carries 500 lb. Boost: +1 hour.",
+  "Hold Portal": "1 Action, Near, 1 Turn. Door stays shut; STR 18 or magic to open. Boost: +1 Turn.",
+  "Magic Missile": "1 Action, Far, Instant. PB darts of 1d4+1 force (auto-hit). Boost: +1 dart.",
+  "Read Languages": "1 Action/Ritual, Self, 1 Turn. Understand written languages (not magical). Boost: +1 Turn.",
+  "Read Magic": "1 Action/Ritual, Self, 1 Turn. Read scrolls, glyphs, spellbooks. Required to learn spells. Boost: +1 Turn.",
+  "Shield": "1 Action, Self, 1 Turn. +4 AC vs missiles, +2 vs melee. Negates Magic Missile. Boost: +1 Turn.",
+  "Sleep": "1 Action, Near, 1 Turn. Put 2d8 HD of creatures to sleep (lowest HD first). 5+ HD immune. Boost: +1d4 HD.",
+  "Ventriloquism": "1 Action, Near, 1 Turn. Project voice from object/location. Boost: +1 Turn.",
+  // Tier 2
+  "Continual Light (MU)": "1 Action/Ritual, Near, Permanent. Object shines like daylight. Can blind (CON save). Boost: 2 objects.",
+  "Darkness, 15 ft Radius": "1 Action, Near, 1 Turn. Magical darkness; normal vision and darkvision fail. Boost: 20 ft radius.",
+  "Detect Invisibility": "1 Action, Self, PB Turns. Invisible creatures/objects glow faintly. Boost: +1 Turn.",
+  "ESP": "1 Action, Near, Conc 1 Turn. Read surface thoughts (WIS save resists). Boost: +1 creature.",
+  "Invisibility": "1 Action, Touch, Until broken. Target invisible. Attacking/casting ends it. Boost: +1 target.",
+  "Knock": "1 Action, Near, Instant. Open 1 locked door/chest/portal. Boost: Far range.",
+  "Levitate": "1 Action, Near, 1 Turn. Rise/descend 15 ft/round. No horizontal movement. Boost: +1 Turn.",
+  "Locate Object (MU)": "1 Action/Ritual, Self, Conc PB Turns. Sense familiar object within 60 ft. Boost: Double range.",
+  "Mirror Image": "1 Action, Self, 1 Turn. Create 1d4 duplicates. Attacks hit images first. Boost: +1 image.",
+  "Phantasmal Force": "1 Action, Near, Conc 1 Turn. Visual illusion up to 15-ft cube. WIS save to disbelieve. Boost: 30-ft cube.",
+  "Web": "1 Action, Near, 1 Turn. 15-ft cube of webs. DEX save or Speed=0. Fire destroys. Boost: 30-ft cube.",
+  // Tier 3
+  "Clairsentience": "1 Action/Ritual, Far, PB Turns. See OR hear known location through barriers. Boost: +1 Turn.",
+  "Fireball": "1 Action, Far, Instant. 15-ft blast: level×d6 fire (DEX half). Boost: +1d6.",
+  "Fly": "1 Action, Touch, 1 Turn. Target flies at normal speed. Boost: +1 target.",
+  "Haste": "1 Action, Near, 1 Turn. +1 attack/round, double movement. 1 Fatigue after. Boost: +1 target.",
+  "Hold Person (MU)": "1 Action, Near, 1 Turn. Up to 3 humanoids paralyzed (WIS save). Repeat save each round. Boost: +1 target.",
+  "Darkvision": "1 Action, Touch, 1 hour. See in darkness up to 60 ft. Boost: +1 hour.",
+  "Invisibility, 10 ft Radius": "1 Action, Self, Until broken. All within 10 ft invisible. Boost: 20 ft radius.",
+  "Lightning Bolt": "1 Action, Self (60-ft line), Instant. 5-ft wide: level×d6 lightning (DEX half). Bounces. Boost: +1d6.",
+  "Protection from Evil, 10 ft Radius (MU)": "1 Action, Self, PB Turns. Allies within 10 ft: +1 AC/saves vs evil. Boost: 15 ft.",
+  "Slow": "1 Action, Near, 1 Turn. Up to 6 creatures: half speed, 1 attack/round (WIS save). Boost: +1 target.",
+  "Water Breathing": "1 Action, Touch, 1 hour. Target breathes underwater. Boost: +1 creature.",
+  // Tier 4
+  "Charm Monster": "1 Action, Near, Until dispelled. Monster charmed as Charm Person (WIS save). Boost: +1 target.",
+  "Confusion": "1 Action, Near, 1 Turn. 3d6 creatures in 15-ft: random actions (WIS save). Boost: +1 Turn.",
+  "Dimension Door": "1 Action, Self +1, Instant. Teleport 360 ft to visible/known location. Boost: +1 creature.",
+  "Growth of Plants": "1 Action/Ritual, Near, Permanent. 30-ft radius vegetation grows thick, halves speed. Boost: Double radius.",
+  "Hallucinatory Terrain": "1 Action/Ritual, Far, Conc 1 day. Illusory terrain (INT save disbelieves). Boost: Double area.",
+  "Massmorph": "1 Action/Ritual, Near, Conc 1 Turn. Up to 100 humanoids appear as trees. Boost: +1 Turn.",
+  "Monster Summoning I": "1 Action, Near, 1 Turn. Summon 1d6 monsters of 2 HD or less. Boost: +1d6 monsters.",
+  "Polymorph Other": "1 Action, Near, Permanent. Transform creature into another form ±2 HD (WIS save). Boost: SETBACK on save.",
+  "Polymorph Self": "1 Action, Self, Conc 1 Turn. Take another creature's form ±2 HD. Gain physical abilities. Boost: +1 Turn.",
+  "Remove Curse (MU)": "1 Action, Touch, Instant. Lift 1 curse from creature or object. Boost: +1 target.",
+  "Wall of Fire": "1 Action, Near, Conc 1 Turn. 20×10 ft wall: 2d6 fire crossing/adjacent (CON half). Boost: +10 ft or +1d6.",
+  "Wizard Eye": "1 Action/Ritual, Self, Conc 1 Turn. Invisible eye scouts 120 ft, relays vision. Boost: +1 Turn.",
+  // Tier 5
+  "Animate Dead (MU)": "1 Action, Near, Permanent. Raise 2d6 skeletons or 1d6 zombies. Boost: +1d6 creatures.",
+  "Cloudkill": "1 Action, Far, Conc 1 Turn. 30-ft moving cloud. ≤4 HD die (no save). >4 HD: 2d6 poison (CON half). Boost: 40 ft.",
+  "Conjure Elemental": "1 Action, Near, Conc 1 Turn. Summon 8 HD elemental. Loses control if concentration breaks. Boost: +1 HD.",
+  "Contact Other Plane": "1 Turn, Self, PB questions. Ask entity questions. Each risks madness (INT save). Boost: 1 safe question.",
+  "Feeblemind": "1 Action, Near, Permanent. Target's INT=1, can't cast (INT save). Boost: SETBACK on save.",
+  "Hold Monster": "1 Action, Near, 1 Turn. Up to 3 creatures paralyzed (WIS save). Repeat each round. Boost: +1 target.",
+  "Magic Jar": "1 Action, Near, Special. Soul to container; possess creatures (WIS save). Jar destroyed = death. Boost: +2 saves.",
+  "Passwall": "1 Action, Near, 1 Turn. Tunnel 10×20 ft through stone/wood. Boost: +10 ft.",
+  "Telekinesis": "1 Action, Near, Conc 1 Turn. Move 250 lb object at will. Boost: Double weight.",
+  "Teleport": "1 Action, Touch, Instant. Instant travel to known location. Risk by familiarity. Boost: Reduce risk.",
+  "Wall of Iron": "1 Action, Near, Permanent. 30×30 ft, 1 inch thick iron wall. Boost: 40×40 ft.",
+  "Wall of Stone": "1 Action, Near, Permanent. 30×30 ft, 1 ft thick stone wall. Boost: 40×40 ft.",
+  // Tier 6
+  "Anti-Magic Shell": "1 Action, Self (10-ft), Conc 1 Turn. No magic functions within. Boost: 15 ft radius.",
+  "Control Weather": "1 Turn, Sight, 1 day. Alter local weather. Extreme changes take hours. Boost: +1 day.",
+  "Death Spell": "1 Action, Far, Instant. Kill up to 3d12 HD of creatures (8+ HD immune, CON save). Boost: +1d6 HD.",
+  "Disintegrate": "1 Action, Far, Instant. Target turns to dust (CON save negates). Boost: SETBACK on save.",
+  "Geas": "1 Action, Near, Until fulfilled. Command one task (WIS save). Breaking: 2d6 damage/day. Boost: SETBACK on save.",
+  "Invisible Stalker": "1 Action, Near, Until done. Summon 8 HD stalker for one mission. Complex tasks may be twisted. Boost: +2 HD.",
+  "Legend Lore": "1 Turn, Self, Instant. Gain lore about person, place, or object of renown. Boost: More detail.",
+  "Lower Water": "1 Action, Near, Conc 1 Turn. Lower water by half in 30-ft square. Boost: Double area.",
+  "Move Earth": "1 Turn, Near, Conc 1 Turn. Reshape terrain in 40-ft cube. Boost: 60 ft cube.",
+  "Reincarnation": "1 Turn, Touch, Instant. Dead returns in new body (d6: 1 Dwarf, 2 Elf, 3 Halfling, 4-6 Human). Boost: Reroll once.",
+  "Stone to Flesh": "1 Action, Near, Instant. Restore one petrified creature. Boost: +1 target.",
+  "Wall of Ice": "1 Action, Near, Conc 1 Turn. 30-ft wall. Shattering: 6d6 cold to adjacent (DEX half). Boost: +10 ft.",
+
+  // ========== DRUID SPELLS ==========
+  // Tier 1
+  "Animal Friendship": "1 Action, Near, Until broken. Natural animal (WIS save) becomes friendly. Boost: +1 animal.",
+  "Entangle": "1 Action, Near, Conc 1 Turn. Plants restrain in 20-ft area (DEX save or Speed=0). Boost: 30 ft or SETBACK.",
+  "Faerie Fire": "1 Action, Near, 1 Turn. Outline creatures in light. Attacks gain EDGE. Boost: +1 Turn.",
+  "Pass Without Trace": "1 Action/Ritual, Touch, 1 Turn. PB creatures leave no tracks. Tracking fails. Boost: +1 Turn.",
+  "Shillelagh": "1 Action, Touch, 1 Turn. Club/staff becomes +1 magical, 1d8 damage. Boost: +1 Turn.",
+  // Tier 2
+  "Barkskin": "1 Action, Touch, 1 Turn. Target's AC = 16 if armor is lower. Boost: +1 Turn.",
+  "Flame Blade": "1 Action, Self, 1 Turn. Fiery blade: 1d6 fire, Finesse, magical. Boost: 1d8 damage.",
+  "Heat Metal": "1 Action, Near, Conc 1 Turn. Metal object red-hot: 2d6 then 1d6/round. Boost: +1 item.",
+  "Obscuring Mist": "1 Action, Self (Near), 1 Turn. Fog; attacks beyond Close have SETBACK. Boost: +1 Turn.",
+  "Speak with Plants": "1 Action/Ritual, Self (Near), PB Turns. Communicate with plants about terrain, dangers. Boost: +1 Turn.",
+  "Produce Flame": "1 Action, Self, 1 Turn. Flame in hand (torch light). Throw: Near, 1d6 fire (ends spell). Boost: 2d6 thrown.",
+  "Warp Wood": "1 Action, Near, Instant. Warp wooden object into useless shape. Boost: +1 object.",
+  // Tier 3
+  "Call Lightning": "1 Action, Far (outdoors), Conc 1 Turn. 1 bolt/round: 2d6 (DEX half). Boost: +1d6.",
+  "Plant Growth": "1 Action, Near, Permanent. 60×15 ft thorny overgrowth. Difficult terrain, 1d6/15 ft. Boost: +30 ft.",
+  "Protection from Elements": "1 Action, Touch, 1 Turn. Choose fire/cold. Immune to normal, half magical. Boost: +1 creature.",
+  "Speak with Dead Animals": "1 Action/Ritual, Touch, PB questions. Ask dead animal about what it sensed. Boost: +1 question.",
+  "Water Walk": "1 Action, Touch, 1 Turn. PB creatures walk on water. Boost: +1 Turn.",
+  "Hold Animal": "1 Action, Near, 1 Turn. Up to 3 animals paralyzed (WIS save). Repeat each round. Boost: +1 target.",
+  "Summon Swarm": "1 Action, Near, Conc 1 Turn. 10-ft swarm: 1d6/round, SETBACK on attacks. Boost: 15 ft radius.",
+  "Wind Wall": "1 Action, Near, 1 Turn. 30-ft wall deflects missiles, small flyers, gas. Boost: +10 ft.",
+  // Tier 4
+  "Animal Growth": "1 Action, Near, 1 Turn. 2d6 animals double size (HD doubled). Boost: +1d6 animals.",
+  "Call Woodland Beings": "1 Turn, Near, 1 Turn. Summon fey (d6): 1-2 Sprites, 3-4 Pixies, 5 Satyrs, 6 Dryad. Boost: Roll twice.",
+  "Ice Storm": "1 Action, Far, Instant. 20-ft hail: level×d6 (half bludgeoning, half cold). DEX half. Boost: +1d6.",
+  "Sticks to Snakes": "1 Action, Near, 1 Turn. 2d6 sticks become poisonous snakes (1 HD each). Boost: +1d6 snakes.",
+  "Wall of Thorns": "1 Action, Near, Conc 1 Turn. 60×10 ft hedge. 2d6 damage to pass (no save). Boost: +20 ft.",
+  // Tier 5
+  "Animal Summoning": "1 Action, Near, 1 Turn. Summon 2d6 animals of 4 HD or less. Boost: +1d6 animals.",
+  "Commune with Nature": "1 Turn/Ritual, Self, PB questions. Ask land about terrain, animals, dangers within 1 mile. Boost: +1 question.",
+  "Control Winds": "1 Action, Far, Conc 1 Turn. Alter wind in 40-ft radius. Hinder flyers, aid ships. Boost: 60 ft radius.",
+  "Transmute Rock to Mud": "1 Action, Near, Permanent. 20-ft cube rock↔mud. Traps creatures. Boost: 30 ft cube.",
+  "Wall of Fire (Greater)": "1 Action, Near, Conc 1 Turn. 20×10 ft wall: 4d6 fire crossing/adjacent. Boost: +1d6 or +10 ft.",
+  // Tier 6
+  "Anti-Animal Shell": "1 Action, Self (10-ft), Conc 1 Turn. Animals cannot enter barrier. Boost: 15 ft radius.",
+  "Conjure Fire Elemental": "1 Action, Near, Conc 1 Turn. Summon 8 HD fire elemental. Hostile if concentration breaks. Boost: +2 HD.",
+  "Earthquake": "1 Action, Far, Instant. 60-ft quake: collapse structures, 6d6 damage (DEX half). Boost: 80 ft radius.",
+  "Transport via Plants": "1 Action, Self, Instant. Step into tree, emerge from same kind anywhere on plane. Boost: +1 ally."
+};
+
+// Spell lists by class type
+const SPELL_LISTS = {
+  "Cleric": {
+    1: ["Bless", "Command", "Cure Light Wounds", "Detect Evil", "Detect Magic", "Light", "Protection from Evil", "Remove Fear", "Purify Food & Drink"],
+    2: ["Bless Water", "Find Traps", "Hold Person", "Resist Elements", "Spiritual Hammer", "Silence, 15 ft Radius", "Speak with Animals", "Augury"],
+    3: ["Continual Light", "Cure Disease", "Locate Object", "Prayer", "Protection from Evil, 10 ft Radius", "Remove Curse", "Speak with Dead", "Striking"],
+    4: ["Create Food & Water", "Cure Serious Wounds", "Neutralize Poison", "Speak with Plants", "Tongues", "Animate Dead", "Dispel Magic", "Divination"],
+    5: ["Commune", "Mass Cure Wounds", "Dispel Evil", "Insect Plague", "Quest", "Raise Dead", "True Seeing", "Flame Strike"],
+    6: ["Animate Object", "Blade Barrier", "Find the Path", "Heal", "Part Water", "Regenerate", "Restoration", "Stone Tell", "Word of Recall"]
+  },
+  "Arcane": {
+    1: ["Charm Person", "Detect Magic", "Floating Disc", "Hold Portal", "Light", "Magic Missile", "Protection from Evil", "Read Languages", "Read Magic", "Shield", "Sleep", "Ventriloquism"],
+    2: ["Continual Light (MU)", "Darkness, 15 ft Radius", "Detect Evil", "Detect Invisibility", "ESP", "Invisibility", "Knock", "Levitate", "Locate Object (MU)", "Mirror Image", "Phantasmal Force", "Web"],
+    3: ["Clairsentience", "Dispel Magic", "Fireball", "Fly", "Haste", "Hold Person (MU)", "Darkvision", "Invisibility, 10 ft Radius", "Lightning Bolt", "Protection from Evil, 10 ft Radius (MU)", "Slow", "Water Breathing"],
+    4: ["Charm Monster", "Confusion", "Dimension Door", "Growth of Plants", "Hallucinatory Terrain", "Massmorph", "Monster Summoning I", "Polymorph Other", "Polymorph Self", "Remove Curse (MU)", "Wall of Fire", "Wizard Eye"],
+    5: ["Animate Dead (MU)", "Cloudkill", "Conjure Elemental", "Contact Other Plane", "Feeblemind", "Hold Monster", "Magic Jar", "Passwall", "Telekinesis", "Teleport", "Wall of Iron", "Wall of Stone"],
+    6: ["Anti-Magic Shell", "Control Weather", "Death Spell", "Disintegrate", "Geas", "Invisible Stalker", "Legend Lore", "Lower Water", "Move Earth", "Reincarnation", "Stone to Flesh", "Wall of Ice"]
+  },
+  "Druidic": {
+    1: ["Animal Friendship", "Cure Light Wounds", "Detect Magic", "Entangle", "Faerie Fire", "Pass Without Trace", "Shillelagh", "Speak with Animals"],
+    2: ["Barkskin", "Flame Blade", "Heat Metal", "Obscuring Mist", "Speak with Plants", "Resist Elements", "Produce Flame", "Warp Wood"],
+    3: ["Call Lightning", "Plant Growth", "Protection from Elements", "Speak with Dead Animals", "Water Walk", "Hold Animal", "Summon Swarm", "Wind Wall"],
+    4: ["Animal Growth", "Call Woodland Beings", "Dispel Magic", "Hallucinatory Terrain", "Ice Storm", "Sticks to Snakes", "Wall of Thorns"],
+    5: ["Animal Summoning", "Commune with Nature", "Control Winds", "Insect Plague", "Transmute Rock to Mud", "Wall of Fire (Greater)"],
+    6: ["Anti-Animal Shell", "Conjure Fire Elemental", "Control Weather", "Earthquake", "Reincarnation", "Transport via Plants"]
+  }
+};
+
 // Spell slots by level (max slots per tier)
 const SPELL_SLOTS_BY_LEVEL = {
   1: { t1: 2, t2: 0, t3: 0, t4: 0, t5: 0, t6: 0 },
@@ -1316,16 +1644,18 @@ function renderEditableSheet(char) {
     </div>
   `;
 
-  // Spellcasting (full 6 tiers)
+  // Spellcasting (full 6 tiers with Spellbook/Prepared distinction)
   let spellHtml = '';
   if (classData?.spellcasting) {
     const stat = classData.spellcasting.stat;
+    const spellType = classData.spellcasting.type; // "Cleric", "Arcane", or "Druidic"
     const mod = char.finalAbilities[stat];
     const dc = 8 + pb + mod;
     const attack = pb + mod;
     const charLevel = char.level || 1;
-    const prepared = Math.max(1, charLevel + mod);
+    const preparedLimit = Math.max(1, charLevel + mod);
     const maxSlots = SPELL_SLOTS_BY_LEVEL[Math.min(charLevel, 10)] || SPELL_SLOTS_BY_LEVEL[1];
+    const spellList = SPELL_LISTS[spellType] || {};
 
     // Initialize spell slots if needed
     if (!char.spellSlots) {
@@ -1340,14 +1670,71 @@ function renderEditableSheet(char) {
       char.spellSlots[key].max = maxSlots[key];
     }
 
-    const preparedSpells = char.preparedSpells || [];
+    // Initialize spellbook (known spells) if needed
+    if (!char.spellbook) {
+      char.spellbook = [];
+    }
+    // Initialize prepared spells if needed
+    if (!char.preparedSpells) {
+      char.preparedSpells = [];
+    }
+
+    // Count prepared spells
+    const preparedCount = char.preparedSpells.length;
+    const atLimit = preparedCount >= preparedLimit;
+
+    // Group known spells by tier
+    const spellsByTier = {};
+    for (let t = 1; t <= 6; t++) {
+      spellsByTier[t] = char.spellbook.filter(s => s.tier === t);
+    }
+
+    // Generate spellbook HTML with checkboxes for prepared
+    let spellbookHtml = '';
+    for (let tier = 1; tier <= 6; tier++) {
+      const tierSpells = spellsByTier[tier];
+      const tierAvailable = maxSlots[`t${tier}`] > 0;
+
+      if (tierSpells.length > 0 || tierAvailable) {
+        spellbookHtml += `<div class="spellbook-tier">`;
+        spellbookHtml += `<div class="spellbook-tier-header">Tier ${tier}${!tierAvailable ? ' (locked)' : ''}</div>`;
+
+        if (tierSpells.length > 0) {
+          tierSpells.forEach(spell => {
+            const isPrepared = char.preparedSpells.some(p => p.name === spell.name && p.tier === spell.tier);
+            const canPrepare = !atLimit || isPrepared;
+            const spellDesc = SPELL_DESCRIPTIONS[spell.name] || 'No description available.';
+
+            spellbookHtml += `
+              <div class="spellbook-spell">
+                <input type="checkbox"
+                       data-spell-name="${spell.name}"
+                       data-spell-tier="${spell.tier}"
+                       ${isPrepared ? 'checked' : ''}
+                       ${!canPrepare ? 'disabled' : ''}
+                       class="prepare-spell-checkbox">
+                <span class="spell-name ${isPrepared ? 'prepared' : ''}">${spell.name}</span>
+                <span class="remove-known-spell" data-spell-name="${spell.name}" data-spell-tier="${spell.tier}">&times;</span>
+                <span class="spell-tooltip">${spellDesc}</span>
+              </div>
+            `;
+          });
+        } else if (tierAvailable) {
+          spellbookHtml += `<p style="color: #999; font-style: italic; font-size: 0.85rem; margin: 0.25rem 0;">No spells known</p>`;
+        }
+        spellbookHtml += `</div>`;
+      }
+    }
+
+    // Get available spells for adding (not already in spellbook)
+    const knownSpellNames = char.spellbook.map(s => `${s.name}-${s.tier}`);
 
     spellHtml = `
-      <h3>Spellcasting (${classData.spellcasting.type})</h3>
+      <h3>Spellcasting (${spellType})</h3>
       <div class="derived-stats" style="grid-template-columns: repeat(3, 1fr);">
         <div class="derived-box"><strong>${dc}</strong>Spell DC</div>
         <div class="derived-box"><strong>${formatMod(attack)}</strong>Spell Attack</div>
-        <div class="derived-box"><strong>${prepared}</strong>Prepared</div>
+        <div class="derived-box"><strong>${preparedLimit}</strong>Max Prepared</div>
       </div>
 
       <h4 style="margin: 0.75rem 0 0.25rem; font-size: 0.95rem;">Spell Slots</h4>
@@ -1368,23 +1755,24 @@ function renderEditableSheet(char) {
         }).join('')}
       </div>
 
-      <h4 style="margin: 0.75rem 0 0.25rem; font-size: 0.95rem;">Prepared Spells <span style="font-weight: normal; color: #666;">(${preparedSpells.length}/${prepared})</span></h4>
-      <div class="prepared-spells-list">
-        ${preparedSpells.map((spell, idx) => `
-          <div class="prepared-spell">
-            <span class="spell-tier-badge">T${spell.tier}</span>
-            <span class="spell-name">${spell.name}</span>
-            <span class="remove-spell" data-idx="${idx}">&times;</span>
-          </div>
-        `).join('')}
-        ${preparedSpells.length === 0 ? '<p style="color: #666; font-style: italic; margin: 0.25rem 0;">No spells prepared</p>' : ''}
-      </div>
-      <div class="add-spell-row">
-        <input type="text" id="new-spell-name" placeholder="Spell name...">
-        <select id="new-spell-tier">
-          ${[1,2,3,4,5,6].map(t => `<option value="${t}" ${maxSlots[`t${t}`] === 0 ? 'disabled' : ''}>Tier ${t}</option>`).join('')}
-        </select>
-        <button class="btn-small" id="add-spell-btn">Add</button>
+      <div class="spellbook-section">
+        <h4>
+          Spellbook
+          <span class="prepared-count ${atLimit ? 'at-limit' : 'under-limit'}">${preparedCount}/${preparedLimit} prepared</span>
+        </h4>
+        <p style="font-size: 0.8rem; color: #666; margin: 0 0 0.5rem 0;">Check spells to prepare them for the day. Hover for descriptions.</p>
+
+        ${spellbookHtml || '<p style="color: #666; font-style: italic;">No spells in spellbook yet. Add spells below.</p>'}
+
+        <div class="add-spellbook-row">
+          <select id="add-spell-tier-select" class="spell-tier-select">
+            ${[1,2,3,4,5,6].map(t => `<option value="${t}" ${maxSlots[`t${t}`] === 0 ? 'disabled' : ''}>Tier ${t}</option>`).join('')}
+          </select>
+          <select id="add-spell-name-select" class="spell-name-select">
+            <option value="">Select spell...</option>
+          </select>
+          <button class="btn-small" id="add-known-spell-btn">Add to Spellbook</button>
+        </div>
       </div>
     `;
   }
@@ -1474,7 +1862,7 @@ function renderEditableSheet(char) {
 
     <h3>Class Features</h3>
     <div class="class-feature"><strong>Boost Hook:</strong> ${classData?.boostHook || 'None'}</div>
-    ${classData?.feature ? `<div class="class-feature"><strong>${classData.feature}</strong></div>` : ''}
+    ${classData?.feature ? `<div class="class-feature"><strong>${classData.feature}</strong>${CLASS_FEATURE_DESCRIPTIONS[classData.feature] ? `<span class="feature-tooltip">${CLASS_FEATURE_DESCRIPTIONS[classData.feature]}</span>` : ''}</div>` : ''}
 
     <h3>Equipment <span style="font-size: 0.8rem; color: #666;">(${(char.equipment || []).length} items)</span></h3>
     <div class="equipment-section">
@@ -1651,34 +2039,94 @@ function attachSheetListeners(char) {
     });
   });
 
-  // Prepared spells
-  document.querySelectorAll('.remove-spell').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const idx = parseInt(btn.dataset.idx);
+  // Spellbook management - prepare/unprepare spells via checkbox
+  document.querySelectorAll('.prepare-spell-checkbox').forEach(checkbox => {
+    checkbox.addEventListener('change', () => {
+      const spellName = checkbox.dataset.spellName;
+      const spellTier = parseInt(checkbox.dataset.spellTier);
+
       char.preparedSpells = char.preparedSpells || [];
-      char.preparedSpells.splice(idx, 1);
+
+      if (checkbox.checked) {
+        // Add to prepared
+        if (!char.preparedSpells.some(p => p.name === spellName && p.tier === spellTier)) {
+          char.preparedSpells.push({ name: spellName, tier: spellTier });
+        }
+      } else {
+        // Remove from prepared
+        char.preparedSpells = char.preparedSpells.filter(p => !(p.name === spellName && p.tier === spellTier));
+      }
+
       saveCurrentCharacter();
       renderEditableSheet(char);
     });
   });
 
-  document.getElementById('add-spell-btn')?.addEventListener('click', () => {
-    const nameInput = document.getElementById('new-spell-name');
-    const tierSelect = document.getElementById('new-spell-tier');
-    const spellName = nameInput?.value.trim();
-    const tier = parseInt(tierSelect?.value) || 1;
-    if (spellName) {
+  // Remove spell from spellbook
+  document.querySelectorAll('.remove-known-spell').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const spellName = btn.dataset.spellName;
+      const spellTier = parseInt(btn.dataset.spellTier);
+
+      char.spellbook = char.spellbook || [];
+      char.spellbook = char.spellbook.filter(s => !(s.name === spellName && s.tier === spellTier));
+
+      // Also remove from prepared if it was prepared
       char.preparedSpells = char.preparedSpells || [];
-      char.preparedSpells.push({ name: spellName, tier: tier });
+      char.preparedSpells = char.preparedSpells.filter(p => !(p.name === spellName && p.tier === spellTier));
+
       saveCurrentCharacter();
       renderEditableSheet(char);
-    }
+    });
   });
 
-  document.getElementById('new-spell-name')?.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter') {
-      document.getElementById('add-spell-btn').click();
+  // Populate spell name dropdown when tier changes
+  const tierSelect = document.getElementById('add-spell-tier-select');
+  const spellSelect = document.getElementById('add-spell-name-select');
+
+  function updateSpellDropdown() {
+    if (!tierSelect || !spellSelect) return;
+
+    const selectedTier = parseInt(tierSelect.value);
+    const classData = CLASSES.find(c => c.name === char.charClass);
+    const spellType = classData?.spellcasting?.type;
+
+    if (!spellType || !SPELL_LISTS[spellType]) {
+      spellSelect.innerHTML = '<option value="">No spells available</option>';
+      return;
+    }
+
+    const tierSpells = SPELL_LISTS[spellType][selectedTier] || [];
+    const knownSpells = (char.spellbook || []).filter(s => s.tier === selectedTier).map(s => s.name);
+    const availableSpells = tierSpells.filter(spell => !knownSpells.includes(spell));
+
+    spellSelect.innerHTML = '<option value="">Select spell...</option>';
+    availableSpells.forEach(spell => {
+      const opt = document.createElement('option');
+      opt.value = spell;
+      opt.textContent = spell;
+      spellSelect.appendChild(opt);
+    });
+  }
+
+  tierSelect?.addEventListener('change', updateSpellDropdown);
+  // Initialize on load
+  updateSpellDropdown();
+
+  // Add spell to spellbook
+  document.getElementById('add-known-spell-btn')?.addEventListener('click', () => {
+    const tier = parseInt(tierSelect?.value) || 1;
+    const spellName = spellSelect?.value;
+
+    if (spellName) {
+      char.spellbook = char.spellbook || [];
+      // Avoid duplicates
+      if (!char.spellbook.some(s => s.name === spellName && s.tier === tier)) {
+        char.spellbook.push({ name: spellName, tier: tier });
+        saveCurrentCharacter();
+        renderEditableSheet(char);
+      }
     }
   });
 }
