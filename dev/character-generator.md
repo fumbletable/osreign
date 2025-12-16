@@ -1236,15 +1236,20 @@ function renderEditableSheet(char) {
         </div>
       `;
     }
+    const excludedFeats = [...allFeats, char.humanFeat].filter(Boolean);
     featsHtml += `
       <div class="add-feat-row">
         <select id="add-feat-select">
           <option value="">Add feat...</option>
-          ${[...GENERAL_FEATS, ...FIGHTER_FEATS, ...EXPERT_FEATS]
-            .filter(f => !allFeats.includes(f) && f !== char.humanFeat)
-            .sort()
-            .map(f => `<option value="${f}">${f}</option>`)
-            .join('')}
+          <optgroup label="General Feats">
+            ${GENERAL_FEATS.filter(f => !excludedFeats.includes(f)).map(f => `<option value="${f}">${f}</option>`).join('')}
+          </optgroup>
+          <optgroup label="Fighter Feats">
+            ${FIGHTER_FEATS.filter(f => !excludedFeats.includes(f)).map(f => `<option value="${f}">${f}</option>`).join('')}
+          </optgroup>
+          <optgroup label="Expert Feats">
+            ${EXPERT_FEATS.filter(f => !excludedFeats.includes(f)).map(f => `<option value="${f}">${f}</option>`).join('')}
+          </optgroup>
         </select>
         <button class="btn-small" id="add-feat-btn">Add</button>
       </div>
@@ -1255,10 +1260,15 @@ function renderEditableSheet(char) {
       <div class="add-feat-row">
         <select id="add-feat-select">
           <option value="">Add feat...</option>
-          ${[...GENERAL_FEATS, ...FIGHTER_FEATS, ...EXPERT_FEATS]
-            .sort()
-            .map(f => `<option value="${f}">${f}</option>`)
-            .join('')}
+          <optgroup label="General Feats">
+            ${GENERAL_FEATS.map(f => `<option value="${f}">${f}</option>`).join('')}
+          </optgroup>
+          <optgroup label="Fighter Feats">
+            ${FIGHTER_FEATS.map(f => `<option value="${f}">${f}</option>`).join('')}
+          </optgroup>
+          <optgroup label="Expert Feats">
+            ${EXPERT_FEATS.map(f => `<option value="${f}">${f}</option>`).join('')}
+          </optgroup>
         </select>
         <button class="btn-small" id="add-feat-btn">Add</button>
       </div>
