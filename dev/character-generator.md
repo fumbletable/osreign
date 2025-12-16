@@ -448,6 +448,184 @@ Create characters and manage them during play. Characters auto-save to your brow
     font-size: 0.9rem;
   }
 
+  /* Weapons table */
+  .weapons-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+  }
+  .weapons-table th {
+    background: #e8f0fe;
+    padding: 0.4rem;
+    text-align: left;
+    border-bottom: 2px solid #2c5282;
+    font-size: 0.8rem;
+  }
+  .weapons-table td {
+    padding: 0.4rem;
+    border-bottom: 1px solid #eee;
+  }
+  .weapons-table .weapon-name {
+    font-weight: bold;
+  }
+  .weapons-table .weapon-attack {
+    color: #2c5282;
+    font-weight: bold;
+  }
+  .weapons-table .weapon-damage {
+    font-family: monospace;
+  }
+  .weapons-table .weapon-tags {
+    font-size: 0.8rem;
+    color: #666;
+  }
+  .weapons-table .remove-weapon {
+    color: #c44;
+    cursor: pointer;
+    padding: 0 0.25rem;
+  }
+  .add-weapon-row {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .add-weapon-row input, .add-weapon-row select {
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .add-weapon-row input[type="text"] {
+    width: 120px;
+  }
+  .add-weapon-row select {
+    width: 100px;
+  }
+
+  /* Spell slots grid */
+  .spell-slots-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+  }
+  .spell-slot-tier {
+    text-align: center;
+    padding: 0.25rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fafafa;
+  }
+  .spell-slot-tier.disabled {
+    opacity: 0.4;
+    background: #eee;
+  }
+  .spell-slot-tier .tier-label {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #666;
+  }
+  .spell-slot-tier .slot-tracker {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .spell-slot-tier input {
+    width: 30px;
+    text-align: center;
+    border: 1px dashed #ccc;
+    border-radius: 3px;
+    padding: 2px;
+  }
+
+  /* Prepared spells */
+  .prepared-spells-list {
+    margin: 0.5rem 0;
+  }
+  .prepared-spell {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.25rem 0;
+    border-bottom: 1px solid #eee;
+  }
+  .prepared-spell .spell-tier-badge {
+    background: #2c5282;
+    color: white;
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    font-size: 0.7rem;
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
+  }
+  .prepared-spell .spell-name {
+    flex: 1;
+  }
+  .prepared-spell .remove-spell {
+    color: #c44;
+    cursor: pointer;
+    padding: 0 0.25rem;
+  }
+  .add-spell-row {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .add-spell-row input {
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 180px;
+  }
+  .add-spell-row select {
+    padding: 0.25rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  /* Editable feats */
+  .feats-section {
+    margin: 0.5rem 0;
+  }
+  .feat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #fff8e8;
+    padding: 0.5rem 0.75rem;
+    margin: 0.25rem 0;
+    border-left: 3px solid #b8860b;
+  }
+  .feat-item .feat-name {
+    flex: 1;
+    font-size: 0.9rem;
+  }
+  .feat-item .feat-source {
+    font-size: 0.75rem;
+    color: #888;
+  }
+  .feat-item .remove-feat {
+    color: #c44;
+    cursor: pointer;
+    font-size: 0.8rem;
+    padding: 0 0.25rem;
+  }
+  .add-feat-row {
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .add-feat-row select {
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 200px;
+  }
+
   /* Coins section */
   .coins-row {
     display: flex;
@@ -678,6 +856,59 @@ const EXPERT_FEATS = [
   "Pick Locks", "Pick Pockets", "Poisoner", "Silver Tongue", "Sleight of Hand", "Trap Expert", "Winning Smile"
 ];
 
+// Weapons database
+const WEAPONS = {
+  // Light weapons
+  "Dagger": { damage: "1d4", stat: "DEX", tags: ["Light", "Finesse", "Thrown (Close)"] },
+  "Club": { damage: "1d4", stat: "STR", tags: ["Light"] },
+  "Sickle": { damage: "1d4", stat: "STR", tags: ["Light"] },
+  "Handaxe": { damage: "1d6", stat: "STR", tags: ["Light", "Thrown (Close)"] },
+  "Light Hammer": { damage: "1d4", stat: "STR", tags: ["Light", "Thrown (Close)"] },
+  // Medium weapons
+  "Shortsword": { damage: "1d6", stat: "DEX", tags: ["Finesse"] },
+  "Rapier": { damage: "1d8", stat: "DEX", tags: ["Finesse"] },
+  "Scimitar": { damage: "1d6", stat: "DEX", tags: ["Finesse"] },
+  "Mace": { damage: "1d6", stat: "STR", tags: ["Bludgeoning"] },
+  "Flail": { damage: "1d8", stat: "STR", tags: ["Bludgeoning"] },
+  "Morningstar": { damage: "1d8", stat: "STR", tags: ["Bludgeoning"] },
+  "Warhammer": { damage: "1d8", stat: "STR", tags: ["Versatile (1d10)", "Bludgeoning"] },
+  "Longsword": { damage: "1d8", stat: "STR", tags: ["Versatile (1d10)"] },
+  "Battleaxe": { damage: "1d8", stat: "STR", tags: ["Versatile (1d10)"] },
+  "Spear": { damage: "1d6", stat: "STR", tags: ["Versatile (1d8)", "Thrown (Close)"] },
+  "Quarterstaff": { damage: "1d6", stat: "STR", tags: ["Versatile (1d8)"] },
+  // Heavy weapons
+  "Greatsword": { damage: "2d6", stat: "STR", tags: ["Heavy", "Two-Handed"] },
+  "Greataxe": { damage: "1d12", stat: "STR", tags: ["Heavy", "Two-Handed"] },
+  "Maul": { damage: "2d6", stat: "STR", tags: ["Heavy", "Two-Handed", "Bludgeoning"] },
+  "Halberd": { damage: "1d10", stat: "STR", tags: ["Heavy", "Two-Handed", "Reach"] },
+  "Pike": { damage: "1d10", stat: "STR", tags: ["Heavy", "Two-Handed", "Reach"] },
+  "Glaive": { damage: "1d10", stat: "STR", tags: ["Heavy", "Two-Handed", "Reach"] },
+  // Ranged
+  "Shortbow": { damage: "1d6", stat: "DEX", tags: ["Ranged (Near/Far)", "Two-Handed"] },
+  "Longbow": { damage: "1d8", stat: "DEX", tags: ["Ranged (Near/Far)", "Two-Handed", "Heavy"] },
+  "Light Crossbow": { damage: "1d8", stat: "DEX", tags: ["Ranged (Near/Far)", "Loading", "Two-Handed"] },
+  "Heavy Crossbow": { damage: "1d10", stat: "DEX", tags: ["Ranged (Near/Far)", "Loading", "Heavy", "Two-Handed"] },
+  "Sling": { damage: "1d4", stat: "DEX", tags: ["Ranged (Close/Near)"] },
+  "Javelin": { damage: "1d6", stat: "STR", tags: ["Thrown (Close/Near)"] },
+  // Special
+  "Unarmed": { damage: "1d4", stat: "STR", tags: ["Light"] },
+  "Staff (Arcane)": { damage: "1d6", stat: "STR", tags: ["Versatile (1d8)", "Focus"] }
+};
+
+// Spell slots by level (max slots per tier)
+const SPELL_SLOTS_BY_LEVEL = {
+  1: { t1: 2, t2: 0, t3: 0, t4: 0, t5: 0, t6: 0 },
+  2: { t1: 3, t2: 0, t3: 0, t4: 0, t5: 0, t6: 0 },
+  3: { t1: 4, t2: 2, t3: 0, t4: 0, t5: 0, t6: 0 },
+  4: { t1: 4, t2: 3, t3: 0, t4: 0, t5: 0, t6: 0 },
+  5: { t1: 4, t2: 3, t3: 2, t4: 0, t5: 0, t6: 0 },
+  6: { t1: 4, t2: 3, t3: 3, t4: 0, t5: 0, t6: 0 },
+  7: { t1: 4, t2: 3, t3: 3, t4: 2, t5: 0, t6: 0 },
+  8: { t1: 4, t2: 3, t3: 3, t4: 3, t5: 0, t6: 0 },
+  9: { t1: 4, t2: 3, t3: 3, t4: 3, t5: 2, t6: 0 },
+  10: { t1: 4, t2: 3, t3: 3, t4: 3, t5: 3, t6: 1 }
+};
+
 // ============ STATE ============
 
 let characters = []; // Array of saved characters
@@ -843,34 +1074,164 @@ function renderEditableSheet(char) {
     }
   }
 
-  // Build feats HTML
+  // Build editable feats HTML
   let featsHtml = '';
-  if (char.feats && char.feats.length > 0) {
-    featsHtml = char.feats.map(f => `<div class="feat-box">${f}</div>`).join('');
-  }
-  if (char.humanFeat) {
-    featsHtml += `<div class="feat-box"><strong>Human Bonus:</strong> ${char.humanFeat}</div>`;
+  const allFeats = char.feats || [];
+  if (allFeats.length > 0 || char.humanFeat) {
+    featsHtml = `<div class="feats-section">`;
+    featsHtml += allFeats.map((f, idx) => `
+      <div class="feat-item">
+        <span class="feat-name">${f}</span>
+        <span class="remove-feat" data-idx="${idx}">&times;</span>
+      </div>
+    `).join('');
+    if (char.humanFeat) {
+      featsHtml += `
+        <div class="feat-item">
+          <span class="feat-name">${char.humanFeat}</span>
+          <span class="feat-source">(Human)</span>
+        </div>
+      `;
+    }
+    featsHtml += `
+      <div class="add-feat-row">
+        <select id="add-feat-select">
+          <option value="">Add feat...</option>
+          ${[...GENERAL_FEATS, ...FIGHTER_FEATS, ...EXPERT_FEATS]
+            .filter(f => !allFeats.includes(f) && f !== char.humanFeat)
+            .sort()
+            .map(f => `<option value="${f}">${f}</option>`)
+            .join('')}
+        </select>
+        <button class="btn-small" id="add-feat-btn">Add</button>
+      </div>
+    </div>`;
+  } else {
+    featsHtml = `<div class="feats-section">
+      <p style="color: #666; font-style: italic;">No feats</p>
+      <div class="add-feat-row">
+        <select id="add-feat-select">
+          <option value="">Add feat...</option>
+          ${[...GENERAL_FEATS, ...FIGHTER_FEATS, ...EXPERT_FEATS]
+            .sort()
+            .map(f => `<option value="${f}">${f}</option>`)
+            .join('')}
+        </select>
+        <button class="btn-small" id="add-feat-btn">Add</button>
+      </div>
+    </div>`;
   }
 
-  // Spellcasting
+  // Build weapons HTML
+  const weapons = char.weapons || [];
+  const weaponsHtml = `
+    <table class="weapons-table">
+      <thead>
+        <tr>
+          <th>Weapon</th>
+          <th>Attack</th>
+          <th>Damage</th>
+          <th>Tags</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        ${weapons.map((w, idx) => {
+          const weaponData = WEAPONS[w.name] || { damage: w.damage || "1d6", stat: "STR", tags: [] };
+          const statMod = char.finalAbilities[weaponData.stat] || 0;
+          const attackBonus = pb + statMod;
+          const damageBonus = statMod;
+          return `
+            <tr>
+              <td class="weapon-name">${w.name}</td>
+              <td class="weapon-attack">${formatMod(attackBonus)}</td>
+              <td class="weapon-damage">${weaponData.damage}${damageBonus >= 0 ? '+' : ''}${damageBonus}</td>
+              <td class="weapon-tags">${weaponData.tags.join(', ')}</td>
+              <td><span class="remove-weapon" data-idx="${idx}">&times;</span></td>
+            </tr>
+          `;
+        }).join('')}
+        ${weapons.length === 0 ? '<tr><td colspan="5" style="color: #666; font-style: italic;">No weapons added</td></tr>' : ''}
+      </tbody>
+    </table>
+    <div class="add-weapon-row">
+      <select id="add-weapon-select">
+        <option value="">Add weapon...</option>
+        ${Object.keys(WEAPONS).sort().map(w => `<option value="${w}">${w}</option>`).join('')}
+      </select>
+      <button class="btn-small" id="add-weapon-btn">Add</button>
+    </div>
+  `;
+
+  // Spellcasting (full 6 tiers)
   let spellHtml = '';
   if (classData?.spellcasting) {
     const stat = classData.spellcasting.stat;
     const mod = char.finalAbilities[stat];
     const dc = 8 + pb + mod;
     const attack = pb + mod;
-    const prepared = Math.max(1, (char.level || 1) + mod);
+    const charLevel = char.level || 1;
+    const prepared = Math.max(1, charLevel + mod);
+    const maxSlots = SPELL_SLOTS_BY_LEVEL[Math.min(charLevel, 10)] || SPELL_SLOTS_BY_LEVEL[1];
+
+    // Initialize spell slots if needed
+    if (!char.spellSlots) {
+      char.spellSlots = {};
+    }
+    for (let t = 1; t <= 6; t++) {
+      const key = `t${t}`;
+      if (!char.spellSlots[key]) {
+        char.spellSlots[key] = { current: maxSlots[key], max: maxSlots[key] };
+      }
+      // Update max based on level
+      char.spellSlots[key].max = maxSlots[key];
+    }
+
+    const preparedSpells = char.preparedSpells || [];
+
     spellHtml = `
       <h3>Spellcasting (${classData.spellcasting.type})</h3>
       <div class="derived-stats" style="grid-template-columns: repeat(3, 1fr);">
         <div class="derived-box"><strong>${dc}</strong>Spell DC</div>
         <div class="derived-box"><strong>${formatMod(attack)}</strong>Spell Attack</div>
-        <div class="derived-box"><strong>${prepared}</strong>Spells Prepared</div>
+        <div class="derived-box"><strong>${prepared}</strong>Prepared</div>
       </div>
-      <div class="resource-tracker">
-        <label>Tier 1 Slots:</label>
-        <span class="editable-field editable-number" contenteditable="true" data-field="spellSlots.t1.current">${char.spellSlots?.t1?.current ?? 2}</span>
-        / ${char.spellSlots?.t1?.max ?? 2}
+
+      <h4 style="margin: 0.75rem 0 0.25rem; font-size: 0.95rem;">Spell Slots</h4>
+      <div class="spell-slots-grid">
+        ${[1,2,3,4,5,6].map(tier => {
+          const key = `t${tier}`;
+          const max = char.spellSlots[key].max;
+          const current = char.spellSlots[key].current;
+          const disabled = max === 0;
+          return `
+            <div class="spell-slot-tier ${disabled ? 'disabled' : ''}">
+              <div class="tier-label">Tier ${tier}</div>
+              <div class="slot-tracker">
+                ${disabled ? '-' : `<input type="number" min="0" max="${max}" value="${current}" data-slot-tier="${key}"> / ${max}`}
+              </div>
+            </div>
+          `;
+        }).join('')}
+      </div>
+
+      <h4 style="margin: 0.75rem 0 0.25rem; font-size: 0.95rem;">Prepared Spells <span style="font-weight: normal; color: #666;">(${preparedSpells.length}/${prepared})</span></h4>
+      <div class="prepared-spells-list">
+        ${preparedSpells.map((spell, idx) => `
+          <div class="prepared-spell">
+            <span class="spell-tier-badge">T${spell.tier}</span>
+            <span class="spell-name">${spell.name}</span>
+            <span class="remove-spell" data-idx="${idx}">&times;</span>
+          </div>
+        `).join('')}
+        ${preparedSpells.length === 0 ? '<p style="color: #666; font-style: italic; margin: 0.25rem 0;">No spells prepared</p>' : ''}
+      </div>
+      <div class="add-spell-row">
+        <input type="text" id="new-spell-name" placeholder="Spell name...">
+        <select id="new-spell-tier">
+          ${[1,2,3,4,5,6].map(t => `<option value="${t}" ${maxSlots[`t${t}`] === 0 ? 'disabled' : ''}>Tier ${t}</option>`).join('')}
+        </select>
+        <button class="btn-small" id="add-spell-btn">Add</button>
       </div>
     `;
   }
@@ -954,9 +1315,13 @@ function renderEditableSheet(char) {
     <div class="class-feature"><strong>Boost Hook:</strong> ${classData?.boostHook || 'None'}</div>
     ${classData?.feature ? `<div class="class-feature"><strong>${classData.feature}</strong></div>` : ''}
 
+    <h3>Weapons</h3>
+    ${weaponsHtml}
+
     ${spellHtml}
 
-    ${featsHtml ? `<h3>Feats</h3>${featsHtml}` : ''}
+    <h3>Feats</h3>
+    ${featsHtml}
 
     <h3>Equipment <span style="font-size: 0.8rem; color: #666;">(${(char.equipment || []).length} items)</span></h3>
     <div class="equipment-section">
@@ -1073,6 +1438,94 @@ function attachSheetListeners(char) {
   document.getElementById('new-item-input')?.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
       document.getElementById('add-item-btn').click();
+    }
+  });
+
+  // Weapons
+  document.querySelectorAll('.remove-weapon').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const idx = parseInt(btn.dataset.idx);
+      char.weapons = char.weapons || [];
+      char.weapons.splice(idx, 1);
+      saveCurrentCharacter();
+      renderEditableSheet(char);
+    });
+  });
+
+  document.getElementById('add-weapon-btn')?.addEventListener('click', () => {
+    const select = document.getElementById('add-weapon-select');
+    const weaponName = select.value;
+    if (weaponName) {
+      char.weapons = char.weapons || [];
+      char.weapons.push({ name: weaponName });
+      saveCurrentCharacter();
+      renderEditableSheet(char);
+    }
+  });
+
+  // Feats
+  document.querySelectorAll('.remove-feat').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const idx = parseInt(btn.dataset.idx);
+      char.feats = char.feats || [];
+      char.feats.splice(idx, 1);
+      saveCurrentCharacter();
+      renderEditableSheet(char);
+    });
+  });
+
+  document.getElementById('add-feat-btn')?.addEventListener('click', () => {
+    const select = document.getElementById('add-feat-select');
+    const featName = select.value;
+    if (featName) {
+      char.feats = char.feats || [];
+      char.feats.push(featName);
+      saveCurrentCharacter();
+      renderEditableSheet(char);
+    }
+  });
+
+  // Spell slots
+  document.querySelectorAll('[data-slot-tier]').forEach(input => {
+    input.addEventListener('change', () => {
+      const tier = input.dataset.slotTier;
+      char.spellSlots = char.spellSlots || {};
+      char.spellSlots[tier] = char.spellSlots[tier] || {};
+      char.spellSlots[tier].current = parseInt(input.value) || 0;
+      saveCurrentCharacter();
+    });
+  });
+
+  // Prepared spells
+  document.querySelectorAll('.remove-spell').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const idx = parseInt(btn.dataset.idx);
+      char.preparedSpells = char.preparedSpells || [];
+      char.preparedSpells.splice(idx, 1);
+      saveCurrentCharacter();
+      renderEditableSheet(char);
+    });
+  });
+
+  document.getElementById('add-spell-btn')?.addEventListener('click', () => {
+    const nameInput = document.getElementById('new-spell-name');
+    const tierSelect = document.getElementById('new-spell-tier');
+    const spellName = nameInput?.value.trim();
+    const tier = parseInt(tierSelect?.value) || 1;
+    if (spellName) {
+      char.preparedSpells = char.preparedSpells || [];
+      char.preparedSpells.push({ name: spellName, tier: tier });
+      saveCurrentCharacter();
+      renderEditableSheet(char);
+    }
+  });
+
+  document.getElementById('new-spell-name')?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      document.getElementById('add-spell-btn').click();
     }
   });
 }
