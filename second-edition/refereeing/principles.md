@@ -20,9 +20,11 @@ nav_order: 1
 
 **Let the world surprise you.** Use random tables - encounters, reactions, what they're doing. Discovering the world alongside your players is part of the fun.
 
-**Telegraph danger.** The more dangerous something is, the more obvious it should be. Eight armoured foes in formation tells players everything they need to know.
+**Telegraph danger.** The more dangerous something is, the more obvious it should be. Eight armored foes in formation tells players everything they need to know.
 
-**Offer choices, not roadblocks.** Instead of "no," try "yes, but with risk." SETBACK for something dangerous. Double damage if you pull it off. Give them a path and let them choose.
+**Reward clever play.** When players think their way around a problem, let it work - no roll needed. If they're being smart but there's still risk, give them EDGE.
+
+**Give out Boost Dice.** Don't hoard them. They reset each session and won't break anything. Good ideas, playing up hindrances, making the table laugh - all worth a Boost Die.
 
 **Make rulings from understanding.** When you know the motivations and the mechanics of the world, calls are easy. Ask yourself: what makes sense here?
 
@@ -32,17 +34,11 @@ nav_order: 1
 
 ---
 
-## Key Differences from 5e GMing
+## Before Your First Session
 
-- No balanced encounters
-- No plot protection for NPCs
-- Minimal prep, heavy improvisation
-- Tables generate content at the table
-- Rules support creativity, not define options
+Tell your players:
 
-## The Session Zero Message
+- *"The world isn't complete - it develops during play, and you will shape it."*
+- *"Don't worry about your character sheet. Do what makes sense for your character and we'll figure out the rules."*
+- *"I'm not here to tell a story. I'm here to see what happens."*
 
-- The world isn't complete - it develops during play
-- You will shape it
-- Don't worry about your character sheet
-- Do what you think is right, we'll figure out the rules

@@ -16,14 +16,28 @@ This section contains material for the Referee's eyes only. Players, turn back n
 
 ## Sections
 
-- [Principles](refereeing/principles/) - Core referee philosophy
+### Philosophy
+
+- [Principles](refereeing/principles/) - The referee's role and core philosophy
 - [Designer Commentary](refereeing/designer-commentary/) - Why the rules work the way they do
-- [Dungeon Exploration](refereeing/dungeon-exploration/) - Turns, hazards, and underground procedures
-- [Wilderness Exploration](refereeing/wilderness-exploration/) - Watches, travel, and overland procedures
-- [Doors & Barriers](refereeing/doors-and-barriers/) - Opening, breaking, and bypassing
+
+### Running the Game
+
+- [Dungeon Exploration](refereeing/dungeon-exploration/) - Turns, light, noise, and underground procedures
+- [Wilderness Exploration](refereeing/wilderness-exploration/) - Watches, travel, weather, and getting lost
+- [Doors & Barriers](refereeing/doors-and-barriers/) - Opening, breaking, and bypassing obstacles
 - [Traps & Hazards](refereeing/traps-and-hazards/) - Detection, triggers, and disarming
-- [Reaction Rolls](refereeing/reaction-rolls/) - NPC initial attitudes
+
+### NPCs & Monsters
+
+- [Reaction Rolls](refereeing/reaction-rolls/) - First impressions and NPC attitudes
 - [Retainers](refereeing/retainers/) - Hiring, loyalty, and morale
 - [Bestiary](refereeing/bestiary/) - Monster rules and 190+ creatures
+
+### Rewards
+
 - [Treasure](refereeing/treasure/) - Treasure types and generation tables
-- [Domain Play](refereeing/domain-play/) - Strongholds, retinues, and rulership *(placeholder)*
+
+### Advanced Play
+
+- [Domain Play](refereeing/domain-play/) - Strongholds and rulership *(placeholder)*

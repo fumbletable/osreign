@@ -4,6 +4,20 @@ How the book should sound. Update this as we refine the voice.
 
 ---
 
+## How We Review (Collaborative Workflow)
+
+This is a two-way process. We work through pages together:
+
+1. **Claude presents** - Read the page (or key sections) aloud
+2. **Discuss together** - Voice, clarity, consistency, rules accuracy
+3. **Agree before editing** - No changes without discussion
+4. **Note what changed** - In `work-to-do.md` checklist
+5. **Move on** - Next page
+
+**Don't just plough through making edits.** The collaborative discussion is the point.
+
+---
+
 ## The Voice
 
 You're explaining rules to a friend at your table. Friendly, direct, no waffle. You respect the reader's time but you're not cold about it.
@@ -22,6 +36,8 @@ You're explaining rules to a friend at your table. Friendly, direct, no waffle. 
 | Brief context before mechanics | Mechanics only, no setup |
 | Light humor where natural | Forced jokes or no personality |
 | American spelling (armor, favor) | UK spelling (armour, favour) |
+
+**Note:** American spelling was chosen for OSwR to match OSR/D&D convention (armor, not armour). This differs from Damien's general UK preference.
 
 ---
 
