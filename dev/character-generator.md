@@ -461,6 +461,7 @@ Create characters and manage them during play. Characters auto-save to your brow
     text-align: left;
     border-bottom: 2px solid #2c5282;
     font-size: 0.8rem;
+    color: #2c5282;
   }
   .weapons-table td {
     padding: 0.4rem;
