@@ -627,6 +627,40 @@ Create characters and manage them during play. Characters auto-save to your brow
     width: 200px;
   }
 
+  /* Feat tooltips */
+  .feat-item {
+    position: relative;
+    cursor: help;
+  }
+  .feat-item .feat-tooltip {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 100;
+    background: #333;
+    color: #fff;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    width: max-content;
+    max-width: 300px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+  .feat-item:hover .feat-tooltip {
+    display: block;
+  }
+  .feat-item .feat-tooltip::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 12px;
+    border: 6px solid transparent;
+    border-bottom-color: #333;
+  }
+
   /* Coins section */
   .coins-row {
     display: flex;
@@ -857,6 +891,112 @@ const EXPERT_FEATS = [
   "Pick Locks", "Pick Pockets", "Poisoner", "Silver Tongue", "Sleight of Hand", "Trap Expert", "Winning Smile"
 ];
 
+// Feat descriptions database
+const FEAT_DESCRIPTIONS = {
+  // General Feats
+  "Alchemist": "EDGE to craft or identify potions.",
+  "Ancient Lore": "EDGE on history and arcane knowledge checks.",
+  "Animal Companion": "Gain a loyal 1 HD animal companion.",
+  "Animal Whisperer": "EDGE to calm, ride, or direct animals.",
+  "Armor Proficiency": "Gain proficiency with the next armor tier (Light \u2192 Medium \u2192 Heavy).",
+  "Attractive": "EDGE on CHA checks when looks would matter.",
+  "Aura of Courage": "Allies within NEAR gain EDGE on saves vs fear.",
+  "Beast Bond": "Your animal companion gains +1 HD and +1 to attack. Requires Animal Companion.",
+  "Brawler": "Add PB to unarmed attacks and grapple checks. Unarmed strikes deal 1d4 (1d6 at level 5, 1d8 at level 9).",
+  "Centered Mind": "Once per rest, end one charm or fear effect on yourself.",
+  "Countercharm": "While you perform, allies within NEAR gain EDGE vs charm and fear.",
+  "Cutting Words": "Spend a Boost Die to impose SETBACK on one enemy's next roll.",
+  "Disease Immunity": "You are immune to non-magical diseases.",
+  "Divine Sense": "You can sense undead and fiendish presence within NEAR.",
+  "Dual Wielder": "EDGE on attacks when fighting with two weapons.",
+  "Empath": "You can sense surface emotions in others.",
+  "Endurance": "EDGE on saves vs fatigue and exhaustion, once per day.",
+  "Escape Artist": "EDGE to escape bonds, grapples, and restraints.",
+  "Fast Healer": "When you spend Hit Dice to heal, add +1 HP per die.",
+  "Favored Enemy": "Choose a creature type. EDGE to track, recall lore, and attack that type.",
+  "Fearless": "Auto-succeed vs mundane fear; EDGE vs magical fear.",
+  "Fleet of Foot": "+5 ft to your Speed.",
+  "Gift of Tongues": "Learn 2 additional languages.",
+  "Healer": "Spend 1 Supply to heal an ally for 1d6 + your CON.",
+  "Heavy Armor Master": "While wearing heavy armor, reduce non-magical physical damage by 2.",
+  "Herbalist": "EDGE to identify and craft herbal remedies. Herbs count as Supply for healing.",
+  "Hold Breath": "You can hold your breath for CON minutes instead of CON rounds.",
+  "Hunter's Mark": "Mark one target. You have EDGE on attacks against that target until it dies or you rest.",
+  "Improved Initiative": "+2 to Initiative rolls.",
+  "Jack of All Trades": "Once per scene, add PB to any check you're not proficient in.",
+  "Keen Senses": "Pick one sense (hearing, sight, or smell). EDGE on checks using that sense. Can take multiple times.",
+  "Leadership": "Spend a Boost Die to grant an ally EDGE on their next roll.",
+  "Linguist": "Learn 2 additional languages.",
+  "Lucky": "Once per session, reroll any die. Halflings only.",
+  "Magic Resistance": "EDGE on saves vs spells and magical effects.",
+  "Martial Adept": "Take one Fighter Feat (you must meet any requirements).",
+  "Mentor": "Once per session, grant a PC you've trained +1 to a roll.",
+  "Mounted Combatant": "EDGE on melee attacks against creatures smaller than your mount.",
+  "Natural Explorer": "Ignore difficult terrain. You can sense weather changes 24 hours ahead.",
+  "Opportunist": "When an adjacent enemy misses you, make a free attack against them.",
+  "Poison Resistance": "EDGE on saves vs poison.",
+  "Polearm Master": "Your reach with polearms extends to 10 ft.",
+  "Quick Draw": "Swap weapons as a free action.",
+  "Resilience": "Once per day, reroll a failed save.",
+  "Resilient": "+1 to saves of one type (choose when you take this feat).",
+  "Rider": "You never fall from your mount involuntarily.",
+  "Shield Master": "Add PB to DEX saves while wielding a shield.",
+  "Strong Back": "+5 item slots to your carrying capacity.",
+  "Survivalist": "EDGE on checks to track or forage.",
+  "Tactician": "Allies within NEAR gain EDGE on Initiative rolls.",
+  "Tough": "+2 HP per level (retroactive).",
+  "Unarmored Defense": "When unarmored, AC = 10 + DEX + CON.",
+  "Weapon Mastery": "Gain proficiency with one weapon category (Light, Medium, or Heavy).",
+  // Fighter Feats
+  "Adaptive Fighter": "Choose one damage type. Reduce damage of that type by 1. Can take multiple times.",
+  "Adrenaline Rush": "Once per combat, take one additional action on your turn.",
+  "Ambush Hunter": "On the first round of combat, deal +1d6 damage on a hit.",
+  "Armor Master": "+1 AC. Heavy armor no longer imposes Stealth penalties.",
+  "Battlecry": "As an action, all enemies within NEAR must make a WIS save or be Frightened for 1 round.",
+  "Blind Fighting": "No attack penalties in darkness or against invisible foes in melee.",
+  "Bodyguard": "Once per round, redirect an attack against an adjacent ally to yourself.",
+  "Cavalry Charge": "When you charge while mounted, deal +1d6 damage. Target must pass STR save or fall prone.",
+  "Cutting Edge": "Once per turn, reroll your damage dice. You must take the new result.",
+  "Death Strike": "When you drop a foe to 0 HP, immediately make another melee attack.",
+  "Debilitating Blow": "On a hit, reduce the target's Speed to half for 1 round.",
+  "Deflect Missiles": "+3 AC against ranged attacks.",
+  "Duelist": "+2 AC when wielding a one-handed weapon and no shield. Light or medium armor only.",
+  "Eagle Eye": "Mark one target. EDGE on ranged attacks against that target until you mark another.",
+  "Feint": "After taking the Dodge action, your next melee attack gains EDGE and +1d6 damage.",
+  "Heavy Hitter": "On a critical hit with a two-handed weapon, roll one additional damage die.",
+  "Hold the Line": "When an enemy moves into your reach, make a free attack against them.",
+  "Hurl Weapon": "Throw any melee weapon to NEAR range without penalty.",
+  "Iron Grip": "You cannot be disarmed.",
+  "Last Stand": "When reduced to 0 HP, you may continue fighting for 1 round before falling.",
+  "Overpower": "EDGE on grapple and shove attempts.",
+  "Quick Reflexes": "Add PB to Initiative rolls.",
+  "Second Wind": "Once per combat, heal 1d6 + CON as a bonus action.",
+  "Shield Bash": "Make an attack with your shield. On a hit, push the target 5 ft or knock them prone.",
+  "Skirmisher": "Move up to half your Speed without provoking opportunity attacks.",
+  "Stalwart": "EDGE on saves vs fear and charm while wearing armor.",
+  "Weapon Specialization": "+1 damage with one chosen weapon type. Can take multiple times.",
+  "Whirlwind Attack": "Once per day, attack all enemies within CLOSE range.",
+  // Expert Feats
+  "Backstab": "From hidden: EDGE on the attack, +2 \u00d7 your level damage. Once per target per combat.",
+  "Contacts (High)": "You have connections among nobles, merchants, and guild leaders.",
+  "Contacts (Low)": "You have connections in the underworld\u2014thieves, fences, smugglers.",
+  "Disguise": "EDGE on checks to pass yourself off as someone else.",
+  "Forgery Master": "EDGE to forge documents or spot forgeries.",
+  "Gambit": "Take SETBACK on your current roll. Your next roll this turn gains +2 dice (roll 3, keep best).",
+  "Garrote": "From behind: restrain and silence your target. They escape on a STR save (DC 12).",
+  "Hide in Shadows": "After breaking line of sight, EDGE to remain hidden.",
+  "Infiltrator": "EDGE on stealth and deception checks against guards and sentries.",
+  "Innate Tracker": "EDGE to track creatures (numbers, size, time elapsed).",
+  "Master of Disguise": "Allies using your disguises also gain EDGE.",
+  "Pick Locks": "Open non-magical locks with thieves' tools. No check required for mundane locks.",
+  "Pick Pockets": "Attempt theft unnoticed. Your DEX vs their WIS.",
+  "Poisoner": "Craft and apply poisons. Immune to your own poisons.",
+  "Silver Tongue": "EDGE on checks to deceive, lie, or misdirect.",
+  "Sleight of Hand": "Conceal or palm small items without being noticed.",
+  "Trap Expert": "EDGE to find, disable, or set traps.",
+  "Winning Smile": "EDGE on checks to persuade, charm, or negotiate."
+};
+
 // Weapons database
 const WEAPONS = {
   // Light weapons
@@ -1084,6 +1224,7 @@ function renderEditableSheet(char) {
       <div class="feat-item">
         <span class="feat-name">${f}</span>
         <span class="remove-feat" data-idx="${idx}">&times;</span>
+        <span class="feat-tooltip">${FEAT_DESCRIPTIONS[f] || 'No description available.'}</span>
       </div>
     `).join('');
     if (char.humanFeat) {
@@ -1091,6 +1232,7 @@ function renderEditableSheet(char) {
         <div class="feat-item">
           <span class="feat-name">${char.humanFeat}</span>
           <span class="feat-source">(Human)</span>
+          <span class="feat-tooltip">${FEAT_DESCRIPTIONS[char.humanFeat] || 'No description available.'}</span>
         </div>
       `;
     }
