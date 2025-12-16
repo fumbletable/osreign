@@ -486,6 +486,16 @@ Create characters and manage them during play. Characters auto-save to your brow
     cursor: pointer;
     padding: 0 0.25rem;
   }
+  .weapons-table tr.not-proficient {
+    opacity: 0.6;
+    background: #fff5f5;
+  }
+  .weapons-table tr.not-proficient .weapon-name {
+    color: #999;
+  }
+  .weapons-table tr.not-proficient .weapon-attack {
+    color: #c44;
+  }
   .add-weapon-row {
     margin-top: 0.5rem;
     display: flex;
@@ -1152,6 +1162,39 @@ const WEAPONS = {
   "Staff (Arcane)": { damage: "1d6", stat: "STR", tags: ["Versatile (1d8)", "Focus"] }
 };
 
+// Helper: Get weapon category (Light, Medium, or Heavy)
+function getWeaponCategory(weaponName, weaponData) {
+  if (weaponData.tags.includes("Light")) return "Light";
+  if (weaponData.tags.includes("Heavy")) return "Heavy";
+  return "Medium";
+}
+
+// Helper: Check if character is proficient with a weapon
+function isWeaponProficient(weaponName, weaponData, classProficiencies) {
+  if (!classProficiencies) return false;
+
+  // Druid has specific weapon list (not categories)
+  if (classProficiencies.includes("Sickles")) {
+    // Druid proficiency: Sickles, Staves, Spears, Slings
+    const druidWeapons = ["Sickle", "Quarterstaff", "Staff (Arcane)", "Spear", "Sling"];
+    return druidWeapons.includes(weaponName);
+  }
+
+  // Standard category-based proficiency
+  const category = getWeaponCategory(weaponName, weaponData);
+
+  // Check if class has this category
+  if (classProficiencies.includes(category)) {
+    // Cleric (Hallowed) restriction: Medium must be bludgeoning
+    if (classProficiencies.includes("bludgeoning only") && category === "Medium") {
+      return weaponData.tags.includes("Bludgeoning");
+    }
+    return true;
+  }
+
+  return false;
+}
+
 // Class feature descriptions
 const CLASS_FEATURE_DESCRIPTIONS = {
   "Turn Undead": "As an action, present your holy symbol. Undead within NEAR must make a WIS save (DC = your Spell DC) or flee for 1 Turn. Undead with HD ≤ half your level (round down) are destroyed instead. You can use this a number of times equal to your PB per long rest.",
@@ -1620,11 +1663,12 @@ function renderEditableSheet(char) {
         ${weapons.map((w, idx) => {
           const weaponData = WEAPONS[w.name] || { damage: w.damage || "1d6", stat: "STR", tags: [] };
           const statMod = char.finalAbilities[weaponData.stat] || 0;
-          const attackBonus = pb + statMod;
+          const proficient = isWeaponProficient(w.name, weaponData, classData?.weapons);
+          const attackBonus = (proficient ? pb : 0) + statMod;
           const damageBonus = statMod;
           return `
-            <tr>
-              <td class="weapon-name">${w.name}</td>
+            <tr class="${proficient ? '' : 'not-proficient'}">
+              <td class="weapon-name">${w.name}${proficient ? '' : ' *'}</td>
               <td class="weapon-attack">${formatMod(attackBonus)}</td>
               <td class="weapon-damage">${weaponData.damage}${damageBonus >= 0 ? '+' : ''}${damageBonus}</td>
               <td class="weapon-tags">${weaponData.tags.join(', ')}</td>
@@ -1635,6 +1679,7 @@ function renderEditableSheet(char) {
         ${weapons.length === 0 ? '<tr><td colspan="5" style="color: #666; font-style: italic;">No weapons added</td></tr>' : ''}
       </tbody>
     </table>
+    <p style="font-size: 0.75rem; color: #888; margin: 0.25rem 0 0.5rem;">* Not proficient (no PB to attack)</p>
     <div class="add-weapon-row">
       <select id="add-weapon-select">
         <option value="">Add weapon...</option>
