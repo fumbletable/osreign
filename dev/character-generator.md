@@ -1421,7 +1421,7 @@ function renderEditableSheet(char) {
     <h3>Combat</h3>
     <div class="derived-stats">
       <div class="derived-box editable-box">
-        <strong><span class="editable-field editable-number" contenteditable="true" data-field="currentHp">${char.currentHp}</span>/${char.maxHp}</strong>
+        <strong><span class="editable-field editable-number" contenteditable="true" data-field="currentHp">${char.currentHp}</span>/<span class="editable-field editable-number" contenteditable="true" data-field="maxHp">${char.maxHp}</span></strong>
         HP
       </div>
       <div class="derived-box"><strong>${char.ac}</strong>AC</div>
@@ -1461,13 +1461,6 @@ function renderEditableSheet(char) {
     <p><strong>Weapons:</strong> ${classData?.weapons || 'None'}<br>
     <strong>Armor:</strong> ${classData?.armor || 'None'}</p>
 
-    <h3>Ancestry Traits (${char.ancestry})</h3>
-    ${traitsHtml}
-
-    <h3>Class Features</h3>
-    <div class="class-feature"><strong>Boost Hook:</strong> ${classData?.boostHook || 'None'}</div>
-    ${classData?.feature ? `<div class="class-feature"><strong>${classData.feature}</strong></div>` : ''}
-
     <h3>Weapons</h3>
     ${weaponsHtml}
 
@@ -1475,6 +1468,13 @@ function renderEditableSheet(char) {
 
     <h3>Feats</h3>
     ${featsHtml}
+
+    <h3>Ancestry Traits (${char.ancestry})</h3>
+    ${traitsHtml}
+
+    <h3>Class Features</h3>
+    <div class="class-feature"><strong>Boost Hook:</strong> ${classData?.boostHook || 'None'}</div>
+    ${classData?.feature ? `<div class="class-feature"><strong>${classData.feature}</strong></div>` : ''}
 
     <h3>Equipment <span style="font-size: 0.8rem; color: #666;">(${(char.equipment || []).length} items)</span></h3>
     <div class="equipment-section">
@@ -1693,31 +1693,15 @@ function updateCharacterField(char, fieldPath, value) {
 
   // Handle numeric fields
   const lastPart = parts[parts.length - 1];
-  if (['level', 'currentHp', 'current', 'max', 'gp', 'sp', 'cp'].includes(lastPart)) {
+  if (['level', 'currentHp', 'maxHp', 'current', 'max', 'gp', 'sp', 'cp'].includes(lastPart)) {
     obj[lastPart] = parseInt(value) || 0;
   } else {
     obj[lastPart] = value;
   }
 
-  // Recalculate derived stats when level changes
+  // Re-render when level changes (updates PB display, spell slots, etc.)
+  // Note: Max HP is NOT auto-calculated - players roll their HD manually
   if (fieldPath === 'level') {
-    const classData = CLASSES.find(c => c.name === char.className);
-    const hd = classData?.hd || 8;
-    const conMod = char.finalAbilities?.CON || 0;
-    const newLevel = char.level || 1;
-
-    // Recalculate max HP: HD + CON at level 1, then average roll + CON per level
-    // Average roll = (HD/2 + 0.5) rounded down = HD/2 for simplicity
-    const avgRoll = Math.floor(hd / 2) + 1;
-    const oldMaxHp = char.maxHp;
-    char.maxHp = Math.max(1, hd + conMod + (newLevel - 1) * Math.max(1, avgRoll + conMod));
-
-    // Adjust current HP proportionally if max changed
-    if (oldMaxHp && oldMaxHp !== char.maxHp) {
-      const hpRatio = char.currentHp / oldMaxHp;
-      char.currentHp = Math.max(1, Math.round(hpRatio * char.maxHp));
-    }
-
     saveCurrentCharacter();
     renderEditableSheet(char);
     return;
