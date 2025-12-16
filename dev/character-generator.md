@@ -2089,7 +2089,7 @@ function attachSheetListeners(char) {
     if (!tierSelect || !spellSelect) return;
 
     const selectedTier = parseInt(tierSelect.value);
-    const classData = CLASSES.find(c => c.name === char.charClass);
+    const classData = CLASSES.find(c => c.name === char.className);
     const spellType = classData?.spellcasting?.type;
 
     if (!spellType || !SPELL_LISTS[spellType]) {
