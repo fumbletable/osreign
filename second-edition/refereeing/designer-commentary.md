@@ -363,23 +363,21 @@ In OSwR, dropping to 0 HP triggers a CON save (DC 12) when you get back up—fai
 
 # Exploration
 
-## Why 6-Hour Watches?
+## Why 4-Hour Watches?
 
-Earlier drafts used 4-hour watches (six per day). We switched to 6-hour watches (four per day).
+We use 4-hour watches (six per day) for wilderness exploration. Earlier drafts experimented with 6-hour watches (four per day), but we returned to the original design.
 
-**Why the change?**
+**Why 4-hour watches work better:**
 
-1. **Simpler mental model.** Four watches is easier to track than six. Dawn, Midday, Dusk, Night. Each is a quarter of the day.
+1. **Hex alignment.** At Normal terrain speed, you cover 6 miles per watch — exactly one 6-mile hex. This clean 1:1 relationship makes hexcrawl navigation intuitive. "One watch, one hex" is easy to track and creates natural decision points.
 
-2. **Fewer rolls without less pressure.** With 4-hour watches, you rolled the hazard die more often, but each roll mattered less. The extra granularity didn't add meaningful decisions—it just created more bookkeeping.
+2. **Meaningful choices.** Six watches per day gives players more granularity in how they spend their time. Travel three watches, hunt for two, rest for one. Or travel two, investigate a hex, forage, and rest two. The extra watches create more interesting daily planning.
 
-3. **Activities fit naturally.** A 6-hour watch is long enough to travel a meaningful distance, hunt for game, thoroughly explore a hex, or get a proper rest. 4-hour watches felt rushed—hunting took most of your watch with little time left.
+3. **Activities scale properly.** Hunting takes two watches because tracking and killing game is serious work. Rest takes two watches because a proper night's sleep needs time. These durations feel right at 4 hours each — hunting is a half-day commitment, rest is a full night.
 
-4. **Two travel watches works.** At 6 hours each, two watches of travel (12 hours) represents a long but manageable day. With 4-hour watches, "two watches of travel" was only 8 hours—too short for a proper journey.
+4. **Three travel watches is a full day.** At 4 hours each, three watches of travel is 12 hours of marching — an exhausting but realistic day's journey. Pushing to a fourth watch means forced march saves every hour.
 
-**What we lost:** Finer time tracking. With 4-hour watches, you could be more precise about "we travel until mid-afternoon." With 6-hour watches, time moves in larger chunks.
-
-**The trade-off was worth it.** The precision rarely mattered in play, but the complexity always cost attention. Four watches keeps the resource pressure while simplifying the tracking.
+**What we traded:** The simpler "four watches = four quarters of the day" mental model. But in practice, the hex alignment and activity granularity matter more than having a neat division of the day.
 
 ---
 

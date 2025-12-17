@@ -8,7 +8,7 @@ nav_order: 1
 
 # Treasure Tables
 
-Treasure is the primary source of XP in OSwR. These tables help generate rewards quickly.
+Use these tables to determine what treasure is found. For generating interesting items, see [Generators](../generators.html).
 
 ---
 
@@ -18,24 +18,24 @@ Roll **d6 + Dungeon Level** to determine the hoard.
 
 | Roll | Gold | Items |
 |-----:|------|-------|
-| 2–3 | 5d10 gp (avg 50) | 1 Minor |
-| 4 | 10d10 gp (avg 100) | 1 Minor |
-| 5 | 15d10 gp (avg 150) | 2 Minor |
-| 6 | 20d10 gp (avg 200) | 2 Minor |
-| 7 | 25d10 gp (avg 250) | 3 Minor |
-| 8 | 30d10 gp (avg 300) | 1 Major |
-| 9 | 40d10 gp (avg 400) | 1 Major + 1 Minor |
-| 10 | 50d10 gp (avg 500) | 1 Major + 2 Minor |
-| 11 | 60d10 gp (avg 600) | 2 Major |
-| 12 | 70d10 gp (avg 700) | 2 Major + 1 Minor |
-| 13 | 80d10 gp (avg 800) | 1 Epic |
-| 14 | 100d10 gp (avg 1,000) | 1 Epic + 1 Minor |
-| 15 | 120d10 gp (avg 1,200) | 1 Epic + 1 Major |
-| 16 | 150d10 gp (avg 1,500) | 2 Epic |
-| 17 | 200d10 gp (avg 2,000) | 2 Epic + 1 Minor |
-| 18 | 300d10 gp (avg 3,000) | 3 Epic |
-| 19 | 400d10 gp (avg 4,000) | 3 Epic + 2 Major |
-| 20+ | 500d10 gp (avg 5,000) | 3 Epic + 3 Major + 2 Minor |
+| 2–3 | 15d10 gp (avg 150) | 1 Minor |
+| 4 | 30d10 gp (avg 300) | 1 Minor |
+| 5 | 45d10 gp (avg 450) | 2 Minor |
+| 6 | 60d10 gp (avg 600) | 2 Minor |
+| 7 | 75d10 gp (avg 750) | 3 Minor |
+| 8 | 90d10 gp (avg 900) | 1 Major |
+| 9 | 120d10 gp (avg 1,200) | 1 Major + 1 Minor |
+| 10 | 150d10 gp (avg 1,500) | 1 Major + 2 Minor |
+| 11 | 180d10 gp (avg 1,800) | 2 Major |
+| 12 | 210d10 gp (avg 2,100) | 2 Major + 1 Minor |
+| 13 | 240d10 gp (avg 2,400) | 1 Epic |
+| 14 | 300d10 gp (avg 3,000) | 1 Epic + 1 Minor |
+| 15 | 360d10 gp (avg 3,600) | 1 Epic + 1 Major |
+| 16 | 450d10 gp (avg 4,500) | 2 Epic |
+| 17 | 600d10 gp (avg 6,000) | 2 Epic + 1 Minor |
+| 18 | 900d10 gp (avg 9,000) | 3 Epic |
+| 19 | 1,200d10 gp (avg 12,000) | 3 Epic + 2 Major |
+| 20+ | 1,500d10 gp (avg 15,000) | 3 Epic + 3 Major + 2 Minor |
 
 **Note:** A level 1 dungeon rolls d6+1 (range 2–7). A level 5 dungeon rolls d6+5 (range 6–11). Deep dungeons yield greater rewards.
 
@@ -44,70 +44,43 @@ Roll **d6 + Dungeon Level** to determine the hoard.
 ## Treasure Tiers
 
 ### Minor (Common)
-Simple bonuses, expendables, and utility items.
+Single-use items, limited effects, or simple enhancements.
+- Potions and scrolls
 - +1 weapons and armor
-- Potions (single use)
-- Scrolls (single use)
-- Trinkets with minor magical effects
+- Items with one trick
 
 ### Major (Rare)
-Stronger bonuses, multi-use items, and versatile effects.
+Reliable powers, multiple uses, or significant abilities.
 - +2 weapons and armor
 - Wands and rods (limited charges)
-- Permanent magic items with useful abilities
-- Items requiring attunement
+- Permanent items worth keeping
 
 ### Epic (Legendary)
-Unique artifacts with names, histories, and powerful abilities.
+Named artifacts with histories, feared or coveted.
 - +3 weapons and armor (rare even here)
-- Artifacts with world-changing potential
 - Items that shape campaigns
 - Cannot be bought or easily replicated
 
 ---
 
-## Item Type (d6)
+## What Kind of Item?
 
-When you need to determine what kind of item, roll d6:
+When you need to determine what type of item is found:
 
-| d6 | Type |
-|---:|------|
-| 1 | Weapon |
-| 2 | Armor |
-| 3 | Potion |
-| 4 | Scroll |
+| d6 | Item Type |
+|---:|-----------|
+| 1 | Potion |
+| 2 | Scroll |
+| 3 | Weapon |
+| 4 | Armor or Shield |
 | 5 | Wondrous Item |
-| 6 | Miscellaneous |
+| 6 | Wondrous Item |
+
+For weapons and armor, use the [Generators](../generators.html) to determine appearance. For wondrous items, roll on the generator tables to create something unique.
 
 ---
 
-## Weapon Subtypes (d6)
-
-| d6 | Minor | Major | Epic |
-|---:|-------|-------|------|
-| 1 | Dagger | Sword | Named blade |
-| 2 | Shortsword | Battleaxe | Legendary bow |
-| 3 | Handaxe | Warhammer | Artifact staff |
-| 4 | Mace | Longbow | Demon-slaying weapon |
-| 5 | Spear | Crossbow | Holy avenger |
-| 6 | Staff | Polearm | Dragon-forged |
-
----
-
-## Armor Subtypes (d6)
-
-| d6 | Minor | Major | Epic |
-|---:|-------|-------|------|
-| 1 | Shield | Enchanted shield | Legendary shield |
-| 2 | Leather | Studded leather +1 | Mithril shirt |
-| 3 | Chain shirt | Chain mail +1 | Dragonscale |
-| 4 | Helm | Helm of protection | Crown of kings |
-| 5 | Bracers | Bracers of defense | Gauntlets of power |
-| 6 | Cloak | Cloak of protection | Cloak of invisibility |
-
----
-
-## Potion Types (d6)
+## Potions (d6)
 
 | d6 | Minor | Major | Epic |
 |---:|-------|-------|------|
@@ -118,9 +91,11 @@ When you need to determine what kind of item, roll d6:
 | 5 | Resistance (1 type) | Heroism | Longevity |
 | 6 | Antidote | Fire Resistance | Flying |
 
+**Weird potions:** Use the [Generators](../generators.html) with Effect + Form for strange potions. "Whispering + Vial" might be a potion that lets you hear distant conversations.
+
 ---
 
-## Scroll Types (d6)
+## Scrolls (d6)
 
 Roll spell tier based on treasure tier:
 - **Minor:** Tier 1–2 spells
@@ -131,44 +106,25 @@ Roll spell tier based on treasure tier:
 |---:|-----------------|
 | 1–2 | Arcane spell (Magic-User list) |
 | 3–4 | Divine spell (Cleric list) |
-| 5 | Druidic spell (Druidic list) |
+| 5 | Druid spell |
 | 6 | Protection scroll (vs specific creature type) |
 
 ---
 
-## Wondrous Items (d6)
+## Mundane Treasure
 
-| d6 | Minor | Major | Epic |
-|---:|-------|-------|------|
-| 1 | Bag of holding (small) | Bag of holding (large) | Portable hole |
-| 2 | Boots of elvenkind | Boots of speed | Seven-league boots |
-| 3 | Rope of climbing | Rope of entanglement | Flying carpet |
-| 4 | Lantern of revealing | Crystal ball | Mirror of scrying |
-| 5 | Amulet of health (+1) | Amulet of health (+2) | Amulet of proof vs detection |
-| 6 | Ring of protection (+1) | Ring of spell storing | Ring of wishes (1d3) |
+Not all treasure is magical. Use [Generators](../generators.html) to make mundane treasure interesting.
 
----
+| d6 | Type | Minor Value | Major Value | Epic Value |
+|---:|------|-------------|-------------|------------|
+| 1 | Gemstones | 20–200 gp | 200–1,000 gp | 2,000+ gp |
+| 2 | Coins | Ancient, unusual | Trade bars | Royal mint |
+| 3 | Map | Fragment | Complete | Legendary location |
+| 4 | Art object | Decorative | Masterwork | Priceless |
+| 5 | Trade goods | Spices, dyes | Rare materials | Unique components |
+| 6 | Documents | Letters, deeds | Contracts, secrets | State secrets |
 
-## Miscellaneous Treasure (d6)
-
-Not everything magical is useful in combat.
-
-| d6 | Minor | Major | Epic |
-|---:|-------|-------|------|
-| 1 | Gemstones (10–100 gp) | Rare gems (100–500 gp) | Legendary jewels (1,000+ gp) |
-| 2 | Ancient coins | Trade bars (silver/gold) | Royal treasury coinage |
-| 3 | Map fragment | Complete treasure map | Map to legendary location |
-| 4 | Art object | Masterwork sculpture | Priceless artifact |
-| 5 | Exotic tool | Specialist equipment | Unique crafting material |
-| 6 | Alchemical supplies | Rare components | Philosopher's stone fragment |
-
----
-
-## Quick Generation
-
-**Fast method:** Roll d6 + dungeon level for the hoard, then roll d6 for each item type. If you need specifics, drill into the subtype tables.
-
-**Lazy method:** Pick items that make sense for the dungeon and its inhabitants. A goblin lair has crude weapons and stolen coins. A dragon's hoard has everything.
+**Make it specific:** Roll on the generator tables even for mundane treasure. "Gemstones worth 200gp" becomes "six polished amber stones, each carved with a weeping face." Specificity creates questions. Questions create adventures.
 
 ---
 
@@ -180,3 +136,12 @@ Not every room has treasure. When stocking a dungeon:
 - **Empty rooms:** 1-in-6 chance of hidden treasure
 - **Trapped areas:** Often guard something valuable
 - **Boss chambers:** The biggest hoard
+
+---
+
+## Quick Reference
+
+1. Roll d6 + dungeon level for hoard size
+2. Roll d6 to determine each item type
+3. Use [Generators](../generators.html) to describe items
+4. Name Epic items and give them history

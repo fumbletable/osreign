@@ -12,9 +12,9 @@ Dungeons are tracked in **Turns** (10 minutes). Each Turn, the Referee notes lig
 
 > **Turn Procedure**
 > 1. Party declares marching order and actions
-> 2. GM describes what they see or encounter
-> 3. Resolve actions (movement, searching, doors)
-> 4. Roll the hazard die
+> 2. Referee describes what they see or encounter
+> 3. Roll the hazard die
+> 4. Resolve actions (Referee decides when hazard occurs)
 > 5. Mark time; track light sources
 
 ---
@@ -43,7 +43,7 @@ Light is precious underground. Track it.
 | **Lantern** | 6 hours (1 flask of oil) | 30 ft bright, 30 ft dim |
 | **Candle** | 1 hour | 5 ft bright, 5 ft dim |
 
-**Darkvision:** See 30 ft in dim light as if bright, darkness as dim. No colour, no fine detail.
+**Darkvision:** See 30 ft in dim light as if bright, darkness as dim. No color, no fine detail.
 
 **No light:** Effectively blind. SETBACK on all rolls. Movement halved. Can't read, search, or spot danger.
 
@@ -58,12 +58,12 @@ Roll **1d6 each Turn**:
 | 1 | **Encounter** — a wandering monster appears. |
 | 2 | **Sign** — noise, smell, tracks, or shadow hinting at nearby danger. |
 | 3 | **Light** — a torch sputters out, or lantern oil runs low. |
-| 4 | **Fatigue** — rest for 10 minutes or CON save (DC 12) or gain 1 Fatigue. |
+| 4 | **Fatigue** — rest now for 10 minutes, or make a CON save (DC 12). Fail the save and gain 1 Fatigue. |
 | 5–6 | **Nothing** — the turn passes uneventfully. |
 
 **Use common sense.** If a torch just got lit, a result of 3 might mean it flickers ominously rather than dying. The hazard die creates pressure; it's not a straitjacket.
 
-*Prefer traditional bookkeeping?* Roll 1d6 every 2 Turns instead; on a 1, encounter. Track light and rest separately.
+*Prefer traditional bookkeeping?* Roll a dice of your choice every Turn; on a 1, encounter. Track light (torch = 6 Turns, lantern = 1 Watch) and rest (once per hour) separately.
 
 ---
 
@@ -73,10 +73,10 @@ Searching a room, passage, or feature for traps, hidden compartments, or secret 
 
 **WIS check** — DC set by how well-hidden the feature is. Easy (DC 8) for a loose flagstone; Hard (DC 16) for a master-crafted hidden door.
 
-- **Success:** The GM reveals what's there.
+- **Success:** The Referee reveals what's there.
 - **Fail:** Nothing found — but that doesn't mean nothing exists.
 
-**Targeted searching** (examining a specific statue, chest, or section of wall) may take less time at the GM's discretion.
+**Targeted searching** (examining a specific statue, chest, or section of wall) may take less time at the Referee's discretion.
 
 ---
 

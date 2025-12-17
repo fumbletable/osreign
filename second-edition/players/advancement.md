@@ -19,7 +19,7 @@ Characters earn XP from **treasure recovered** and **monsters overcome**.
 
 ### Treasure XP
 
-**1 XP per 1 GP** of treasure recovered from dangerous locations and returned to civilisation.
+**1 XP per 1 GP** of treasure recovered from dangerous locations and returned to civilization.
 
 Treasure must be won through risk. Coins earned through honest work or trade don't count—only wealth pulled from dungeons, ruins, lairs, and other perilous places.
 

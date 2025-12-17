@@ -9,42 +9,42 @@ has_children: true
 
 # Treasure
 
-Treasure is the primary source of XP in OSwR. Every gold piece recovered from a dangerous location grants 1 XP.
+Treasure drives the game. Every gold piece recovered from a dangerous location grants 1 XP—making wealth the primary measure of success.
 
 ---
 
-## Treasure Tiers
+## Why Treasure-for-XP?
 
-### Minor (Common)
-- Simple bonuses or expendables: +1 items, potions, scrolls, trinkets.
-- Frequent; found in small hoards or on lesser foes.
-- Value: baseline currency for trade and barter.
+This system rewards clever play over combat. Sneaking past the dragon to grab its hoard is smarter than fighting it—the gold is worth far more XP than the kill.
 
-### Major (Rare)
-- Stronger bonuses or multi-use items: +2 gear, relics, versatile effects.
-- Rewards major encounters or deep-level discoveries.
-- Value: 10× Minor; often gated by settlement size or contacts.
+When players know that treasure equals advancement, they:
+- Scout before fighting
+- Negotiate when possible
+- Take risks for the big score
+- Retreat to fight another day
 
-### Epic (Legendary)
-- Singular artifacts, legendary relics, items with names or histories.
-- Found only in high-risk dungeons or narrative milestones.
-- Value: 100× Minor; trade and duplication impossible.
+Combat becomes a tool, not a goal. That's intentional.
 
 ---
 
-## Treasure and XP
+## XP Values
 
 | Source | XP Value |
 |--------|----------|
-| Gold, silver, gems | 1 XP per 1 GP value |
+| Coins, gems, jewelry | 1 XP per 1 GP value |
 | Art objects | Appraised value = XP |
-| Magic items | No direct XP (value is in use) |
-| Monster defeat | HD² × 10 (secondary to treasure) |
+| Trade goods | Market value = XP |
+| Magic items | No XP (the item is the reward) |
+| Monsters defeated | HD² × 10 |
 
-**Design note:** Treasure-for-XP encourages clever play. Sneaking past the dragon to grab the hoard is smarter than fighting it — the gold is worth more XP than the kill.
+**Recovered, not found.** Treasure only grants XP when brought back to civilization. A hoard discovered but left behind is worth nothing until claimed.
+
+**Magic items grant no XP** because their utility is the reward. This prevents "magic item farming" and keeps the focus on portable wealth.
+
+**Monster XP is secondary.** A dragon's hoard might be worth 10,000 XP. The dragon itself? 810 XP (9 HD² × 10). The math speaks for itself.
 
 ---
 
 ## Contents
 
-- [Treasure Tables](treasure/treasure-tables/) - Generation tables by dungeon level
+- [Treasure Tables](treasure/treasure-tables/) — Generation tables by dungeon level

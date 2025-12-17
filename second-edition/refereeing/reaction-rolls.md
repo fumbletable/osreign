@@ -8,28 +8,46 @@ nav_order: 7
 
 # Reaction Rolls
 
-When you meet NPCs or monsters, don't assume they attack.
-The Referee rolls **2d6**, modified by the party's highest **CHA**, to set their initial stance:
-
-| Roll | Initial Reaction |
-|-----:|------------------|
-| 2 | Immediate attack (no chance to negotiate) |
-| 3–5 | Hostile / unfriendly |
-| 6–8 | Uncertain / cautious |
-| 9–11 | Friendly / open |
-| 12 | Immediate aid |
+Not everything wants to fight. Reaction rolls let the world surprise you — and your players.
 
 ---
 
-## Shifting the Reaction
+## Why This Matters
 
-After the initial roll (except on a 2), the party's spokesperson may try to shift the stance with a **CHA check** (Referee sets the DC based on context).
+Don't pre-script NPC behaviour. A goblin patrol might be lost, hungry, or fleeing something worse. Bandits might want to negotiate. Even a troll might pause if offered food.
 
-- **Success:** move the stance one step more favorable.
-- **Nat 20:** move two steps more favorable.
-- **Failure:** no change.
-- **Nat 1:** move two steps less favorable.
+The reaction roll creates emergent encounters. You discover what happens alongside your players, and that's part of the fun.
 
 ---
 
-This system makes first contact unpredictable, but still gives the party face a chance to steer outcomes through roleplay and CHA.
+## When to Roll
+
+Roll when the party encounters creatures whose intentions aren't already established. Don't roll for mindless creatures, sworn enemies, or when the party attacks first.
+
+---
+
+## The Roll
+
+Roll **2d6**:
+
+| Roll | Reaction |
+|-----:|----------|
+| 2 | Hostile — attacks immediately |
+| 3–5 | Unfriendly — threatens or demands |
+| 6–8 | Uncertain — wary, waiting |
+| 9–11 | Friendly — willing to talk |
+| 12 | Helpful — offers aid |
+
+Adjust for context: weapons drawn, reputation, gifts offered, what the creatures are protecting. A +1 or −1 either way is usually enough.
+
+---
+
+## After the Roll
+
+The result is a starting point. Good roleplay can shift it — if what the party says or offers makes sense, move the reaction one step without a roll. If it's a hard sell, call for a CHA check.
+
+---
+
+## Retainers
+
+Hiring retainers uses a similar 2d6 reaction roll. See [Retainers](retainers.md) for details.

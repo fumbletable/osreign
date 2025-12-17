@@ -200,25 +200,11 @@ See individual equipment pages for full lists.
 
 ## Treasure
 
-*[TO DO: Treasure tables and dungeon stocking]*
-
-### Treasure by Dungeon Level
-
-Deeper = richer. Treasure scales with risk.
-
-*[TO DO: d6 + Dungeon Level table]*
-
-### Magic Item Tiers
-
-| Tier | Examples |
-|------|----------|
-| Minor | Potions, scrolls, +1 weapons |
-| Major | +2 items, wands, useful permanent items |
-| Epic | +3 items, artifacts, legendary items |
+See [Treasure](../refereeing/treasure) in the Referee's Guide for treasure generation tables and magic item tiers.
 
 ---
 
 ## Strongholds & Domain Play
 
-*[TO DO: Post-MVP content]*
+See [Domain Play](../refereeing/domain-play) in the Referee's Guide for rules on strongholds, retainer armies, and domain income.
 
