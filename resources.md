@@ -43,7 +43,26 @@ Check the [GitHub releases page](https://github.com/fumbletable/osreign/releases
 
 ## Character Sheets
 
-*Coming soon*
+Two-page character sheets for OSwR Second Edition, designed to track everything your adventurer needs.
+
+| Version | Description |
+|---------|-------------|
+| **[Form-Fillable PDF]({{ site.baseurl }}/assets/downloads/oswr-character-sheet-form-fillable.pdf)** | Fill in digitally using any PDF reader |
+| **[Printable PDF]({{ site.baseurl }}/assets/downloads/oswr-character-sheet-printable.pdf)** | Clean version for printing and handwriting |
+
+### What's on the Sheet?
+
+**Page 1 - Character Record:**
+- Ability scores with save checkboxes
+- Attacks, armor, and combat stats
+- Inventory with slot-based encumbrance
+- Feats, hindrances, and ancestry traits
+- Fatigue and condition tracking
+
+**Page 2 - Spellcasting:**
+- Spell slots by tier (1-6)
+- Spell save DC and attack bonus
+- Full spell list with preparation checkboxes
 
 ---
 
