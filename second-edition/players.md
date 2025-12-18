@@ -18,11 +18,11 @@ Everything you need to create your character and venture into the unknown.
 
 - **Character** - Roll abilities, choose your ancestry and background, pick a hindrance
 - **Classes** - Fighter, Expert, Cleric, or Magic-User - each with unique abilities
-- **Feats** - Specialise your character with General, Fighter, and Expert feats
+- **Feats** - Specialize your character with General, Fighter, and Expert feats
 
 ### Outfitting for Adventure
 
-- **Equipment** - Weapons, armour, adventuring gear, and encumbrance
+- **Equipment** - Weapons, armor, adventuring gear, and encumbrance
 - **Economy** - Prices, wages, and what gold can buy
 
 ### Core Rules

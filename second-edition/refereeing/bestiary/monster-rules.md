@@ -8,6 +8,8 @@ nav_order: 1
 
 # Monster Rules
 
+How to read stat blocks and run creatures at your table.
+
 ---
 
 ## Stat Block Format
@@ -16,15 +18,15 @@ nav_order: 1
 ## Monster Name
 **HD X | AC Y | HP Z** | [combat-critical tags]<br>
 Atk attacks (damage) | Mv Speed | Ml # | XP ##<br>
-Special abilities (STAT DC).<br>
+Special abilities (DC # STAT or effect).<br>
 Flavour text—what it looks like, where it lives, how it behaves.
 ```
 
 **Line 1:** Name as heading (linkable anchor)
 **Line 2:** The survival trio—HD, AC, HP—bolded. Combat-critical tags (Darkvision, Immune, Regenerate, Incorporeal) follow.
 **Line 3:** What it does to you (attacks), then secondary info (movement, morale, XP).
-**Line 4:** Special abilities—the mechanics a GM needs mid-combat.
-**Line 5:** Flavour—what it is. GMs can skip this line during combat, but it's there for prep and player questions.
+**Line 4:** Special abilities—the mechanics you need mid-combat.
+**Line 5:** Flavour—what it is. Skip this line during combat, but it's there for prep and player questions.
 
 ---
 
@@ -38,7 +40,7 @@ Everything flows from **Hit Dice (HD)**:
 | **HP** | = HD × 4 (or roll d8s per HD) |
 | **Save Bonus** | = HD ÷ 2 (round up), or HD if excellent, 0 if terrible |
 | **XP** | = HD² × 10 (shown in stat block) |
-| **Save DC** | HD 1-4: DC 8 / HD 5-8: DC 12 / HD 9-12: DC 16 / HD 13+: DC 20 |
+| **Save DC** | HD 1-4: Easy (DC 8) / HD 5-8: Normal (DC 12) / HD 9-12: Hard (DC 16) / HD 13+: Extreme (DC 20) |
 
 ---
 
@@ -168,7 +170,7 @@ Small green-skinned raiders. Attack in swarms, flee when outmatched.
 ## Ghoul
 **HD 2 | AC 13 | HP 8** | Darkvision<br>
 Atk 2 claws (d3), bite (d4) | Mv Normal | Ml 9 | XP 40<br>
-Paralysing touch (STR 8, 3d6×10 minutes). Elves immune.<br>
+Paralysing touch (DC 8 STR or paralyzed 3d6×10 minutes). Elves immune.<br>
 Grave-stench and too-long fingers. Once human, now endlessly hungry.
 
 ---
@@ -176,7 +178,7 @@ Grave-stench and too-long fingers. Once human, now endlessly hungry.
 ## Basilisk
 **HD 6 | AC 15 | HP 24** | Darkvision<br>
 Atk bite (d10) | Mv Slow | Ml 9 | XP 360<br>
-Petrifying gaze (CON 12 or stone). Fighting blind = SETBACK.<br>
+Petrifying gaze (DC 12 CON or turned to stone). Fighting blind = SETBACK.<br>
 Eight-legged reptile with dead white eyes. Lairs in ruins, surrounded by statues of the unfortunate.
 
 ---
@@ -192,7 +194,7 @@ Rubbery green flesh, long arms, black eyes. Remembers everyone who hurt it.
 ## Rust Monster
 **HD 5 | AC 17 | HP 20** | Darkvision<br>
 Atk antennae (special) | Mv Normal | Ml 7 | XP 250<br>
-Touch rusts metal instantly. Magic items: save or destroyed (10% per +1 bonus to resist).<br>
+Touch rusts metal instantly. Magic items: DC 12, +2 per +1 bonus, or destroyed.<br>
 Lobster-like scavenger. Loves the taste of iron. Harmless if you're naked.
 
 ---
@@ -200,5 +202,5 @@ Lobster-like scavenger. Loves the taste of iron. Harmless if you're naked.
 ## Dragon
 **HD 10 | AC 19 | HP 40** | Darkvision | Immune: Fire<br>
 Atk 2 claws (d8), bite (3d6) | Mv Normal, Fly Fast | Ml 10 | XP 1000<br>
-Breath weapon (DEX 16, fire, 90' cone, HD damage).<br>
+Breath weapon (DC 16 DEX or 10d6 fire, 90' cone).<br>
 Ancient, cunning, and endlessly greedy. Enjoys flattery almost as much as gold.
