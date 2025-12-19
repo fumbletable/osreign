@@ -54,8 +54,8 @@ Steel, wood, and string - here's what kills.
 - **Finesse** - Can use DEX instead of STR for attack and damage
 - **Versatile** - One or two hands; two-handed uses the higher damage die
 - **Two-Handed** - Requires both hands
-- **Thrown (Near)** - Can be thrown to Near range
-- **Ranged (Near/Far)** - Fires projectiles to Near or Far range
+- **Thrown (Near)** - Can be thrown to **Near** range
+- **Ranged (Near/Far)** - Fires projectiles to **Near** or **Far** range
 - **Reach** - Melee attacks reach 10 ft
 - **Loading** - Takes 1 action to reload after firing
 
@@ -63,6 +63,6 @@ Steel, wood, and string - here's what kills.
 - **Bulky** - Counts as 2 slots for encumbrance
 
 **Special:**
-- **Cleave** - When you drop a foe to 0 HP, deal d4 damage to another foe within Close range (once per turn)
-- **Crush** - On a hit, you can knock the target prone instead of adding your STR to damage
+- **Cleave** - When you drop a foe to 0 HP, deal d4 damage to another foe within **Close** range (once per turn)
+- **Crush** - On a hit, you can knock the target **Prone** instead of adding your STR to damage
 - **Hook** - On a hit, you can push or pull the target 5 ft instead of adding your STR to damage

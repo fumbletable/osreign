@@ -12,13 +12,57 @@ This page explains the thinking behind OSwR's design decisions. It's here for pl
 
 ---
 
+## The Purpose
+
+I don't want to write another book.
+
+That's not laziness - it's the point. OSwR is designed to be handed over. Every system in this book exists so you can create for it, not just consume it.
+
+**Build-an-Ancestry** means you're not waiting for me to publish dark elves. **Build-a-Spell** means you're not stuck with my spell list. The combinatorial treasure tables mean you'll never need a "Magic Items Compendium."
+
+The monster stat blocks follow a rigid format with maximum flexibility, so your creations look like mine. The spell tiers (1-6) give us a shared language. The DC pattern (Easy 8, Normal 12, Hard 16) means your content and mine are interchangeable.
+
+Want to run a B/X module? Convert on the fly. Want to grab a 5e monster? The maths work. Want to share your dungeon with another OSwR table? They'll read it instantly.
+
+This is why there are only four classes but robust feats and multiclassing. This is why the treasure tables teach you the grammar of magic items instead of listing 100 fixed entries. This is why everything has tiers, tags, and patterns.
+
+The book is a toolkit. Use it to build your own game.
+
+---
+
 ## The Core Vision
 
 **"5e chassis, OSR soul."**
 
-OSwR takes the mechanical foundation that modern players know (bounded accuracy, proficiency bonus, advantage/disadvantage) and pairs it with the play philosophy that makes old-school games sing (player skill over character builds, resource pressure, emergent narrative).
+OSwR takes the mechanical foundation that modern players know (bounded accuracy, proficiency bonus, Edge/Setback) and pairs it with the play philosophy that makes old-school games sing (player skill over character builds, resource pressure, emergent narrative).
 
 The goal: a game where 5e players feel mechanically at home but discover a completely different play experience.
+
+---
+
+## The Design Pillars
+
+These are the principles behind every rule in OSwR.
+
+### 1. Danger Stays Real
+
+Combat is risky at every level. HP stays lower than 5e. Death has teeth - you can die, not just yo-yo back up. There are no safety nets that let you bounce back repeatedly. The power curve stays low even as characters advance.
+
+### 2. Emergent Gameplay Through Systems
+
+The world responds to player choices through dice, not GM decisions. Reaction rolls mean NPCs aren't pre-scripted. Morale means enemies flee. Supply means torches and rations create real decisions. These systems generate story - the GM doesn't decide "this NPC is friendly," the dice and player choices create that outcome.
+
+### 3. Player Flexibility Without Bloat
+
+Four classes. No skill list. Feats build archetypes - Ranger, Paladin, Bard, Monk all emerge from combinations. If it makes sense, roll for it. One rule that covers many cases beats many rules that cover one case each.
+
+### 4. Resource Management Matters
+
+Encumbrance is slot-based and consequential. Light matters - darkvision is rare. Rest has three tiers with real trade-offs. Spell slots are limited. Fatigue accumulates. 5e handwaves these; OSwR makes them real.
+
+### 5. Functional With Flavour
+
+Every rule separates what it *does* from what it *is*. Mechanics first, atmosphere second. Monster stat blocks have a mechanics line then a flavour line. Spells have effects then description. The book supports two reading modes: scan for rules, or read for immersion.
 
 ---
 
@@ -161,6 +205,10 @@ Boost Dice started as physical d6s handed to players for doing cool things. The 
 **Why separate from Edge?** **Edge** is situational—the environment or circumstances give it to you. Boost Dice are earned through play and spent deliberately. They're a player resource, not a Referee ruling.
 
 **Classic divergence:** This replaces 5e's Inspiration (which nobody remembers to use) with something visible, tactile, and tied to character identity.
+
+**Why feats cost Boost Dice.** Some feats—Rage, Leadership, Hunter's Mark—let you do powerful things. But they cost Boost Dice to activate. This means you can't do everything: you can't Rage AND take an extra Fighter attack AND boost your damage roll in the same fight. You have to choose.
+
+Hard decisions make a good game. Boost Dice create those decisions by putting powerful abilities in competition with each other.
 
 ---
 
@@ -432,7 +480,7 @@ In 5e, you level up and get your features automatically. In OSwR, levelling gran
 
 3. **Different classes, different pressures.** Magic-Users spend gold on spell research. Fighters spend it on feats. The system naturally creates different economic priorities without forcing it.
 
-4. **Party dynamics.** A Fighter who carouses (spending gold for XP) might level faster than a Magic-User saving for research. That's fine - the Fighter becomes a better bodyguard for the squishy wizard. Everyone benefits.
+4. **Party dynamics.** Characters level at different rates based on how they spend gold. That's fine—it creates natural party roles and dependencies.
 
 ---
 
@@ -451,6 +499,20 @@ Spell research costs 700 gp per week and requires an INT check at the end of the
 Simple, memorable, scales naturally with time. A week of research = 7 days = 700 gp. No lookup tables needed.
 
 This also makes finding spells in the world more valuable. Copying from a found scroll (100 gp/tier) is much cheaper than researching from scratch (700 gp/week + INT check). The economy rewards exploration.
+
+---
+
+## Why Spell Scaling Patterns?
+
+OSwR spells follow predictable patterns:
+
+- **Artillery** (Fireball, Lightning Bolt): Tier × d6 damage, save for half
+- **Missile** (Magic Missile): PB missiles, each dealing 1d4+1
+- **Healing** (Cure spells): Scales with PB and tier
+
+When I converted classic spells, I couldn't see the logic in why some were higher level than others. The original spell levels felt arbitrary. Patterns fix that—you can look at a spell and understand why it's Tier 3 instead of Tier 4.
+
+More importantly, patterns are creation tools. If someone writes a "Book of Shadow Magic," the spells will fit because the grammar is clear. If you convert a spell from B/X or 5e, you know where it belongs. The patterns make the system legible—to me, to you, to anyone creating for it.
 
 ---
 
@@ -578,6 +640,8 @@ The Player's Guide follows a specific sequence: How to Play → Character → Eq
 
 **How to Play first.** Every other section uses terms like DC, **Edge**, **Setback**, checks, and saves. By putting the core mechanics at the front, we define these before they appear elsewhere. A reader going cover-to-cover never hits an unexplained term.
 
+OSwR uses different terminology than 5e—Edge instead of advantage, Boost Dice instead of Inspiration, Supply instead of rations, five Fatigue levels instead of exhaustion. These need explaining before character creation starts using them. The goal is simple: no forward references, no flicking back through the book.
+
 **Character includes Classes, Feats, and Advancement.** When players build characters, they're already thinking ahead: "At level 3 I'll take this feat, at level 5 I'll multiclass..." Grouping the full character arc together—creation through progression—matches how players actually think about their builds.
 
 **Magic is separate from Character.** Not everyone plays a caster. Keeping magic in its own section means non-casters can skip it entirely, while casters have everything they need in one place.
@@ -605,47 +669,6 @@ Beyond the philosophical changes, here are specific mechanical divergences from 
 **Hit Dice for HP:** OSE rolls HD at each level (d8 for Fighter). OSwR does the same but offers the option to take the average, reducing variance.
 
 **Multiclassing:** OSE doesn't have multiclassing (demihumans were the multi-role option). OSwR allows multiclassing at odd levels, closer to AD&D's approach.
-
----
-
-# Still Being Figured Out
-
-**Multiclassing rules.** We know it happens at odd levels, but the full rules (HP calculation, save proficiencies, spell slot stacking) need writing.
-
-**Domain play.** Stronghold costs, army management, domain income. The bones are there; the flesh isn't.
-
----
-
-# Sections To Write
-
-*These placeholders track which commentary sections still need writing.*
-
-### Character Creation
-- [ ] **Why Backgrounds Work This Way** - Skills as narrative, not mechanical lists
-- [ ] **Why Hindrances?** - Optional flaws for bonus feats
-
-### Equipment & Resources
-- [ ] **Why Slot-Based Encumbrance?** - Simplicity over pound-counting
-- [ ] **Why Equipment Kits?** - Speed up character creation
-
-### Exploration
-- [ ] **Why Turns & Rounds?** - Time as resource
-- [ ] **Why Random Encounters?** - Pressure that drives decisions
-- [ ] **Why Light Rules Matter?** - Darkness as gameplay
-
-### Magic
-- [ ] **Why Spell Slots (Not Points)?** - Flexibility vs Vancian
-- [ ] **Why Six Spell Tiers?** - Pacing power growth
-- [ ] **Why Spellbooks Cost Gold?** - Knowledge as treasure
-- [ ] **Why Boostable Spells?** - Resource decisions for casters
-
-### Social & Hirelings
-- [ ] **Why 2d6 Reaction Rolls?** - Bell curve social encounters
-- [ ] **Why Morale Checks?** - Monsters that flee
-- [ ] **Why Retainer Rules?** - Henchmen as gameplay
-
-### Referee Tools
-- [ ] **Why These Difficulty Tiers?** - Easy/Normal/Hard at 8/12/16
 
 ---
 

@@ -8,9 +8,7 @@ nav_order: 1
 
 # Economy
 
-> **Note:** This page consolidates economic reference material. Some of this information duplicates or expands on rules found elsewhere (Equipment, Hiring Help, Spellbooks & Research). A future pass will streamline player-facing essentials from Referee worldbuilding.
-
-This page consolidates all economic information for OSwR - what things cost, what adventurers earn, and how gold flows through the game.
+This page consolidates all economic information for OSwR—what things cost, what adventurers earn, and how gold flows through the game.
 
 ---
 
@@ -25,7 +23,7 @@ This page consolidates all economic information for OSwR - what things cost, wha
 | Gold (gp) | 1 gp |
 | Platinum (pp) | 10 gp |
 
-**Wages baseline:** 1 gp/day for unskilled labour. This anchors all other prices.
+**Wages baseline:** 1 gp/day for unskilled labor. This anchors all other prices.
 
 **Encumbrance:** 100 coins = 1 slot. Carrying wealth is a logistical problem.
 
@@ -90,7 +88,7 @@ Clerics don't use spellbooks - they receive spells through divine connection. Bu
 
 ### Tithes (Required)
 
-Clerics must give **10% of all treasure** to maintain divine favour. This is not optional - a Cleric who fails to tithe will find their spells no longer function until the debt is paid.
+Clerics must give **10% of all treasure** to maintain divine favor. This is not optional - a Cleric who fails to tithe will find their spells no longer function until the debt is paid.
 
 | Cleric Type | Tithe To | Form |
 |-------------|----------|------|
@@ -191,9 +189,9 @@ See individual equipment pages for full lists.
 |----------|-------------|
 | Common gear | 1-10 gp |
 | Weapons | 1-60 gp |
-| Armour (leather) | 20 gp |
-| Armour (chain) | 60 gp |
-| Armour (plate) | 300 gp |
+| Armor (leather) | 20 gp |
+| Armor (chain) | 60 gp |
+| Armor (plate) | 300 gp |
 | Kits | 25 gp |
 | Mount (riding horse) | 75 gp |
 | Mount (warhorse) | 400 gp |
@@ -202,11 +200,11 @@ See individual equipment pages for full lists.
 
 ## Treasure
 
-See [Treasure](../refereeing/treasure) in the Referee's Guide for treasure generation tables and magic item tiers.
+See [Treasure](../refereeing/treasure.md) in the Referee's Guide for treasure generation tables and magic item tiers.
 
 ---
 
 ## Strongholds & Domain Play
 
-See [Domain Play](../refereeing/domain-play) in the Referee's Guide for rules on strongholds, retainer armies, and domain income.
+See [Domain Play](../refereeing/domain-play.md) in the Referee's Guide for rules on strongholds, retainer armies, and domain income.
 

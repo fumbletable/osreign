@@ -3,7 +3,7 @@ title: Magic
 layout: default
 parent: Players
 grand_parent: Second Edition
-nav_order: 4
+nav_order: 5
 has_children: true
 ---
 
@@ -30,14 +30,14 @@ Magic in OSwR uses **spell slots**. Each time you cast a spell, you expend one s
 - Prepared spells form your *daily list*; you may cast any from that list while slots remain.
 - You don't need to prepare duplicates — one prep allows multiple casts.
 - Changing your list requires another rest.
-- **Prep time:** `1 Turn (10 min) × highest spell tier prepared.`
+- **Prep time:** 1 **Turn** (10 min) × highest spell tier prepared.
   - Tier 1 → 10 min · Tier 2 → 20 min · Tier 3 → 30 min · Tier 4 → 40 min · Tier 5 → 50 min · Tier 6 → 60 min
 
 ---
 
 ## Casting
 - **Spend a slot** of that spell's tier or higher; the slot is lost, the spell remains prepared.
-- **Boostable:** Some spells can be enhanced by spending a Boost Die. See individual spell descriptions.
+- **Boostable:** Some spells can be enhanced by spending a **Boost Die**. See individual spell descriptions.
 - All spells require **words and gestures**. You cannot cast if gagged, bound, or unable to move/speak freely.
 - **Concentration:** If maintaining a spell, any damage or significant disturbance (Referee's call) forces a **CON save (DC 12)** or the spell ends.
 

@@ -18,10 +18,10 @@ The stuff that keeps you alive between fights.
 
 | Item | Cost | Notes |
 |:-----|-----:|:------|
-| Candles (10) | 1 gp | Close range, 1 hour each |
-| Torches (6) | 1 gp | Near range, 1 hour each, can be used as improvised club |
-| Lantern | 10 gp | Near range, shieldable, requires oil |
-| Flask of Oil | 1 gp | Fuels lantern for 1 watch, or use for fire tricks |
+| Candles (10) | 1 gp | **Close** range, 1 hour each |
+| Torches (6) | 1 gp | **Near** range, 1 hour each, can be used as improvised club |
+| Lantern | 10 gp | **Near** range, shieldable, requires oil |
+| Flask of Oil | 1 gp | Fuels lantern for 1 **Watch**, or use for fire tricks |
 
 ---
 
@@ -44,7 +44,7 @@ The stuff that keeps you alive between fights.
 
 | Item | Cost | Notes |
 |:-----|-----:|:------|
-| Supply (6 uses) | 3 gp | Food, water, bandages. Spend 1 for a Breather or Night's Rest |
+| **Supply** (6 uses) | 3 gp | Food, water, bandages. Spend 1 for a **Breather** or **Night's Rest** |
 | Waterskin | 1 gp | Holds 1 day's water |
 | Backpack | 2 gp | +10 slots capacity (worn) |
 | Sack | 1 gp | +5 slots capacity (requires a free hand) |
@@ -115,5 +115,5 @@ Kits let you attempt actions that are otherwise impossible. Without the right ki
 |:-----|-----:|:------|
 | Manacles | 10 gp | DC 16 STR to break, needs key or lockpick |
 | Chain (10 ft) | 5 gp | Heavy, unbreakable without tools |
-| Signal Whistle | 1 gp | Audible to Far range |
+| Signal Whistle | 1 gp | Audible to **Far** range |
 | Silver Mirror | 10 gp | Useful against some monsters |

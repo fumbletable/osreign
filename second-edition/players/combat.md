@@ -85,10 +85,10 @@ On your turn you can move up to your Speed and take one Action.
 | **Dash** | Double your movement this turn |
 | **Help** | Give an ally **Edge** on their next roll (must be in reach) |
 | **Grapple** | STR vs their STR or DEX—success means their Speed drops to 0 |
-| **Shove** | STR vs their STR or DEX—push them 5 ft or knock them prone |
+| **Shove** | STR vs their STR or DEX—push them 5 ft or knock them **Prone** |
 | **Disarm** | STR or DEX vs theirs—weapon flies d10 ft in a random direction |
 | **Hide** | DEX check, needs cover or distraction |
-| **Stabilize** | Costs 1 Supply—dying ally becomes stable, wakes at 1 HP next turn |
+| **Stabilize** | Costs 1 **Supply**—dying ally becomes stable, wakes at 1 HP next turn |
 | **Ready** | Name a trigger—when it happens, take your prepared action |
 | **Improvise** | Describe something creative, roll vs DC, see what happens |
 

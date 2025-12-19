@@ -8,11 +8,13 @@ nav_order: 1
 
 # Spellbooks & Research
 
+How Magic-Users expand their arcane repertoire.
+
 ---
 
 ## The Spellbook
 
-A Magic-User's spellbook is the centre of their world. It holds all the arcane knowledge they've collected and must be studied daily to prepare spells.
+A Magic-User's spellbook is the center of their world. It holds all the arcane knowledge they've collected and must be studied daily to prepare spells.
 
 **Starting Spellbook:** At 1st level, you have a spellbook containing *Read Magic* plus **(1 + INT)** 1st-tier spells.
 
@@ -48,7 +50,7 @@ When you acquire another Magic-User's spellbook or a spell scroll, you can copy 
 
 A more experienced Magic-User can teach you spells they know.
 
-**The Catch:** Mentors don't give away their secrets for free. They may demand payment, favours, quests, or rare components. The Referee adjudicates what a mentor requires.
+**The Catch:** Mentors don't give away their secrets for free. They may demand payment, favors, quests, or rare components. The Referee adjudicates what a mentor requires.
 
 **Once a mentor agrees to teach you:** Copy the spell as normal (1 day/tier, 100 gp/tier). The adventure to earn their trust IS the real cost.
 
@@ -69,9 +71,9 @@ Creating a new spell or independently discovering an existing one requires exten
 **Cost:** 700 gp per week (materials, texts)
 
 **Check:** At the end of the research period, make an **INT check** to finalise the spell:
-- Tier 1-2: DC 8 (Easy)
-- Tier 3-4: DC 12 (Normal)
-- Tier 5-6: DC 16 (Hard)
+- Tier 1-2: Easy (DC 8)
+- Tier 3-4: Normal (DC 12)
+- Tier 5-6: Hard (DC 16)
 
 **Success:** The spell is added to your spellbook.
 

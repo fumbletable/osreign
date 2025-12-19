@@ -26,9 +26,8 @@ You start with six of these at level 1 and pick another at each odd level (3, 5,
 | Garrote | From behind: restrain and silence your target. They escape on a STR save (DC 12). |
 | Hide in Shadows | After breaking line of sight, **Edge** to remain hidden. |
 | Infiltrator | **Edge** on stealth and deception checks against guards and sentries. |
-| Innate Tracker | **Edge** to track creatures (numbers, size, time elapsed). |
-| Master of Disguise | Allies using your disguises also gain **Edge**. |
-| Pick Locks | Open non-magical locks with thieves' tools. No check required for mundane locks. |
+| Master of Disguise | Allies using your disguises also gain **Edge**. Requires Disguise. |
+| Pick Locks | You can pick locks with thieves' tools. |
 | Pick Pockets | Attempt theft unnoticed. Your DEX vs their WIS. |
 | Poisoner | Craft and apply poisons. Immune to your own poisons. |
 | Silver Tongue | **Edge** on checks to deceive, lie, or misdirect. |

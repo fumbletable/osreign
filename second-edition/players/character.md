@@ -3,7 +3,7 @@ title: Character
 layout: default
 parent: Players
 grand_parent: Second Edition
-nav_order: 2
+nav_order: 3
 has_children: true
 ---
 

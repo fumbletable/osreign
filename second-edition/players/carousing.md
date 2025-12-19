@@ -32,7 +32,7 @@ You may carouse again the following night—if the mishaps haven't caught up wit
 
 | Roll | Result |
 |-----:|--------|
-| **2** | **Jailed.** You wake in a cell. Bail is 1d6 × 100 gp, or a favour for someone unsavoury. Your weapons and armour are impounded until you pay. |
+| **2** | **Jailed.** You wake in a cell. Bail is 1d6 × 100 gp, or a favor for someone unsavory. Your weapons and armor are impounded until you pay. |
 | **3** | **Enemy made.** Someone powerful now hates you. A guild leader, noble's son, or criminal boss. They'll remember your face. |
 | **4** | **Gambling debt.** You owe 1d6 × 50 gp to someone who doesn't accept "no." They have friends. Payment due within the week. |
 | **5** | **Robbed.** Lose half your remaining coin. Your purse was cut, or you were rolled in an alley. No idea who did it. |

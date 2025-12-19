@@ -20,22 +20,22 @@ Fatigue tracks exhaustion. You start at 0 and gain levels when pushed beyond you
 |------:|--------|
 | 1 | −1 to all checks and saves |
 | 2 | −2 to all checks and saves |
-| 3 | −3 to all checks and saves; Speed drops to Slow |
-| 4 | −4 to all checks and saves; Speed remains Slow |
-| 5 | Incapacitated—can't act until you rest |
+| 3 | −3 to all checks and saves; Speed drops to **Slow** |
+| 4 | −4 to all checks and saves; Speed remains **Slow** |
+| 5 | **Incapacitated**—can't act until you rest |
 
 ### Gaining Fatigue
 
 When you're pushed beyond your limits, roll **CON save (DC 12)**. On a failure, gain +1 Fatigue.
 
 **Common triggers:**
-- Forced march (extra Watch of travel)
-- Skipping rest in a dungeon (after 6 Turns without resting)
+- Forced march (extra **Watch** of travel)
+- Skipping rest in a dungeon (after 6 **Turns** without resting)
 - Dropping to 0 HP and getting back up
-- Sleeping in heavy armour
+- Sleeping in heavy armor
 - No food or water
 - Soaked and cold, or blazing heat
-- Long swims or climbs in armour
+- Long swims or climbs in armor
 - Toxic fumes or bad air
 
 Extreme conditions use DC 16. Proper gear or shelter gives **Edge**. Severe conditions give **Setback**.
@@ -44,14 +44,14 @@ Extreme conditions use DC 16. Proper gear or shelter gives **Edge**. Severe cond
 
 ## Breather (10 minutes)
 
-After a fight or hard exertion, you can catch your breath. Spend **1 Supply** and choose one:
+After a fight or hard exertion, you can catch your breath. Spend 1 **Supply** and choose one:
 
 - **Heal:** Regain **1d4 + CON** HP.
 - **Shake it off:** Roll CON save (DC 12) to remove 1 Fatigue.
 
 If an ally spends the Breather tending to you, you can do both.
 
-*In a dungeon, resting for a Turn counts as a Breather. This is also how you avoid Fatigue from extended exploration—rest for a Turn every hour or so.*
+*In a dungeon, resting for a **Turn** counts as a **Breather**. This is also how you avoid **Fatigue** from extended exploration—rest for a **Turn** every hour or so.*
 
 ---
 

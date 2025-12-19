@@ -40,13 +40,13 @@ Each Turn, the Referee rolls dice to see if something happens—an encounter, a 
 
 **Lingering.** The longer you stay in one area, the more likely something finds you. Clear a room and move on, or accept the risk.
 
-**Rest.** After about an hour (6 Turns) of exploration, you need to stop and rest for a Turn or risk [Fatigue](rests-recovery-fatigue). Pushing through exhaustion gets people killed.
+**Rest.** After about an hour (6 **Turns**) of exploration, you need to stop and rest for a **Turn** or risk [Fatigue](rests-recovery-fatigue). Pushing through exhaustion gets people killed.
 
 ---
 
 ## Time in the Wilderness
 
-Overland, time is tracked in **Watches** (about 6 hours each). Four watches make a day.
+Overland, time is tracked in **Watches** (about 6 hours each). Four **Watches** make a day.
 
 A typical day:
 - **Two watches of travel** — the safe maximum
@@ -55,9 +55,9 @@ A typical day:
 
 ### What the Referee Tracks
 
-Each Watch of travel (and each night), the Referee rolls to see what happens—encounters, signs of danger, weather shifts, or supply problems. More travel means more rolls.
+Each **Watch** of travel (and each night), the Referee rolls to see what happens—encounters, signs of danger, weather shifts, or supply problems. More travel means more rolls.
 
-**Supplies matter.** Track your Supply. Running out in the wild is dangerous—you can't just pop back to town.
+**Supplies matter.** Track your **Supply**. Running out in the wild is dangerous—you can't just pop back to town.
 
 **Weather matters.** Storms slow travel. Extreme conditions can kill. The Referee will tell you when conditions change, but you should plan for the worst.
 
@@ -69,11 +69,11 @@ Each Watch of travel (and each night), the Referee rolls to see what happens—e
 
 **Ask questions.** "What do we see?" "Is there another way around?" "How far is the noise?" "Does this room have other exits?" Information keeps you alive.
 
-**Manage your resources.** Light, food, water, rest—these aren't flavour, they're survival. Plan for them.
+**Manage your resources.** Light, food, water, rest—these aren't flavor, they're survival. Plan for them.
 
-**Time has consequences.** Every Turn in the dungeon, every Watch in the wilderness, the Referee rolls dice. The longer you spend in dangerous places, the more likely something finds you.
+**Time has consequences.** Every **Turn** in the dungeon, every **Watch** in the wilderness, the Referee rolls dice. The longer you spend in dangerous places, the more likely something finds you.
 
-**Your choices matter.** Do you search this room thoroughly (1 Turn, more rolls) or move on? Do you take the quick route through unknown territory or the longer safe path? Do you rest now or push on and risk Fatigue?
+**Your choices matter.** Do you search this room thoroughly (1 **Turn**, more rolls) or move on? Do you take the quick route through unknown territory or the longer safe path? Do you rest now or push on and risk **Fatigue**?
 
 ---
 

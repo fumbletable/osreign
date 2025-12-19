@@ -35,7 +35,7 @@ Protection costs mobility - pick your trade-off.
 
 **Restrictions:**
 - **Bulky** - Counts as 2 slots for encumbrance
-- **Min STR** - If you don't meet the requirement, your Speed drops one step (Normal → Slow)
+- **Min STR** - If you don't meet the requirement, your Speed drops one step (**Normal** → **Slow**)
 
 **Special:**
 - **Sunder** - When you take damage, you can destroy your shield to reduce that damage to 0
@@ -44,4 +44,4 @@ Protection costs mobility - pick your trade-off.
 
 ## Sleeping in Armor
 
-If you sleep in Heavy armor, make a CON save (Easy DC 8). Fail and you gain no benefit from the rest.
+If you sleep in Heavy armor, make a CON save Easy (DC 8). Fail and you gain no benefit from the rest.

@@ -3,7 +3,7 @@ title: Downtime
 layout: default
 parent: Players
 grand_parent: Second Edition
-nav_order: 6
+nav_order: 7
 has_children: true
 ---
 

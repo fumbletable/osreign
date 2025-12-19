@@ -3,7 +3,7 @@ title: Adventuring
 layout: default
 parent: Players
 grand_parent: Second Edition
-nav_order: 5
+nav_order: 6
 has_children: true
 ---
 

@@ -3,7 +3,7 @@ title: Equipment
 layout: default
 parent: Players
 grand_parent: Second Edition
-nav_order: 3
+nav_order: 4
 has_children: true
 ---
 
@@ -29,9 +29,9 @@ When you sell treasure:
 
 ## Encumbrance (reminder)
 
-You can carry 10 + STR slots. A backpack adds another 10. Bulky items take 2 slots.
+You can carry 10 + STR slots. A backpack adds another 10. **Bulky** items take 2 slots.
 
-If you're over capacity, your Speed drops to Slow and you make a CON save (DC 12) or gain 1 Fatigue.
+If you're over capacity, your Speed drops to **Slow** and you make a CON save (DC 12) or gain 1 **Fatigue**.
 
 ---
 

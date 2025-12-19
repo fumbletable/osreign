@@ -32,7 +32,7 @@ How long things take and how far you can go.
 | **Fast** | 45 ft | 135 yards | 13.5 miles |
 
 - **Slow:** Cautious, sneaking, or encumbered.
-- **Normal:** Average travelling pace.
+- **Normal:** Average traveling pace.
 - **Fast:** Urgent or reckless movement.
 
 **Dash:** In combat, you can use your action to Dash—move again at your full Speed. See [Combat Actions](combat#combat-actions).
@@ -51,7 +51,7 @@ How long things take and how far you can go.
 | **Lantern** | 6 hours (1 flask of oil) | 30 ft bright, 30 ft dim |
 | **Candle** | 1 hour | 5 ft bright, 5 ft dim |
 
-**Darkvision:** See 30 ft in dim light as if bright, darkness as dim. No colour, no fine detail.
+**Darkvision:** See 30 ft in dim light as if bright, darkness as dim. No color, no fine detail.
 
 **No light:** Effectively blind. **Setback** on all rolls. Movement halved.
 
@@ -70,7 +70,7 @@ How long things take and how far you can go.
 
 ## Climbing, Swimming, Crawling
 
-Movement is reduced by one step (Fast → Normal, Normal → Slow) unless the creature has a climbing or swimming speed.
+Movement is reduced by one step (**Fast** → **Normal**, **Normal** → **Slow**) unless the creature has a climbing or swimming speed.
 
 - **Slippery or difficult surfaces:** STR check, DC set by conditions.
 - **Rough water:** STR check to make progress. Failure = 1 [Fatigue](rests-recovery-fatigue) and no forward movement that round.
@@ -91,7 +91,7 @@ Difficult landings or obstacles may require a STR or DEX check.
 
 ## Falling
 
-Take **1d6 cumulative damage** for every 10 ft fallen. Land prone.
+Take **1d6 cumulative damage** for every 10 ft fallen. Land **Prone**.
 
 - 10 ft = 1d6
 - 20 ft = 1d6 + 2d6 = 3d6
