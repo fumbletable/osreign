@@ -9,6 +9,9 @@
 # Introduction
 second-edition/players.md
 
+# How to Play
+second-edition/players/rolling-dice.md
+
 # Character Creation
 second-edition/players/character.md
 second-edition/players/character-creation.md
@@ -38,8 +41,6 @@ second-edition/players/adventuring-gear.md
 second-edition/players/encumbrance.md
 
 # Rules
-second-edition/players/rules.md
-second-edition/players/rolling-dice.md
 second-edition/players/combat.md
 second-edition/players/rests-recovery-fatigue.md
 second-edition/players/exploration.md

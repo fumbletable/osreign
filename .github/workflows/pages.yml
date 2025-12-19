@@ -1,4 +1,4 @@
-name: Deploy Jekyll site to Pages
+name: Deploy Site and Build PDF
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  build-site:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -34,13 +34,91 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
 
-  deploy:
+  deploy-site:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build
+    needs: build-site
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  build-pdf:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Pandoc and LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-extra texlive-latex-extra
+
+      - name: Install Google Fonts
+        run: |
+          mkdir -p ~/.local/share/fonts
+          git clone --filter=blob:none --sparse https://github.com/google/fonts.git google-fonts
+          cd google-fonts
+          git sparse-checkout set ofl/crimsontext ofl/imfellenglishsc
+          cp ofl/crimsontext/*.ttf ~/.local/share/fonts/
+          cp ofl/imfellenglishsc/*.ttf ~/.local/share/fonts/
+          cd ..
+          rm -rf google-fonts
+          fc-cache -f -v
+
+      - name: Strip Jekyll frontmatter and build file list
+        run: |
+          mkdir -p build
+          while IFS= read -r file || [ -n "$file" ]; do
+            [[ "$file" =~ ^#.*$ ]] && continue
+            [[ -z "$file" ]] && continue
+            if [ -f "$file" ]; then
+              sed '1{/^---$/!q;};1,/^---$/d' "$file" >> build/combined.md
+              echo -e "\n\n" >> build/combined.md
+            fi
+          done < pdf/book-order.txt
+
+      - name: Generate PDF
+        run: |
+          pandoc build/combined.md \
+            -o "Olde-Swords-Reign-Alpha.pdf" \
+            --pdf-engine=xelatex \
+            --include-in-header=pdf/header.tex \
+            -V mainfont="Crimson Text" \
+            -V monofont="DejaVu Sans Mono" \
+            -V fontsize=11pt \
+            -V geometry:margin=1in \
+            -V linkcolor=black \
+            -V urlcolor=black \
+            --toc \
+            --toc-depth=2 \
+            -V toc-title="Table of Contents" \
+            --metadata title="Olde Swords Reign" \
+            --metadata subtitle="Alpha Playtest Document" \
+            --highlight-style=tango
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: oswr-alpha-pdf
+          path: Olde-Swords-Reign-Alpha.pdf
+          retention-days: 30
+
+      - name: Update Alpha Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: alpha-latest
+          name: Alpha (Latest Build)
+          body: |
+            **Automatically updated on every push to main.**
+
+            This is the latest alpha build of Olde Swords Reign Second Edition.
+
+            Built: ${{ github.event.head_commit.timestamp }}
+            Commit: ${{ github.sha }}
+          files: Olde-Swords-Reign-Alpha.pdf
+          prerelease: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
