@@ -13,8 +13,8 @@ nav_order: 25
 ## Yellow Mold
 **HD 2 | AC 3 | HP 8** | Immune: weapons<br>
 Atk touch (d6 acid) | Mv None | Ml 12 | XP 40<br>
-Spores (50% when struck): 10' cloud, CON 10 or drop to 0 HP. Destroyed by fire.<br>
-Not a monster—a hazard. Grows in dungeons. Don't touch it. Don't hit it.
+Spores (50% when struck): 10' cloud (DC 12 CON or drop to 0 HP). Destroyed by fire.<br>
+Not a monster—a hazard. Grows in dungeons. The smart adventurer carries a torch.
 
 ---
 

@@ -21,8 +21,8 @@ Can carry 50x body weight.<br>
 ## Ant, Giant Warrior
 **HD 2 | AC 16 | HP 8**<br>
 Atk bite (2d6) | Mv Normal | Ml 10 | XP 40<br>
-Defend the colony to the death.<br>
-About 6 ft long with larger mandibles than workers.
+Swarm Tactics: **Edge** on attacks when 2+ ants attack the same target.<br>
+Dies before retreating. The chittering of warriors means the nest is close.
 
 ---
 
@@ -30,7 +30,7 @@ About 6 ft long with larger mandibles than workers.
 **HD 10 | AC 16 | HP 40**<br>
 Atk bite (2d6) | Mv Slow | Ml 9 | XP 1000<br>
 Destroying her ends the colony's future.<br>
-Heart of the colony. About 9 ft long.
+Bloated and immobile. Kill her and the colony collapses within weeks.
 
 ---
 
@@ -38,7 +38,7 @@ Heart of the colony. About 9 ft long.
 **HD 4 | AC 13 | HP 16**<br>
 Atk 2 fists (d4), bite (d8) | Mv Normal, Climb Normal | Ml 7 | XP 160<br>
 Territorial predators who attack anything entering their domain.<br>
-Aggressive gorilla-like creatures with grey fur.
+Hunts in packs through jungle canopy. The screaming starts before you see them.
 
 ---
 

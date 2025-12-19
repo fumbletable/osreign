@@ -13,7 +13,7 @@ nav_order: 20
 ## Thoul
 **HD 3 | AC 13 | HP 12** | Darkvision | Regenerate 1<br>
 Atk 2 claws (d3), bite (d6) | Mv Normal | Ml 10 | XP 90<br>
-Paralysing touch (STR 8, 2d4 turns). Fire and acid stop regeneration.<br>
+Paralysing Touch (DC 8 STR or paralysed 2d4 turns). Fire and acid stop regeneration.<br>
 Magical hybrid of ghoul, hobgoblin, and troll. Found among hobgoblin tribes.
 
 ---
@@ -45,8 +45,8 @@ Almost as powerful as gods. Each unique in powers and personality.
 ## Toad, Giant
 **HD 3 | AC 13 | HP 12** | Darkvision<br>
 Atk bite (d10) | Mv Slow, Swim Normal | Ml 7 | XP 90<br>
-Can attack at the end of a hop (bonus movement).<br>
-Human-sized predator. Will attack creatures as large as men.
+Hop: Can attack at the end of a bonus 20' leap. Swallow (attack 4+ over needed): Halfling-sized or smaller prey swallowed, d6 acid damage per round.<br>
+Ambush hunter with a gullet bigger than its brain. Swallows prey whole when it can.
 
 ---
 
@@ -69,7 +69,7 @@ Rubbery green flesh, long arms, black eyes. Remembers everyone who hurt it.
 ## Troglodyte
 **HD 2 | AC 14 | HP 8** | Darkvision<br>
 Atk 2 claws (d4), bite (d4) | Mv Normal | Ml 9 | XP 40<br>
-Stench: All within Near must save (CON 8) or suffer SETBACK for d6 rounds. Chameleon skin: Surprise on 1-4.<br>
+Stench: All within **Near** (DC 8 CON or **Setback** for d6 rounds). Chameleon Skin: Surprise on 1-4.<br>
 Reptilian cave-dwellers. Hate surface creatures. Serve as shock troops for darker powers.
 
 ---

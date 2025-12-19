@@ -13,7 +13,7 @@ nav_order: 13
 ## Leech, Giant
 **HD 2 | AC 12 | HP 8** | Blindsight<br>
 Atk bite (d6) | Mv Slow, Swim Normal | Ml 9 | XP 40<br>
-Blood Drain: After first hit, drains d6 HP per round automatically until killed or removed (STR 8).<br>
+Blood Drain: After first hit, drains d6 HP per round automatically until killed or removed (DC 8 STR).<br>
 Found in swamps and stagnant water. Attracted to movement and warmth.
 
 ---
@@ -29,24 +29,24 @@ Mischievous fey who guard pots of gold. Will bargain for freedom if caught.
 ## Living Statue, Crystal
 **HD 3 | AC 15 | HP 12** | Darkvision | Immune: sleep, charm<br>
 Atk 2 fists (d6) | Mv Normal | Ml 11 | XP 90<br>
-Appear as crystal sculptures.<br>
-Guard treasures in ancient temples.
+Refract: spells have 1-in-6 chance to reflect back at caster. Shatter: explodes into shards when destroyed (d6 damage, Near).<br>
+Beautiful and deadly. The light bends strangely around them.
 
 ---
 
 ## Living Statue, Iron
 **HD 4 | AC 17 | HP 16** | Darkvision | Immune: sleep, charm<br>
-Atk 2 fists (d8) | Mv Normal | Ml 11 | XP 160<br>
-Fire heats: victims touching suffer d6 extra fire damage. Armed with sword and trident.<br>
-Animated metal warriors forged by ancient artificers.
+Atk sword (d8) and trident (d6) | Mv Normal | Ml 11 | XP 160<br>
+Absorb Heat: fire damage heals it instead. Burning Touch: after absorbing fire, melee attacks deal +d6 fire for 3 rounds.<br>
+Animated metal warriors forged by ancient artificers. Wizards learn to stop casting Fireball.
 
 ---
 
 ## Living Statue, Stone
 **HD 5 | AC 15 | HP 20** | Darkvision | Immune: sleep, charm<br>
 Atk 2 fists (2d6) | Mv Normal | Ml 11 | XP 250<br>
-Lava spray (DEX 8, 2d6 fire, 2/day).<br>
-Appear as carved stone warriors.
+Lava Spray (DC 8 DEX or 2d6 fire, 2/day). Stone Camouflage: indistinguishable from carved statues until they move.<br>
+The oldest and most dangerous. Entire halls of them stand waiting.
 
 ---
 
@@ -60,9 +60,9 @@ Human-headed winged lion. Temple guardian and agent of Law. Speaks all languages
 
 ## Leopard
 **HD 4 | AC 16 | HP 16** | Darkvision<br>
-Atk 2 claws (d4), bite (2d4) | Mv Fast | Ml 8 | XP 160<br>
-Great cats 7-8 ft long. Prefer climbing trees to swimming.<br>
-All-black leopards are called panthers.
+Atk 2 claws (d4), bite (2d4) | Mv Fast, Climb Fast | Ml 8 | XP 160<br>
+Ambush: **Edge** from concealment. Prefer climbing trees to swimming.<br>
+All-black leopards are called panthers. Both drop on prey from above.
 
 ---
 
@@ -77,24 +77,32 @@ The undead remnant of a wizard who refused death. Brilliant, patient, utterly ma
 ## Lion
 **HD 5 | AC 13 | HP 20**<br>
 Atk 2 claws (d3), bite (d10) | Mv Fast | Ml 9 | XP 250<br>
-First encountered is male; all others are lionesses.<br>
-Ambush hunters of the savanna.
+Pounce: **Edge** on first attack after charging. First encountered is male; all others are lionesses.<br>
+Ambush hunters of the savanna. The males roar; the females kill.
 
 ---
 
 ## Lizard, Giant
 **HD 3 | AC 14 | HP 12**<br>
 Atk bite (2d4) | Mv Normal, Climb Normal | Ml 7 | XP 90<br>
-About 4 ft at the shoulder.<br>
-Larger specimens exist—perhaps they never stop growing.
+Tail Sweep: once per round, knock prone all adjacent creatures (DC 8 DEX). Can be trained as mounts.<br>
+About 4 ft at the shoulder. Larger specimens exist—perhaps they never stop growing.
 
 ---
 
 ## Lizardman
 **HD 2 | AC 14 | HP 8** | Darkvision<br>
-Atk 2 claws (d3), bite (d8) or club (d8) | Mv Fast | Ml 8 | XP 40<br>
+Atk 2 claws (d3), bite (d8) or club (d8) | Mv Fast, Swim Fast | Ml 8 | XP 40<br>
 Can hold breath for an hour or more; some breathe underwater.<br>
 Reptilian humanoids dwelling in fetid swamps. Tribal and territorial.
+
+---
+
+## Lizardman Chief
+**HD 4 | AC 15 | HP 16** | Darkvision<br>
+Atk 2 claws (d4), bite (d10) or bone trident (d8) | Mv Fast, Swim Fast | Ml 9 | XP 160<br>
+Can hold breath for an hour. War Cry: once per battle, all lizardmen within **Near** get **Edge** on next attack.<br>
+Largest and oldest of the tribe. Wears trophies from defeated enemies.
 
 ---
 
@@ -109,15 +117,15 @@ Forest guardians, not ravagers. The most benevolent of lycanthropes.
 ## Lycanthrope, Wereboar
 **HD 4 | AC 14 | HP 16** | Immune: non-silver, non-magical weapons<br>
 Atk bite (2d6) | Mv Normal (Fast in boar form) | Ml 10 | XP 160<br>
-Curse spreads to those reduced below half HP.<br>
-Found in remote wilderness. Stubborn, aggressive, and hard to kill.
+Charge: **Edge** and +d6 damage after moving 20'+. Relentless: keeps fighting at 0 HP for one more round. Curse spreads to those reduced below half HP.<br>
+Found in remote wilderness. Stubborn, aggressive, and too angry to die.
 
 ---
 
 ## Lycanthrope, Wererat
 **HD 3 | AC 13 | HP 12** | Darkvision | Immune: non-silver, non-magical weapons<br>
 Atk bite (d3), weapon (d6) | Mv Normal (Fast in rat form) | Ml 7 | XP 90<br>
-Controls rats. EDGE on stealth. Curse spreads to those reduced below half HP.<br>
+Controls rats. **Edge** on stealth. Curse spreads to those reduced below half HP.<br>
 Urban predators lurking in shadowy alleyways. Cunning and cowardly.
 
 ---
@@ -125,7 +133,7 @@ Urban predators lurking in shadowy alleyways. Cunning and cowardly.
 ## Lycanthrope, Weretiger
 **HD 6 | AC 14 | HP 24** | Immune: non-silver, non-magical weapons<br>
 Atk 2 claws (d4), bite (d10) | Mv Normal (Fast in tiger form) | Ml 9 | XP 360<br>
-Curse spreads to those reduced below half HP.<br>
+Pounce: **Edge** on first attack after charging. Ambush: **Edge** from concealment. Curse spreads to those reduced below half HP.<br>
 Found in tropical cities and jungle ruins. Graceful, deadly, and proud.
 
 ---

@@ -13,8 +13,8 @@ nav_order: 10
 ## Insect Swarm
 **HD 2-4 | AC immune to weapons | HP HD×4**<br>
 Atk swarm (d3, double vs unarmored) | Mv Slow, Fly Slow | Ml 11 | XP varies<br>
-Fills 3 10-ft cubes. Affected by Sleep. Smoke drives them away. Fire deals d4/round.<br>
-Mindless cloud of biting, stinging things.
+Fills 3 10-ft cubes. Affected by Sleep. Smoke drives them away. Fire deals d4/round. Engulf: creatures inside the swarm take damage automatically—no attack roll.<br>
+Wasps, locusts, biting flies—whatever it is, you hear it before you see it.
 
 ---
 
@@ -29,5 +29,5 @@ Invisible, relentless, patient. Cannot be bargained with until the task is done.
 ## Ironbane
 **HD 3 | AC 15 | HP 12** | Darkvision<br>
 Atk touch (rust) | Mv Fast | Ml 8 | XP 90<br>
-Touch transforms metal to rust. Non-magic metal ruined instantly. Magic items lose one "plus" per touch.<br>
-Armadillo-like creature with anteater snout. Related to rust monsters. Silver and copper are candy to it.
+Touch transforms metal to rust. Non-magic metal ruined instantly. Magic items lose one "plus" per touch. Smells metal—drawn to armored prey.<br>
+Armadillo-like creature with anteater snout. Silver and copper are candy to it.

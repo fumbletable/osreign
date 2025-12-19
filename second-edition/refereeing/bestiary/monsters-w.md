@@ -13,7 +13,7 @@ nav_order: 23
 ## Wasp, Giant
 **HD 4 | AC 16 | HP 16** | Darkvision<br>
 Atk sting (d4 + poison) | Mv Normal, Fly Fast | Ml 9 | XP 160<br>
-Poison sting (CON 8 or paralysed for 1 day). Carries paralysed prey back to nest.<br>
+Poison Sting (DC 8 CON or paralysed for 1 day). Carries paralysed prey back to nest.<br>
 Paper-nest builders. Aggressively defend their territory.
 
 ---
@@ -29,8 +29,8 @@ Can be trained as guards (deadlier than dogs, but won't warn of intruders). Pelt
 ## Whale, Killer
 **HD 6 | AC 13 | HP 24** | Blindsight<br>
 Atk bite (2d6) | Mv Swim Fast | Ml 10 | XP 360<br>
-Pack hunters. Will attack boats if hungry.<br>
-Intelligent and coordinated.
+Pack Tactics: **Edge** when ally within **Close**. Will attack boats if hungry.<br>
+Hunt in pods. Tip ice floes. Corner prey against rocks.
 
 ---
 
@@ -61,16 +61,16 @@ Lures travelers to their doom—quicksand, cliffs, deep water.
 ## Wolf
 **HD 2 | AC 12 | HP 8**<br>
 Atk bite (d6) | Mv Fast | Ml 8 | XP 40<br>
-Pack hunters. Found in large numbers.<br>
-Males weigh 80-100 pounds.
+Pack Tactics: **Edge** when ally within **Close**.<br>
+Travel in packs. Prefer the weak, the young, the separated.
 
 ---
 
 ## Wolf, Dire
-**HD 4 | AC 13 | HP 16**<br>
-Atk bite (2d4) | Mv Fast | Ml 8 | XP 160<br>
-Larger, fiercer prehistoric wolves. Sometimes ridden by goblins.<br>
-Hunt in packs like their smaller cousins.
+**HD 4 | AC 14 | HP 16**<br>
+Atk bite (d8) | Mv Fast | Ml 8 | XP 160<br>
+Pack Tactics: **Edge** when ally within **Close**.<br>
+Larger, fiercer prehistoric wolves. Often ridden by goblins or in the service of darker powers.
 
 ---
 
@@ -93,5 +93,5 @@ Powerful wights. More terrible, more relentless.
 ## Wyvern
 **HD 7 | AC 16 | HP 28**<br>
 Atk bite (2d8) or sting (d6 + poison) | Mv Slow, Fly Fast | Ml 8 | XP 490<br>
-Poison sting (CON 12 or drop to 0 HP).<br>
+Poison Sting (DC 12 CON or drop to 0 HP).<br>
 Two-legged dragon. Smaller, less intelligent, no breath weapon. Still deadly.

@@ -29,15 +29,15 @@ Some are intelligent and can speak.
 ## Harpy
 **HD 3 | AC 12 | HP 12**<br>
 Atk 2 claws (d3), club (d6) | Mv Normal, Fly Normal | Ml 7 | XP 90<br>
-Charming song (CHA 8 to resist, lures victims closer). Touch charms as Charm Person (CHA 8).<br>
-Human face, vulture body. Nests on cliffs and lures sailors to their doom.
+Luring Song: DC 8 CHA or compelled to approach. Charming Touch: DC 8 CHA or charmed.<br>
+Human face, vulture body. Nests on sea cliffs and lures sailors onto the rocks.
 
 ---
 
 ## Hellhound
 **HD 4-7 | AC 15 | HP HD×4** | Darkvision<br>
 Atk bite (d6) | Mv Normal | Ml 9 | XP varies<br>
-Fire breath (HD d4s damage, Near, single target).<br>
+Fire Breath: DC 8/8/12/12 DEX (by HD 4/5/6/7) or take HD d4s fire damage.<br>
 Flame-eyed hounds from the lower planes. Serve evil masters or hunt in infernal packs.
 
 ---
@@ -53,15 +53,23 @@ Easier to train than griffons, but less prestigious.
 ## Hobgoblin
 **HD 1 | AC 14 | HP 4** | Darkvision<br>
 Atk sword (d8) or longbow (d8) | Mv Normal | Ml 9 | XP 10<br>
-Larger, more disciplined goblins.<br>
-Militaristic and cruel. Form organized warbands.
+Shield Wall: +1 AC when adjacent to another hobgoblin with a shield.<br>
+Militaristic and cruel. Fight in disciplined formations, never alone if they can help it.
+
+---
+
+## Hobgoblin Captain
+**HD 4 | AC 16 | HP 16** | Darkvision<br>
+Atk longsword (d10) or longbow (d8) | Mv Normal | Ml 10 | XP 160<br>
+Shield Wall: +1 AC when adjacent to another hobgoblin. Command: Allies within Near get +1 to attack.<br>
+Barks orders even as they fight. Hobgoblin soldiers fear their captains more than the enemy.
 
 ---
 
 ## Homunculus
 **HD 2 | AC 13 | HP 8** | Darkvision<br>
 Atk bite (d3) | Mv Slow, Fly Normal | Ml 7 | XP 40<br>
-Sleep bite (CON 8). Other variants: poison bite, detect magic/evil.<br>
+Sleep Bite: DC 8 CON or sleep. Variants exist with poison bite or detection abilities.<br>
 Tiny winged servant created by wizards. Abilities vary by creator's design.
 
 ---
@@ -93,13 +101,13 @@ The backbone of civilization and frequent victims of adventure.
 ## Hyena
 **HD 2 | AC 13 | HP 8**<br>
 Atk bite (d6) | Mv Fast | Ml 8 | XP 40<br>
-Scavengers and pack hunters of the savanna.<br>
-Often kept as pets by gnolls. Clans can number up to 100.
+Pack Tactics: **Edge** when ally within 5'.<br>
+Scavengers and pack hunters of the savanna. Often kept as pets by gnolls.
 
 ---
 
 ## Hydra
 **HD 5-12 | AC 14 | HP HD×4**<br>
 Atk 1 bite per head (d6 each) | Mv Normal, Swim Normal | Ml 10 | XP varies<br>
-One head per HD. *Some hydrae regrow heads. Some breathe fire. Referee's choice.*<br>
-Great serpentine or lizard-like body with many necks.
+One head per HD. Regenerating: 2 heads grow back each round for each severed (fire/acid prevents). Fire-breathing variant: each head breathes 1d8 fire (DC 12 DEX for half).<br>
+Great serpentine body with many necks. Severing heads only makes it angrier.

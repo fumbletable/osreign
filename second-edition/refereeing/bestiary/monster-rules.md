@@ -162,7 +162,7 @@ That's it. No other conversion needed.
 ## Goblin
 **HD 1 | AC 13 | HP 4** | Darkvision<br>
 Atk weapon (d6) | Mv Normal | Ml 7 | XP 10<br>
-Sunlight Sensitivity: SETBACK in bright light.<br>
+Sunlight Sensitivity: **Setback** in bright light.<br>
 Small green-skinned raiders. Attack in swarms, flee when outmatched.
 
 ---
@@ -178,7 +178,7 @@ Grave-stench and too-long fingers. Once human, now endlessly hungry.
 ## Basilisk
 **HD 6 | AC 15 | HP 24** | Darkvision<br>
 Atk bite (d10) | Mv Slow | Ml 9 | XP 360<br>
-Petrifying gaze (DC 12 CON or turned to stone). Fighting blind = SETBACK.<br>
+Petrifying gaze (DC 12 CON or turned to stone). Fighting blind = **Setback**.<br>
 Eight-legged reptile with dead white eyes. Lairs in ruins, surrounded by statues of the unfortunate.
 
 ---

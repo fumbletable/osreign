@@ -13,7 +13,15 @@ nav_order: 3
 ## Bandit
 **HD 1 | AC 12 | HP 4**<br>
 Atk sword (d6) or crossbow (d6) | Mv Normal | Ml 8 | XP 10<br>
-Roving thieves, sometimes organized into small armies led by bandit chiefs with higher HD.
+Desperate men driven to the roads by debt, war, or worse. Quick to flee if outmatched.
+
+---
+
+## Bandit Chief
+**HD 4 | AC 14 | HP 16**<br>
+Atk sword (d8) or crossbow (d8) | Mv Normal | Ml 9 | XP 160<br>
+Commands 2d6 bandits. Knows when to parley and when to ambush.<br>
+Scarred veterans who've survived long enough to take charge.
 
 ---
 
@@ -36,7 +44,7 @@ Hundreds of bats moving as one.
 ## Basilisk
 **HD 6 | AC 15 | HP 24** | Darkvision<br>
 Atk bite (d10) | Mv Slow | Ml 9 | XP 360<br>
-Petrifying gaze (CON 12 or stone). Fighting blind = SETBACK.<br>
+Petrifying gaze (DC 12 CON or turned to stone). Fighting blind = **Setback**.<br>
 Eight-legged reptile with dead white eyes. Lairs in ruins, surrounded by statues of the unfortunate.
 
 ---
@@ -45,7 +53,7 @@ Eight-legged reptile with dead white eyes. Lairs in ruins, surrounded by statues
 **HD 4 | AC 12 | HP 16**<br>
 Atk 2 claws (d6), bite (d8) | Mv Normal | Ml 7 | XP 160<br>
 Will avoid humans unless provoked or protecting cubs.<br>
-Omnivorous and territorial.
+Drawn to campsites by the smell of food.
 
 ---
 
@@ -68,14 +76,16 @@ Nocturnal scavengers.
 ## Beetle, Giant Oil
 **HD 2 | AC 15 | HP 8** | Darkvision<br>
 Atk bite (d6) | Mv Normal | Ml 8 | XP 40<br>
-Oil spray: 5' x 5' area, causes painful blisters (-2 attack for 24 hours, CON 8 negates).
+Oil spray: 5' x 5' area, causes painful blisters (DC 8 CON or -2 attack for 24 hours).<br>
+Reeks of rancid fat. Found in caves and ruins.
 
 ---
 
 ## Beetle, Giant Bombardier
 **HD 2 | AC 15 | HP 8** | Darkvision<br>
 Atk bite (d6) | Mv Normal | Ml 8 | XP 40<br>
-Acid spray: 5' x 10' behind it, 2d6 damage (DEX 8 for half).
+Acid spray: 5' x 10' behind it, 2d6 damage (DC 8 DEX for half).<br>
+Announces itself with a sharp crack and acrid smoke.
 
 ---
 
@@ -90,8 +100,16 @@ Aggressive striped predator.
 ## Berserker
 **HD 1 | AC 12 | HP 4**<br>
 Atk battle axe (d8) | Mv Normal | Ml 12 | XP 10<br>
-+1 to attack rolls from battle fury. Never wears armor heavier than leather.<br>
+Rage: **Edge** on attacks, double damage dice. Attacks nearest target until none remain.<br>
 Wild-eyed warriors who fight without regard for their own safety.
+
+---
+
+## Berserker Chief
+**HD 2 | AC 12 | HP 8**<br>
+Atk great axe (d10) | Mv Normal | Ml 12 | XP 40<br>
+Rage: **Edge** on attacks, double damage dice. Attacks nearest target until none remain.<br>
+Leads by being the most dangerous one in the warband.
 
 ---
 
@@ -114,12 +132,13 @@ Pack hunters. Intelligent, lawful, hate displacer beasts.
 ## Boar, Wild
 **HD 3 | AC 12 | HP 12**<br>
 Atk tusks (2d4) | Mv Normal | Ml 10 | XP 90<br>
-Fight to the death when wounded. Charge for double damage on first attack.
+Fight to the death when wounded. Charge for double damage on first attack.<br>
+Bristled, tusked, and foul-tempered. Hunters fear them more than wolves.
 
 ---
 
 ## Bugbear
 **HD 3 | AC 12 | HP 12** | Darkvision<br>
 Atk morningstar (d8) or spear (d8) | Mv Normal | Ml 9 | XP 90<br>
-Stealthy: EDGE on stealth and hiding checks.<br>
+Stealthy: **Edge** on stealth and hiding checks.<br>
 Large, hairy goblinoids standing 7-8 ft tall. Surprisingly quiet for their size.

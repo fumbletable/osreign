@@ -13,15 +13,15 @@ nav_order: 8
 ## Gargoyle
 **HD 4 | AC 14 | HP 16** | Darkvision | Immune: non-magical weapons<br>
 Atk bite (d6), horns (d4), 2 claws (d3) | Mv Normal, Fly Fast | Ml 11 | XP 160<br>
-Winged stone predators.<br>
-Perch motionless on ruins and cathedrals, waiting for prey.
+Stone Form: Indistinguishable from statue when motionless. **Edge** on first attack from ambush.<br>
+Patient hunters that perch on ruins for years, waiting for prey to pass below.
 
 ---
 
 ## Gelatinous Cube
 **HD 4 | AC 11 | HP 16** | Blindsight<br>
 Atk pseudopod (2d4) | Mv Slow | Ml 12 | XP 160<br>
-Paralyzing touch (STR 8, 60 minutes). Nearly invisible.<br>
+Engulf: DC 8 STR or paralyzed (60 minutes). Nearly invisible until you walk into it.<br>
 Transparent 10' cube. Sloshes through corridors, engulfing debris and the unwary. Often contains undigested treasure.
 
 ---
@@ -29,15 +29,15 @@ Transparent 10' cube. Sloshes through corridors, engulfing debris and the unwary
 ## Ghast
 **HD 4 | AC 13 | HP 16** | Darkvision<br>
 Atk 2 claws (d4), bite (d8) | Mv Normal | Ml 9 | XP 160<br>
-Stench: All within Near must save (CON 8) or suffer SETBACK. Paralysing touch (STR 12, 5d4 rounds). Elves NOT immune.<br>
-More powerful ghoul. The stink of death clings to them.
+Stench: DC 8 CON or **Setback** while within **Near**. Paralysis: DC 12 STR or **Paralyzed** (5d4 rounds). Elves NOT immune.<br>
+Bloated, rotting, and reeking. The stronger cousin of the common ghoul.
 
 ---
 
 ## Ghoul
 **HD 2 | AC 13 | HP 8** | Darkvision<br>
 Atk 2 claws (d3), bite (d4) | Mv Normal | Ml 9 | XP 40<br>
-Paralyzing touch (STR 8, 3d6×10 minutes). Elves immune.<br>
+Paralysis: DC 8 STR or paralyzed (3d6×10 minutes). Elves immune.<br>
 Grave-stench and too-long fingers. Once human, now endlessly hungry.
 
 ---
@@ -52,40 +52,40 @@ Cunning giants dwelling in cloud-castles. Fabulously wealthy and dangerously cle
 
 ## Giant, Fire
 **HD 11 | AC 15 | HP 44** | Immune: Fire<br>
-Atk greatsword (5d6) or rock (5d6, Far) | Mv Normal | Ml 10 | XP 1210<br>
-Dwell near volcanoes in castles of basalt or iron.<br>
-Forge weapons in rivers of lava. Master smiths and brutal warriors.
+Atk greatsword (5d6+d6 fire) or rock (5d6, Far) | Mv Normal | Ml 10 | XP 1210<br>
+Heated Weapons: Melee attacks deal +d6 fire damage (included above).<br>
+Forge weapons in rivers of lava. Their blades glow red-hot. Master smiths and brutal warriors.
 
 ---
 
 ## Giant, Frost
 **HD 10 | AC 15 | HP 40** | Immune: Cold<br>
 Atk greataxe (4d6) or rock (4d6, Far) | Mv Normal | Ml 10 | XP 1000<br>
-Dwell in castles of ice and snow.<br>
-Raiders and plunderers of northern lands. Respect strength above all.
+Reckless: **Edge** on attacks, but attacks against them also have **Edge**.<br>
+Raiders and plunderers of northern lands. View retreat as cowardice and fight to the death.
 
 ---
 
 ## Giant, Hill
 **HD 8 | AC 15 | HP 32**<br>
 Atk greatclub (2d8) or rock (2d8, Near) | Mv Normal | Ml 9 | XP 640<br>
-The least and most brutish of giants.<br>
-Cave-dwellers dressed in pelts and uncured hides. Dull and hungry.
+Crushing Blow: Rock throws knock prone (DC 12 STR to stay standing).<br>
+The least and most brutish of giants. Cave-dwellers dressed in pelts and uncured hides. Dull and hungry.
 
 ---
 
 ## Giant, Stone
 **HD 9 | AC 15 | HP 36**<br>
 Atk greatclub (3d6) or rock (3d6, Far) | Mv Normal | Ml 9 | XP 810<br>
-Master ambushers in their native terrain.<br>
-Mountain-dwellers. Travelers rarely return from their domain.
+Stone Camouflage: **Edge** on ambush in rocky terrain. Expert throwers—can ricochet rocks around corners.<br>
+Mountain-dwellers who blend with the stone. Travelers rarely return from their domain.
 
 ---
 
 ## Giant, Storm
 **HD 15 | AC 17 | HP 60** | Immune: Lightning<br>
 Atk greatsword (7d6) or rock (3d6, Far) or lightning bolt | Mv Fast | Ml 10 | XP 2250<br>
-Lightning bolt (DEX 16, 15d6, 1/day). Can control weather. Breathe underwater.<br>
+Lightning Bolt: DC 16 DEX or 15d6 lightning (1/day). Can control weather. Breathe underwater.<br>
 The mightiest and most noble of giants. Dwell in cloud-castles or undersea palaces. Generally peaceful unless provoked.
 
 ---
@@ -93,8 +93,16 @@ The mightiest and most noble of giants. Dwell in cloud-castles or undersea palac
 ## Gnoll
 **HD 2 | AC 14 | HP 8** | Darkvision<br>
 Atk bite (d4), spear (d6) or longbow (d8) | Mv Normal | Ml 8 | XP 40<br>
-Tall hyena-headed humanoids.<br>
-Form loose clans, ranging far to steal and kill with rapacious ferocity.
+Pack Tactics: **Edge** when ally within 5'.<br>
+Hyena-headed raiders. Hunt in packs, laughing as they kill.
+
+---
+
+## Gnoll Chieftain
+**HD 4 | AC 15 | HP 16** | Darkvision<br>
+Atk bite (d6), greataxe (d10) | Mv Normal | Ml 9 | XP 160<br>
+Pack Tactics: **Edge** when ally within 5'. Rampage: On dropping a foe, can move and attack again.<br>
+The biggest and most vicious of the pack. Leads by fear and hunger.
 
 ---
 
@@ -109,8 +117,16 @@ Shorter than dwarves, bearded, fond of gems and practical jokes.
 ## Goblin
 **HD 1 | AC 13 | HP 4** | Darkvision<br>
 Atk weapon (d6) | Mv Normal | Ml 7 | XP 10<br>
-Sunlight Sensitivity: SETBACK in bright light.<br>
+Sunlight Sensitivity: **Setback** in bright light. Slippery: Can disengage freely after attacking.<br>
 Small green-skinned raiders. Attack in swarms, flee when outmatched.
+
+---
+
+## Goblin Boss
+**HD 3 | AC 15 | HP 12** | Darkvision<br>
+Atk scimitar (d8) | Mv Normal | Ml 8 | XP 90<br>
+Sunlight Sensitivity: **Setback** in bright light. Redirect Attack: When missed, can force nearby goblin to take the hit instead.<br>
+Rules through cruelty and cunning. Always has minions between itself and danger.
 
 ---
 
@@ -125,7 +141,7 @@ Stitched from corpse-parts. Shambling horror of stolen flesh.
 ## Golem, Iron
 **HD 16 | AC 14 | HP 64** | Darkvision | Immune: non-magical weapons, most spells<br>
 Atk 2 fists (4d8) | Mv Normal | Ml 12 | XP 2560<br>
-Poison breath (Near radius). Slowed by lightning. Fire heals it. Only +3 weapons harm it.<br>
+Poison Breath: DC 20 CON or 3d6 poison (Near radius). Slowed by lightning. Fire heals it. Only +3 weapons harm it.<br>
 Hulking statue of iron. Unstoppable guardian of ancient vaults.
 
 ---
@@ -141,7 +157,7 @@ Massive animated statue. Patient, tireless, utterly loyal to its creator.
 ## Gorgon
 **HD 8 | AC 17 | HP 32** | Darkvision<br>
 Atk gore (2d6) | Mv Fast | Ml 8 | XP 640<br>
-Petrifying breath (CON 12, Near range).<br>
+Petrifying Breath: DC 12 CON or petrified (Near range).<br>
 Iron-scaled bull. Snorts clouds of stone-making vapor.
 
 ---
@@ -149,7 +165,7 @@ Iron-scaled bull. Snorts clouds of stone-making vapor.
 ## Gray Ooze
 **HD 3 | AC 11 | HP 12** | Blindsight | Immune: spells, fire, cold, bludgeoning<br>
 Atk pseudopod (2d8) | Mv Normal | Ml 12 | XP 90<br>
-Acid destroys metal (CON 8 or rusts through).<br>
+Acid: DC 8 CON or metal armor/weapon rusts through.<br>
 Looks exactly like wet stone. A patient predator.
 
 ---
@@ -157,7 +173,7 @@ Looks exactly like wet stone. A patient predator.
 ## Green Slime
 **HD 2 | AC 14 | HP 8**<br>
 Atk touch (special) | Mv None | Ml 12 | XP 40<br>
-Contact transforms organic/metal to slime (CON 8). Killed by fire or cold. Cure Disease halts transformation.<br>
+Transform: DC 8 CON or flesh/metal begins turning to slime. Killed by fire or cold. Cure Disease halts transformation.<br>
 Not a monster—a hazard. Drips from dungeon ceilings onto the unwary.
 
 ---
