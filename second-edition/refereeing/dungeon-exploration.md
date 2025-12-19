@@ -29,7 +29,7 @@ In a Turn (10 minutes), a character can move **3× their base speed** in yards w
 | **Normal** | 30 ft | 90 yards | 180 yards |
 | **Fast** | 45 ft | 135 yards | 270 yards |
 
-**Rushing:** Double movement, but no searching or mapping. SETBACK on checks to spot traps or hidden features.
+**Rushing:** Double movement, but no searching or mapping. **Setback** on checks to spot traps or hidden features.
 
 ---
 
@@ -45,7 +45,7 @@ Light is precious underground. Track it.
 
 **Darkvision:** See 30 ft in dim light as if bright, darkness as dim. No color, no fine detail.
 
-**No light:** Effectively blind. SETBACK on all rolls. Movement halved. Can't read, search, or spot danger.
+**No light:** Effectively blind. **Setback** on all rolls. Movement halved. Can't read, search, or spot danger.
 
 ---
 
@@ -89,7 +89,7 @@ When either side might be caught off guard:
 - **Surprised:** Cannot act in the first round of combat.
 - **Partial surprise:** Some party members may be surprised while others aren't.
 
-Circumstances grant EDGE or SETBACK — a party creeping through darkness might surprise a distracted foe; a party arguing loudly won't surprise anyone.
+Circumstances grant **Edge** or **Setback** — a party creeping through darkness might surprise a distracted foe; a party arguing loudly won't surprise anyone.
 
 ---
 
@@ -108,7 +108,7 @@ Rest means sitting, eating, drinking, catching breath — not moving or doing an
 | Activity | Time | Check |
 |----------|------|-------|
 | Move (cautious) | 1 Turn | — |
-| Move (rushing) | 1 Turn | SETBACK to spot danger |
+| Move (rushing) | 1 Turn | **Setback** to spot danger |
 | Search a room | 1 Turn | WIS vs concealment |
 | Force a door | 1 Turn | STR vs door |
 | Pick a lock | 1 Turn | DEX vs lock |

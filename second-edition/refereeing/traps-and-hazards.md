@@ -37,7 +37,7 @@ If they're paying attention and asking questions, give them information. If they
 
 **Room search:** If they search without a specific method ("I search for traps"), call for a **WIS check**. DC depends on how well-hidden: Easy (DC 8) for a crude pit, Hard (DC 16) for a master-crafted pressure plate. This takes 1 Turn.
 
-**Trap Expert feat:** Characters with this Expert feat roll with EDGE to find, disable, or set traps.
+**Trap Expert feat:** Characters with this Expert feat roll with **Edge** to find, disable, or set traps.
 
 ---
 
@@ -58,7 +58,7 @@ When players describe *how* they're disarming — cutting the tripwire, jamming 
 
 **Uncertain methods:** Call for a **DEX check (DC 12)**. Failure means the trap triggers. Use common sense about who's affected — a failed disarm of a pit trap might drop the character in; a failed disarm of a dart trap fires into the corridor.
 
-**Tools help.** Thieves' tools, spikes, wire — improvising without proper tools means SETBACK.
+**Tools help.** Thieves' tools, spikes, wire — improvising without proper tools means **Setback**.
 
 **Magical traps** may require *Dispel Magic* or special knowledge to disarm.
 

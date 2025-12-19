@@ -119,7 +119,7 @@ Spend a watch thoroughly exploring the current hex. The Referee reveals any hidd
 At the end of a travel day, one character can search for a good campsite.
 
 **WIS check, Normal (DC 12):**
-- **Success:** Defensible site found. EDGE on lookout checks during the night.
+- **Success:** Defensible site found. **Edge** on lookout checks during the night.
 - **Fail:** Exposed site. Normal lookout checks.
 
 ### Rest
@@ -154,11 +154,11 @@ When you need weather, roll 2d6:
 | 3–4 | **Poor** — heavy rain, strong winds, bitter cold. Travel one speed slower. |
 | 5–9 | **Fair** — typical for the season. No effect. |
 | 10–11 | **Good** — clear skies, mild temperature. Pleasant travel. |
-| 12 | **Perfect** — ideal conditions. EDGE on navigation. |
+| 12 | **Perfect** — ideal conditions. **Edge** on navigation. |
 
 **Poor weather** slows travel by one speed category (Fast becomes Normal, Normal becomes Slow, Slow becomes half speed).
 
-**Severe weather** may halt travel entirely or require CON saves, Normal (DC 12) to avoid Fatigue. Proper gear or shelter grants EDGE.
+**Severe weather** may halt travel entirely or require CON saves, Normal (DC 12) to avoid Fatigue. Proper gear or shelter grants **Edge**.
 
 ---
 

@@ -78,6 +78,30 @@ Use natural language labels (Easy, Normal, Hard) but always include the DC in pa
 
 ---
 
+## Game Term Styling
+
+Use **bold** for all game terms with specific mechanical meanings:
+
+| Category | Examples |
+|----------|----------|
+| Roll modifiers | **Edge**, **Setback** |
+| Ranges | **Close**, **Near**, **Far**, **Very Far** |
+| Speeds | **Slow**, **Normal**, **Fast** |
+| Conditions | **Prone**, **Grappled**, **Frightened**, etc. |
+| Time units | **Round**, **Turn**, **Watch** |
+| Resources | **Boost Die**, **Supply**, **Fatigue**, **Hit Dice** |
+| Rest types | **Breather**, **Night's Rest**, **Safe Haven** |
+
+**Do not bold** when the word is used in regular prose without mechanical meaning.
+- "You have **Edge** on the roll" ✓
+- "The edge of the cliff" ✗
+- "Your Speed is **Slow**" ✓
+- "Move slowly through the cave" ✗
+
+**IMPORTANT:** Completed Dec 2024. All EDGE/SETBACK/CLOSE/NEAR/FAR converted from ALL CAPS to **Bold Title Case** throughout the book.
+
+---
+
 ## Page Structure
 
 Every page follows this pattern:

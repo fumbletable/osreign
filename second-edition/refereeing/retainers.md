@@ -83,5 +83,5 @@ A well-treated retainer with Loyalty +2 and a +2 Retainer modifier has Morale 11
 
 - **Death payout:** Paying wergild (≈50 gp/level) to a dead retainer's kin avoids −1 to local hiring.
 - **Reputation clock:** Each retainer death ticks a 6-segment clock; when full, hiring gets harder until the party mends their name.
-- **Generous terms:** Consistently overpaying may grant EDGE on Loyalty rolls.
+- **Generous terms:** Consistently overpaying may grant **Edge** on Loyalty rolls.
 - **XP growth:** Retainers gain XP if they survive. Over time, they may level up — or step in as a replacement character.

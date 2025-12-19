@@ -104,7 +104,7 @@ Weapon tags give players tactical options without adding cognitive load. The des
 **Three tiers, clear trade-offs:**
 - **Leather (AC 12 + DEX)**: Full mobility, any DEX bonus
 - **Chain (AC 14 + DEX max 2)**: Solid protection, some mobility
-- **Plate (AC 18)**: Best protection, no DEX, Stealth SETBACK, Bulky, expensive
+- **Plate (AC 18)**: Best protection, no DEX, Stealth **Setback**, Bulky, expensive
 
 **Why AC 18 for Plate?** Earlier drafts had AC 16, but that made Chain + high DEX strictly better. A character with DEX +2 in Chain gets AC 16 - same as Plate, but cheaper, lighter, quieter, and faster to don.
 
@@ -133,15 +133,15 @@ OSwR uses "Supply" as an abstract resource rather than tracking individual ratio
 
 # Core Mechanics
 
-## Why EDGE/SETBACK (Not Advantage/Disadvantage)
+## Why Edge/Setback (Not Advantage/Disadvantage)
 
 5e's advantage system is elegant but binary: roll 2d20, take best/worst. You either have it or you don't, and multiple sources don't stack. That binary nature creates problems—if you have advantage from one source, additional advantages are worthless. Stacking circumstantial bonuses should *matter*.
 
-**EDGE and SETBACK use 1d6.** EDGE adds 1d6 to your roll. SETBACK subtracts 1d6. They cancel one-for-one, but they also *stack*. Two sources of EDGE means +2d6. Being really well-prepared matters more than being slightly prepared.
+**Edge and Setback use 1d6.** **Edge** adds 1d6 to your roll. **Setback** subtracts 1d6. They cancel one-for-one, but they also *stack*. Two sources of **Edge** means +2d6. Being really well-prepared matters more than being slightly prepared.
 
 **Why d6?** It feels different from the core d20. Rolling a d6 alongside your d20 has a tactile, additive quality that 2d20-keep-best lacks. The language is natural too: "take an edge" makes intuitive sense at the table.
 
-**Classic divergence:** OSE has no advantage system. OSwR uses EDGE/SETBACK for situational modifiers that stack.
+**Classic divergence:** OSE has no advantage system. OSwR uses **Edge**/**Setback** for situational modifiers that stack.
 
 ---
 
@@ -158,7 +158,7 @@ Boost Dice started as physical d6s handed to players for doing cool things. The 
 - **Expert:** Roll 2d6 keep best (precision, reliability)
 - **Cleric/Magic-User:** Trigger Boostable spell effects (resource multiplication)
 
-**Why separate from EDGE?** EDGE is situational—the environment or circumstances give it to you. Boost Dice are earned through play and spent deliberately. They're a player resource, not a Referee ruling.
+**Why separate from Edge?** **Edge** is situational—the environment or circumstances give it to you. Boost Dice are earned through play and spent deliberately. They're a player resource, not a Referee ruling.
 
 **Classic divergence:** This replaces 5e's Inspiration (which nobody remembers to use) with something visible, tactile, and tied to character identity.
 
@@ -570,13 +570,31 @@ Flavour text (what it is).
 
 ---
 
+# Book Structure
+
+## Why This Reading Order?
+
+The Player's Guide follows a specific sequence: How to Play → Character → Equipment → Magic → Adventuring → Downtime.
+
+**How to Play first.** Every other section uses terms like DC, **Edge**, **Setback**, checks, and saves. By putting the core mechanics at the front, we define these before they appear elsewhere. A reader going cover-to-cover never hits an unexplained term.
+
+**Character includes Classes, Feats, and Advancement.** When players build characters, they're already thinking ahead: "At level 3 I'll take this feat, at level 5 I'll multiclass..." Grouping the full character arc together—creation through progression—matches how players actually think about their builds.
+
+**Magic is separate from Character.** Not everyone plays a caster. Keeping magic in its own section means non-casters can skip it entirely, while casters have everything they need in one place.
+
+**Adventuring and Downtime split the gameplay loop.** Adventuring covers what happens in dangerous places (time, rests, combat, exploration). Downtime covers what happens between adventures (hiring help, carousing). This mirrors how sessions actually flow: venture out, return to town, repeat.
+
+**Equipment before Magic.** You gear up before you study spells. Practical before specialist.
+
+---
+
 # Divergences from OSE/Classic
 
 Beyond the philosophical changes, here are specific mechanical divergences from Old-School Essentials and B/X:
 
 **Saves:** OSE has 5 save categories (Death, Wands, Paralysis, Breath, Spells). OSwR uses 6 ability-based saves with proficiency, matching 5e's structure.
 
-**Thief Skills:** OSE Thieves have percentage-based skills (Pick Locks 15%, Hide in Shadows 10%). OSwR Experts use feats - you either have the ability or you don't, with EDGE when applicable.
+**Thief Skills:** OSE Thieves have percentage-based skills (Pick Locks 15%, Hide in Shadows 10%). OSwR Experts use feats - you either have the ability or you don't, with **Edge** when applicable.
 
 **Turn Undead:** OSE uses a 2d6 table cross-referenced by Cleric level and undead HD. OSwR uses a flat DC 12 check with HD thresholds for effect.
 

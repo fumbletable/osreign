@@ -21,7 +21,7 @@ A stuck door requires a **STR check (DC 12)** to force open.
 - **Fail:** The door holds. Time is lost. They can try again.
 - **Success:** The door crashes open — roll the hazard die immediately.
 
-**Tools help.** A crowbar or pry bar grants EDGE. Multiple characters pushing together can grant EDGE at your discretion.
+**Tools help.** A crowbar or pry bar grants **Edge**. Multiple characters pushing together can grant **Edge** at your discretion.
 
 Forcing a door is never quiet. Even a failed attempt makes noise.
 

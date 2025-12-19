@@ -22,7 +22,7 @@ nav_order: 1
 
 **Telegraph danger.** The more dangerous something is, the more obvious it should be. Eight armored foes in formation tells players everything they need to know.
 
-**Reward clever play.** When players think their way around a problem, let it work - no roll needed. If they're being smart but there's still risk, give them EDGE.
+**Reward clever play.** When players think their way around a problem, let it work - no roll needed. If they're being smart but there's still risk, give them **Edge**.
 
 **Give out Boost Dice.** Don't hoard them. They reset each session and won't break anything. Good ideas, playing up hindrances, making the table laugh - all worth a Boost Die.
 
