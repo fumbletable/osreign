@@ -84,7 +84,7 @@ In classic D&D and 5e, you roll 3d6 for a score (3-18), then look up a modifier 
 
 Simple: "race" carries baggage. "Ancestry" describes what it actually is - where you come from, what you inherited.
 
-**Mechanical change:** OSwR ancestries have 3 traits max (Humans get 2). One is marked "Essential" - the defining old-school ability (Dwarf stonecunning, Elf ghoul immunity, Halfling fearlessness). The others can vary for sub-ancestries.
+**Mechanical change:** OSwR ancestries have 2–3 traits. Each ancestry has signature abilities (Dwarf stonecunning, Elf ghoul immunity, Halfling fearlessness), but these can vary for sub-ancestries.
 
 **Classic divergence:** In OSE, demihuman races ARE classes. An Elf is a class, not an ancestry + class. OSwR separates these, allowing Dwarf Fighters, Elf Clerics, etc.
 

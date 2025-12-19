@@ -859,7 +859,7 @@ const ANCESTRIES = [
     size: "Medium",
     languages: ["Common", "Dwarvish"],
     traits: [
-      { name: "Stone Sense", desc: "Detect unusual stonework. EDGE when actively searching.", essential: true },
+      { name: "Stone Sense", desc: "Detect unusual stonework. EDGE when actively searching." },
       { name: "Darkvision", desc: "See in darkness up to 30 ft." },
       { name: "Resist Spells", desc: "EDGE on saves vs spells." }
     ],
@@ -871,7 +871,7 @@ const ANCESTRIES = [
     size: "Medium",
     languages: ["Common", "Elvish"],
     traits: [
-      { name: "Ghoul Immunity", desc: "Immune to ghoul paralysis.", essential: true },
+      { name: "Ghoul Immunity", desc: "Immune to ghoul paralysis." },
       { name: "Keen Senses", desc: "EDGE on sight and hearing checks." },
       { name: "Secret Door Sense", desc: "EDGE when searching for hidden doors." }
     ]
@@ -881,7 +881,7 @@ const ANCESTRIES = [
     size: "Small",
     languages: ["Common", "Halfling"],
     traits: [
-      { name: "Fearless", desc: "EDGE on saves vs fear.", essential: true },
+      { name: "Fearless", desc: "EDGE on saves vs fear." },
       { name: "Small & Quiet", desc: "EDGE to Hide in wilderness." },
       { name: "Sling Training", desc: "EDGE on attacks with slings." }
     ],
@@ -892,7 +892,7 @@ const ANCESTRIES = [
     size: "Medium",
     languages: ["Common"],
     traits: [
-      { name: "Versatile", desc: "+1 to any one ability (you choose).", essential: true },
+      { name: "Versatile", desc: "+1 to any one ability (you choose)." },
       { name: "Broad Training", desc: "One bonus General Feat." }
     ],
     bonusAbility: true,
@@ -1579,7 +1579,7 @@ function renderEditableSheet(char) {
   let traitsHtml = '';
   if (ancestryData) {
     traitsHtml = ancestryData.traits.map(t =>
-      `<div class="ancestry-trait"><strong>${t.name}${t.essential ? ' (Essential)' : ''}:</strong> ${t.desc}</div>`
+      `<div class="ancestry-trait"><strong>${t.name}:</strong> ${t.desc}</div>`
     ).join('');
     if (ancestryData.restriction) {
       traitsHtml += `<div class="ancestry-trait" style="background: #fee; border-color: #c44;"><strong>Restriction:</strong> ${ancestryData.restriction}</div>`;

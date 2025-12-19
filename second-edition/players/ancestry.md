@@ -14,7 +14,7 @@ Choose one of the four core ancestries for your character.
 
 - Everyone speaks **Common** plus their ancestry's tongue (Humans just speak Common).
 - **Bonus languages:** If your INT is positive, you gain that many extra languages.
-- Each ancestry has 3 traits. One is marked **Essential** (core to old-school play). The other two can vary for sub-ancestries.
+- Each ancestry has 2–3 traits. These can vary for sub-ancestries.
 
 ---
 
@@ -22,7 +22,7 @@ Choose one of the four core ancestries for your character.
 **Size:** Medium · **Languages:** Common, Dwarvish
 **Age:** Adult ~40 · Lifespan ~250–400
 
-- **Stone Sense (Essential):** You detect unusual stonework. If you pass within 5 ft of slopes, seams, traps, or recent masonry, the Referee may roll a secret INT check for you. When you actively search stonework, roll with **Edge**.
+- **Stone Sense:** You detect unusual stonework. If you pass within 5 ft of slopes, seams, traps, or recent masonry, the Referee may roll a secret INT check for you. When you actively search stonework, roll with **Edge**.
 - **Darkvision (30 ft).**
 - **Resist Spells:** **Edge** on saves vs spells and spell-like effects.
 
@@ -34,7 +34,7 @@ Choose one of the four core ancestries for your character.
 **Size:** Medium · **Languages:** Common, Elvish
 **Age:** Adult ~100 · Lifespan ~400–1000+
 
-- **Ghoul Immunity (Essential):** You're immune to ghoul paralysis.
+- **Ghoul Immunity:** You're immune to ghoul paralysis.
 - **Keen Senses:** **Edge** on sight and hearing checks. **Edge** to avoid being Surprised at **Near** range if you're alert.
 - **Secret Door Sense:** If you pass within 5 ft of a hidden door, the Referee may roll a secret WIS check for you. When you actively search, roll with **Edge**.
 
@@ -44,7 +44,7 @@ Choose one of the four core ancestries for your character.
 **Size:** Small · **Languages:** Common, Halfling
 **Age:** Adult ~20 · Lifespan ~100–150
 
-- **Fearless (Essential):** **Edge** on saves vs fear and morale-breaking effects.
+- **Fearless:** **Edge** on saves vs fear and morale-breaking effects.
 - **Small & Quiet:** **Edge** to Hide in wilderness. Creatures larger than you have **Setback** to detect you beyond **Close** if you stay still.
 - **Sling Training:** **Edge** on attacks with slings (and thrown stones, if you like).
 
@@ -56,5 +56,5 @@ Choose one of the four core ancestries for your character.
 **Size:** Medium · **Languages:** Common
 **Age:** Adult ~15–18 · Lifespan ~70–90
 
-- **Versatile (Essential):** +1 to any one ability.
+- **Versatile:** +1 to any one ability.
 - **Broad Training:** Choose one General Feat you qualify for.

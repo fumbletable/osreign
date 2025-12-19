@@ -14,6 +14,8 @@ When the outcome's uncertain, you roll dice.
 
 Roll d20 + ability + Proficiency Bonus (PB) if it applies. Beat the Difficulty Class (DC) and you succeed. Fall short and something goes wrong—but never a dead end. Every roll should push the story forward.
 
+**Proficiency Bonus (PB):** Your PB is +2 at levels 1–4, +3 at levels 5–8, and +4 at levels 9–12. Add it to attacks with proficient weapons, proficient saves, and checks where your class, background, or feats apply.
+
 ---
 
 ## Saving Throws
