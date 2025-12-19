@@ -3,7 +3,7 @@ title: Magic
 layout: default
 parent: Players
 grand_parent: Second Edition
-nav_order: 6
+nav_order: 4
 has_children: true
 ---
 

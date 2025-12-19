@@ -202,7 +202,7 @@ nav_order: 5
 - **Casting Time:** 1 Action
 - **Range:** Near (30 ft)
 - **Duration:** Concentration, 1 Turn
-- **Effect:** Summon a swarm of insects, bats, or rats (10-ft radius). Creatures in the swarm take 1d6 damage per round and have SETBACK on attacks. Creatures can move freely through or out of the swarm.
+- **Effect:** Summon a swarm of insects, bats, or rats (10-ft radius). Creatures in the swarm take 1d6 damage per round and have **Setback** on attacks. Creatures can move freely through or out of the swarm.
 - **Boost:** Swarm expands to 15-ft radius.
 
 ## Wind Wall

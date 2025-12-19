@@ -1,9 +1,9 @@
 ---
 title: Exploration
 layout: default
-parent: Rules
+parent: Adventuring
 grand_parent: Players
-nav_order: 9
+nav_order: 4
 ---
 
 # Exploration Basics

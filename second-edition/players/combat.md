@@ -1,9 +1,9 @@
 ---
 title: Combat
 layout: default
-parent: Rules
+parent: Adventuring
 grand_parent: Players
-nav_order: 2
+nav_order: 3
 ---
 
 # Combat
@@ -43,7 +43,7 @@ Roll d20 + ability + PB. Meet or beat the target's AC and you hit.
 **Fumble:** Natural 1 invites a complication—dropped weapon, slipped footing, friendly fire. Referee's call.
 
 **Cover:**
-- *Partial cover* (half-hidden): Attacker has SETBACK.
+- *Partial cover* (half-hidden): Attacker has **Setback**.
 - *Full cover* (completely obscured): Can't be targeted.
 
 ---
@@ -52,7 +52,7 @@ Roll d20 + ability + PB. Meet or beat the target's AC and you hit.
 
 Roll d20 + ability vs the DC. Meet or beat it and you avoid or reduce the harm. Fail and you take the full effect.
 
-You add PB to saves your class grants proficiency in. Don't forget to apply your Fatigue penalty.
+You add PB to saves your class grants proficiency in. Don't forget to apply your Fatigue penalty (your exhaustion level—see [Rests](rests-recovery-fatigue.md)).
 
 ---
 
@@ -80,10 +80,10 @@ On your turn you can move up to your Speed and take one Action.
 |--------|--------------|
 | **Attack** | Melee or ranged attack vs AC |
 | **Cast Spell** | Resolve per the spell description |
-| **Dodge** | Attacks against you have SETBACK until your next turn |
+| **Dodge** | Attacks against you have **Setback** until your next turn |
 | **Disengage** | Move without provoking opportunity attacks. You can Dash afterwards to flee |
 | **Dash** | Double your movement this turn |
-| **Help** | Give an ally EDGE on their next roll (must be in reach) |
+| **Help** | Give an ally **Edge** on their next roll (must be in reach) |
 | **Grapple** | STR vs their STR or DEX—success means their Speed drops to 0 |
 | **Shove** | STR vs their STR or DEX—push them 5 ft or knock them prone |
 | **Disarm** | STR or DEX vs theirs—weapon flies d10 ft in a random direction |

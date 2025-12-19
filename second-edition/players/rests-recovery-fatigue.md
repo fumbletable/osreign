@@ -1,9 +1,9 @@
 ---
 title: Rests, Recovery & Fatigue
 layout: default
-parent: Rules
+parent: Adventuring
 grand_parent: Players
-nav_order: 4
+nav_order: 2
 ---
 
 # Rests, Recovery & Fatigue
@@ -38,7 +38,7 @@ When you're pushed beyond your limits, roll **CON save (DC 12)**. On a failure, 
 - Long swims or climbs in armour
 - Toxic fumes or bad air
 
-Extreme conditions use DC 16. Proper gear or shelter gives EDGE. Severe conditions give SETBACK.
+Extreme conditions use DC 16. Proper gear or shelter gives **Edge**. Severe conditions give **Setback**.
 
 ---
 

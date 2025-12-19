@@ -12,10 +12,10 @@ OSwR uses four core ancestries - Dwarf, Elf, Halfling, and Human - but you can e
 
 Each ancestry has **3 traits max** (Humans are the exception). Traits come in a few categories:
 
-- **Sense:** Darkvision (30 ft) or EDGE on a sense (sight, hearing, smell). Keep darkvision rare.
-- **Resist:** EDGE on one type of save (poison, charm, fear, spells, cold/heat).
-- **Knack:** EDGE on one exploration task (stone sense, find secret doors, woodland stealth, tracking).
-- **Quirk:** A small, always-on perk (ignore Winded once/day, treat Bulky as 1 slot, EDGE on sling attacks).
+- **Sense:** Darkvision (30 ft) or **Edge** on a sense (sight, hearing, smell). Keep darkvision rare.
+- **Resist:** **Edge** on one type of save (poison, charm, fear, spells, cold/heat).
+- **Knack:** **Edge** on one exploration task (stone sense, find secret doors, woodland stealth, tracking).
+- **Quirk:** A small, always-on perk (ignore 1 **Fatigue** once/day, treat **Bulky** as 1 slot, **Edge** on sling attacks).
 
 Pick 2–3 that fit the concept. Don't stack the same category twice.
 
@@ -35,9 +35,9 @@ These examples use the Build-an-Ancestry rules to show how you might create othe
 
 - **Ghoul Immunity (Essential).**
 - **Darkvision (30 ft).**
-- **Resist Spells:** EDGE on saves vs spells and magical effects.
+- **Resist Spells:** **Edge** on saves vs spells and magical effects.
 
-*Note:* In Mystara, Shadow Elves are mistrusted by surface folk. The Referee may apply SETBACK on reaction rolls with NPCs unfamiliar with their culture.
+*Note:* In Mystara, Shadow Elves are mistrusted by surface folk. The Referee may apply **Setback** on reaction rolls with NPCs unfamiliar with their culture.
 
 ---
 
@@ -45,8 +45,8 @@ These examples use the Build-an-Ancestry rules to show how you might create othe
 **Size:** Small · **Languages:** Common, Gnomish (often Dwarvish too)
 **Age:** Adult ~40 · Lifespan ~300–500
 
-- **Stone Sense (Essential):** As Dwarves, you detect stonework anomalies. If you pass within 5 ft of slopes, seams, traps, or recent masonry, the Referee may roll a secret INT check. When actively searching stonework, roll with EDGE.
-- **Resist Illusion:** EDGE on saves vs illusions and trickery.
-- **Tinker's Knack:** EDGE on checks to repair, disassemble, or jury-rig mechanical devices.
+- **Stone Sense (Essential):** As Dwarves, you detect stonework anomalies. If you pass within 5 ft of slopes, seams, traps, or recent masonry, the Referee may roll a secret INT check. When actively searching stonework, roll with **Edge**.
+- **Resist Illusion:** **Edge** on saves vs illusions and trickery.
+- **Tinker's Knack:** **Edge** on checks to repair, disassemble, or jury-rig mechanical devices.
 
-*Restriction:* You're Small, so you can't wield Large or Heavy weapons (polearms, greatswords, etc.).
+*Restriction:* You're Small, so you can't wield **Large** or **Heavy** weapons (polearms, greatswords, etc.).

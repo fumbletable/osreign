@@ -20,7 +20,7 @@ nav_order: 3
 - **Range:** Near (30 ft)
 - **Duration:** PB rounds
 - **Effect:** Speak one word; target obeys if it fails a WIS spell save. Examples: *Halt, Flee, Drop, Approach*.
-- **Boost:** Target suffers SETBACK on save.
+- **Boost:** Target suffers **Setback** on save.
 
 ## Cure Light Wounds
 - **Casting Time:** 1 Action
@@ -61,7 +61,7 @@ nav_order: 3
 - **Casting Time:** 1 Action
 - **Range:** Touch
 - **Duration:** Instant
-- **Effect:** Calms one frightened creature. If target is under magical fear, they get a new save with EDGE.
+- **Effect:** Calms one frightened creature. If target is under magical fear, they get a new save with **Edge**.
 - **Boost:** Affect +1 creature.
 
 ## Purify Food & Drink
@@ -80,7 +80,7 @@ nav_order: 3
 - **Range:** Near (30 ft)
 - **Duration:** Special (see below)
 - **Effect:** One humanoid that fails a WIS spell save regards caster as trusted ally. Hostile acts end effect. Target repeats save: daily (INT 13+), weekly (INT 9-12), or monthly (INT 8-).
-- **Boost:** Target has SETBACK on initial save.
+- **Boost:** Target has **Setback** on initial save.
 
 ## Detect Magic
 - Same as Cleric version.
@@ -169,13 +169,13 @@ nav_order: 3
 - **Range:** Near (30 ft)
 - **Duration:** Concentration, 1 Turn
 - **Effect:** Plants restrain creatures in a 20-ft area. DEX spell save or Speed = 0.
-- **Boost:** Expand to 30 ft or add SETBACK to escape.
+- **Boost:** Expand to 30 ft or add **Setback** to escape.
 
 ## Faerie Fire
 - **Casting Time:** 1 Action
 - **Range:** Near (30 ft)
 - **Duration:** 1 Turn (10 minutes)
-- **Effect:** Outline creatures/objects in light. Attacks vs outlined targets gain EDGE.
+- **Effect:** Outline creatures/objects in light. Attacks vs outlined targets gain **Edge**.
 - **Boost:** Duration +1 Turn.
 
 ## Pass Without Trace

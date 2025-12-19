@@ -1,13 +1,15 @@
 ---
 title: Classes
 layout: default
-parent: Players
-grand_parent: Second Edition
-nav_order: 2
+parent: Character
+grand_parent: Players
+nav_order: 6
 has_children: true
 ---
 
 # Classes
+
+Your class is your adventuring profession—what you're best at when things go wrong.
 
 OSwR has four base classes: [Cleric](cleric.md), [Expert](expert.md), [Fighter](fighter.md), [Magic-User](magic-user.md).
 Your class sets your hit points, saves, weapon and armor proficiencies, and what you gain as you level.
@@ -40,7 +42,7 @@ Rather than dozens of rigid classes, OSwR gives you four broad frameworks and th
 All characters begin with:
 - Backpack
 - 6 Torches
-- 6 Supply
+- 6 **Supply** (consumable resources for healing and survival—see [Adventuring Gear](adventuring-gear.md))
 - Wineskin
 - 25 gp
 - One **Starting Kit** (defined in your class entry), *or* roll `4d4 × 10 gp` and buy your own equipment.

@@ -14,36 +14,26 @@ Everything you need to create your character and venture into the unknown.
 
 ## Sections
 
-### Building Your Character
+### How to Play
 
-- **Character** - Roll abilities, choose your ancestry and background, pick a hindrance
-- **Classes** - Fighter, Expert, Cleric, or Magic-User - each with unique abilities
-- **Feats** - Specialize your character with General, Fighter, and Expert feats
+Learn the core mechanics first: checks, saves, DCs, **Edge** and **Setback**, Boost Dice.
 
-### Outfitting for Adventure
+### Character
 
-- **Equipment** - Weapons, armor, adventuring gear, and encumbrance
-- **Economy** - Prices, wages, and what gold can buy
+Build your character from the ground up—abilities, ancestry, background, class, feats—and see where they're heading with advancement.
 
-### Core Rules
+### Equipment
 
-- **Rolling Dice** - Checks, saves, EDGE and SETBACK
-- **Combat** - Initiative, attacks, damage, and death
-- **Time & Movement** - Turns, watches, travel speeds
-- **Exploration** - Dungeon procedures for players
-- **Rests & Recovery** - Breathers, full rests, Hit Dice, and fatigue
-
-### Working Together
-
-- **Hiring Help** - Recruiting and managing retainers
-- **Carousing** - Spend gold to earn XP between adventures
+Weapons, armor, adventuring gear, and how much you can carry.
 
 ### Magic
 
-- **Magic** - Casting spells, spell slots, and ritual magic
-- **Spellbooks & Research** - Learning new spells and creating scrolls
-- **Spells** - Complete spell lists by tier (1-6)
+For casters: spell slots, preparation, ritual magic, and complete spell lists by tier.
 
-### Growing Stronger
+### Adventuring
 
-- **Advancement** - Earning XP, levelling up, and multiclassing
+What happens in the field: time and movement, rests and fatigue, combat, exploration.
+
+### Downtime
+
+What happens between adventures: hiring help and carousing.

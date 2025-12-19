@@ -1,9 +1,9 @@
 ---
 title: Carousing
 layout: default
-parent: Rules
+parent: Downtime
 grand_parent: Players
-nav_order: 10
+nav_order: 2
 ---
 
 # Carousing
@@ -37,7 +37,7 @@ You may carouse again the following night—if the mishaps haven't caught up wit
 | **4** | **Gambling debt.** You owe 1d6 × 50 gp to someone who doesn't accept "no." They have friends. Payment due within the week. |
 | **5** | **Robbed.** Lose half your remaining coin. Your purse was cut, or you were rolled in an alley. No idea who did it. |
 | **6** | **Fined.** Property damage, public indecency, or disturbing the peace. Pay 2d6 × 10 gp or spend a night in the stocks. |
-| **7** | **Brutal hangover.** SETBACK on all checks until you complete a full rest. You remember nothing useful. |
+| **7** | **Brutal hangover.** **Setback** on all checks until you complete a full rest. You remember nothing useful. |
 | **8** | **Embarrassing tattoo.** It's prominent. It's ugly. It might be offensive to someone. Removal costs 100 gp and hurts. |
 | **9** | **Entangled.** You promised something. A favor, a job, your sword arm. Someone will collect. Work out the details with the Referee. |
 | **10** | **Reputation shift.** Word spreads about your antics. When you meet new NPCs, the Referee rolls to see how they react—you now get +1 with rogues and lowlifes, −1 with respectable folk. Lasts until you do something to change it. |

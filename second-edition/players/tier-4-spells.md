@@ -114,7 +114,7 @@ nav_order: 6
 - **Range:** Near (30 ft)
 - **Duration:** Permanent (until dispelled)
 - **Effect:** Transform 1 creature into another form (±2 HD). Target gains new form's physical stats but keeps mind. WIS spell save resists.
-- **Boost:** Target suffers SETBACK on save.
+- **Boost:** Target suffers **Setback** on save.
 
 ## Polymorph Self
 - **Casting Time:** 1 Action

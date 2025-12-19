@@ -1,9 +1,9 @@
 ---
 title: Hiring Help
 layout: default
-parent: Rules
+parent: Downtime
 grand_parent: Players
-nav_order: 8
+nav_order: 1
 ---
 
 # Hiring Help

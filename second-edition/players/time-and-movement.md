@@ -1,9 +1,9 @@
 ---
 title: Time & Movement
 layout: default
-parent: Rules
+parent: Adventuring
 grand_parent: Players
-nav_order: 3
+nav_order: 1
 ---
 
 # Time and Movement
@@ -53,7 +53,7 @@ How long things take and how far you can go.
 
 **Darkvision:** See 30 ft in dim light as if bright, darkness as dim. No colour, no fine detail.
 
-**No light:** Effectively blind. SETBACK on all rolls. Movement halved.
+**No light:** Effectively blind. **Setback** on all rolls. Movement halved.
 
 ---
 

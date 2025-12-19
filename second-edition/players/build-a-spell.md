@@ -203,13 +203,13 @@ Every spell has a **Boost** effect triggered by spending a Boost Die. Boosts sho
 | +1 duration | Add 1 Turn to duration | Most utility spells |
 | +1d4 or +1d6 | Increase effect by one die | Healing, damage spells |
 | Expand area | Increase radius by 5-10 ft | Fireball, Entangle |
-| SETBACK on save | Target rolls with SETBACK | Charm, control spells |
+| **Setback** on save | Target rolls with **Setback** | Charm, control spells |
 
 **Boost Guidelines:**
 - A boost should feel worth a Boost Die but not double the spell's power
 - Duration boosts work well for utility spells
 - Damage/healing boosts should add roughly 25-50% more effect
-- Control spells benefit from +1 target or SETBACK on save
+- Control spells benefit from +1 target or **Setback** on save
 - Area expansion should be modest (5-10 ft)
 
 ---
@@ -265,7 +265,7 @@ Each class has a distinct magical identity:
 
 ### From 5e
 - **Spell level ≈ Tier** (5e level 1-2 = T1, level 3-4 = T2, etc.)
-- Convert advantage/disadvantage to EDGE/SETBACK
+- Convert advantage/disadvantage to **Edge**/**Setback**
 - Remove concentration if effect is simple; keep for ongoing control
 - Reduce damage slightly (OSwR is lower-powered)
 - Add a Boost effect
@@ -319,7 +319,7 @@ When creating or converting a spell:
 - Effect: difficult terrain + fall prone on failed save
 
 **Step 4 - Add Boost:**
-- +1 area or SETBACK on save? Area expansion feels right for terrain control.
+- +1 area or **Setback** on save? Area expansion feels right for terrain control.
 
 **Result:**
 
@@ -348,7 +348,7 @@ When creating or converting a spell:
 - ✓ Spiritual Hammer (T2 Cleric) - 1d6+PB force damage
 - ✓ Regenerate (T6 Cleric) - regrows limbs, heals 3d6
 - ✓ Restoration (T6 Cleric) - removes negative levels or restores drained ability scores
-- ✓ Remove Fear (T1 Cleric) - calms frightened creatures, new save with EDGE vs magical fear
+- ✓ Remove Fear (T1 Cleric) - calms frightened creatures, new save with **Edge** vs magical fear
 - ✓ Augury (T2 Cleric) - weal/woe divination for planned actions
 - ✓ Divination (T4 Cleric) - 1-2 sentence truthful answer about events within one week
 - ✓ Animate Dead (T4 Cleric) - weaker version with control limit (PB × 2 HD)
@@ -356,7 +356,7 @@ When creating or converting a spell:
 - ✓ Pass Without Trace (T1 Druid) - no tracks/scent, tracking fails
 - ✓ Shillelagh (T1 Druid) - magical staff (+1/1d8)
 - ✓ Produce Flame (T2 Druid) - torch + throwable 1d6 fire
-- ✓ Summon Swarm (T3 Druid) - 1d6/round + SETBACK in 10-ft radius
+- ✓ Summon Swarm (T3 Druid) - 1d6/round + **Setback** in 10-ft radius
 - ✓ Hold Animal (T3 Druid) - paralysis for up to 3 animals
 
 **Spell count balancing (DONE):**

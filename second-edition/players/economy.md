@@ -8,6 +8,8 @@ nav_order: 1
 
 # Economy
 
+> **Note:** This page consolidates economic reference material. Some of this information duplicates or expands on rules found elsewhere (Equipment, Hiring Help, Spellbooks & Research). A future pass will streamline player-facing essentials from Referee worldbuilding.
+
 This page consolidates all economic information for OSwR - what things cost, what adventurers earn, and how gold flows through the game.
 
 ---

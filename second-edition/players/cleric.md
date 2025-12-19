@@ -50,7 +50,7 @@ At 1st level, choose one oath. This shapes your path, spell list, and unique gif
 **Turn Undead**
 **Action:** Present holy symbol and call upon your power.
 - Make a **Normal (DC 12) WIS check**.
-- **On success:** affect up to `2d6 + PB` HD of undead within NEAR, starting with the lowest HD first.
+- **On success:** affect up to `2d6 + PB` HD of undead within **Near**, starting with the lowest HD first.
   - If the undead's HD ≤ (your level − 3), it is **Destroyed**.
   - If the undead's HD ≤ (your level + 1), it is **Turned** for `2d6` rounds (must flee, cannot approach).
   - If its HD > (your level + 1), it is **unaffected**.
@@ -73,7 +73,7 @@ At 1st level, choose one oath. This shapes your path, spell list, and unique gif
 - **Form:** You may become any natural beast you have seen, provided you can pay its Hit Dice cost from your pool.
 - **Duration:** **1d6 rounds.** After rolling, you may spend a **Boost Die** to add **+1d6 rounds.**
 - **HP:** While shaped, your HP becomes the beast's full HP. When that HP is lost or the duration ends, you revert; any excess damage carries over.
-- **Resource trade:** The Hit Dice spent are **gone from your pool until you rest in a Safe Haven.**
+- **Resource trade:** The Hit Dice spent are gone from your pool until you rest in a **Safe Haven**.
 - **Traits gained:** The beast's movement, senses, and natural attacks. You cannot cast spells while shaped. Gear merges or drops (your choice).
 
 **Starting Kit:**

@@ -1,9 +1,9 @@
 ---
 title: Encumbrance
 layout: default
-parent: Rules
+parent: Equipment
 grand_parent: Players
-nav_order: 6
+nav_order: 4
 ---
 
 # Encumbrance

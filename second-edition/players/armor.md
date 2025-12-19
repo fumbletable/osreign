@@ -31,7 +31,7 @@ Protection costs mobility - pick your trade-off.
 **How it works:**
 - **Light** - Full DEX bonus to AC
 - **Medium** - DEX bonus to AC capped at +2
-- **Heavy** - No DEX bonus to AC; Stealth checks have SETBACK
+- **Heavy** - No DEX bonus to AC; Stealth checks have **Setback**
 
 **Restrictions:**
 - **Bulky** - Counts as 2 slots for encumbrance

@@ -8,6 +8,8 @@ nav_order: 4
 
 # Backgrounds (d50)
 
+Your background is what you did before you picked up a sword.
+
 Roll or choose one. Your background replaces skills - when it reasonably applies, add your PB to non-combat checks.
 
 | d50 | Background        | Description                                                                   |

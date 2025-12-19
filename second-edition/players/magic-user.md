@@ -33,7 +33,7 @@ Magic-Users wield arcane power through study and intellect. You're fragile in co
 
 At level 1 you know two cantrips:
 
-- **Wizard Bolt:** Make a **ranged spell attack** against one target within **NEAR**.
+- **Wizard Bolt:** Make a **ranged spell attack** against one target within **Near**.
   - On a hit: deal `1d3` force damage.
   - This is treated as a magical attack.
 - **Prestidigitation:** Create harmless sensory effects or minor magical tricks (e.g., spark, puff of wind, change in taste). The Referee decides limits.

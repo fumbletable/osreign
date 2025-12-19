@@ -25,7 +25,7 @@ Experts are the skilled specialists—thieves, scouts, assassins, bards, rangers
 - At each odd level, gain +1 feat from either list.
 
 **Boost Hook — Precision**
-When you spend a Boost Die, roll 2d6 and keep the higher result.
+When you spend a **Boost Die**, roll 2d6 and keep the higher result.
 
 ---
 

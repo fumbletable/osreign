@@ -50,10 +50,10 @@ Look up each roll on the table below - that's your ability. Record only the abil
 ### The Six Abilities
 
 **Strength (STR)**
-Physical power, athletics, brute force. You add STR to melee attack and damage rolls. Your carrying capacity is 10 + STR slots.
+Physical power, athletics, brute force. You add STR to melee attack and damage rolls. Your carrying capacity is 10 + STR slots (see [Encumbrance](encumbrance)).
 
 **Dexterity (DEX)**
-Agility, reflexes, balance. You add DEX to ranged attack rolls (not damage). With a finesse weapon like a dagger or shortsword, you can use DEX for both attack and damage instead of STR. DEX also adds to your AC.
+Agility, reflexes, balance. You add DEX to ranged attack rolls (not damage). With a finesse weapon like a dagger or shortsword, you can use DEX for both attack and damage instead of STR. DEX also adds to your AC (Armor Class—how hard you are to hit).
 
 **Constitution (CON)**
 Health, stamina, resilience. You add CON to your HP each level.
@@ -65,13 +65,13 @@ Memory, reasoning, knowledge. Magic-Users use INT for spell save DCs and spell a
 Perception, insight, intuition. Clerics use WIS for spell save DCs and spell attacks.
 
 **Charisma (CHA)**
-Personality, charm, leadership. CHA affects reaction rolls (how NPCs respond to you), how many retainers you can employ, and social checks like persuasion or intimidation.
+Personality, charm, leadership. CHA affects reaction rolls (how NPCs respond to you), how many [retainers](hiring-help) you can employ, and social checks like persuasion or intimidation.
 
 ---
 
 ### Proficiency Bonus (PB)
 
-Your Proficiency Bonus represents your training. At level 1, it's +2 and increases as you level.
+Your Proficiency Bonus represents your training. It's +2 at levels 1–4, +3 at levels 5–8, and +4 at levels 9–12.
 
 Add your PB to:
 - Attacks with weapons you're proficient in

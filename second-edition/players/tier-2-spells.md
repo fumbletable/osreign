@@ -33,7 +33,7 @@ nav_order: 4
 - **Casting Time:** 1 Action
 - **Range:** Touch
 - **Duration:** 1 Turn (10 minutes)
-- **Effect:** Choose fire or cold when preparing this spell. Target gains EDGE on saves against that element and takes half damage from it.
+- **Effect:** Choose fire or cold when preparing this spell. Target gains **Edge** on saves against that element and takes half damage from it.
 - **Boost:** Affect +1 additional creature.
 
 ## Spiritual Hammer
@@ -177,7 +177,7 @@ nav_order: 4
 - **Casting Time:** 1 Action
 - **Range:** Self (Near radius)
 - **Duration:** 1 Turn (10 minutes)
-- **Effect:** Fog fills area; attacks beyond Close have SETBACK.
+- **Effect:** Fog fills area; attacks beyond **Close** have **Setback**.
 - **Boost:** Duration +1 Turn.
 
 ## Speak with Plants

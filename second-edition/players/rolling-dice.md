@@ -1,12 +1,12 @@
 ---
-title: Rolling Dice
+title: How to Play
 layout: default
-parent: Rules
-grand_parent: Players
+parent: Players
+grand_parent: Second Edition
 nav_order: 1
 ---
 
-# Rolling Dice
+# How to Play
 
 When the outcome's uncertain, you roll dice.
 
@@ -31,6 +31,7 @@ When something nasty happens to you—a trap springs, a spell hits, the floor gi
 | 8 | Easy | Climb a knotted rope |
 | 12 | Normal | Cross a narrow ledge |
 | 16 | Hard | Decipher ancient text |
+| 20 | Extreme | Leap a 30-ft chasm |
 
 Most checks are DC 12. The Referee sets the DC based on how hard the task actually is, and may adjust it for circumstances.
 
@@ -48,13 +49,13 @@ When the whole party attempts something together, everyone rolls. If at least ha
 
 ---
 
-## EDGE and SETBACK
+## Edge and Setback
 
-When circumstances favor you, you have **EDGE**—add 1d6 to your roll.
+When circumstances favor you, you have **Edge**—add 1d6 to your roll.
 
-When circumstances work against you, you have **SETBACK**—subtract 1d6 from your roll.
+When circumstances work against you, you have **Setback**—subtract 1d6 from your roll.
 
-EDGE and SETBACK can stack. Two sources of EDGE means +2d6. One EDGE and one SETBACK cancel out.
+**Edge** and **Setback** can stack. Two sources of **Edge** means +2d6. One **Edge** and one **Setback** cancel out.
 
 ---
 
@@ -64,7 +65,7 @@ Boost Dice are a personal resource you spend to enhance your actions. You start 
 
 **Basic use:** Spend 1 Boost Die to add 1d6 to any roll. Declare it before or after you roll.
 
-**Earning more:** The Referee may award Boost Dice when you play up your hindrances, do something memorable, or make the game more fun.
+**Earning more:** The Referee may award Boost Dice when you play up your hindrances (character flaws—see [Hindrances](character/hindrances)), do something memorable, or make the game more fun.
 
 **Class abilities:** Each class also has special ways to spend Boost Dice—see your class description for details.
 

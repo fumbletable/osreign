@@ -35,7 +35,7 @@ The stuff that keeps you alive between fights.
 | Hammer | 1 gp | Drives pitons and spikes |
 | Iron Spikes (10) | 1 gp | Brace doors, stake tents, mark trails |
 | 10-Foot Pole | 1 gp | Poke floors, trip wires from safety. **Bulky** |
-| Crowbar | 2 gp | EDGE on prying and breaking |
+| Crowbar | 2 gp | **Edge** on prying and breaking |
 | Shovel | 2 gp | Earthworks, graves, ditches |
 
 ---
@@ -71,10 +71,10 @@ Kits let you attempt actions that are otherwise impossible. Without the right ki
 | Item | Cost | Notes |
 |:-----|-----:|:------|
 | Thieves' Tools | 25 gp | Pick locks, disarm traps |
-| Healer's Kit (10 uses) | 10 gp | EDGE on healing checks, treat poison and disease |
+| Healer's Kit (10 uses) | 10 gp | **Edge** on healing checks, treat poison and disease |
 | Herbalist's Kit | 15 gp | Identify plants, brew poultices, prepare antidotes |
 | Disguise Kit | 15 gp | Make-up, props, false identities |
-| Climbing Kit | 10 gp | EDGE on climbing checks |
+| Climbing Kit | 10 gp | **Edge** on climbing checks |
 | Poisoner's Kit | 50 gp | Brew and apply poisons |
 | Alchemist's Supplies | 50 gp | Potions, reagents, volatile mixes |
 | Artisan's Tools | 20 gp | Blacksmith, mason, weaver, etc. |

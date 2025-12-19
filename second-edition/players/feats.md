@@ -1,9 +1,9 @@
 ---
 title: Feats
 layout: default
-parent: Players
-grand_parent: Second Edition
-nav_order: 3
+parent: Character
+grand_parent: Players
+nav_order: 7
 has_children: true
 ---
 

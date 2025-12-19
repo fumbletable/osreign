@@ -16,22 +16,22 @@ You start with six of these at level 1 and pick another at each odd level (3, 5,
 
 | Feat | Effect |
 |:-----|:-------|
-| Backstab | From hidden: EDGE on the attack, +2 × your level damage. Once per target per combat. |
+| Backstab | From hidden: **Edge** on the attack, +2 × your level damage. Once per target per combat. |
 | Contacts (High) | You have connections among nobles, merchants, and guild leaders. |
 | Contacts (Low) | You have connections in the underworld—thieves, fences, smugglers. |
 | Deflect Missiles | +3 AC against ranged attacks. |
-| Disguise | EDGE on checks to pass yourself off as someone else. |
-| Forgery Master | EDGE to forge documents or spot forgeries. |
-| Gambit | Take SETBACK on your current roll. Your next roll this turn gains +2 dice (roll 3, keep best). |
+| Disguise | **Edge** on checks to pass yourself off as someone else. |
+| Forgery Master | **Edge** to forge documents or spot forgeries. |
+| Gambit | Take **Setback** on your current roll. Your next roll this turn gains +2 dice (roll 3, keep best). |
 | Garrote | From behind: restrain and silence your target. They escape on a STR save (DC 12). |
-| Hide in Shadows | After breaking line of sight, EDGE to remain hidden. |
-| Infiltrator | EDGE on stealth and deception checks against guards and sentries. |
-| Innate Tracker | EDGE to track creatures (numbers, size, time elapsed). |
-| Master of Disguise | Allies using your disguises also gain EDGE. |
+| Hide in Shadows | After breaking line of sight, **Edge** to remain hidden. |
+| Infiltrator | **Edge** on stealth and deception checks against guards and sentries. |
+| Innate Tracker | **Edge** to track creatures (numbers, size, time elapsed). |
+| Master of Disguise | Allies using your disguises also gain **Edge**. |
 | Pick Locks | Open non-magical locks with thieves' tools. No check required for mundane locks. |
 | Pick Pockets | Attempt theft unnoticed. Your DEX vs their WIS. |
 | Poisoner | Craft and apply poisons. Immune to your own poisons. |
-| Silver Tongue | EDGE on checks to deceive, lie, or misdirect. |
+| Silver Tongue | **Edge** on checks to deceive, lie, or misdirect. |
 | Sleight of Hand | Conceal or palm small items without being noticed. |
-| Trap Expert | EDGE to find, disable, or set traps. |
-| Winning Smile | EDGE on checks to persuade, charm, or negotiate. |
+| Trap Expert | **Edge** to find, disable, or set traps. |
+| Winning Smile | **Edge** on checks to persuade, charm, or negotiate. |

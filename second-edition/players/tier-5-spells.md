@@ -41,7 +41,7 @@ nav_order: 7
 - **Range:** Near (30 ft)
 - **Duration:** Until completed
 - **Effect:** One creature must undertake a quest; WIS spell save resists.
-- **Boost:** Target suffers SETBACK on save.
+- **Boost:** Target suffers **Setback** on save.
 
 ## Raise Dead
 - **Casting Time:** 1 Turn
@@ -101,7 +101,7 @@ nav_order: 7
 - **Range:** Near (30 ft)
 - **Duration:** Permanent until cured
 - **Effect:** One caster target INT spell save or INT reduced to 1, cannot cast spells.
-- **Boost:** Target suffers SETBACK on save.
+- **Boost:** Target suffers **Setback** on save.
 
 ## Hold Monster
 - **Casting Time:** 1 Action

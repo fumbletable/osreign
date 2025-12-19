@@ -3,7 +3,7 @@ title: Equipment
 layout: default
 parent: Players
 grand_parent: Second Edition
-nav_order: 4
+nav_order: 3
 has_children: true
 ---
 
@@ -40,3 +40,4 @@ If you're over capacity, your Speed drops to Slow and you make a CON save (DC 12
 - [Weapons](weapons.md) - Melee and ranged weapons with tags
 - [Armor](armor.md) - Protection and mobility trade-offs
 - [Adventuring Gear](adventuring-gear.md) - Tools, supplies, kits, and sundries
+- [Encumbrance](encumbrance.md) - How much you can carry

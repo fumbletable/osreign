@@ -100,14 +100,14 @@ nav_order: 8
 - **Range:** Far (120 ft)
 - **Duration:** Instant
 - **Effect:** One target turns to dust. CON spell save negates. If object, destroyed.
-- **Boost:** Target suffers SETBACK on save.
+- **Boost:** Target suffers **Setback** on save.
 
 ## Geas
 - **Casting Time:** 1 Action
 - **Range:** Near (30 ft)
 - **Duration:** Until fulfilled
 - **Effect:** Command one creature to complete a task. WIS spell save resists. Breaking command causes 2d6 damage/day.
-- **Boost:** Target has SETBACK on save.
+- **Boost:** Target has **Setback** on save.
 
 ## Invisible Stalker
 - **Casting Time:** 1 Action
