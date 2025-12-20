@@ -40,4 +40,4 @@ This section contains material for the Referee's eyes only. Players, turn back n
 
 ### Advanced Play
 
-- [Domain Play](refereeing/domain-play/) - Strongholds and rulership *(placeholder)*
+- [Domain Play](refereeing/domain-play/) - Strongholds and rulership *(coming in Beta)*
