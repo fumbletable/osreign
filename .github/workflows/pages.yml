@@ -47,6 +47,12 @@ jobs:
 
   build-pdf:
     runs-on: ubuntu-latest
+    # Only run PDF build when 2e content changes
+    if: |
+      github.event_name == 'workflow_dispatch' ||
+      contains(github.event.head_commit.modified, 'second-edition/') ||
+      contains(github.event.head_commit.added, 'second-edition/') ||
+      contains(github.event.head_commit.modified, 'pdf/')
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
