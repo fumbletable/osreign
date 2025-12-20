@@ -6,7 +6,7 @@ on:
     paths:
       - 'second-edition/**'
       - 'second-edition.md'
-      - 'scripts/generate-ebook.js'
+      - 'scripts/generate-ebook.cjs'
   workflow_dispatch: # Allow manual trigger
 
 permissions:
@@ -34,7 +34,7 @@ jobs:
         run: mkdir -p downloads
 
       - name: Generate EPUB
-        run: node scripts/generate-ebook.js
+        run: node scripts/generate-ebook.cjs
 
       - name: Commit and push ebook
         run: |

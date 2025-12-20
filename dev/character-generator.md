@@ -90,9 +90,23 @@ Create characters and manage them during play. Characters auto-save to your brow
         </div>
 
         <div class="manual-row">
-          <label>Class:</label>
+          <label>Primary Class:</label>
           <select id="manual-class"></select>
+          <input type="number" id="manual-class-levels" value="1" min="1" max="10" style="width: 50px; margin-left: 0.5rem;">
+          <span style="font-size: 0.85rem; color: #666; margin-left: 0.25rem;">levels</span>
         </div>
+
+        <div class="manual-row" id="manual-second-class-row">
+          <label>Second Class:</label>
+          <select id="manual-class-2">
+            <option value="">(None - single class)</option>
+          </select>
+          <input type="number" id="manual-class-2-levels" value="0" min="0" max="10" style="width: 50px; margin-left: 0.5rem;">
+          <span style="font-size: 0.85rem; color: #666; margin-left: 0.25rem;">levels</span>
+        </div>
+        <p id="multiclass-note" style="font-size: 0.8rem; color: #888; margin: 0 0 0.75rem 0; display: none;">
+          Note: Dual-caster multiclassing not supported. One class must be Fighter or Expert.
+        </p>
 
         <div class="manual-row">
           <label>Background:</label>
@@ -1606,10 +1620,186 @@ let generatorState = {
 
 // ============ STORAGE ============
 
+// ============ MULTICLASSING SUPPORT (v4) ============
+
+// Migration function: converts old className to new classes array
+function migrateCharacter(char) {
+  // Skip if already migrated
+  if (char.classes && !char.className) {
+    return char;
+  }
+
+  // Migrate className → classes array
+  if (char.className && !char.classes) {
+    char.classes = [{ name: char.className, levels: char.level || 1 }];
+    char.totalLevel = char.level || 1;
+    delete char.className;
+  }
+
+  // Migrate feats to include source
+  if (char.feats && char.feats.length > 0 && typeof char.feats[0] === 'string') {
+    const primaryClass = char.classes?.[0]?.name || 'Unknown';
+    char.feats = char.feats.map(f => ({ name: f, source: primaryClass }));
+  }
+
+  return char;
+}
+
+// Helper: Get display string for class (e.g., "Fighter 2 / Magic-User 3")
+function getClassDisplayString(char) {
+  if (!char.classes || char.classes.length === 0) {
+    return char.className || 'Unknown';
+  }
+  return char.classes.map(c => `${c.name} ${c.levels}`).join(' / ');
+}
+
+// Helper: Get primary class (first class in array)
+function getPrimaryClass(char) {
+  if (char.classes && char.classes.length > 0) {
+    return CLASSES.find(c => c.name === char.classes[0].name);
+  }
+  return CLASSES.find(c => c.name === char.className);
+}
+
+// Helper: Get all class data for a multiclass character
+function getAllClassData(char) {
+  if (!char.classes || char.classes.length === 0) {
+    const classData = CLASSES.find(c => c.name === char.className);
+    return classData ? [classData] : [];
+  }
+  return char.classes.map(c => CLASSES.find(cl => cl.name === c.name)).filter(Boolean);
+}
+
+// Helper: Get class levels for a specific class
+function getClassLevels(char, className) {
+  if (char.classes) {
+    const classEntry = char.classes.find(c => c.name === className);
+    return classEntry ? classEntry.levels : 0;
+  }
+  return char.className === className ? char.level : 0;
+}
+
+// Helper: Get total level
+function getTotalLevel(char) {
+  if (char.totalLevel) return char.totalLevel;
+  if (char.classes) {
+    return char.classes.reduce((sum, c) => sum + c.levels, 0);
+  }
+  return char.level || 1;
+}
+
+// Helper: Get union of save proficiencies from all classes
+function getSaveProficiencies(char) {
+  const allClasses = getAllClassData(char);
+  const saves = new Set();
+  allClasses.forEach(c => {
+    if (c.saves) c.saves.forEach(s => saves.add(s));
+  });
+  return Array.from(saves);
+}
+
+// Helper: Get union of weapon proficiencies from all classes
+function getWeaponProficiencies(char) {
+  const allClasses = getAllClassData(char);
+  const profs = [];
+
+  allClasses.forEach(c => {
+    if (c.weapons) {
+      // Parse weapon proficiency string
+      const parts = c.weapons.split(', ');
+      parts.forEach(p => {
+        if (!profs.includes(p)) profs.push(p);
+      });
+    }
+  });
+
+  return profs.join(', ');
+}
+
+// Helper: Get union of armor proficiencies from all classes
+function getArmorProficiencies(char) {
+  const allClasses = getAllClassData(char);
+  const profs = new Set();
+
+  allClasses.forEach(c => {
+    if (c.armor) {
+      c.armor.split(', ').forEach(a => profs.add(a));
+    }
+  });
+
+  return Array.from(profs).join(', ');
+}
+
+// Helper: Check weapon proficiency considering all classes
+function isWeaponProficientMulticlass(weaponName, weaponData, char) {
+  const allClasses = getAllClassData(char);
+
+  for (const classData of allClasses) {
+    if (isWeaponProficient(weaponName, weaponData, classData?.weapons)) {
+      return true;
+    }
+  }
+  return false;
+}
+
+// Helper: Get spellcasting class (only one caster class allowed per design)
+function getSpellcastingClass(char) {
+  const allClasses = getAllClassData(char);
+  return allClasses.find(c => c.spellcasting);
+}
+
+// Helper: Get caster level for spell slot calculation
+function getCasterLevel(char) {
+  const casterClass = getSpellcastingClass(char);
+  if (!casterClass) return 0;
+
+  if (char.classes) {
+    const classEntry = char.classes.find(c => c.name === casterClass.name);
+    return classEntry ? classEntry.levels : 0;
+  }
+  return char.level || 1;
+}
+
+// Helper: Get hit dice by type for multiclass
+function getHitDice(char) {
+  const allClasses = getAllClassData(char);
+  const dice = {};
+
+  if (char.classes) {
+    char.classes.forEach(c => {
+      const classData = CLASSES.find(cl => cl.name === c.name);
+      if (classData) {
+        const dieType = `d${classData.hd}`;
+        dice[dieType] = (dice[dieType] || 0) + c.levels;
+      }
+    });
+  } else {
+    const classData = CLASSES.find(c => c.name === char.className);
+    if (classData) {
+      dice[`d${classData.hd}`] = char.level || 1;
+    }
+  }
+
+  return dice;
+}
+
+// Helper: Format hit dice for display (e.g., "2d8 + 3d4")
+function formatHitDice(char) {
+  const dice = getHitDice(char);
+  const parts = Object.entries(dice)
+    .sort((a, b) => parseInt(b[0].slice(1)) - parseInt(a[0].slice(1))) // Sort by die size desc
+    .map(([die, count]) => `${count}${die}`);
+  return parts.join(' + ') || '0';
+}
+
 function loadCharacters() {
   try {
     const data = localStorage.getItem(STORAGE_KEY);
     characters = data ? JSON.parse(data) : [];
+    // Migrate all characters to new format
+    characters = characters.map(migrateCharacter);
+    // Save migrated data
+    saveCharacters();
   } catch (e) {
     console.error('Failed to load characters:', e);
     characters = [];
@@ -1710,7 +1900,7 @@ function renderCharacterList() {
       <div class="char-info">
         <h3>${char.name}</h3>
         <div class="char-details">
-          Level ${char.level || 1} ${char.ancestry} ${char.className} | ${char.background}
+          Level ${getTotalLevel(char)} ${char.ancestry} ${getClassDisplayString(char)} | ${char.background}
         </div>
       </div>
       <div class="char-hp">${char.currentHp}/${char.maxHp} HP</div>
@@ -1736,11 +1926,13 @@ function loadCharacter(id) {
 
 function renderEditableSheet(char) {
   const sheet = document.getElementById('character-sheet');
-  const classData = CLASSES.find(c => c.name === char.className);
+  const primaryClass = getPrimaryClass(char);
+  const allClasses = getAllClassData(char);
   const ancestryData = ANCESTRIES.find(a => a.name === char.ancestry);
 
-  // Calculate derived stats
-  const pb = char.level <= 4 ? 2 : (char.level <= 8 ? 3 : 4);
+  // Calculate derived stats (based on total level for multiclass)
+  const totalLevel = getTotalLevel(char);
+  const pb = totalLevel <= 4 ? 2 : (totalLevel <= 8 ? 3 : 4);
   const startingBoost = Math.floor(pb / 2);
 
   // Build traits HTML
@@ -1754,18 +1946,26 @@ function renderEditableSheet(char) {
     }
   }
 
-  // Build editable feats HTML
+  // Build editable feats HTML (feats are now objects with name and source)
   let featsHtml = '';
   const allFeats = char.feats || [];
+  // Helper to get feat name (handles both old string format and new object format)
+  const getFeatName = (f) => typeof f === 'string' ? f : f.name;
+  const getFeatSource = (f) => typeof f === 'string' ? null : f.source;
+
   if (allFeats.length > 0 || char.humanFeat) {
     featsHtml = `<div class="feats-section">`;
-    featsHtml += allFeats.map((f, idx) => `
+    featsHtml += allFeats.map((f, idx) => {
+      const featName = getFeatName(f);
+      const featSource = getFeatSource(f);
+      return `
       <div class="feat-item">
-        <span class="feat-name">${f}</span>
+        <span class="feat-name">${featName}</span>
+        ${featSource ? `<span class="feat-source">(${featSource})</span>` : ''}
         <span class="remove-feat" data-idx="${idx}">&times;</span>
-        <span class="feat-tooltip">${FEAT_DESCRIPTIONS[f] || 'No description available.'}</span>
+        <span class="feat-tooltip">${FEAT_DESCRIPTIONS[featName] || 'No description available.'}</span>
       </div>
-    `).join('');
+    `}).join('');
     if (char.humanFeat) {
       featsHtml += `
         <div class="feat-item">
@@ -1775,19 +1975,19 @@ function renderEditableSheet(char) {
         </div>
       `;
     }
-    const excludedFeats = [...allFeats, char.humanFeat].filter(Boolean);
+    const excludedFeatNames = [...allFeats.map(getFeatName), char.humanFeat].filter(Boolean);
     featsHtml += `
       <div class="add-feat-row">
         <select id="add-feat-select">
           <option value="">Add feat...</option>
           <optgroup label="General Feats">
-            ${GENERAL_FEATS.filter(f => !excludedFeats.includes(f)).map(f => `<option value="${f}">${f}</option>`).join('')}
+            ${GENERAL_FEATS.filter(f => !excludedFeatNames.includes(f)).map(f => `<option value="${f}">${f}</option>`).join('')}
           </optgroup>
           <optgroup label="Fighter Feats">
-            ${FIGHTER_FEATS.filter(f => !excludedFeats.includes(f)).map(f => `<option value="${f}">${f}</option>`).join('')}
+            ${FIGHTER_FEATS.filter(f => !excludedFeatNames.includes(f)).map(f => `<option value="${f}">${f}</option>`).join('')}
           </optgroup>
           <optgroup label="Expert Feats">
-            ${EXPERT_FEATS.filter(f => !excludedFeats.includes(f)).map(f => `<option value="${f}">${f}</option>`).join('')}
+            ${EXPERT_FEATS.filter(f => !excludedFeatNames.includes(f)).map(f => `<option value="${f}">${f}</option>`).join('')}
           </optgroup>
         </select>
         <button class="btn-small" id="add-feat-btn">Add</button>
@@ -1814,7 +2014,7 @@ function renderEditableSheet(char) {
     </div>`;
   }
 
-  // Build weapons HTML
+  // Build weapons HTML (uses multiclass proficiency check)
   const weapons = char.weapons || [];
   const weaponsHtml = `
     <table class="weapons-table">
@@ -1831,7 +2031,7 @@ function renderEditableSheet(char) {
         ${weapons.map((w, idx) => {
           const weaponData = WEAPONS[w.name] || { damage: w.damage || "1d6", stat: "STR", tags: [] };
           const statMod = char.finalAbilities[weaponData.stat] || 0;
-          const proficient = isWeaponProficient(w.name, weaponData, classData?.weapons);
+          const proficient = isWeaponProficientMulticlass(w.name, weaponData, char);
           const attackBonus = (proficient ? pb : 0) + statMod;
           const damageBonus = statMod;
           return `
@@ -1858,16 +2058,18 @@ function renderEditableSheet(char) {
   `;
 
   // Spellcasting (full 6 tiers with Spellbook/Prepared distinction)
+  // For multiclass: spell slots based on caster class levels only, not total level
   let spellHtml = '';
-  if (classData?.spellcasting) {
-    const stat = classData.spellcasting.stat;
-    const spellType = classData.spellcasting.type; // "Cleric", "Arcane", or "Druidic"
+  const spellcastingClass = getSpellcastingClass(char);
+  if (spellcastingClass?.spellcasting) {
+    const stat = spellcastingClass.spellcasting.stat;
+    const spellType = spellcastingClass.spellcasting.type; // "Cleric", "Arcane", or "Druidic"
     const mod = char.finalAbilities[stat];
     const dc = 8 + pb + mod;
     const attack = pb + mod;
-    const charLevel = char.level || 1;
-    const preparedLimit = Math.max(1, charLevel + mod);
-    const maxSlots = SPELL_SLOTS_BY_LEVEL[Math.min(charLevel, 10)] || SPELL_SLOTS_BY_LEVEL[1];
+    const casterLevel = getCasterLevel(char); // Uses caster class levels for multiclass
+    const preparedLimit = Math.max(1, casterLevel + mod);
+    const maxSlots = SPELL_SLOTS_BY_LEVEL[Math.min(casterLevel, 10)] || SPELL_SLOTS_BY_LEVEL[1];
     const spellList = SPELL_LISTS[spellType] || {};
 
     // Initialize spell slots if needed
@@ -1999,13 +2201,22 @@ function renderEditableSheet(char) {
     </div>
   `).join('');
 
+  // Build class features HTML for all classes
+  const classFeatures = allClasses.map(classData => {
+    let html = `<div class="class-feature"><strong>${classData.name} Boost Hook:</strong> ${classData?.boostHook || 'None'}</div>`;
+    if (classData?.feature) {
+      html += `<div class="class-feature"><strong>${classData.feature}</strong>${CLASS_FEATURE_DESCRIPTIONS[classData.feature] ? `<span class="feature-tooltip">${CLASS_FEATURE_DESCRIPTIONS[classData.feature]}</span>` : ''}</div>`;
+    }
+    return html;
+  }).join('');
+
   sheet.innerHTML = `
     <h2>${char.name}</h2>
     <p style="font-size: 1rem; margin-bottom: 1rem;">
       <strong>Ancestry:</strong> ${char.ancestry} |
-      <strong>Class:</strong> ${char.className} |
+      <strong>Class:</strong> ${getClassDisplayString(char)} |
       <strong>Background:</strong> ${char.background} |
-      <strong>Level:</strong> <span class="editable-field editable-number" contenteditable="true" data-field="level">${char.level || 1}</span> |
+      <strong>Total Level:</strong> ${totalLevel} |
       <strong>PB:</strong> +${pb}
     </p>
 
@@ -2026,7 +2237,7 @@ function renderEditableSheet(char) {
         HP
       </div>
       <div class="derived-box"><strong>${char.ac}</strong>AC</div>
-      <div class="derived-box"><strong>1d${classData?.hd || 8}</strong>Hit Die</div>
+      <div class="derived-box"><strong>${formatHitDice(char)}</strong>Hit Dice</div>
       <div class="derived-box"><strong>${char.slots}</strong>Slots</div>
     </div>
 
@@ -2054,13 +2265,13 @@ function renderEditableSheet(char) {
     </div>
 
     <div class="saves-proficiencies">
-      <div><strong>Proficient Saves:</strong> ${classData?.saves.join(', ') || 'None'}</div>
+      <div><strong>Proficient Saves:</strong> ${getSaveProficiencies(char).join(', ') || 'None'}</div>
       <div><strong>Languages:</strong> ${ancestryData?.languages.join(', ') || 'Common'}</div>
     </div>
 
     <h3>Proficiencies</h3>
-    <p><strong>Weapons:</strong> ${classData?.weapons || 'None'}<br>
-    <strong>Armor:</strong> ${classData?.armor || 'None'}</p>
+    <p><strong>Weapons:</strong> ${getWeaponProficiencies(char) || 'None'}<br>
+    <strong>Armor:</strong> ${getArmorProficiencies(char) || 'None'}</p>
 
     <h3>Weapons</h3>
     ${weaponsHtml}
@@ -2074,8 +2285,7 @@ function renderEditableSheet(char) {
     ${traitsHtml}
 
     <h3>Class Features</h3>
-    <div class="class-feature"><strong>Boost Hook:</strong> ${classData?.boostHook || 'None'}</div>
-    ${classData?.feature ? `<div class="class-feature"><strong>${classData.feature}</strong>${CLASS_FEATURE_DESCRIPTIONS[classData.feature] ? `<span class="feature-tooltip">${CLASS_FEATURE_DESCRIPTIONS[classData.feature]}</span>` : ''}</div>` : ''}
+    ${classFeatures}
 
     <h3>Equipment <span style="font-size: 0.8rem; color: #666;">(${(char.equipment || []).length} items)</span></h3>
     <div class="equipment-section">
@@ -2235,7 +2445,14 @@ function attachSheetListeners(char) {
     const featName = select.value;
     if (featName) {
       char.feats = char.feats || [];
-      char.feats.push(featName);
+      // Determine source based on feat type
+      let source = 'General';
+      if (FIGHTER_FEATS.includes(featName)) {
+        source = 'Fighter';
+      } else if (EXPERT_FEATS.includes(featName)) {
+        source = 'Expert';
+      }
+      char.feats.push({ name: featName, source: source });
       saveCurrentCharacter();
       renderEditableSheet(char);
     }
@@ -2615,17 +2832,24 @@ function createCharacter() {
     "Wineskin"
   ];
 
+  // Convert feats to new format with source (v4)
+  const featsWithSource = (generatorState.feats || []).map(f => ({
+    name: f,
+    source: generatorState.charClass.name
+  }));
+
+  // Build character object (v4 format with classes array)
   const character = {
     id: generateId(),
     name: name,
     ancestry: generatorState.ancestry.name,
-    className: generatorState.charClass.name,
+    classes: [{ name: generatorState.charClass.name, levels: 1 }], // New v4 format
+    totalLevel: 1,
     background: generatorState.background,
-    level: 1,
     abilities: generatorState.abilities,
     finalAbilities: finalAbilities,
     humanBonusAbility: generatorState.humanBonusAbility,
-    feats: generatorState.feats,
+    feats: featsWithSource, // New v4 format with source
     humanFeat: generatorState.humanFeat,
     maxHp: maxHp,
     currentHp: maxHp,
@@ -2724,10 +2948,10 @@ function importCharacter(file) {
   const reader = new FileReader();
   reader.onload = (e) => {
     try {
-      const char = JSON.parse(e.target.result);
+      let char = JSON.parse(e.target.result);
 
-      // Validate basic structure
-      if (!char.name || !char.ancestry || !char.className) {
+      // Validate basic structure (support both old className and new classes format)
+      if (!char.name || !char.ancestry || (!char.className && !char.classes)) {
         alert('Invalid character file');
         return;
       }
@@ -2735,6 +2959,9 @@ function importCharacter(file) {
       // Generate new ID to avoid conflicts
       char.id = generateId();
       char.importedAt = new Date().toISOString();
+
+      // Migrate to v4 format if needed
+      char = migrateCharacter(char);
 
       characters.push(char);
       saveCharacters();
@@ -2803,8 +3030,9 @@ function populateManualDropdowns() {
     `<option value="${a.name}">${a.name}${a.restriction ? ' (' + a.restriction + ')' : ''}</option>`
   ).join('');
 
-  // Class dropdown
+  // Class dropdowns (primary and secondary)
   const classSelect = document.getElementById('manual-class');
+  const class2Select = document.getElementById('manual-class-2');
   updateManualClassOptions();
 
   // Background dropdown
@@ -2816,8 +3044,61 @@ function populateManualDropdowns() {
   // Set up ancestry change handler for class restrictions
   ancestrySelect.addEventListener('change', updateManualClassOptions);
 
-  // Set up class change handler for feats
-  classSelect.addEventListener('change', updateManualFeats);
+  // Set up class change handler for feats and second class options
+  classSelect.addEventListener('change', () => {
+    updateManualSecondClassOptions();
+    updateManualFeats();
+  });
+  class2Select.addEventListener('change', updateManualFeats);
+
+  // Set up level change handlers to update total level display
+  document.getElementById('manual-class-levels').addEventListener('change', updateManualTotalLevel);
+  document.getElementById('manual-class-2-levels').addEventListener('change', updateManualTotalLevel);
+}
+
+// Helper: Check if a class is a caster
+function isCasterClass(className) {
+  const classData = CLASSES.find(c => c.name === className);
+  return classData && classData.spellcasting;
+}
+
+function updateManualSecondClassOptions() {
+  const primaryClass = document.getElementById('manual-class').value;
+  const class2Select = document.getElementById('manual-class-2');
+  const multiclassNote = document.getElementById('multiclass-note');
+  const ancestryName = document.getElementById('manual-ancestry').value;
+  const ancestry = ANCESTRIES.find(a => a.name === ancestryName);
+  const primaryIsCaster = isCasterClass(primaryClass);
+
+  // Build options for second class
+  let options = '<option value="">(None - single class)</option>';
+
+  CLASSES.forEach(c => {
+    // Can't pick same class
+    if (c.name === primaryClass) return;
+
+    // Ancestry restriction
+    if (ancestry && ancestry.restrictedClass === c.name) return;
+
+    // Dual-caster restriction
+    const secondIsCaster = isCasterClass(c.name);
+    if (primaryIsCaster && secondIsCaster) {
+      options += `<option value="${c.name}" disabled>${c.name} (dual-caster not allowed)</option>`;
+    } else {
+      options += `<option value="${c.name}">${c.name}</option>`;
+    }
+  });
+
+  class2Select.innerHTML = options;
+
+  // Show/hide multiclass note
+  multiclassNote.style.display = primaryIsCaster ? 'block' : 'none';
+}
+
+function updateManualTotalLevel() {
+  const level1 = parseInt(document.getElementById('manual-class-levels').value) || 1;
+  const level2 = parseInt(document.getElementById('manual-class-2-levels').value) || 0;
+  // Total level is just informational - we track separately
 }
 
 function updateManualClassOptions() {
@@ -2836,6 +3117,8 @@ function updateManualClassOptions() {
     classSelect.value = currentClass;
   }
 
+  // Also update second class options
+  updateManualSecondClassOptions();
   updateManualFeats();
 }
 
@@ -2893,8 +3176,20 @@ function updateManualFeats() {
 function createManualCharacter() {
   // Gather form data
   const name = document.getElementById('manual-name').value.trim();
-  const level = parseInt(document.getElementById('manual-level').value) || 1;
   const maxHp = parseInt(document.getElementById('manual-maxhp').value) || 8;
+
+  // Get class levels for multiclass support
+  const className = document.getElementById('manual-class').value;
+  const classLevels = parseInt(document.getElementById('manual-class-levels').value) || 1;
+  const class2Name = document.getElementById('manual-class-2').value;
+  const class2Levels = parseInt(document.getElementById('manual-class-2-levels').value) || 0;
+
+  // Build classes array (new v4 format)
+  const classes = [{ name: className, levels: classLevels }];
+  if (class2Name && class2Levels > 0) {
+    classes.push({ name: class2Name, levels: class2Levels });
+  }
+  const totalLevel = classes.reduce((sum, c) => sum + c.levels, 0);
 
   const abilities = {
     STR: parseInt(document.getElementById('manual-str').value) || 0,
@@ -2907,16 +3202,22 @@ function createManualCharacter() {
 
   const ancestryName = document.getElementById('manual-ancestry').value;
   const ancestry = ANCESTRIES.find(a => a.name === ancestryName);
-  const className = document.getElementById('manual-class').value;
   const classData = CLASSES.find(c => c.name === className);
   const background = document.getElementById('manual-background').value;
 
-  // Gather selected feats
+  // Gather selected feats (now stored with source)
   const featSelects = document.querySelectorAll('.manual-feat-select');
   const feats = [];
   featSelects.forEach(select => {
     if (select.value) {
-      feats.push(select.value);
+      // Determine source based on feat type
+      let source = className; // Default to primary class
+      if (FIGHTER_FEATS.includes(select.value)) {
+        source = classes.find(c => c.name === 'Fighter')?.name || className;
+      } else if (EXPERT_FEATS.includes(select.value)) {
+        source = classes.find(c => c.name === 'Expert')?.name || className;
+      }
+      feats.push({ name: select.value, source: source });
     }
   });
 
@@ -2932,11 +3233,11 @@ function createManualCharacter() {
   const hasHumanFeat = ancestry && ancestry.bonusFeat === 'general';
   let humanFeat = null;
   if (hasHumanFeat && feats.length > 0) {
-    humanFeat = feats[feats.length - 1]; // Last feat is the human one
+    humanFeat = feats.pop().name; // Last feat is the human one (remove from array)
   }
 
-  // Calculate derived values
-  const pb = Math.floor((level + 3) / 4) + 1; // PB by level
+  // Calculate derived values (based on total level)
+  const pb = Math.floor((totalLevel + 3) / 4) + 1; // PB by level
   const boostDice = Math.floor(pb / 2);
 
   // Calculate AC (default to 10 + DEX, player can edit later)
@@ -2945,18 +3246,23 @@ function createManualCharacter() {
   // Calculate slots
   const slots = Math.max(5, 10 + abilities.STR);
 
-  // Build character object
+  // Find spellcasting class (if any) for spell slots
+  const allClassData = classes.map(c => CLASSES.find(cl => cl.name === c.name)).filter(Boolean);
+  const casterClass = allClassData.find(c => c.spellcasting);
+  const casterLevels = casterClass ? classes.find(c => c.name === casterClass.name)?.levels || 0 : 0;
+
+  // Build character object (new v4 format)
   const character = {
     id: generateId(),
     name: name || `${ancestryName} ${className}`,
     ancestry: ancestryName,
-    className: className,
+    classes: classes, // New v4 format
+    totalLevel: totalLevel,
     background: background,
-    level: level,
     abilities: abilities, // For manual entry, base = final
     finalAbilities: abilities,
     humanBonusAbility: humanBonusAbility,
-    feats: classData.feats ? feats.filter(f => f !== humanFeat) : [],
+    feats: feats, // Now array of {name, source} objects
     humanFeat: humanFeat,
     maxHp: maxHp,
     currentHp: maxHp,
@@ -2966,8 +3272,8 @@ function createManualCharacter() {
     boostDice: boostDice,
     equipment: [], // Start empty, player adds their own
     coins: { gp: 0, sp: 0, cp: 0 },
-    spellSlots: classData.spellcasting ? calculateSpellSlots(level, classData) : null,
-    spellbook: classData.spellcasting ? [] : null,
+    spellSlots: casterClass ? calculateSpellSlots(casterLevels, casterClass) : null,
+    spellbook: casterClass ? [] : null,
     notes: 'Imported from paper/PDF',
     createdAt: new Date().toISOString()
   };
