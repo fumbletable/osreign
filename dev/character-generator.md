@@ -2349,6 +2349,7 @@ function renderEditableSheet(char) {
     <div class="rest-buttons" style="margin: 1rem 0; display: flex; gap: 0.5rem; flex-wrap: wrap;">
       <button id="nights-rest-btn" class="btn-secondary" style="padding: 0.5rem 1rem;">Night's Rest</button>
       <button id="safe-haven-btn" class="btn-secondary" style="padding: 0.5rem 1rem;">Safe Haven</button>
+      <button id="spend-hit-die-btn" class="btn-secondary" style="padding: 0.5rem 1rem;">Spend Hit Die</button>
     </div>
 
     <div class="saves-proficiencies">
@@ -2631,6 +2632,83 @@ function showSafeHavenModal(char) {
   });
 }
 
+// Show Spend Hit Die modal (for Wild Shape, Lay on Hands, etc.)
+function showSpendHitDieModal(char) {
+  initializeHitDice(char);
+
+  // Check if any dice available
+  const totalAvailable = Object.values(char.hitDiceTracking).reduce((sum, d) => sum + d.current, 0);
+
+  const modal = document.createElement('div');
+  modal.className = 'rest-modal';
+  modal.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 1000;';
+
+  function renderModalContent() {
+    const hitDiceHtml = Object.entries(char.hitDiceTracking)
+      .sort((a, b) => parseInt(b[0].slice(1)) - parseInt(a[0].slice(1)))
+      .map(([die, data]) => `
+        <div style="display: flex; align-items: center; gap: 0.5rem; margin: 0.5rem 0;">
+          <span style="font-weight: bold; min-width: 80px;">${die}: ${data.current}/${data.max}</span>
+          <button class="spend-die-btn btn-small" data-die="${die}" ${data.current <= 0 ? 'disabled' : ''}>
+            Spend ${die}
+          </button>
+          ${data.current <= 0 ? '<span style="color: #999; font-size: 0.85rem;">(none left)</span>' : ''}
+        </div>
+      `).join('');
+
+    return `
+      <div style="background: white; padding: 1.5rem; border-radius: 8px; max-width: 400px; width: 90%;">
+        <h3 style="margin-top: 0;">Spend Hit Die</h3>
+        <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">
+          For abilities like Wild Shape, Lay on Hands, or other effects that cost a hit die.
+        </p>
+
+        <div style="margin: 1rem 0; padding: 1rem; background: #f8f9fa; border-radius: 4px;">
+          ${totalAvailable > 0 ? hitDiceHtml : '<p style="color: #999; margin: 0;">No hit dice remaining. Rest to recover them.</p>'}
+        </div>
+
+        <div style="margin-top: 1rem; display: flex; justify-content: flex-end;">
+          <button id="close-spend-modal" class="btn-primary">Done</button>
+        </div>
+      </div>
+    `;
+  }
+
+  modal.innerHTML = renderModalContent();
+  document.body.appendChild(modal);
+
+  function attachModalListeners() {
+    // Spend die buttons
+    modal.querySelectorAll('.spend-die-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const die = btn.dataset.die;
+        if (char.hitDiceTracking[die] && char.hitDiceTracking[die].current > 0) {
+          char.hitDiceTracking[die].current--;
+          saveCurrentCharacter();
+          modal.querySelector('div > div').outerHTML = renderModalContent().match(/<div style="background: white;[\s\S]*<\/div>\s*$/)[0];
+          attachModalListeners();
+        }
+      });
+    });
+
+    // Close button
+    modal.querySelector('#close-spend-modal')?.addEventListener('click', () => {
+      modal.remove();
+      renderEditableSheet(char);
+    });
+  }
+
+  attachModalListeners();
+
+  // Close on backdrop click
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.remove();
+      renderEditableSheet(char);
+    }
+  });
+}
+
 function attachSheetListeners(char) {
   // Class level inputs (for leveling up)
   document.querySelectorAll('.class-level-input').forEach(input => {
@@ -2675,6 +2753,9 @@ function attachSheetListeners(char) {
   });
   document.getElementById('safe-haven-btn')?.addEventListener('click', () => {
     showSafeHavenModal(char);
+  });
+  document.getElementById('spend-hit-die-btn')?.addEventListener('click', () => {
+    showSpendHitDieModal(char);
   });
 
   // Editable fields
