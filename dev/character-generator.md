@@ -2320,7 +2320,6 @@ function renderEditableSheet(char) {
       </div>
       <div class="derived-box"><strong>${char.ac}</strong>AC</div>
       <div class="derived-box"><strong>${formatHitDiceWithCurrent(char)}</strong>Hit Dice</div>
-      <div class="derived-box"><strong>${char.slots}</strong>Slots</div>
     </div>
 
     <div class="resource-tracker">
@@ -2352,15 +2351,6 @@ function renderEditableSheet(char) {
       <button id="spend-hit-die-btn" class="btn-secondary" style="padding: 0.5rem 1rem;">Spend Hit Die</button>
     </div>
 
-    <div class="saves-proficiencies">
-      <div><strong>Proficient Saves:</strong> ${getSaveProficiencies(char).join(', ') || 'None'}</div>
-      <div><strong>Languages:</strong> ${ancestryData?.languages.join(', ') || 'Common'}</div>
-    </div>
-
-    <h3>Proficiencies</h3>
-    <p><strong>Weapons:</strong> ${getWeaponProficiencies(char) || 'None'}<br>
-    <strong>Armor:</strong> ${getArmorProficiencies(char) || 'None'}</p>
-
     <h3>Weapons</h3>
     ${weaponsHtml}
 
@@ -2368,12 +2358,6 @@ function renderEditableSheet(char) {
 
     <h3>Feats</h3>
     ${featsHtml}
-
-    <h3>Ancestry Traits (${char.ancestry})</h3>
-    ${traitsHtml}
-
-    <h3>Class Features</h3>
-    ${classFeatures}
 
     <h3>Equipment</h3>
     ${(() => {
@@ -2420,6 +2404,21 @@ function renderEditableSheet(char) {
 
     <h3>Notes</h3>
     <textarea class="notes-area" data-field="notes" placeholder="Session notes, backstory, reminders...">${char.notes || ''}</textarea>
+
+    <hr style="margin: 2rem 0; border: none; border-top: 1px solid #ddd;">
+    <h3 style="color: #666;">Reference</h3>
+
+    <h4>Ancestry Traits (${char.ancestry})</h4>
+    ${traitsHtml}
+
+    <h4>Class Features</h4>
+    ${classFeatures}
+
+    <h4>Proficiencies</h4>
+    <p><strong>Saves:</strong> ${getSaveProficiencies(char).join(', ') || 'None'}<br>
+    <strong>Weapons:</strong> ${getWeaponProficiencies(char) || 'None'}<br>
+    <strong>Armor:</strong> ${getArmorProficiencies(char) || 'None'}<br>
+    <strong>Languages:</strong> ${ancestryData?.languages.join(', ') || 'Common'}</p>
   `;
 
   sheet.style.display = 'block';
