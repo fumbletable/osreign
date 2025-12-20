@@ -45,4 +45,4 @@ When the Second Edition is complete:
 - **Player's Guide** - The Players section only (affordable player handout)
 - **Full Book** - Everything (Players + Refereeing)
 
-Both will be available as free PDF and cheap print.
+Both will be available as free PDF, EPUB, and cheap print.
