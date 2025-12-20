@@ -1,0 +1,7 @@
+{
+  "name": "osreign",
+  "version": "2.0.0",
+  "description": "Olde Swords Reign - OSR tabletop RPG",
+  "private": true,
+  "type": "commonjs"
+}
