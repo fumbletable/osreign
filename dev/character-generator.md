@@ -476,18 +476,18 @@ Create characters and manage them during play. Characters auto-save to your brow
 
   .derived-stats {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 0.5rem;
     margin: 1rem 0;
   }
   .derived-box {
     border: 1px solid #999;
-    padding: 0.4rem;
+    padding: 0.5rem 0.25rem;
     text-align: center;
     background: #f0f0f0;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
-  .derived-box strong { display: block; font-size: 1rem; }
+  .derived-box strong { font-size: 1.1rem; font-weight: bold; }
   .derived-box.editable-box {
     cursor: pointer;
   }
@@ -2352,11 +2352,10 @@ function renderEditableSheet(char) {
     <h3>Combat</h3>
     <div class="derived-stats">
       <div class="derived-box editable-box">
-        <strong><span class="editable-field editable-number" contenteditable="true" data-field="currentHp">${char.currentHp}</span>/<span class="editable-field editable-number" contenteditable="true" data-field="maxHp">${char.maxHp}</span></strong>
-        HP
+        <strong><span class="editable-field editable-number" contenteditable="true" data-field="currentHp">${char.currentHp}</span>/<span class="editable-field editable-number" contenteditable="true" data-field="maxHp">${char.maxHp}</span></strong> HP
       </div>
-      <div class="derived-box"><strong>${char.ac}</strong>AC</div>
-      <div class="derived-box"><strong>${formatHitDiceWithCurrent(char)}</strong>Hit Dice</div>
+      <div class="derived-box"><strong>${char.ac}</strong> AC</div>
+      <div class="derived-box"><strong>${formatHitDiceWithCurrent(char)}</strong> HD</div>
     </div>
 
     <div class="resource-tracker">
