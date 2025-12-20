@@ -208,16 +208,9 @@ function buildEbook() {
 
   // Generate EPUB with Pandoc
   const epubPath = path.join(OUTPUT_DIR, 'olde-swords-reign.epub');
-  const metadata = [
-    '--metadata', 'title=Olde Swords Reign',
-    '--metadata', 'subtitle=Second Edition',
-    '--metadata', 'author=Fumble Table',
-    '--metadata', 'lang=en-GB',
-    '--metadata', 'rights=CC BY-SA 4.0',
-  ];
 
   try {
-    const cmd = `pandoc "${TEMP_FILE}" -o "${epubPath}" ${metadata.join(' ')} --toc --toc-depth=2`;
+    const cmd = `pandoc "${TEMP_FILE}" -o "${epubPath}" --metadata title="Olde Swords Reign" --metadata subtitle="Second Edition" --metadata author="Fumble Table" --metadata lang=en-GB --metadata rights="CC BY-SA 4.0" --toc --toc-depth=2`;
     console.log('\n  Running Pandoc...');
     execSync(cmd, { stdio: 'inherit' });
     console.log(`\n  ✓ Created: ${epubPath}`);
