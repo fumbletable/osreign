@@ -22,6 +22,17 @@ bundle exec jekyll serve
 # View at http://localhost:4000
 ```
 
+## Ebook Generation
+
+The EPUB is automatically generated via GitHub Actions when `second-edition/` content changes.
+
+To build locally (requires [Pandoc](https://pandoc.org/installing.html)):
+
+```bash
+node scripts/generate-ebook.js
+# Output: downloads/olde-swords-reign.epub
+```
+
 ## License
 
 Game content is licensed under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
