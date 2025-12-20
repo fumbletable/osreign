@@ -29,11 +29,91 @@ Create characters and manage them during play. Characters auto-save to your brow
       <p>Roll 3d6 for each ability, converted to modifiers.</p>
       <button id="roll-abilities-btn" class="btn-primary">Roll Abilities</button>
       <button id="roll-random-btn" class="btn-secondary" style="margin-left: 0.5rem;">Full Random Character</button>
+      <button id="enter-manually-btn" class="btn-secondary" style="margin-left: 0.5rem;">Enter Manually</button>
 
       <div id="abilities-display" style="display: none;">
         <div class="stat-grid" id="stat-boxes"></div>
         <button id="reroll-btn" class="btn-small">Re-roll All</button>
         <p style="margin-top: 1rem;">Happy with these? Choose your ancestry below.</p>
+      </div>
+    </div>
+
+    <!-- Manual Entry Form (hidden by default) -->
+    <div id="step-manual-entry" class="generator-step" style="display: none;">
+      <h2>Import Existing Character</h2>
+      <p>Enter your character's stats from paper or PDF.</p>
+
+      <div class="manual-entry-form">
+        <div class="manual-row">
+          <label>Name:</label>
+          <input type="text" id="manual-name" placeholder="Character name">
+        </div>
+
+        <div class="manual-row">
+          <label>Level:</label>
+          <input type="number" id="manual-level" value="1" min="1" max="10" style="width: 60px;">
+        </div>
+
+        <div class="manual-section">
+          <label>Ability Modifiers:</label>
+          <div class="manual-abilities">
+            <div class="manual-ability">
+              <span>STR</span>
+              <input type="number" id="manual-str" value="0" min="-3" max="4">
+            </div>
+            <div class="manual-ability">
+              <span>DEX</span>
+              <input type="number" id="manual-dex" value="0" min="-3" max="4">
+            </div>
+            <div class="manual-ability">
+              <span>CON</span>
+              <input type="number" id="manual-con" value="0" min="-3" max="4">
+            </div>
+            <div class="manual-ability">
+              <span>INT</span>
+              <input type="number" id="manual-int" value="0" min="-3" max="4">
+            </div>
+            <div class="manual-ability">
+              <span>WIS</span>
+              <input type="number" id="manual-wis" value="0" min="-3" max="4">
+            </div>
+            <div class="manual-ability">
+              <span>CHA</span>
+              <input type="number" id="manual-cha" value="0" min="-3" max="4">
+            </div>
+          </div>
+        </div>
+
+        <div class="manual-row">
+          <label>Ancestry:</label>
+          <select id="manual-ancestry"></select>
+        </div>
+
+        <div class="manual-row">
+          <label>Class:</label>
+          <select id="manual-class"></select>
+        </div>
+
+        <div class="manual-row">
+          <label>Background:</label>
+          <select id="manual-background"></select>
+        </div>
+
+        <div class="manual-row">
+          <label>Max HP:</label>
+          <input type="number" id="manual-maxhp" value="8" min="1" max="100" style="width: 60px;">
+          <span style="font-size: 0.85rem; color: #666; margin-left: 0.5rem;">(Current HP will match)</span>
+        </div>
+
+        <div id="manual-feats-section" class="manual-section" style="display: none;">
+          <label id="manual-feats-label">Select Feats:</label>
+          <div id="manual-feats-list"></div>
+        </div>
+
+        <div class="manual-actions">
+          <button id="manual-create-btn" class="btn-primary">Create Character</button>
+          <button id="manual-back-btn" class="btn-secondary" style="margin-left: 0.5rem;">Back</button>
+        </div>
       </div>
     </div>
 
@@ -833,6 +913,94 @@ Create characters and manage them during play. Characters auto-save to your brow
     font-size: 0.8rem;
     color: #4a7c23;
     margin-left: 1rem;
+  }
+
+  /* Manual Entry Form */
+  .manual-entry-form {
+    max-width: 500px;
+  }
+  .manual-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0.75rem 0;
+  }
+  .manual-row label {
+    min-width: 100px;
+    font-weight: bold;
+  }
+  .manual-row input[type="text"],
+  .manual-row select {
+    flex: 1;
+    padding: 0.4rem 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  .manual-row input[type="number"] {
+    padding: 0.4rem 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  .manual-section {
+    margin: 1rem 0;
+    padding: 0.75rem;
+    background: #f8f8f8;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+  }
+  .manual-section > label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  .manual-abilities {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.5rem;
+  }
+  .manual-ability {
+    text-align: center;
+  }
+  .manual-ability span {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 0.25rem;
+  }
+  .manual-ability input {
+    width: 45px;
+    text-align: center;
+    padding: 0.4rem;
+    border: 2px solid #666;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+  .manual-actions {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+  }
+  .manual-feat-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+  }
+  .manual-feat-row select {
+    flex: 1;
+    padding: 0.4rem 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .manual-feat-row .remove-manual-feat {
+    color: #c44;
+    cursor: pointer;
+    padding: 0 0.25rem;
+    font-size: 0.9rem;
   }
 </style>
 
@@ -2607,6 +2775,229 @@ function backToList() {
   renderCharacterList();
 }
 
+// ============ MANUAL ENTRY FUNCTIONS ============
+
+function showManualEntry() {
+  // Hide roll steps, show manual entry
+  document.getElementById('step-abilities').style.display = 'none';
+  document.getElementById('step-ancestry').style.display = 'none';
+  document.getElementById('step-class').style.display = 'none';
+  document.getElementById('step-background').style.display = 'none';
+  document.getElementById('step-kit').style.display = 'none';
+  document.getElementById('step-name').style.display = 'none';
+  document.getElementById('step-manual-entry').style.display = 'block';
+
+  // Populate dropdowns
+  populateManualDropdowns();
+}
+
+function hideManualEntry() {
+  document.getElementById('step-manual-entry').style.display = 'none';
+  document.getElementById('step-abilities').style.display = 'block';
+}
+
+function populateManualDropdowns() {
+  // Ancestry dropdown
+  const ancestrySelect = document.getElementById('manual-ancestry');
+  ancestrySelect.innerHTML = ANCESTRIES.map(a =>
+    `<option value="${a.name}">${a.name}${a.restriction ? ' (' + a.restriction + ')' : ''}</option>`
+  ).join('');
+
+  // Class dropdown
+  const classSelect = document.getElementById('manual-class');
+  updateManualClassOptions();
+
+  // Background dropdown
+  const bgSelect = document.getElementById('manual-background');
+  bgSelect.innerHTML = BACKGROUNDS.map(b =>
+    `<option value="${b}">${b}</option>`
+  ).join('');
+
+  // Set up ancestry change handler for class restrictions
+  ancestrySelect.addEventListener('change', updateManualClassOptions);
+
+  // Set up class change handler for feats
+  classSelect.addEventListener('change', updateManualFeats);
+}
+
+function updateManualClassOptions() {
+  const ancestryName = document.getElementById('manual-ancestry').value;
+  const ancestry = ANCESTRIES.find(a => a.name === ancestryName);
+  const classSelect = document.getElementById('manual-class');
+  const currentClass = classSelect.value;
+
+  classSelect.innerHTML = CLASSES.map(c => {
+    const disabled = ancestry && ancestry.restrictedClass === c.name;
+    return `<option value="${c.name}" ${disabled ? 'disabled' : ''}>${c.name}${disabled ? ' (not available)' : ''}</option>`;
+  }).join('');
+
+  // Try to keep current selection if still valid
+  if (currentClass && !CLASSES.find(c => c.name === currentClass && ancestry && ancestry.restrictedClass === c.name)) {
+    classSelect.value = currentClass;
+  }
+
+  updateManualFeats();
+}
+
+function updateManualFeats() {
+  const className = document.getElementById('manual-class').value;
+  const classData = CLASSES.find(c => c.name === className);
+  const featsSection = document.getElementById('manual-feats-section');
+  const featsList = document.getElementById('manual-feats-list');
+  const featsLabel = document.getElementById('manual-feats-label');
+
+  // Check ancestry for Human bonus feat
+  const ancestryName = document.getElementById('manual-ancestry').value;
+  const ancestry = ANCESTRIES.find(a => a.name === ancestryName);
+  const hasHumanFeat = ancestry && ancestry.bonusFeat === 'general';
+
+  if (!classData || (!classData.feats && !hasHumanFeat)) {
+    featsSection.style.display = 'none';
+    return;
+  }
+
+  featsSection.style.display = 'block';
+
+  // Calculate total feats needed
+  let featCount = classData.feats ? classData.feats.count : 0;
+  if (hasHumanFeat) featCount += 1;
+
+  featsLabel.textContent = `Select ${featCount} Feat${featCount > 1 ? 's' : ''}:`;
+
+  // Get available feats based on class
+  let availableFeats = [...GENERAL_FEATS];
+  if (classData.feats) {
+    if (classData.feats.type === 'fighter') {
+      availableFeats = [...FIGHTER_FEATS, ...GENERAL_FEATS];
+    } else if (classData.feats.type === 'expert') {
+      availableFeats = [...EXPERT_FEATS, ...GENERAL_FEATS];
+    }
+  }
+  availableFeats.sort();
+
+  // Build feat selection rows
+  featsList.innerHTML = '';
+  for (let i = 0; i < featCount; i++) {
+    const row = document.createElement('div');
+    row.className = 'manual-feat-row';
+    row.innerHTML = `
+      <select class="manual-feat-select">
+        <option value="">-- Select Feat ${i + 1} --</option>
+        ${availableFeats.map(f => `<option value="${f}">${f}</option>`).join('')}
+      </select>
+    `;
+    featsList.appendChild(row);
+  }
+}
+
+function createManualCharacter() {
+  // Gather form data
+  const name = document.getElementById('manual-name').value.trim();
+  const level = parseInt(document.getElementById('manual-level').value) || 1;
+  const maxHp = parseInt(document.getElementById('manual-maxhp').value) || 8;
+
+  const abilities = {
+    STR: parseInt(document.getElementById('manual-str').value) || 0,
+    DEX: parseInt(document.getElementById('manual-dex').value) || 0,
+    CON: parseInt(document.getElementById('manual-con').value) || 0,
+    INT: parseInt(document.getElementById('manual-int').value) || 0,
+    WIS: parseInt(document.getElementById('manual-wis').value) || 0,
+    CHA: parseInt(document.getElementById('manual-cha').value) || 0
+  };
+
+  const ancestryName = document.getElementById('manual-ancestry').value;
+  const ancestry = ANCESTRIES.find(a => a.name === ancestryName);
+  const className = document.getElementById('manual-class').value;
+  const classData = CLASSES.find(c => c.name === className);
+  const background = document.getElementById('manual-background').value;
+
+  // Gather selected feats
+  const featSelects = document.querySelectorAll('.manual-feat-select');
+  const feats = [];
+  featSelects.forEach(select => {
+    if (select.value) {
+      feats.push(select.value);
+    }
+  });
+
+  // Check for human bonus ability
+  const hasHumanBonus = ancestry && ancestry.bonusAbility;
+  let humanBonusAbility = null;
+  if (hasHumanBonus) {
+    // For manual entry, we'll just note it - they've already included it in their stats
+    humanBonusAbility = 'included'; // Marker that human bonus was applied
+  }
+
+  // Check for human bonus feat
+  const hasHumanFeat = ancestry && ancestry.bonusFeat === 'general';
+  let humanFeat = null;
+  if (hasHumanFeat && feats.length > 0) {
+    humanFeat = feats[feats.length - 1]; // Last feat is the human one
+  }
+
+  // Calculate derived values
+  const pb = Math.floor((level + 3) / 4) + 1; // PB by level
+  const boostDice = Math.floor(pb / 2);
+
+  // Calculate AC (default to 10 + DEX, player can edit later)
+  const ac = 10 + abilities.DEX;
+
+  // Calculate slots
+  const slots = Math.max(5, 10 + abilities.STR);
+
+  // Build character object
+  const character = {
+    id: generateId(),
+    name: name || `${ancestryName} ${className}`,
+    ancestry: ancestryName,
+    className: className,
+    background: background,
+    level: level,
+    abilities: abilities, // For manual entry, base = final
+    finalAbilities: abilities,
+    humanBonusAbility: humanBonusAbility,
+    feats: classData.feats ? feats.filter(f => f !== humanFeat) : [],
+    humanFeat: humanFeat,
+    maxHp: maxHp,
+    currentHp: maxHp,
+    ac: ac,
+    slots: slots,
+    fatigue: 0,
+    boostDice: boostDice,
+    equipment: [], // Start empty, player adds their own
+    coins: { gp: 0, sp: 0, cp: 0 },
+    spellSlots: classData.spellcasting ? calculateSpellSlots(level, classData) : null,
+    spellbook: classData.spellcasting ? [] : null,
+    notes: 'Imported from paper/PDF',
+    createdAt: new Date().toISOString()
+  };
+
+  characters.push(character);
+  saveCharacters();
+
+  currentCharacterId = character.id;
+  document.getElementById('generator-steps').style.display = 'none';
+  document.getElementById('step-manual-entry').style.display = 'none';
+  document.getElementById('cancel-creation').style.display = 'none';
+  renderEditableSheet(character);
+}
+
+function calculateSpellSlots(level, classData) {
+  // Calculate max slots per tier based on level
+  // Tier 1 available at level 1, Tier 2 at level 3, etc.
+  const slots = {};
+  const maxTier = Math.min(6, Math.ceil(level / 2));
+
+  for (let tier = 1; tier <= maxTier; tier++) {
+    const tierKey = `t${tier}`;
+    // Rough approximation: 2 slots per tier, +1 at higher levels
+    const maxSlots = 2 + Math.floor((level - (tier * 2 - 1)) / 3);
+    slots[tierKey] = { current: Math.max(1, maxSlots), max: Math.max(1, maxSlots) };
+  }
+
+  return slots;
+}
+
 // ============ EVENT LISTENERS ============
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -2668,6 +3059,11 @@ document.getElementById('character-name-input').addEventListener('keydown', func
 });
 
 document.getElementById('cancel-btn').addEventListener('click', backToList);
+
+// Manual entry event listeners
+document.getElementById('enter-manually-btn').addEventListener('click', showManualEntry);
+document.getElementById('manual-back-btn').addEventListener('click', hideManualEntry);
+document.getElementById('manual-create-btn').addEventListener('click', createManualCharacter);
 
 document.getElementById('export-btn').addEventListener('click', exportCharacter);
 
