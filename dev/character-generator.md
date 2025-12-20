@@ -276,9 +276,37 @@ Create characters and manage them during play. Characters auto-save to your brow
     padding: 0.75rem 0.5rem;
     background: #f8f8f8;
     border-radius: 4px;
+    position: relative;
+  }
+  .stat-box.save-proficient {
+    border-color: #c9a227;
+    border-width: 3px;
+    background: #fefdf5;
   }
   .stat-box .label { font-size: 0.75rem; font-weight: bold; color: #555; }
   .stat-box .value { font-size: 1.5rem; font-weight: bold; }
+  .stat-box .save-indicator {
+    font-size: 0.6rem;
+    color: #997a1a;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+  }
+
+  /* Mobile responsive stats */
+  @media (max-width: 480px) {
+    .stat-grid {
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0.25rem;
+      max-width: 100%;
+    }
+    .stat-box {
+      padding: 0.5rem 0.25rem;
+    }
+    .stat-box .label { font-size: 0.65rem; }
+    .stat-box .value { font-size: 1.2rem; }
+    .stat-box .save-indicator { font-size: 0.5rem; }
+  }
 
   .option-grid {
     display: grid;
@@ -2304,12 +2332,19 @@ function renderEditableSheet(char) {
 
     <h3>Abilities</h3>
     <div class="stat-grid" style="max-width: 100%;">
-      ${['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA'].map(stat => `
-        <div class="stat-box">
-          <div class="label">${stat}</div>
-          <div class="value">${formatMod(char.finalAbilities[stat])}</div>
-        </div>
-      `).join('')}
+      ${(() => {
+        const saveProficiencies = getSaveProficiencies(char);
+        return ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA'].map(stat => {
+          const isProficient = saveProficiencies.includes(stat);
+          return `
+            <div class="stat-box${isProficient ? ' save-proficient' : ''}">
+              <div class="label">${stat}</div>
+              <div class="value">${formatMod(char.finalAbilities[stat])}</div>
+              ${isProficient ? '<div class="save-indicator">save</div>' : ''}
+            </div>
+          `;
+        }).join('');
+      })()}
     </div>
 
     <h3>Combat</h3>
