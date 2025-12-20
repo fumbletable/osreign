@@ -32,20 +32,13 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y pandoc
 
-      - name: Create downloads directory
-        run: mkdir -p downloads
-
       - name: Generate EPUB
-        run: |
-          pwd
-          ls -la
-          ls -la scripts/
-          node scripts/generate-ebook.cjs
+        run: node scripts/generate-ebook.cjs
 
       - name: Commit and push ebook
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add downloads/olde-swords-reign.epub
+          git add assets/downloads/olde-swords-reign.epub
           git diff --staged --quiet || git commit -m "Update ebook [skip ci]"
           git push

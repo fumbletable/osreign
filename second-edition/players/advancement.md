@@ -113,6 +113,10 @@ Ability increases at levels 4, 8, and 12 are **free**—no gold or time required
 
 You can take levels in multiple classes, gaining their abilities at the cost of slower progression in each.
 
+### Restrictions
+
+- **No Cleric/Magic-User multiclassing.** You cannot have levels in both Cleric and Magic-User. Divine and arcane magic draw from fundamentally different sources—clerical power flows from devotion to a deity, while arcane magic requires years of secular study. The mental frameworks are incompatible, and no mortal can serve two such different masters.
+
 ### Rules
 
 - **Odd levels only:** You may only switch to a different class at odd character levels (3, 5, 7, 9, 11). This means you commit to at least two levels before you can switch again.

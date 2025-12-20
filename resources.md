@@ -15,7 +15,7 @@ Downloads and reference materials for Olde Swords Reign.
 | Format | Description |
 |--------|-------------|
 | **[Alpha PDF](https://github.com/fumbletable/osreign/releases/download/alpha-latest/Olde-Swords-Reign-Alpha.pdf)** | For offline reading and printing |
-| **[EPUB](downloads/olde-swords-reign.epub)** | For e-readers (Kobo, Apple Books, etc.) |
+| **[EPUB]({{ site.baseurl }}/assets/downloads/olde-swords-reign.epub)** | For e-readers (Kobo, Apple Books, etc.) |
 
 Both files update automatically whenever the rules change. For Kindle, use [Calibre](https://calibre-ebook.com/) to convert the EPUB to MOBI.
 

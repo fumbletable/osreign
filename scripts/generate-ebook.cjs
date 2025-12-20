@@ -14,8 +14,8 @@ const { execSync } = require('child_process');
 
 const SITE_ROOT = path.join(__dirname, '..');
 const SECOND_EDITION = path.join(SITE_ROOT, 'second-edition');
-const OUTPUT_DIR = path.join(SITE_ROOT, 'downloads');
-const TEMP_FILE = path.join(OUTPUT_DIR, '_combined.md');
+const OUTPUT_DIR = path.join(SITE_ROOT, 'assets', 'downloads');
+const TEMP_FILE = path.join(SITE_ROOT, '_combined.md'); // Temp file in root, not output dir
 
 // Book structure - defines the reading order
 const BOOK_STRUCTURE = [

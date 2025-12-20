@@ -55,10 +55,6 @@ kramdown:
     block:
       line_numbers: false
 
-# Include static files
-include:
-  - downloads
-
 # Exclude from build
 exclude:
   - README.md
