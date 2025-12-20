@@ -35,7 +35,11 @@ jobs:
         run: mkdir -p downloads
 
       - name: Generate EPUB
-        run: node scripts/generate-ebook.cjs
+        run: |
+          pwd
+          ls -la
+          ls -la scripts/
+          node scripts/generate-ebook.cjs
 
       - name: Commit and push ebook
         run: |
