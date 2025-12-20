@@ -2207,13 +2207,23 @@ function renderEditableSheet(char) {
 
   sheet.innerHTML = `
     <h2>${char.name}</h2>
-    <p style="font-size: 1rem; margin-bottom: 1rem;">
+    <p style="font-size: 1rem; margin-bottom: 0.5rem;">
       <strong>Ancestry:</strong> ${char.ancestry} |
-      <strong>Class:</strong> ${getClassDisplayString(char)} |
       <strong>Background:</strong> ${char.background} |
       <strong>Total Level:</strong> ${totalLevel} |
       <strong>PB:</strong> +${pb}
     </p>
+    <div class="class-levels-editor" style="margin-bottom: 1rem;">
+      <strong>Classes:</strong>
+      ${char.classes.map((c, idx) => `
+        <span class="class-level-item" style="margin-left: 0.5rem;">
+          ${c.name}
+          <input type="number" class="class-level-input" data-class-idx="${idx}" value="${c.levels}" min="1" max="10" style="width: 40px; margin: 0 0.25rem;">
+          ${char.classes.length > 1 ? `<span class="remove-class" data-class-idx="${idx}" style="cursor: pointer; color: #c44;">&times;</span>` : ''}
+        </span>
+      `).join(' / ')}
+      ${char.classes.length < 2 ? `<button id="add-class-btn" class="btn-small" style="margin-left: 0.75rem;">+ Add Class</button>` : ''}
+    </div>
 
     <h3>Abilities</h3>
     <div class="stat-grid" style="max-width: 100%;">
@@ -2318,7 +2328,95 @@ function renderEditableSheet(char) {
   attachSheetListeners(char);
 }
 
+// Show modal to add a second class (multiclassing)
+function showAddClassModal(char) {
+  // Get current class to filter options
+  const currentClassName = char.classes[0]?.name;
+  const currentClassData = CLASSES.find(c => c.name === currentClassName);
+  const currentIsCaster = currentClassData?.spellcasting;
+
+  // Build available classes (exclude current, handle dual-caster restriction)
+  const availableClasses = CLASSES.filter(c => {
+    if (c.name === currentClassName) return false;
+    // No dual-caster multiclassing
+    if (currentIsCaster && c.spellcasting) return false;
+    return true;
+  });
+
+  // Create modal
+  const modal = document.createElement('div');
+  modal.className = 'add-class-modal';
+  modal.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 1000;';
+  modal.innerHTML = `
+    <div style="background: white; padding: 1.5rem; border-radius: 8px; max-width: 400px; width: 90%;">
+      <h3 style="margin-top: 0;">Add Second Class</h3>
+      <p style="font-size: 0.9rem; color: #666;">Choose a class to multiclass into:</p>
+      ${currentIsCaster ? '<p style="font-size: 0.85rem; color: #c44; margin: 0.5rem 0;">Note: Dual-caster multiclassing not supported.</p>' : ''}
+      <select id="new-class-select" style="width: 100%; padding: 0.5rem; margin: 0.5rem 0;">
+        ${availableClasses.map(c => `<option value="${c.name}">${c.name}</option>`).join('')}
+      </select>
+      <div style="margin-top: 1rem; display: flex; gap: 0.5rem; justify-content: flex-end;">
+        <button id="cancel-add-class" class="btn-secondary">Cancel</button>
+        <button id="confirm-add-class" class="btn-primary">Add Class</button>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+
+  // Event listeners
+  document.getElementById('cancel-add-class').addEventListener('click', () => {
+    modal.remove();
+  });
+
+  document.getElementById('confirm-add-class').addEventListener('click', () => {
+    const newClassName = document.getElementById('new-class-select').value;
+    if (newClassName) {
+      char.classes.push({ name: newClassName, levels: 1 });
+      char.totalLevel = char.classes.reduce((sum, c) => sum + c.levels, 0);
+      saveCurrentCharacter();
+      modal.remove();
+      renderEditableSheet(char);
+    }
+  });
+
+  // Close on backdrop click
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.remove();
+  });
+}
+
 function attachSheetListeners(char) {
+  // Class level inputs (for leveling up)
+  document.querySelectorAll('.class-level-input').forEach(input => {
+    input.addEventListener('change', () => {
+      const idx = parseInt(input.dataset.classIdx);
+      const newLevel = parseInt(input.value) || 1;
+      char.classes[idx].levels = Math.max(1, Math.min(10, newLevel));
+      char.totalLevel = char.classes.reduce((sum, c) => sum + c.levels, 0);
+      saveCurrentCharacter();
+      renderEditableSheet(char);
+    });
+  });
+
+  // Remove class button (for multiclass)
+  document.querySelectorAll('.remove-class').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const idx = parseInt(btn.dataset.classIdx);
+      if (char.classes.length > 1) {
+        char.classes.splice(idx, 1);
+        char.totalLevel = char.classes.reduce((sum, c) => sum + c.levels, 0);
+        saveCurrentCharacter();
+        renderEditableSheet(char);
+      }
+    });
+  });
+
+  // Add class button (for multiclassing)
+  document.getElementById('add-class-btn')?.addEventListener('click', () => {
+    showAddClassModal(char);
+  });
+
   // Editable fields
   document.querySelectorAll('.editable-field').forEach(field => {
     field.addEventListener('blur', () => {
