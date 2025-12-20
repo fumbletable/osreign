@@ -1,0 +1,41 @@
+name: Build Ebook
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'second-edition/**'
+      - 'scripts/generate-ebook.js'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Pandoc
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc
+
+      - name: Create downloads directory
+        run: mkdir -p downloads
+
+      - name: Generate EPUB
+        run: node scripts/generate-ebook.js
+
+      - name: Commit and push ebook
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add downloads/olde-swords-reign.epub
+          git diff --staged --quiet || git commit -m "Update ebook [skip ci]"
+          git push
