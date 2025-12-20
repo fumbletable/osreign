@@ -7,6 +7,7 @@ on:
       - 'second-edition/**'
       - 'second-edition.md'
       - 'scripts/generate-ebook.cjs'
+      - 'package.json'
   workflow_dispatch: # Allow manual trigger
 
 permissions:
