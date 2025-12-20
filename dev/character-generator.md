@@ -49,11 +49,6 @@ Create characters and manage them during play. Characters auto-save to your brow
           <input type="text" id="manual-name" placeholder="Character name">
         </div>
 
-        <div class="manual-row">
-          <label>Level:</label>
-          <input type="number" id="manual-level" value="1" min="1" max="10" style="width: 60px;">
-        </div>
-
         <div class="manual-section">
           <label>Ability Modifiers:</label>
           <div class="manual-abilities">
