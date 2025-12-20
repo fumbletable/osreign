@@ -1817,6 +1817,42 @@ function formatHitDice(char) {
   return parts.join(' + ') || '0';
 }
 
+// Helper: Initialize or update hit dice tracking structure
+function initializeHitDice(char) {
+  const maxDice = getHitDice(char);
+  if (!char.hitDiceTracking) {
+    char.hitDiceTracking = {};
+  }
+  // Update max values and ensure current exists
+  Object.keys(maxDice).forEach(die => {
+    if (!char.hitDiceTracking[die]) {
+      char.hitDiceTracking[die] = { current: maxDice[die], max: maxDice[die] };
+    } else {
+      char.hitDiceTracking[die].max = maxDice[die];
+      // Cap current at new max if levels decreased
+      if (char.hitDiceTracking[die].current > maxDice[die]) {
+        char.hitDiceTracking[die].current = maxDice[die];
+      }
+    }
+  });
+  // Remove dice types no longer present (class changed)
+  Object.keys(char.hitDiceTracking).forEach(die => {
+    if (!maxDice[die]) {
+      delete char.hitDiceTracking[die];
+    }
+  });
+  return char.hitDiceTracking;
+}
+
+// Helper: Format hit dice with current/max for display
+function formatHitDiceWithCurrent(char) {
+  initializeHitDice(char);
+  const parts = Object.entries(char.hitDiceTracking)
+    .sort((a, b) => parseInt(b[0].slice(1)) - parseInt(a[0].slice(1)))
+    .map(([die, data]) => `${data.current}/${data.max}${die}`);
+  return parts.join(' + ') || '0';
+}
+
 function loadCharacters() {
   try {
     const data = localStorage.getItem(STORAGE_KEY);
@@ -2283,7 +2319,7 @@ function renderEditableSheet(char) {
         HP
       </div>
       <div class="derived-box"><strong>${char.ac}</strong>AC</div>
-      <div class="derived-box"><strong>${formatHitDice(char)}</strong>Hit Dice</div>
+      <div class="derived-box"><strong>${formatHitDiceWithCurrent(char)}</strong>Hit Dice</div>
       <div class="derived-box"><strong>${char.slots}</strong>Slots</div>
     </div>
 
@@ -2308,6 +2344,11 @@ function renderEditableSheet(char) {
         `).join('')}
       </div>
       <span style="font-size: 0.8rem; color: #666; margin-left: 0.5rem;">(Session start: ${startingBoost})</span>
+    </div>
+
+    <div class="rest-buttons" style="margin: 1rem 0; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+      <button id="nights-rest-btn" class="btn-secondary" style="padding: 0.5rem 1rem;">Night's Rest</button>
+      <button id="safe-haven-btn" class="btn-secondary" style="padding: 0.5rem 1rem;">Safe Haven</button>
     </div>
 
     <div class="saves-proficiencies">
@@ -2427,6 +2468,169 @@ function showAddClassModal(char) {
   });
 }
 
+// Show Night's Rest modal
+function showNightsRestModal(char) {
+  initializeHitDice(char);
+  const conMod = char.finalAbilities?.CON || 0;
+  const spellcastingClass = getSpellcastingClass(char);
+
+  // Restore spell slots immediately
+  if (spellcastingClass && char.spellSlots) {
+    const casterLevel = getCasterLevel(char);
+    const maxSlots = SPELL_SLOTS_BY_LEVEL[Math.min(casterLevel, 12)] || SPELL_SLOTS_BY_LEVEL[1];
+    Object.keys(char.spellSlots).forEach(key => {
+      char.spellSlots[key].current = maxSlots[key] || 0;
+    });
+    saveCurrentCharacter();
+  }
+
+  const modal = document.createElement('div');
+  modal.className = 'rest-modal';
+  modal.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 1000;';
+
+  function renderModalContent() {
+    const hitDiceHtml = Object.entries(char.hitDiceTracking)
+      .sort((a, b) => parseInt(b[0].slice(1)) - parseInt(a[0].slice(1)))
+      .map(([die, data]) => `
+        <div style="display: flex; align-items: center; gap: 0.5rem; margin: 0.5rem 0;">
+          <span style="font-weight: bold; min-width: 80px;">${die}: ${data.current}/${data.max}</span>
+          <button class="spend-die-btn btn-small" data-die="${die}" ${data.current <= 0 ? 'disabled' : ''}>
+            Spend ${die}
+          </button>
+          ${data.current <= 0 ? '<span style="color: #999; font-size: 0.85rem;">(none left)</span>' : ''}
+        </div>
+      `).join('');
+
+    return `
+      <div style="background: white; padding: 1.5rem; border-radius: 8px; max-width: 450px; width: 90%;">
+        <h3 style="margin-top: 0;">Night's Rest</h3>
+
+        <p style="color: #28a745; margin: 0.5rem 0;">✓ Spell slots restored</p>
+
+        <div style="margin: 1rem 0; padding: 1rem; background: #f8f9fa; border-radius: 4px;">
+          <p style="margin: 0 0 0.5rem 0; font-weight: bold;">Spend Hit Dice to heal:</p>
+          <p style="margin: 0 0 0.75rem 0; font-size: 0.9rem; color: #666;">
+            Roll each die + CON (${conMod >= 0 ? '+' : ''}${conMod}), add result to HP
+          </p>
+          ${hitDiceHtml}
+        </div>
+
+        <div style="margin: 1rem 0; padding: 0.75rem; background: #fff3cd; border-radius: 4px;">
+          <p style="margin: 0; font-size: 0.9rem;">
+            <strong>Fatigue:</strong> Reduce by 2 (with shelter) or 1 (roughing it)<br>
+            <span style="color: #666;">Current: ${char.fatigue || 0} — adjust manually</span>
+          </p>
+        </div>
+
+        <div style="margin-top: 1rem; display: flex; justify-content: flex-end;">
+          <button id="close-rest-modal" class="btn-primary">Done</button>
+        </div>
+      </div>
+    `;
+  }
+
+  modal.innerHTML = renderModalContent();
+  document.body.appendChild(modal);
+
+  function attachModalListeners() {
+    // Spend die buttons
+    modal.querySelectorAll('.spend-die-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const die = btn.dataset.die;
+        if (char.hitDiceTracking[die] && char.hitDiceTracking[die].current > 0) {
+          char.hitDiceTracking[die].current--;
+          saveCurrentCharacter();
+          modal.querySelector('div > div').outerHTML = renderModalContent().match(/<div style="background: white;[\s\S]*<\/div>\s*$/)[0];
+          attachModalListeners();
+        }
+      });
+    });
+
+    // Close button
+    modal.querySelector('#close-rest-modal')?.addEventListener('click', () => {
+      modal.remove();
+      renderEditableSheet(char);
+    });
+  }
+
+  attachModalListeners();
+
+  // Close on backdrop click
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.remove();
+      renderEditableSheet(char);
+    }
+  });
+}
+
+// Show Safe Haven modal
+function showSafeHavenModal(char) {
+  initializeHitDice(char);
+  const spellcastingClass = getSpellcastingClass(char);
+
+  // Restore everything
+  char.currentHp = char.maxHp;
+  char.fatigue = 0;
+
+  // Restore all hit dice
+  Object.keys(char.hitDiceTracking).forEach(die => {
+    char.hitDiceTracking[die].current = char.hitDiceTracking[die].max;
+  });
+
+  // Restore spell slots
+  if (spellcastingClass && char.spellSlots) {
+    const casterLevel = getCasterLevel(char);
+    const maxSlots = SPELL_SLOTS_BY_LEVEL[Math.min(casterLevel, 12)] || SPELL_SLOTS_BY_LEVEL[1];
+    Object.keys(char.spellSlots).forEach(key => {
+      char.spellSlots[key].current = maxSlots[key] || 0;
+    });
+  }
+
+  saveCurrentCharacter();
+
+  const modal = document.createElement('div');
+  modal.className = 'rest-modal';
+  modal.style.cssText = 'position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 1000;';
+
+  modal.innerHTML = `
+    <div style="background: white; padding: 1.5rem; border-radius: 8px; max-width: 400px; width: 90%;">
+      <h3 style="margin-top: 0;">Safe Haven</h3>
+      <p style="font-size: 0.9rem; color: #666; margin-bottom: 1rem;">1d4+1 days of rest in a safe location</p>
+
+      <div style="margin: 1rem 0;">
+        <p style="color: #28a745; margin: 0.25rem 0;">✓ HP restored to maximum (${char.maxHp})</p>
+        <p style="color: #28a745; margin: 0.25rem 0;">✓ All Hit Dice restored (${formatHitDice(char)})</p>
+        ${spellcastingClass ? '<p style="color: #28a745; margin: 0.25rem 0;">✓ Spell slots restored</p>' : ''}
+        <p style="color: #28a745; margin: 0.25rem 0;">✓ Fatigue cleared</p>
+      </div>
+
+      <p style="font-size: 0.95rem; margin: 1rem 0; padding: 0.75rem; background: #e7f3ff; border-radius: 4px;">
+        You're fully rested and ready to adventure.
+      </p>
+
+      <div style="margin-top: 1rem; display: flex; justify-content: flex-end;">
+        <button id="close-rest-modal" class="btn-primary">Done</button>
+      </div>
+    </div>
+  `;
+
+  document.body.appendChild(modal);
+
+  modal.querySelector('#close-rest-modal').addEventListener('click', () => {
+    modal.remove();
+    renderEditableSheet(char);
+  });
+
+  // Close on backdrop click
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.remove();
+      renderEditableSheet(char);
+    }
+  });
+}
+
 function attachSheetListeners(char) {
   // Class level inputs (for leveling up)
   document.querySelectorAll('.class-level-input').forEach(input => {
@@ -2463,6 +2667,14 @@ function attachSheetListeners(char) {
     char.xp = Math.max(0, parseInt(e.target.value) || 0);
     saveCurrentCharacter();
     renderEditableSheet(char);
+  });
+
+  // Rest buttons
+  document.getElementById('nights-rest-btn')?.addEventListener('click', () => {
+    showNightsRestModal(char);
+  });
+  document.getElementById('safe-haven-btn')?.addEventListener('click', () => {
+    showSafeHavenModal(char);
   });
 
   // Editable fields
