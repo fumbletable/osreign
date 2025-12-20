@@ -2375,7 +2375,25 @@ function renderEditableSheet(char) {
     <h3>Class Features</h3>
     ${classFeatures}
 
-    <h3>Equipment <span style="font-size: 0.8rem; color: #666;">(${(char.equipment || []).length} items)</span></h3>
+    <h3>Equipment</h3>
+    ${(() => {
+      const defaultMax = 10 + (char.finalAbilities?.STR || 0);
+      const usedSlots = char.usedSlots ?? (char.equipment || []).length;
+      const maxSlots = char.maxSlots ?? defaultMax;
+      const isEncumbered = usedSlots > maxSlots;
+      const isImmobile = usedSlots > maxSlots * 2;
+      const statusText = isImmobile ? 'Immobile!' : isEncumbered ? 'Encumbered' : '';
+      const statusColor = isImmobile ? '#dc3545' : isEncumbered ? '#fd7e14' : '';
+      return `
+    <div class="encumbrance-tracker" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem; flex-wrap: wrap;">
+      <span>Slots:</span>
+      <input type="number" class="slot-input" id="used-slots" value="${usedSlots}" min="0" style="width: 50px; text-align: center;">
+      <span>/</span>
+      <input type="number" class="slot-input" id="max-slots" value="${maxSlots}" min="1" style="width: 50px; text-align: center;">
+      <span style="font-size: 0.8rem; color: #666;">(base: 10 + STR, +10 backpack, +5 sack)</span>
+      ${statusText ? `<span style="color: ${statusColor}; font-weight: bold; margin-left: 0.5rem;">${statusText}</span>` : ''}
+    </div>`;
+    })()}
     <div class="equipment-section">
       ${equipmentHtml}
       <div class="add-item-row">
@@ -2779,6 +2797,18 @@ function attachSheetListeners(char) {
       const fieldPath = input.dataset.field;
       updateCharacterField(char, fieldPath, parseInt(input.value) || 0);
     });
+  });
+
+  // Slot inputs (encumbrance)
+  document.getElementById('used-slots')?.addEventListener('change', (e) => {
+    char.usedSlots = Math.max(0, parseInt(e.target.value) || 0);
+    saveCurrentCharacter();
+    renderEditableSheet(char);
+  });
+  document.getElementById('max-slots')?.addEventListener('change', (e) => {
+    char.maxSlots = Math.max(1, parseInt(e.target.value) || 1);
+    saveCurrentCharacter();
+    renderEditableSheet(char);
   });
 
   // Notes
