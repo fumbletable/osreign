@@ -372,7 +372,7 @@ When creating or converting a spell:
 - ✓ Ritual format standardized to "1 Action or Ritual"
 - ✓ Detect Evil/Detect Magic/Protection from Evil → PB Turns duration
 - ✓ Floating Disc/Light → 1 hour duration
-- ✓ Sleep: added "5+ HD immune", duration "1 Turn or until harmed/shaken"
+- ✓ Sleep: added "5+ HD immune", duration "1 Turn or until harmed/woken"
 - ✓ Command: duration "PB rounds"
 
 **Tier 2 editorial pass (DONE):**

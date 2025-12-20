@@ -47,4 +47,4 @@ These examples use the Build-an-Ancestry rules to show how you might create othe
 - **Resist Illusion:** **Edge** on saves vs illusions and trickery.
 - **Tinker's Knack:** **Edge** on checks to repair, disassemble, or jury-rig mechanical devices.
 
-*Restriction:* You're Small, so you can't wield **Large** or **Heavy** weapons (polearms, greatswords, etc.).
+*Restriction:* You're Small, so you can't wield **Heavy** weapons (polearms, greatswords, etc.).

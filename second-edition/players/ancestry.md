@@ -48,7 +48,7 @@ Choose one of the four core ancestries for your character.
 - **Small & Quiet:** **Edge** to Hide in wilderness. Creatures larger than you have **Setback** to detect you beyond **Close** if you stay still.
 - **Sling Training:** **Edge** on attacks with slings (and thrown stones, if you like).
 
-*Restriction:* You can't wield **Large** or **Heavy** weapons (polearms, greatswords, etc.).
+*Restriction:* You can't wield **Heavy** weapons (polearms, greatswords, etc.).
 
 ---
 

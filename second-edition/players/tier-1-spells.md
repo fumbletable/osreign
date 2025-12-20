@@ -47,7 +47,7 @@ nav_order: 3
 - **Casting Time:** 1 Action or Ritual
 - **Range:** Near (30 ft)
 - **Duration:** 1 hour
-- **Effect:** Cast on object: glows like a torch. Cast on creature's eyes: blinds if it fails a CON spell save.
+- **Effect:** Cast on object: glows like a torch. Cast on creature's eyes: target is **Blinded** if it fails a CON spell save.
 - **Boost:** Duration +1 hour.
 
 ## Protection from Evil
@@ -136,7 +136,7 @@ nav_order: 3
 ## Sleep
 - **Casting Time:** 1 Action
 - **Range:** Near (30 ft)
-- **Duration:** 1 Turn or until harmed/shaken
+- **Duration:** 1 Turn or until harmed/woken
 - **Effect:** Puts creatures with total HD = 2d8 to sleep (lowest HD first). Creatures with 5+ HD are immune. No save.
 - **Boost:** +1d4 HD affected.
 

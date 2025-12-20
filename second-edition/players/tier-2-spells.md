@@ -26,7 +26,7 @@ nav_order: 4
 - **Casting Time:** 1 Action
 - **Range:** Near (30 ft)
 - **Duration:** 1 Turn (10 minutes)
-- **Effect:** Up to 3 humanoids must make a WIS spell save or be paralysed. Target may repeat save at end of each round.
+- **Effect:** Up to 3 humanoids must make a WIS spell save or be **Paralyzed**. Target may repeat save at end of each round.
 - **Boost:** +1 target.
 
 ## Resist Elements

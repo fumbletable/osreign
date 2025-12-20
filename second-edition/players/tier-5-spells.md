@@ -33,7 +33,7 @@ nav_order: 7
 - **Casting Time:** 1 Action
 - **Range:** Far (120 ft)
 - **Duration:** Concentration, 1 Turn
-- **Effect:** Swarm fills 30-ft radius, causing fear and 2d6 damage per round.
+- **Effect:** Swarm fills 30-ft radius. Creatures inside are **Frightened** and take 2d6 damage per round.
 - **Boost:** Radius expands to 40 ft.
 
 ## Quest

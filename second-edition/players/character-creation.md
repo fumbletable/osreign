@@ -65,7 +65,7 @@ Memory, reasoning, knowledge. Magic-Users use INT for spell save DCs and spell a
 Perception, insight, intuition. Clerics use WIS for spell save DCs and spell attacks.
 
 **Charisma (CHA)**
-Personality, charm, leadership. CHA affects reaction rolls (how NPCs respond to you), how many [retainers](hiring-help) you can employ, and social checks like persuasion or intimidation.
+Personality, charm, leadership. CHA affects reaction rolls (how NPCs respond to you), how many [retainers](hiring-help.md) you can employ, and social checks like persuasion or intimidation.
 
 ---
 

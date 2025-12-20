@@ -8,7 +8,7 @@ nav_order: 1
 
 # Treasure Tables
 
-Use these tables to determine what treasure is found. For generating interesting items, see [Generators](../generators.html).
+Use these tables to determine what treasure is found. For generating interesting items, see [Generators](../generators).
 
 ---
 
@@ -76,7 +76,7 @@ When you need to determine what type of item is found:
 | 5 | Wondrous Item |
 | 6 | Wondrous Item |
 
-For weapons and armor, use the [Generators](../generators.html) to determine appearance. For wondrous items, roll on the generator tables to create something unique.
+For weapons and armor, use the [Generators](../generators) to determine appearance. For wondrous items, roll on the generator tables to create something unique.
 
 ---
 
@@ -91,7 +91,7 @@ For weapons and armor, use the [Generators](../generators.html) to determine app
 | 5 | Resistance (1 type) | Heroism | Longevity |
 | 6 | Antidote | Fire Resistance | Flying |
 
-**Weird potions:** Use the [Generators](../generators.html) with Effect + Form for strange potions. "Whispering + Vial" might be a potion that lets you hear distant conversations.
+**Weird potions:** Use the [Generators](../generators) with Effect + Form for strange potions. "Whispering + Vial" might be a potion that lets you hear distant conversations.
 
 ---
 
@@ -113,7 +113,7 @@ Roll spell tier based on treasure tier:
 
 ## Mundane Treasure
 
-Not all treasure is magical. Use [Generators](../generators.html) to make mundane treasure interesting.
+Not all treasure is magical. Use [Generators](../generators) to make mundane treasure interesting.
 
 | d6 | Type | Minor Value | Major Value | Epic Value |
 |---:|------|-------------|-------------|------------|
@@ -143,5 +143,5 @@ Not every room has treasure. When stocking a dungeon:
 
 1. Roll d6 + dungeon level for hoard size
 2. Roll d6 to determine each item type
-3. Use [Generators](../generators.html) to describe items
+3. Use [Generators](../generators) to describe items
 4. Name Epic items and give them history

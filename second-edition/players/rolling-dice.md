@@ -63,9 +63,11 @@ When circumstances work against you, you have **Setback**—subtract 1d6 from yo
 
 ## Boost Dice
 
-Boost Dice are a personal resource you spend to enhance your actions. You start each session with **half your PB** (minimum 1) Boost Dice. They don't carry over—use them or lose them.
+Boost Dice are a personal resource you spend to enhance your actions. You start each session with Boost Dice equal to your **PB**. Your maximum pool also equals your PB. They don't carry over—use them or lose them.
 
 **Basic use:** Spend 1 Boost Die to add 1d6 to any roll. Declare it before or after you roll.
+
+**Recovery:** When you roll a natural 1 on any d20 roll, gain 1 Boost Die (up to your maximum). Failure teaches.
 
 **Earning more:** The Referee may award Boost Dice when you play up your hindrances (character flaws—see [Hindrances](character/hindrances)), do something memorable, or make the game more fun.
 

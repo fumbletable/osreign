@@ -57,8 +57,8 @@ The tables generate combinations. You interpret them.
 
 ## Contents
 
-- [Item Generator](generators/items/) — Treasure, weapons, armor, artifacts
-- [NPCs & Factions](generators/npcs/) — Characters, organizations, names by ancestry
+- [Item Generator](generators/items) — Treasure, weapons, armor, artifacts
+- [NPCs & Factions](generators/npcs) — Characters, organizations, names by ancestry
 - Dungeon Generator *(planned)* — Dungeon concepts, room stocking, dressing
 - Wilderness Generator *(planned)* — Hex features, landmarks, travel events
 - Town Generator *(planned)* — Settlements, buildings, local situations

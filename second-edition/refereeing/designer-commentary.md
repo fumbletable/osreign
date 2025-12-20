@@ -193,9 +193,11 @@ OSwR uses "Supply" as an abstract resource rather than tracking individual ratio
 
 Boost Dice started as physical d6s handed to players for doing cool things. The origin was simple: reward players at the table with something tangible they can immediately use.
 
-**Reset each session.** You start with half your Proficiency Bonus in Boost Dice (minimum 1). They don't carry over—use them or lose them. This encourages spending rather than hoarding.
+**Reset each session.** You start with Boost Dice equal to your Proficiency Bonus. They don't carry over—use them or lose them. This encourages spending rather than hoarding.
 
-**The Referee gives more.** Play up your hindrances? Boost Die. Do something memorable? Boost Die. This creates a feedback loop: players engage with their characters, Referee rewards it, everyone has fun.
+**Natural 1 recovery.** When you roll a nat 1 on any d20, you gain 1 BD (up to your maximum). This creates a self-regulating economy—players who roll badly get more fuel, players who roll well don't need as much. It also softens the sting of critical failures without removing the failure itself. "I missed badly, but at least I got something."
+
+**The Referee can give more.** Play up your hindrances? Boost Die. Do something memorable? Boost Die. But this is now a bonus on top of a functional baseline, not the primary source. The nat 1 recovery means the economy runs itself—taking pressure off the Referee to constantly hand out dice.
 
 **Class-specific uses.** Each class spends Boost Dice differently:
 - **Fighter:** Extra attack (aggressive, combat-focused)

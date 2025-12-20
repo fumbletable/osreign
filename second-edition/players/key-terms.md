@@ -74,7 +74,7 @@ What you track and spend.
 | **Supply** | Abstract provisions—food, water, bandages. Spend 1 per rest. |
 | **Fatigue** | Exhaustion from forced marches, missed sleep, harsh conditions. Each level gives **Setback** on all rolls. 5 Fatigue = collapse. |
 | **Hit Dice** | Your recovery pool. Spend during Breathers to heal (roll + CON per die). |
-| **Boost Die** | Personal resource for clutch moments. Add d6 to any roll. |
+| **Boost Die** | Spendable resource (PB per session). Spend 1 to add 1d6 to any roll, or use for class abilities. Recover 1 on a natural 1. |
 
 ---
 
@@ -84,15 +84,19 @@ States that affect you.
 
 | Condition | Effect |
 |-----------|--------|
-| **Prone** | **Setback** on attacks. Melee attacks against you have **Edge**. Stand up costs half your movement. |
-| **Grappled** | Speed 0. Can't move until you break free (contest of STR). |
-| **Frightened** | **Setback** on checks and attacks while you can see the source. Can't willingly move closer. |
 | **Blinded** | Can't see. Auto-fail sight-based checks. Attacks have **Setback**, attacks against you have **Edge**. |
+| **Charmed** | Regard the charmer as a trusted ally. Can't attack them. |
 | **Deafened** | Can't hear. Auto-fail hearing-based checks. |
-| **Poisoned** | **Setback** on attacks and checks. |
-| **Stunned** | Can't act or move. Auto-fail STR and DEX saves. Attacks against you have **Edge**. |
+| **Frightened** | **Setback** on checks and attacks while you can see the source. Can't willingly move closer. |
+| **Grappled** | Speed 0. Can't move until you break free (contest of STR). |
 | **Incapacitated** | Can't take actions or reactions. |
-| **Unconscious** | Incapacitated, can't move or speak, unaware. Drop whatever you're holding, fall **Prone**. |
+| **Paralyzed** | Can't move, speak, or act. Attacks against you have **Edge** and auto-crit from **Close**. |
+| **Poisoned** | **Setback** on attacks and checks. |
+| **Prone** | **Setback** on attacks. Melee attacks against you have **Edge**. Stand up costs half movement. |
+| **Restrained** | Speed 0, your attacks have **Setback**, attacks against you have **Edge**. |
+| **Shaken** | **Setback** on attacks and checks. Ends after a Breather or when the source is defeated. |
+| **Stunned** | Can't act or move. Auto-fail STR and DEX saves. Attacks against you have **Edge**. |
+| **Unconscious** | Incapacitated, can't move or speak, unaware. Drop what you're holding, fall **Prone**. |
 
 ---
 

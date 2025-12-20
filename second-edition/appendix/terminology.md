@@ -21,7 +21,7 @@ All the key terms in one place.
 | **PB (Proficiency Bonus)** | Training bonus. +2 at levels 1–4, +3 at levels 5–8, +4 at levels 9–12. Add to attacks, saves, and checks you're proficient in. |
 | **Edge** | Favorable circumstances. Add 1d6 to your roll. Multiple sources stack. |
 | **Setback** | Unfavorable circumstances. Subtract 1d6 from your roll. Cancels **Edge**. |
-| **Boost Die** | Spendable resource (half PB per session, minimum 1). Spend 1 to add 1d6 to any roll, or use for class abilities. |
+| **Boost Die** | Spendable resource (PB per session). Spend 1 to add 1d6 to any roll, or use for class abilities. Recover 1 on a natural 1. |
 
 ---
 
@@ -55,13 +55,19 @@ All the key terms in one place.
 
 | Condition | Effect |
 |-----------|--------|
-| **Prone** | Lying down. Stand up costs half your movement. Melee attacks against you have **Edge**; ranged attacks have **Setback**. |
-| **Grappled** | Held. Speed drops to 0. Break free with STR or DEX vs grappler's STR. |
-| **Restrained** | Bound or entangled. Speed 0, your attacks have **Setback**, attacks against you have **Edge**. |
-| **Frightened** | Terrified. Can't willingly move closer to the source. Attacks have **Setback** while you can see it. |
+| **Blinded** | Can't see. Auto-fail sight-based checks. Your attacks have **Setback**; attacks against you have **Edge**. |
 | **Charmed** | Beguiled. Regard the charmer as a trusted ally. Can't attack them. Hostile acts break the effect. |
-| **Paralyzed** | Frozen. Can't move, speak, or act. Attacks against you have **Edge** and auto-crit from **Close** range. |
+| **Deafened** | Can't hear. Auto-fail hearing-based checks. |
+| **Frightened** | Terrified. Can't willingly move closer to the source. Attacks and checks have **Setback** while you can see it. |
+| **Grappled** | Held. Speed drops to 0. Break free with STR or DEX vs grappler's STR. |
 | **Incapacitated** | Unable to act. Can't take actions or reactions. |
+| **Paralyzed** | Frozen. Can't move, speak, or act. Attacks against you have **Edge** and auto-crit from **Close** range. |
+| **Poisoned** | Toxic. **Setback** on attacks and checks. |
+| **Prone** | Lying down. Stand up costs half your movement. Melee attacks against you have **Edge**; ranged attacks have **Setback**. |
+| **Restrained** | Bound or entangled. Speed 0, your attacks have **Setback**, attacks against you have **Edge**. |
+| **Shaken** | Rattled but functioning. **Setback** on attacks and checks. Ends after a Breather or when the source is defeated. |
+| **Stunned** | Shocked. Can't act or move. Auto-fail STR and DEX saves. Attacks against you have **Edge**. |
+| **Unconscious** | Out cold. Incapacitated, can't move or speak, unaware. Drop what you're holding, fall **Prone**. |
 
 ---
 
