@@ -1595,8 +1595,38 @@ const SPELL_SLOTS_BY_LEVEL = {
   7: { t1: 4, t2: 3, t3: 3, t4: 2, t5: 0, t6: 0 },
   8: { t1: 4, t2: 3, t3: 3, t4: 3, t5: 0, t6: 0 },
   9: { t1: 4, t2: 3, t3: 3, t4: 3, t5: 2, t6: 0 },
-  10: { t1: 4, t2: 3, t3: 3, t4: 3, t5: 3, t6: 1 }
+  10: { t1: 4, t2: 3, t3: 3, t4: 3, t5: 3, t6: 1 },
+  11: { t1: 4, t2: 3, t3: 3, t4: 3, t5: 3, t6: 2 },
+  12: { t1: 4, t2: 3, t3: 3, t4: 3, t5: 3, t6: 3 }
 };
+
+// XP thresholds by level (cumulative XP needed to reach each level)
+const XP_THRESHOLDS = [
+  0,       // Level 0 (unused)
+  0,       // Level 1
+  1500,    // Level 2
+  4500,    // Level 3
+  9000,    // Level 4
+  18000,   // Level 5
+  36000,   // Level 6
+  60000,   // Level 7
+  100000,  // Level 8
+  150000,  // Level 9
+  225000,  // Level 10
+  300000,  // Level 11
+  375000   // Level 12
+];
+
+// Helper: Get XP needed to reach a specific level
+function getXpForLevel(level) {
+  return XP_THRESHOLDS[level] || 0;
+}
+
+// Helper: Get XP remaining to next level
+function getXpToNextLevel(currentXp, currentLevel) {
+  if (currentLevel >= 12) return 0; // Max level
+  return Math.max(0, XP_THRESHOLDS[currentLevel + 1] - currentXp);
+}
 
 // ============ STATE ============
 
@@ -2225,6 +2255,17 @@ function renderEditableSheet(char) {
       ${char.classes.length < 2 ? `<button id="add-class-btn" class="btn-small" style="margin-left: 0.75rem;">+ Add Class</button>` : ''}
     </div>
 
+    <div class="xp-tracker" style="margin-bottom: 1rem; padding: 0.5rem; background: #f8f8f8; border-radius: 4px; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+      <div>
+        <strong>XP:</strong>
+        <input type="number" id="xp-current" value="${char.xp || 0}" min="0" style="width: 80px; margin: 0 0.25rem;">
+        <span style="color: #666;">/ ${getXpForLevel(totalLevel + 1).toLocaleString()} for level ${Math.min(totalLevel + 1, 12)}</span>
+      </div>
+      <div style="color: #666; font-size: 0.9rem;">
+        ${totalLevel >= 12 ? '<em>Max level reached!</em>' : `<em>${getXpToNextLevel(char.xp || 0, totalLevel).toLocaleString()} XP to next level</em>`}
+      </div>
+    </div>
+
     <h3>Abilities</h3>
     <div class="stat-grid" style="max-width: 100%;">
       ${['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA'].map(stat => `
@@ -2415,6 +2456,13 @@ function attachSheetListeners(char) {
   // Add class button (for multiclassing)
   document.getElementById('add-class-btn')?.addEventListener('click', () => {
     showAddClassModal(char);
+  });
+
+  // XP input
+  document.getElementById('xp-current')?.addEventListener('change', (e) => {
+    char.xp = Math.max(0, parseInt(e.target.value) || 0);
+    saveCurrentCharacter();
+    renderEditableSheet(char);
   });
 
   // Editable fields
@@ -2612,8 +2660,9 @@ function attachSheetListeners(char) {
     if (!tierSelect || !spellSelect) return;
 
     const selectedTier = parseInt(tierSelect.value);
-    const classData = CLASSES.find(c => c.name === char.className);
-    const spellType = classData?.spellcasting?.type;
+    // Use getSpellcastingClass for multiclass support (v4)
+    const spellcastingClass = getSpellcastingClass(char);
+    const spellType = spellcastingClass?.spellcasting?.type;
 
     if (!spellType || !SPELL_LISTS[spellType]) {
       spellSelect.innerHTML = '<option value="">No spells available</option>';
@@ -2952,6 +3001,7 @@ function createCharacter() {
     boostDice: 1, // PB/2 rounded down at level 1
     equipment: equipment,
     coins: { gp: 25, sp: 0, cp: 0 },
+    xp: 0,
     spellSlots: generatorState.charClass.spellcasting ? { t1: { current: 2, max: 2 } } : null,
     notes: '',
     createdAt: new Date().toISOString()
@@ -3365,6 +3415,7 @@ function createManualCharacter() {
     boostDice: boostDice,
     equipment: [], // Start empty, player adds their own
     coins: { gp: 0, sp: 0, cp: 0 },
+    xp: 0,
     spellSlots: casterClass ? calculateSpellSlots(casterLevels, casterClass) : null,
     spellbook: casterClass ? [] : null,
     notes: 'Imported from paper/PDF',
