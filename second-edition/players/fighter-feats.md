@@ -27,6 +27,7 @@ You start with two of these at level 1 and pick another at each odd level (3, 5,
 | Death Strike | When you drop a foe to 0 HP, immediately make another melee attack. |
 | Debilitating Blow | On a hit, reduce the target's Speed to half for 1 round. |
 | Deflect Missiles | +3 AC against ranged attacks. |
+| Divine Smite | When you hit an undead or fiend with a melee weapon, deal +1d6 damage. |
 | Duelist | +2 AC in melee when wielding a one-handed weapon and no shield. Light or medium armor only. |
 | Feint | After taking the Dodge action, your next melee attack gains **Edge** and +1d6 damage. |
 | Heavy Hitter | On a critical hit with a two-handed weapon, roll one additional damage die. |
