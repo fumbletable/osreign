@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'second-edition/**'
+      - 'second-edition.md'
       - 'scripts/generate-ebook.js'
   workflow_dispatch: # Allow manual trigger
 

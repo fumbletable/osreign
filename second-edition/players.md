@@ -37,3 +37,7 @@ What happens in the field: time and movement, rests and fatigue, combat, explora
 ### Downtime
 
 What happens between adventures: hiring help and carousing.
+
+---
+
+*Also available as [EPUB download](/resources/#downloads) for offline reading.*
