@@ -132,6 +132,20 @@ Create characters and manage them during play. Characters auto-save to your brow
       <div id="ancestry-options" class="option-grid"></div>
     </div>
 
+    <!-- Step 2b: Human Bonus Selection (only shown for humans) -->
+    <div id="step-human-bonus" class="generator-step" style="display: none;">
+      <h2>Human Bonus: Choose Ability</h2>
+      <p>As a Human, you get <strong>+1 to any ability</strong> of your choice.</p>
+      <div id="human-bonus-options" class="option-grid" style="grid-template-columns: repeat(6, 1fr);">
+        <div class="option-card stat-option" data-stat="STR"><h3>STR</h3><p>Strength</p></div>
+        <div class="option-card stat-option" data-stat="DEX"><h3>DEX</h3><p>Dexterity</p></div>
+        <div class="option-card stat-option" data-stat="CON"><h3>CON</h3><p>Constitution</p></div>
+        <div class="option-card stat-option" data-stat="INT"><h3>INT</h3><p>Intelligence</p></div>
+        <div class="option-card stat-option" data-stat="WIS"><h3>WIS</h3><p>Wisdom</p></div>
+        <div class="option-card stat-option" data-stat="CHA"><h3>CHA</h3><p>Charisma</p></div>
+      </div>
+    </div>
+
     <!-- Step 3: Choose Class -->
     <div id="step-class" class="generator-step" style="display: none;">
       <h2>Step 3: Choose Class</h2>
@@ -523,6 +537,31 @@ Create characters and manage them during play. Characters auto-save to your brow
   }
   .equipment-item .remove-item:hover {
     background: #fee;
+  }
+  .languages-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .language-tag {
+    background: #e8f4f8;
+    border: 1px solid #b8d4e8;
+    border-radius: 3px;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  .language-tag .remove-language {
+    color: #888;
+    cursor: pointer;
+    font-size: 0.75rem;
+    margin-left: 0.25rem;
+  }
+  .language-tag .remove-language:hover {
+    color: #c44;
   }
   .add-item-row {
     margin-top: 0.5rem;
@@ -1677,11 +1716,6 @@ let generatorState = {
 
 // Migration function: converts old className to new classes array
 function migrateCharacter(char) {
-  // Skip if already migrated
-  if (char.classes && !char.className) {
-    return char;
-  }
-
   // Migrate className → classes array
   if (char.className && !char.classes) {
     char.classes = [{ name: char.className, levels: char.level || 1 }];
@@ -1693,6 +1727,12 @@ function migrateCharacter(char) {
   if (char.feats && char.feats.length > 0 && typeof char.feats[0] === 'string') {
     const primaryClass = char.classes?.[0]?.name || 'Unknown';
     char.feats = char.feats.map(f => ({ name: f, source: primaryClass }));
+  }
+
+  // Migrate languages (add if missing, based on ancestry)
+  if (!char.languages) {
+    const ancestryData = ANCESTRIES.find(a => a.name === char.ancestry);
+    char.languages = ancestryData ? [...ancestryData.languages] : ['Common'];
   }
 
   return char;
@@ -2300,7 +2340,7 @@ function renderEditableSheet(char) {
   }).join('');
 
   sheet.innerHTML = `
-    <h2>${char.name}</h2>
+    <h2><span class="editable-field" contenteditable="true" data-field="name" style="min-width: 100px;">${char.name}</span></h2>
     <p style="font-size: 1rem; margin-bottom: 0.5rem;">
       <strong>Ancestry:</strong> ${char.ancestry} |
       <strong>Background:</strong> ${char.background} |
@@ -2354,7 +2394,7 @@ function renderEditableSheet(char) {
       <div class="derived-box editable-box">
         <strong><span class="editable-field editable-number" contenteditable="true" data-field="currentHp">${char.currentHp}</span>/<span class="editable-field editable-number" contenteditable="true" data-field="maxHp">${char.maxHp}</span></strong> HP
       </div>
-      <div class="derived-box"><strong>${char.ac}</strong> AC</div>
+      <div class="derived-box editable-box"><strong><span class="editable-field editable-number" contenteditable="true" data-field="ac">${char.ac}</span></strong> AC</div>
       <div class="derived-box"><strong>${formatHitDiceWithCurrent(char)}</strong> HD</div>
     </div>
 
@@ -2453,8 +2493,21 @@ function renderEditableSheet(char) {
     <h4>Proficiencies</h4>
     <p><strong>Saves:</strong> ${getSaveProficiencies(char).join(', ') || 'None'}<br>
     <strong>Weapons:</strong> ${getWeaponProficiencies(char) || 'None'}<br>
-    <strong>Armor:</strong> ${getArmorProficiencies(char) || 'None'}<br>
-    <strong>Languages:</strong> ${ancestryData?.languages.join(', ') || 'Common'}</p>
+    <strong>Armor:</strong> ${getArmorProficiencies(char) || 'None'}</p>
+
+    <h4>Languages</h4>
+    <div class="languages-section">
+      ${(char.languages || ancestryData?.languages || ['Common']).map((lang, idx) => `
+        <span class="language-tag" data-idx="${idx}">
+          ${lang}
+          <span class="remove-language" data-idx="${idx}">&times;</span>
+        </span>
+      `).join('')}
+      <div class="add-language-row" style="margin-top: 0.5rem;">
+        <input type="text" id="new-language-input" placeholder="Add language..." style="width: 150px; padding: 0.25rem 0.5rem;">
+        <button class="btn-small" id="add-language-btn" style="margin-left: 0.25rem;">Add</button>
+      </div>
+    </div>
   `;
 
   sheet.style.display = 'block';
@@ -2904,6 +2957,41 @@ function attachSheetListeners(char) {
     }
   });
 
+  // Languages
+  document.querySelectorAll('.remove-language').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const idx = parseInt(btn.dataset.idx);
+      char.languages = char.languages || [];
+      if (char.languages.length > 1) { // Keep at least one language
+        char.languages.splice(idx, 1);
+        saveCurrentCharacter();
+        renderEditableSheet(char);
+      }
+    });
+  });
+
+  document.getElementById('add-language-btn')?.addEventListener('click', () => {
+    const input = document.getElementById('new-language-input');
+    const langName = input.value.trim();
+    if (langName) {
+      char.languages = char.languages || ['Common'];
+      if (!char.languages.includes(langName)) {
+        char.languages.push(langName);
+        saveCurrentCharacter();
+        renderEditableSheet(char);
+      } else {
+        input.value = '';
+      }
+    }
+  });
+
+  document.getElementById('new-language-input')?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      document.getElementById('add-language-btn').click();
+    }
+  });
+
   // Weapons
   document.querySelectorAll('.remove-weapon').forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -3071,7 +3159,7 @@ function updateCharacterField(char, fieldPath, value) {
 
   // Handle numeric fields
   const lastPart = parts[parts.length - 1];
-  if (['level', 'currentHp', 'maxHp', 'current', 'max', 'gp', 'sp', 'cp'].includes(lastPart)) {
+  if (['level', 'currentHp', 'maxHp', 'current', 'max', 'gp', 'sp', 'cp', 'ac'].includes(lastPart)) {
     obj[lastPart] = parseInt(value) || 0;
   } else {
     obj[lastPart] = value;
@@ -3168,11 +3256,36 @@ function selectAncestry(index) {
     card.classList.toggle('selected', i === index);
   });
 
-  document.getElementById('step-class').style.display = 'block';
+  // Hide all subsequent steps
+  document.getElementById('step-human-bonus').style.display = 'none';
+  document.getElementById('step-class').style.display = 'none';
   document.getElementById('step-background').style.display = 'none';
   document.getElementById('step-kit').style.display = 'none';
   document.getElementById('step-name').style.display = 'none';
 
+  // If Human, show the bonus ability selection step
+  if (generatorState.ancestry.bonusAbility) {
+    document.getElementById('step-human-bonus').style.display = 'block';
+    // Clear any previous selection
+    document.querySelectorAll('#human-bonus-options .option-card').forEach(card => {
+      card.classList.remove('selected');
+    });
+  } else {
+    // Non-human: go directly to class selection
+    document.getElementById('step-class').style.display = 'block';
+    renderClassOptions();
+  }
+}
+
+function selectHumanBonusAbility(stat) {
+  generatorState.humanBonusAbility = stat;
+
+  document.querySelectorAll('#human-bonus-options .option-card').forEach(card => {
+    card.classList.toggle('selected', card.dataset.stat === stat);
+  });
+
+  // Proceed to class selection
+  document.getElementById('step-class').style.display = 'block';
   renderClassOptions();
 }
 
@@ -3234,9 +3347,7 @@ function selectClass(index) {
   } else {
     generatorState.humanFeat = null;
   }
-  if (generatorState.ancestry.bonusAbility) {
-    generatorState.humanBonusAbility = pickRandom(['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA']);
-  }
+  // Note: humanBonusAbility is now set by selectHumanBonusAbility() before this step
 
   document.querySelectorAll('#class-options .option-card').forEach((card, i) => {
     card.classList.toggle('selected', i === index);
@@ -3360,6 +3471,7 @@ function createCharacter() {
     equipment: equipment,
     coins: { gp: 25, sp: 0, cp: 0 },
     xp: 0,
+    languages: [...generatorState.ancestry.languages], // Copy from ancestry
     spellSlots: generatorState.charClass.spellcasting ? { t1: { current: 2, max: 2 } } : null,
     notes: '',
     createdAt: new Date().toISOString()
@@ -3420,6 +3532,7 @@ function generateFullRandom() {
   // Go straight to name step
   document.getElementById('step-abilities').style.display = 'none';
   document.getElementById('step-ancestry').style.display = 'none';
+  document.getElementById('step-human-bonus').style.display = 'none';
   document.getElementById('step-class').style.display = 'none';
   document.getElementById('step-background').style.display = 'none';
   document.getElementById('step-kit').style.display = 'none';
@@ -3774,6 +3887,7 @@ function createManualCharacter() {
     equipment: [], // Start empty, player adds their own
     coins: { gp: 0, sp: 0, cp: 0 },
     xp: 0,
+    languages: ancestry ? [...ancestry.languages] : ['Common'], // Copy from ancestry
     spellSlots: casterClass ? calculateSpellSlots(casterLevels, casterClass) : null,
     spellbook: casterClass ? [] : null,
     notes: 'Imported from paper/PDF',
@@ -3867,6 +3981,11 @@ document.getElementById('character-name-input').addEventListener('keydown', func
 });
 
 document.getElementById('cancel-btn').addEventListener('click', backToList);
+
+// Human bonus ability selection
+document.querySelectorAll('#human-bonus-options .option-card').forEach(card => {
+  card.addEventListener('click', () => selectHumanBonusAbility(card.dataset.stat));
+});
 
 // Manual entry event listeners
 document.getElementById('enter-manually-btn').addEventListener('click', showManualEntry);
