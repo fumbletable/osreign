@@ -298,6 +298,10 @@ Create characters and manage them during play. Characters auto-save to your brow
   }
   .stat-box .label { font-size: 0.7rem; font-weight: bold; color: #555; }
   .stat-box .mod { font-size: 1.3rem; font-weight: bold; }
+  .stat-box .ability-mod {
+    min-width: 2em;
+    text-align: center;
+  }
   .stat-box .save-value {
     font-size: 0.75rem;
     color: #666;
@@ -2381,7 +2385,7 @@ function renderEditableSheet(char) {
           return `
             <div class="stat-box${isProficient ? ' save-proficient' : ''}">
               <div class="label">${stat}</div>
-              <div class="mod">${formatMod(mod)}</div>
+              <div class="mod"><span class="editable-field editable-number ability-mod" contenteditable="true" data-field="finalAbilities.${stat}">${formatMod(mod)}</span></div>
               <div class="save-value">sv ${formatMod(saveBonus)}</div>
             </div>
           `;
@@ -3159,15 +3163,21 @@ function updateCharacterField(char, fieldPath, value) {
 
   // Handle numeric fields
   const lastPart = parts[parts.length - 1];
-  if (['level', 'currentHp', 'maxHp', 'current', 'max', 'gp', 'sp', 'cp', 'ac'].includes(lastPart)) {
+  const numericFields = ['level', 'currentHp', 'maxHp', 'current', 'max', 'gp', 'sp', 'cp', 'ac'];
+  const abilityStats = ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA'];
+
+  if (numericFields.includes(lastPart)) {
     obj[lastPart] = parseInt(value) || 0;
+  } else if (abilityStats.includes(lastPart)) {
+    // Parse ability modifiers (handle "+2", "-1", "2", etc.)
+    const cleanValue = value.replace(/[^0-9\-+]/g, '');
+    obj[lastPart] = parseInt(cleanValue) || 0;
   } else {
     obj[lastPart] = value;
   }
 
-  // Re-render when level changes (updates PB display, spell slots, etc.)
-  // Note: Max HP is NOT auto-calculated - players roll their HD manually
-  if (fieldPath === 'level') {
+  // Re-render when level or abilities change (updates saves, attack bonuses, etc.)
+  if (fieldPath === 'level' || fieldPath.startsWith('finalAbilities.')) {
     saveCurrentCharacter();
     renderEditableSheet(char);
     return;
