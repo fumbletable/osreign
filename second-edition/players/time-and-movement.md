@@ -18,7 +18,7 @@ How long things take and how far you can go.
 |---------|----------|-----|
 | **Round** | 6 seconds | Combat actions |
 | **Turn** | 10 minutes | Dungeon exploration |
-| **Watch** | 6 hours | Wilderness travel, marching, or rest (4 watches = 1 day) |
+| **Watch** | 4 hours | Wilderness travel, marching, or rest (6 watches = 1 day) |
 | **Day** | 24 hours | Downtime, recovery, overland travel |
 
 ---
@@ -27,9 +27,9 @@ How long things take and how far you can go.
 
 | Speed | Per Round | Per Turn (dungeon) | Per Watch (wilderness) |
 |-------|----------:|-------------------:|------------------------:|
-| **Slow** | 15 ft | 45 yards | 4.5 miles |
-| **Normal** | 30 ft | 90 yards | 9 miles |
-| **Fast** | 45 ft | 135 yards | 13.5 miles |
+| **Slow** | 15 ft | 45 yards | 3 miles |
+| **Normal** | 30 ft | 90 yards | 6 miles |
+| **Fast** | 45 ft | 135 yards | 9 miles |
 
 - **Slow:** Cautious, sneaking, or encumbered.
 - **Normal:** Average traveling pace.
@@ -39,7 +39,7 @@ How long things take and how far you can go.
 
 **Turn speed** (dungeon) = 3× base speed in yards. Assumes cautious exploration — watching footing, checking for danger, mapping.
 
-**Watch speed** (wilderness) = distance covered in 6 hours of marching with gear. Two watches is the safe daily maximum—pushing beyond risks [Fatigue](rests-recovery-fatigue). See [Wilderness Exploration](../refereeing/wilderness-exploration) for terrain modifiers and forced march rules.
+**Watch speed** (wilderness) = distance covered in 4 hours of marching with gear. Three watches is the safe daily maximum—pushing beyond risks [Fatigue](rests-recovery-fatigue). See [Wilderness Exploration](../refereeing/wilderness-exploration) for terrain modifiers and forced march rules.
 
 ---
 

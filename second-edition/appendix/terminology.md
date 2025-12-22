@@ -21,7 +21,7 @@ All the key terms in one place.
 | **PB (Proficiency Bonus)** | Training bonus. +2 at levels 1–4, +3 at levels 5–8, +4 at levels 9–12. Add to attacks, saves, and checks you're proficient in. |
 | **Edge** | Favorable circumstances. Add 1d6 to your roll. Multiple sources stack. |
 | **Setback** | Unfavorable circumstances. Subtract 1d6 from your roll. Cancels **Edge**. |
-| **Boost Die** | Spendable resource (PB per session). Spend 1 to add 1d6 to any roll, or use for class abilities. Recover 1 on a natural 1. |
+| **Boost Die** | Start each session with PB. Spend 1 to add 1d6 to any roll, or use for class abilities. Gain 1 on a natural 1. No maximum. |
 
 ---
 
@@ -77,7 +77,7 @@ All the key terms in one place.
 |------|----------|-----|
 | **Round** | 6 seconds | Combat actions |
 | **Turn** | 10 minutes | Dungeon exploration |
-| **Watch** | 6 hours | Wilderness travel or extended rest (4 Watches = 1 day) |
+| **Watch** | 4 hours | Wilderness travel or extended rest (6 Watches = 1 day) |
 
 ---
 
@@ -96,9 +96,9 @@ All the key terms in one place.
 
 | Speed | Per Round | Description |
 |-------|-----------|-------------|
-| **Slow** | 15 ft | Cautious, sneaking, or encumbered |
-| **Normal** | 30 ft | Standard pace |
-| **Fast** | 45 ft | Urgent or reckless |
+| **Slow** | 15 ft | Heavily encumbered, some creatures |
+| **Normal** | 30 ft | Most characters and creatures |
+| **Fast** | 45 ft | Some feats, fast creatures |
 
 **Dash** — Action to move again at full Speed.
 
@@ -111,7 +111,7 @@ All the key terms in one place.
 | Term | Definition |
 |------|------------|
 | **Fatigue** | Exhaustion level (0–5). Each level is −1 to all checks and saves. At 5, incapacitated. |
-| **Supply** | Abstract consumables (food, water, bandages). Spend 1 for a Breather or Night's Rest. |
+| **Supply** | Abstract consumables (food, water, bandages). Spend 1 per Breather, 1 per day for food. |
 | **Slots** | Inventory capacity. Most items = 1 slot, Bulky = 2. You have 10 + STR (backpack adds 10). |
 
 ---
@@ -120,8 +120,8 @@ All the key terms in one place.
 
 | Rest | Duration | Effect |
 |------|----------|--------|
-| **Breather** | 10 minutes | Spend 1 Supply to heal 1d4+CON or roll to remove 1 Fatigue. |
-| **Night's Rest** | 8 hours | Spend Hit Dice to heal, regain spell slots, remove 1–2 Fatigue. |
+| **Breather** | 10 minutes | Spend 1 Supply. Heal 1d4+CON HP **or** CON save (DC 12) to clear 1 Fatigue. Choose one. |
+| **Night's Rest** | 8 hours | Spend Hit Dice to heal (roll + CON each), regain spell slots, clear 2 Fatigue (shelter) or 1 (roughing it). |
 | **Safe Haven** | 1d4+1 days | Full reset: HP, Hit Dice, spell slots, Fatigue. |
 
 ---
