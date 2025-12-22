@@ -137,8 +137,8 @@ Weapons fall into three proficiency tiers with predictable damage bands:
 **The class logic:**
 
 - **Light (d4)** — Simple weapons anyone can pick up. A dagger, a club, a dart. Magic-Users aren't warriors, so d4 is their ceiling.
-- **Medium (d6)** — Proper martial arms. Longswords, maces, bows. Experts and Clerics are more effective in combat than Magic-Users, but they're not specialists.
-- **Heavy (d8–d10)** — Specialist weapons. Greataxes, mauls, longbows. Only Fighters train with these. This is part of what makes a Fighter a Fighter.
+- **Medium (d6 or d8 two-handed)** — Proper martial arms. Experts and Clerics are more effective in combat than Magic-Users, but they're not specialists. Versatile weapons offer d6 one-handed or d8 two-handed — the extra die step costs you a free hand for a shield, torch, or spell focus.
+- **Heavy (d8–d10, two-handed)** — Specialist weapons. Greataxes, mauls, longbows. Only Fighters train with these. You're sacrificing your off-hand for power — no shield, no torch. This is part of what makes a Fighter a Fighter.
 
 **The creation logic:**
 
