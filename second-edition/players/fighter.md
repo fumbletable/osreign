@@ -2,7 +2,7 @@
 title: Fighter
 layout: default
 parent: Classes
-grand_parent: Players
+grand_parent: Character
 nav_order: 1
 ---
 

@@ -53,7 +53,7 @@ Barks orders and expects them followed. Knows every dirty trick in the book.
 ## Shadow
 **HD 3 | AC 12 | HP 12** | Incorporeal | Immune: non-magical weapons<br>
 Atk chill touch (special) | Mv Fast | Ml 12 | XP 90<br>
-Chill Touch drains 1 STR (victim at STR 0 becomes a shadow). STR returns after 90 minutes.<br>
+Chill Touch drains 1 STR (victim at STR −5 becomes a shadow). STR returns after 90 minutes.<br>
 Darker than darkness itself. Perhaps undead, perhaps something worse.
 
 ---

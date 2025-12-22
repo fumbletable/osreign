@@ -31,6 +31,7 @@ Steel, wood, and string - here's what kills.
 | Mace | 6 gp | d6 | Medium, Bludgeoning, Crush |
 | Maul | 12 gp | d10 | Heavy, Bludgeoning, Two-Handed, Bulky, Crush |
 | Poleaxe | 14 gp | d10 | Heavy, Slashing, Two-Handed, Bulky, Reach, Hook |
+| Rapier | 12 gp | d6 | Medium, Piercing, Finesse, Parry |
 | Shortbow | 25 gp | d6 | Medium, Piercing, Ranged (Far) |
 | Shortsword | 10 gp | d6+1 | Medium, Slashing, Finesse |
 | Sickle | 5 gp | d6 | Medium, Slashing, Finesse, Hook |
@@ -64,5 +65,6 @@ Steel, wood, and string - here's what kills.
 
 **Special:**
 - **Cleave** - When you drop a foe to 0 HP, deal d4 damage to another foe within **Close** range (once per turn)
-- **Crush** - On a hit, you can knock the target **Prone** instead of adding your STR to damage
-- **Hook** - On a hit, you can push or pull the target 5 ft instead of adding your STR to damage
+- **Crush** - On a hit, roll one die step lower to knock the target **Prone**
+- **Hook** - On a hit, roll one die step lower to push or pull the target 5 ft
+- **Parry** - On a hit, roll one die step lower to impose **Setback** on the next attack against you

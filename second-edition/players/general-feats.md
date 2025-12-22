@@ -21,6 +21,7 @@ These feats are open to everyone. You pick one at each even level (2, 4, 6, 8, 1
 | Animal Companion | Gain a loyal 1 HD animal companion. |
 | Animal Whisperer | **Edge** to calm, ride, or direct animals. |
 | Armor Proficiency | Gain proficiency with the next armor tier (Light → Medium → Heavy). |
+| Armored Caster | You can cast spells while wearing armor. |
 | Aura of Courage | Allies within **Near** gain **Edge** on saves vs fear. |
 | Beast Bond | Your animal companion gains +1 HD. Requires Animal Companion. |
 | Brawler | +PB to unarmed attack rolls and grapple checks. Unarmed strikes deal 1d4 (1d6 at level 5, 1d8 at level 9). You may use DEX instead of STR for unarmed attacks. |

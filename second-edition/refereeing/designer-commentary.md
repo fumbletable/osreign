@@ -124,20 +124,54 @@ Brawler grants unarmed damage that scales: 1d4 → 1d6 (level 5) → 1d8 (level 
 
 # Equipment & Resources
 
+## Why Weapon Tiers?
+
+Weapons fall into three proficiency tiers with predictable damage bands:
+
+| Tier | Damage | Who Uses It |
+|------|--------|-------------|
+| **Light** | d4 | Everyone (suitable for Magic-Users) |
+| **Medium** | d6 (or d6/d8 versatile) | Expert, Cleric |
+| **Heavy** | d8–d10 | Fighter only |
+
+**The class logic:**
+
+- **Light (d4)** — Simple weapons anyone can pick up. A dagger, a club, a dart. Magic-Users aren't warriors, so d4 is their ceiling.
+- **Medium (d6)** — Proper martial arms. Longswords, maces, bows. Experts and Clerics are more effective in combat than Magic-Users, but they're not specialists.
+- **Heavy (d8–d10)** — Specialist weapons. Greataxes, mauls, longbows. Only Fighters train with these. This is part of what makes a Fighter a Fighter.
+
+**The creation logic:**
+
+These tiers exist so anyone can create custom weapons. Pick the tier based on who should wield it, and the damage follows:
+
+- Making a weapon for rogueish types? Medium, d6.
+- Making a big two-handed monster? Heavy, d10.
+- Making a simple improvised weapon? Light, d4.
+
+Tags add the tactical flavour — Finesse, Reach, Cleave, Hook — but the tier sets the baseline. You don't need to balance damage numbers; the tier does it for you.
+
+---
+
 ## Why Weapon Tags?
 
 Weapon tags give players tactical options without adding cognitive load. The design principle: tags must be either **conditional triggers** (happens automatically when X occurs) or **simple trades** (sacrifice one thing, get another).
 
 **Cleave** (Greataxe, Greatsword): When you drop a foe to 0 HP, deal d4 to an adjacent enemy. No decision needed - it just happens. Rewards aggressive play and makes two-handers feel powerful against groups.
 
-**Crush** (Mace, Maul): Trade your STR damage to knock the target prone. Simple choice: damage or control? No save, no slowdown.
+**The "die step" trades:** Crush, Hook, and Parry all use the same pattern: roll one die step lower (d10→d8, d8→d6, d6→d4) to get a tactical effect. This creates a flat cost everyone pays equally - unlike trading your ability modifier, which punishes high-stat characters more.
 
-**Hook** (Flail, Poleaxe, Sickle): Trade your STR damage to push or pull 5 ft. Battlefield positioning for tactical players.
+**Crush** (Mace, Maul): Roll one die step lower to knock the target prone. Simple choice: damage or control?
 
-**What we cut:** Earlier drafts had Armor-Piercing, Quiet, Parry, Accurate, Ready. Each failed the "earns its place" test:
+**Hook** (Flail, Poleaxe, Sickle): Roll one die step lower to push or pull 5 ft. Battlefield positioning for tactical players.
+
+**Parry** (Rapier): Roll one die step lower to impose **Setback** on the next attack against you. The duelist's trade - less damage, better defence.
+
+**What I cut:** Earlier drafts had Armor-Piercing, Quiet, Accurate, Ready. Each failed the "earns its place" test:
 - *Armor-Piercing*: Became the +1 on crossbows and shortsword - the bonus IS the benefit
 - *Quiet*: Situational flavor, not a combat choice. Daggers are obviously quiet
-- *Parry/Accurate/Ready*: Added complexity without interesting decisions
+- *Accurate/Ready*: Added complexity without interesting decisions
+
+**Why I brought Parry back:** Earlier drafts of Parry traded your ability modifier for a defensive bonus. The problem: a +4 DEX character paid more than a +0 DEX character for the same effect. The die-step pattern fixed this - everyone pays the same cost (d6→d4), making it a fair trade regardless of stats.
 
 **The +1 pattern:** Shortsword (d6+1), Light Crossbow (d6+1), Heavy Crossbow (d8+1) all have a flat +1 to damage. For crossbows, this represents armor-piercing power - you get more damage but Loading means you can't fire every round. For shortsword, it's the premium over the cheaper Sickle (which has Hook instead).
 
@@ -171,7 +205,7 @@ OSwR uses "Supply" as an abstract resource rather than tracking individual ratio
 - Stabilizing dying allies (1 Supply)
 - Daily sustenance (on wilderness expeditions)
 
-**Why not "Provisions"?** We changed the name. "Provisions" sounds like food only. "Supply" better captures the abstraction—it's whatever consumable the situation demands.
+**Why not "Provisions"?** I changed the name. "Provisions" sounds like food only. "Supply" better captures the abstraction—it's whatever consumable the situation demands.
 
 ---
 
@@ -241,7 +275,7 @@ This isn't explicit in the rules, but it's implicit in the pacing and costs. The
 
 ## Why No Passive Checks?
 
-5e has passive Perception (10 + modifier) for "always-on" awareness. We cut it.
+5e has passive Perception (10 + modifier) for "always-on" awareness. I cut it.
 
 **The problem:** Passive checks give the illusion of a system while the Referee is really just deciding. If your passive is 12 and the DC is 12, you notice. If the DC is 13, you don't. The Referee sets both numbers—they're deciding the outcome with extra steps.
 
@@ -415,7 +449,7 @@ In OSwR, dropping to 0 HP triggers a CON save (DC 12) when you get back up—fai
 
 ## Why 4-Hour Watches?
 
-We use 4-hour watches (six per day) for wilderness exploration. Earlier drafts experimented with 6-hour watches (four per day), but we returned to the original design.
+OSwR uses 4-hour watches (six per day) for wilderness exploration. Earlier drafts experimented with 6-hour watches (four per day), but I returned to the original design.
 
 **Why 4-hour watches work better:**
 
@@ -427,7 +461,7 @@ We use 4-hour watches (six per day) for wilderness exploration. Earlier drafts e
 
 4. **Three travel watches is a full day.** At 4 hours each, three watches of travel is 12 hours of marching — an exhausting but realistic day's journey. Pushing to a fourth watch means forced march saves every hour.
 
-**What we traded:** The simpler "four watches = four quarters of the day" mental model. But in practice, the hex alignment and activity granularity matter more than having a neat division of the day.
+**What I traded:** The simpler "four watches = four quarters of the day" mental model. But in practice, the hex alignment and activity granularity matter more than having a neat division of the day.
 
 ---
 
@@ -466,7 +500,7 @@ Monster XP is earned when you "overcome" a threat - which includes defeating, ou
 
 **Combat is not the only solution.** Tricking the ogre into leaving, negotiating safe passage with the bandits, or locking the gelatinous cube in a room all count as overcoming the threat. The XP reward is the same.
 
-**This matches the play philosophy.** If we only rewarded kills, players would fight everything. But OSwR wants players to think, negotiate, and avoid unnecessary risks. The XP rules support that.
+**This matches the play philosophy.** If the game only rewarded kills, players would fight everything. But OSwR wants players to think, negotiate, and avoid unnecessary risks. The XP rules support that.
 
 ---
 
@@ -572,7 +606,7 @@ Divine magic isn't free. Temple healing costs exist for several reasons:
 
 4. **Prevents the heal-and-return loop.** If adventurers could cheaply heal up and head straight back to the dungeon, the Safe Haven rest system loses its teeth. Expensive healing encourages proper recovery time.
 
-**The pricing curve:** Base costs roughly follow Tier² × 100 gp (T1 = 100, T2 = 400, T3 = 900...), but we rounded to memorable numbers: 100, 200, 500, 1,000, 2,500, 5,000. The curve accelerates at higher tiers because world-altering magic *should* be expensive. Raising the dead at 2,500 gp is still a fortune for most parties; full restoration at 5,000 gp represents a major investment.
+**The pricing curve:** Base costs roughly follow Tier² × 100 gp (T1 = 100, T2 = 400, T3 = 900...), but I rounded to memorable numbers: 100, 200, 500, 1,000, 2,500, 5,000. The curve accelerates at higher tiers because world-altering magic *should* be expensive. Raising the dead at 2,500 gp is still a fortune for most parties; full restoration at 5,000 gp represents a major investment.
 
 **Referees adjusting prices:** If you want stricter economics, the Tier² × 100 formula gives you a baseline. Double it for rare services or hostile temples. Halve it for faithful members or temples in the party's debt.
 
@@ -624,7 +658,7 @@ Flavour text (what it is).
 
 **Why separate mechanics from flavour?** Earlier drafts merged them. But at the table, you need different information at different times. During initiative: "It regenerates 3 HP/round." During roleplay: "Rubbery green flesh, long arms, remembers everyone who hurt it." Keeping them on separate lines lets GMs scan efficiently.
 
-**What we cut:**
+**What I cut:**
 
 - **Flavour tags** like [Undead], [Mindless], [Cowardly]. If the description says "walking dead, tireless, hungry"—you don't need a tag saying [Undead]. Morale 12 means fearless; you don't need [Fearless].
 - **Redundant immunities.** Undead immunity to poison/charm/sleep is standard. Only note exceptions or unusual immunities.
@@ -640,7 +674,7 @@ Flavour text (what it is).
 
 The Player's Guide follows a specific sequence: How to Play → Character → Equipment → Magic → Adventuring → Downtime.
 
-**How to Play first.** Every other section uses terms like DC, **Edge**, **Setback**, checks, and saves. By putting the core mechanics at the front, we define these before they appear elsewhere. A reader going cover-to-cover never hits an unexplained term.
+**How to Play first.** Every other section uses terms like DC, **Edge**, **Setback**, checks, and saves. By putting the core mechanics at the front, I define these before they appear elsewhere. A reader going cover-to-cover never hits an unexplained term.
 
 OSwR uses different terminology than 5e—Edge instead of advantage, Boost Dice instead of Inspiration, Supply instead of rations, five Fatigue levels instead of exhaustion. These need explaining before character creation starts using them. The goal is simple: no forward references, no flicking back through the book.
 

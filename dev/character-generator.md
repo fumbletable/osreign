@@ -1381,7 +1381,7 @@ const WEAPONS = {
   "Light Hammer": { damage: "1d4", stat: "STR", tags: ["Light", "Thrown (Close)"] },
   // Medium weapons
   "Shortsword": { damage: "1d6", stat: "DEX", tags: ["Finesse"] },
-  "Rapier": { damage: "1d8", stat: "DEX", tags: ["Finesse"] },
+  "Rapier": { damage: "1d6", stat: "DEX", tags: ["Finesse", "Parry"] },
   "Scimitar": { damage: "1d6", stat: "DEX", tags: ["Finesse"] },
   "Mace": { damage: "1d6", stat: "STR", tags: ["Bludgeoning"] },
   "Flail": { damage: "1d8", stat: "STR", tags: ["Bludgeoning"] },

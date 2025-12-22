@@ -121,7 +121,7 @@ You can take levels in multiple classes, gaining their abilities at the cost of 
 
 - **Odd levels only:** You may only switch to a different class at odd character levels (3, 5, 7, 9, 11). This means you commit to at least two levels before you can switch again.
 - **Proficiency Bonus:** Your PB is based on your total adventurer level, not individual class levels.
-- **Proficiencies:** You gain all proficiencies (weapons, armor, saves) of your new class. However, proficiency doesn't override class restrictions—a Magic-User who takes Fighter levels gains armor proficiency but still can't cast spells in armor without the Armored Caster feat.
+- **Proficiencies:** You gain weapon and armor proficiencies of your new class. Your **saving throw proficiencies remain those of your starting class**—a Fighter who multiclasses into Magic-User keeps proficiency in Strength and Constitution saves, not Intelligence and Wisdom. However, proficiency doesn't override class restrictions—a Magic-User who takes Fighter levels gains armor proficiency but still can't cast spells in armor without the Armored Caster feat.
 - **Hit Dice:** Your Hit Dice pool is the sum of all dice gained from your class levels. You can spend these dice in any combination when resting or using abilities that require Hit Dice.
 - **Spell tiers:** You unlock spell tiers based on your levels in each casting class separately. Three Cleric levels unlocks Tier 2 divine spells; two Magic-User levels only unlocks Tier 1 arcane spells.
 - **Spell slots:** Each casting class has its own spell slot progression based on your levels in that class. They don't combine.
