@@ -100,7 +100,7 @@ nav_order: 7
 - **Casting Time:** 1 Action
 - **Range:** Near (30 ft)
 - **Duration:** Permanent until cured
-- **Effect:** One caster target INT spell save or INT reduced to 1, cannot cast spells.
+- **Effect:** One caster target INT spell save or INT reduced to −4, cannot cast spells.
 - **Boost:** Target suffers **Setback** on save.
 
 ## Hold Monster

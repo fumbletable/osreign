@@ -273,7 +273,7 @@ Each class has a distinct magical identity:
 ### From OSE/B/X
 - **Spell level = Tier** (direct mapping)
 - Add a Boost effect
-- Clarify saves using ability scores (not "save vs spells")
+- Clarify saves using abilities (not "save vs spells")
 - Standardise range to Touch/Near/Far
 - Check duration against OSwR conventions (1 Turn = 10 min)
 
@@ -347,7 +347,7 @@ When creating or converting a spell:
 - ✓ Resist Elements (T2 Cleric/Druid) - choose fire or cold when preparing
 - ✓ Spiritual Hammer (T2 Cleric) - 1d6+PB force damage
 - ✓ Regenerate (T6 Cleric) - regrows limbs, heals 3d6
-- ✓ Restoration (T6 Cleric) - removes negative levels or restores drained ability scores
+- ✓ Restoration (T6 Cleric) - removes negative levels or restores drained abilities
 - ✓ Remove Fear (T1 Cleric) - calms frightened creatures, new save with **Edge** vs magical fear
 - ✓ Augury (T2 Cleric) - weal/woe divination for planned actions
 - ✓ Divination (T4 Cleric) - 1-2 sentence truthful answer about events within one week

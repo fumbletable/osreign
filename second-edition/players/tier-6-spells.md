@@ -54,7 +54,7 @@ nav_order: 8
 - **Casting Time:** 1 Action
 - **Range:** Touch
 - **Duration:** Instant
-- **Effect:** Removes one negative level caused by energy drain, or restores 1d4 points to a single ability score drained by magic or monsters.
+- **Effect:** Removes one negative level caused by energy drain, or restores 1d4 to a single ability drained by magic or monsters.
 
 ## Stone Tell
 - **Casting Time:** 1 Action

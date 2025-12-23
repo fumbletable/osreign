@@ -79,7 +79,7 @@ nav_order: 3
 - **Casting Time:** 1 Action
 - **Range:** Near (30 ft)
 - **Duration:** Special (see below)
-- **Effect:** One humanoid that fails a WIS spell save regards caster as trusted ally. Hostile acts end effect. Target repeats save: daily (INT 13+), weekly (INT 9-12), or monthly (INT 8-).
+- **Effect:** One humanoid that fails a WIS spell save regards caster as trusted ally. Hostile acts end effect. Target repeats save: daily (INT +1 or higher), weekly (INT −1 to 0), or monthly (INT −2 or lower).
 - **Boost:** Target has **Setback** on initial save.
 
 ## Detect Magic
@@ -96,7 +96,7 @@ nav_order: 3
 - **Casting Time:** 1 Action
 - **Range:** Near (30 ft)
 - **Duration:** 1 Turn (10 minutes)
-- **Effect:** Keeps 1 door/gate shut; STR 18 or magic required to open.
+- **Effect:** Keeps 1 door/gate shut; STR +4 or magic required to open.
 - **Boost:** Duration +1 Turn.
 
 ## Light
