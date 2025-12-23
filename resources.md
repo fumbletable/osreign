@@ -78,3 +78,7 @@ Two-page character sheets for OSwR Second Edition, designed to track everything 
 ## First Edition
 
 The original 2021 release is available on [DriveThruRPG](https://www.drivethrurpg.com/).
+
+| Resource | Description |
+|----------|-------------|
+| **[Form-Fillable Character Sheet]({{ site.baseurl }}/assets/downloads/oswr-1e-character-sheet-form-fillable.pdf)** | Single-page character sheet for OSwR 1e |
