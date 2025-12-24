@@ -90,9 +90,17 @@ Crafting requires the **Alchemist** feat (for potions) or **Poisoner** feat (for
 
 **Requirements:**
 - The appropriate feat
-- A clean environment (camp, shelter, or better)
+- A safe environment (see below)
 - 1 **Supply** per essence used
 - 1 **kit use** per essence used
+
+**Environment affects the roll:**
+
+| Environment | Modifier |
+|-------------|----------|
+| Camp or shelter | **Setback** |
+| Town workshop | Normal |
+| Laboratory | **Edge** |
 
 **Time:** 1 Watch (4 hours) per essence used.
 
@@ -139,6 +147,12 @@ They make two INT checks vs DC 12 (one per potion). Each success produces a poti
 |------|-------|-----|------|
 | Harvest | INT or WIS | By creature HD | 1 Turn |
 | Craft | INT | By creature HD | 1 Watch per essence |
+
+| Environment | Modifier |
+|-------------|----------|
+| Camp/shelter | **Setback** |
+| Town workshop | Normal |
+| Laboratory | **Edge** |
 
 | Essences | Effect DC | Supply | Kit Uses | Time |
 |----------|-----------|--------|----------|------|

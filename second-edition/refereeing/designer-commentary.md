@@ -702,6 +702,8 @@ The Alchemist and Poisoner feats promised crafting rules. I could have written a
 
 **The costs:** 1 Supply + 1 kit use per essence. The kit (50 gp, 10 uses) is the gold sink. Time is 1 Watch (4 hours) per essence. Making a powerful DC 16 potion takes 3 essences, 3 Supply, 3 kit uses, and 12 hours—a meaningful investment.
 
+**Environment matters.** Crafting at camp gives Setback—you're improvising with limited tools. A town workshop is normal. A proper laboratory gives Edge. This creates a reason to invest in facilities, ties into domain play (build a lab in your stronghold), and makes the shelf life of essences matter. Do you rush the job at camp with Setback, or risk the essences spoiling while you travel back to town?
+
 **Why this approach?** It supports creation. A referee can drop any creature with a special ability and players immediately know what they might harvest. No need to consult a separate crafting manual. The alchemy rules and the bestiary work together, not as separate systems.
 
 ---
