@@ -78,7 +78,7 @@ Two-page character sheets for OSwR Second Edition, designed to track everything 
 
 ## First Edition
 
-The original 2021 release is available on [DriveThruRPG](https://www.drivethrurpg.com/).
+The 2022 release is available on [DriveThruRPG](https://www.drivethrurpg.com/).
 
 | Resource | Description |
 |----------|-------------|

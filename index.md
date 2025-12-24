@@ -51,7 +51,7 @@ You'll learn OSwR in one session. You'll still be finding new angles a year late
 | | |
 |:--|:--|
 | [**Second Edition**](second-edition) | Read the full rules online (free) |
-| [**First Edition**](first-edition) | The original 2021 release |
+| [**First Edition**](first-edition) | The 2022 release |
 | [**Resources**](resources) | Character sheets and downloads |
 | [**Roadmap**](roadmap) | Where we are and where we're headed |
 | [**Community**](community) | Join the Discord |

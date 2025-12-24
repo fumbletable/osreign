@@ -74,7 +74,7 @@ It's not my preferred way to play anymore, but the mechanics make sense to me. O
 
 OSwR started because Scott made something and I wouldn't shut up about it.
 
-The original came out in 2021. Since then I've written three different games while supposedly "editing" this one. The current version is an amalgamation of the best ideas from all of them - finally coherent, finally finished enough to share.
+Scots came out in 2021. First Edition followed in 2022. Since then I've written three different games while supposedly "editing" this one. The current version is an amalgamation of the best ideas from all of them - finally coherent, finally finished enough to share.
 
 If you've read this far: thank you. Now go play something.
 

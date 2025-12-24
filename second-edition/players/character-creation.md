@@ -84,7 +84,7 @@ You only add PB once per roll.
 
 ### Using Abilities
 
-When the outcome's uncertain, the Referee calls for an ability check. Roll d20 + ability (+ PB if it applies). Beat the DC and you succeed. Fall short and something goes wrong.
+When the outcome's uncertain, the Referee calls for an ability check. Roll d20 + ability (+ PB if it applies). Meet or beat the DC and you succeed. Fall short and something goes wrong.
 
 ---
 
