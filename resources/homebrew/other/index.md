@@ -1,5 +1,5 @@
 ---
-title: Other
+title: Other-Homebrew
 layout: default
 parent: Homebrew
 grand_parent: Resources

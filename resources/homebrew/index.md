@@ -32,14 +32,4 @@ Community-created content for OSWR 2e. All submissions are reviewed for compatib
 
 ---
 
-## Contributors
-
-Thank you to everyone who has contributed to the OSWR community content!
-
-| Contributor | Contributions |
-|-------------|---------------|
-| knighterrant1663 | Banshee |
-
----
-
 *Community content is not official OSWR material but has been reviewed for compatibility.*

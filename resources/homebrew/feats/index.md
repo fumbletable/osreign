@@ -1,5 +1,5 @@
 ---
-title: Feats
+title: Feats-Homebrew
 layout: default
 parent: Homebrew
 grand_parent: Resources

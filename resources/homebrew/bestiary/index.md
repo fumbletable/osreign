@@ -1,5 +1,5 @@
 ---
-title: Bestiary
+title: Bestiary-Homebrew
 layout: default
 parent: Homebrew
 grand_parent: Resources
