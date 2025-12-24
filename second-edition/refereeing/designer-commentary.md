@@ -682,9 +682,27 @@ OSwR uses different terminology than 5e—Edge instead of advantage, Boost Dice 
 
 **Magic is separate from Character.** Not everyone plays a caster. Keeping magic in its own section means non-casters can skip it entirely, while casters have everything they need in one place.
 
-**Adventuring and Downtime split the gameplay loop.** Adventuring covers what happens in dangerous places (time, rests, combat, exploration). Downtime covers what happens between adventures (hiring help, carousing). This mirrors how sessions actually flow: venture out, return to town, repeat.
+**Adventuring and Downtime split the gameplay loop.** Adventuring covers what happens in dangerous places (time, rests, combat, exploration). Downtime covers what happens between adventures (hiring help, carousing, alchemy). This mirrors how sessions actually flow: venture out, return to town, repeat.
 
 **Equipment before Magic.** You gear up before you study spells. Practical before specialist.
+
+---
+
+## Why Alchemy Works This Way
+
+The Alchemist and Poisoner feats promised crafting rules. I could have written a recipe list—"Healing Potion: 50 gp, 1 day"—but that contradicts everything OSwR is trying to do.
+
+**The bestiary is the recipe book.** If a creature has a special ability that forces a save, you can harvest something from it. Basilisk eyes yield petrification. Spider venom sacs yield poison. Dragon glands yield elemental breath. The system doesn't need a separate list of "what you can make" because the monster entries already tell you.
+
+**HD = essences.** A creature's Hit Dice determines how much you can extract. Kill a 6 HD basilisk, succeed on your harvest check, get 6 essences of petrifying element. Simple, consistent, and it makes bigger monsters more rewarding.
+
+**Potency through combination.** Spend 1 essence for DC 8 effect. Spend 2 for DC 12. Spend 3 for DC 16. The same three-tier structure that appears throughout OSwR (Easy/Normal/Hard DCs, Minor/Major/Epic treasure, spell tiers).
+
+**Anyone can harvest, crafting needs the feat.** The fighter can butcher the basilisk and extract its eyes—harvesting is an INT or WIS check, feat gives Edge. But turning those essences into a usable potion requires the Alchemist feat. This creates party roles and makes essences tradeable commodities. No alchemist in the party? Sell the parts in town.
+
+**The costs:** 1 Supply + 1 kit use per essence. The kit (50 gp, 10 uses) is the gold sink. Time is 1 Watch (4 hours) per essence. Making a powerful DC 16 potion takes 3 essences, 3 Supply, 3 kit uses, and 12 hours—a meaningful investment.
+
+**Why this approach?** It supports creation. A referee can drop any creature with a special ability and players immediately know what they might harvest. No need to consult a separate crafting manual. The alchemy rules and the bestiary work together, not as separate systems.
 
 ---
 
