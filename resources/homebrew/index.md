@@ -16,10 +16,10 @@ Community-created content for OSWR 2e. All submissions are reviewed for compatib
 
 ## What's Here
 
-- [**Monsters**](monsters/) - Community-created creatures → `#homebrew-bestiary`
-- [**Ancestries**](ancestries/) - New player ancestries → `#homebrew-ancestry`
-- [**Feats**](feats/) - Character options → `#homebrew-feats`
-- [**Other**](other/) - Spells, items, and more → `#homebrew-other`
+- [**Monsters**](bestiary/) - Community-created creatures → `#bestiary-homebrew`
+- [**Ancestries**](ancestries/) - New player ancestries → `#ancestries-homebrew`
+- [**Feats**](feats/) - Character options → `#feats-homebrew`
+- [**Other**](other/) - Spells, items, and more → `#other-homebrew`
 
 ---
 

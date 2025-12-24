@@ -1,5 +1,5 @@
 ---
-title: Other-Homebrew
+title: Other
 layout: default
 parent: Homebrew
 grand_parent: Resources
@@ -17,4 +17,4 @@ Spells, items, and other homebrew created by the OSWR community. Each entry cred
 
 ---
 
-*Have something to submit? Post it in `#homebrew-other` on [Discord](https://discord.gg/XpRqQFs3CX).*
+*Have something to submit? Post it in `#other-homebrew` on [Discord](https://discord.gg/XpRqQFs3CX).*

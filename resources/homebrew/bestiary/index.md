@@ -1,5 +1,5 @@
 ---
-title: Bestiary-Homebrew
+title: Bestiary
 layout: default
 parent: Homebrew
 grand_parent: Resources
@@ -157,4 +157,4 @@ A flying cat. The perfect predator if only it wasn't so tiny.
 
 ---
 
-*Have a monster to submit? Post it in `#homebrew-bestiary` on [Discord](https://discord.gg/XpRqQFs3CX).*
+*Have a monster to submit? Post it in `#bestiary-homebrew` on [Discord](https://discord.gg/XpRqQFs3CX).*

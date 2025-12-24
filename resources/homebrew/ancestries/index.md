@@ -1,5 +1,5 @@
 ---
-title: Ancestries-Homebrew
+title: Ancestries
 layout: default
 parent: Homebrew
 grand_parent: Resources
@@ -51,4 +51,4 @@ Select a dragon colour as your bloodline (your abilities are based on your blood
 
 ---
 
-*Have an ancestry to submit? Post it in `#homebrew-ancestry` on [Discord](https://discord.gg/XpRqQFs3CX).*
+*Have an ancestry to submit? Post it in `#ancestries-homebrew` on [Discord](https://discord.gg/XpRqQFs3CX).*

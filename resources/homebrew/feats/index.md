@@ -1,5 +1,5 @@
 ---
-title: Feats-Homebrew
+title: Feats
 layout: default
 parent: Homebrew
 grand_parent: Resources
@@ -17,4 +17,4 @@ Character feats created by the OSWR community. Each entry credits its creator.
 
 ---
 
-*Have a feat to submit? Post it in `#homebrew-feats` on [Discord](https://discord.gg/XpRqQFs3CX).*
+*Have a feat to submit? Post it in `#feats-homebrew` on [Discord](https://discord.gg/XpRqQFs3CX).*
