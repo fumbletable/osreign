@@ -75,8 +75,8 @@ Kits let you attempt actions that are otherwise impossible. Without the right ki
 | Herbalist's Kit | 15 gp | Identify plants, brew poultices, prepare antidotes |
 | Disguise Kit | 15 gp | Make-up, props, false identities |
 | Climbing Kit | 10 gp | **Edge** on climbing checks |
-| Poisoner's Kit | 50 gp | Brew and apply poisons |
-| Alchemist's Supplies | 50 gp | Potions, reagents, volatile mixes |
+| Poisoner's Kit (10 uses) | 50 gp | Craft poisons. See [Alchemy](alchemy). |
+| Alchemist's Supplies (10 uses) | 50 gp | Craft potions. See [Alchemy](alchemy). |
 | Artisan's Tools | 20 gp | Blacksmith, mason, weaver, etc. |
 | Brewer's Tools | 15 gp | Make beer, ale, spirits |
 

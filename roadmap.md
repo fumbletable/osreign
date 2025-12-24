@@ -25,7 +25,8 @@ OSwR Second Edition is currently in **Alpha**.
 
 We leave Alpha when:
 
-- [ ] Rules gaps closed (crafting, mounted combat)
+- [x] Rules gaps closed: crafting (see [Alchemy](second-edition/players/alchemy))
+- [ ] Rules gaps closed: mounted combat
 - [ ] 7 classic archetypes built and documented
 - [ ] Play tested across levels 1-9
 - [ ] External creators successfully use the Build-a-X tools

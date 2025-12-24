@@ -29,7 +29,7 @@ You start with six of these at level 1 and pick another at each odd level (3, 5,
 | Master of Disguise | Allies using your disguises also gain **Edge**. Requires Disguise. |
 | Pick Locks | You can pick locks with thieves' tools. |
 | Pick Pockets | Attempt theft unnoticed. Your DEX vs their WIS. |
-| Poisoner | Craft and apply poisons. Immune to your own poisons. |
+| Poisoner | **Edge** to harvest and craft poisons. Immune to your own. See [Alchemy](alchemy). |
 | Silver Tongue | **Edge** on checks to deceive, lie, or misdirect. |
 | Sleight of Hand | Conceal or palm small items without being noticed. |
 | Trap Expert | **Edge** to find, disable, or set traps. |

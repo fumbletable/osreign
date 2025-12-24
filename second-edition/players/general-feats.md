@@ -16,7 +16,7 @@ These feats are open to everyone. You pick one at each even level (2, 4, 6, 8, 1
 
 | Feat | Effect |
 |:-----|:-------|
-| Alchemist | **Edge** to craft or identify potions. |
+| Alchemist | **Edge** to harvest and craft potions. See [Alchemy](alchemy). |
 | Ancient Lore | **Edge** on history and arcane knowledge checks. |
 | Animal Companion | Gain a loyal 1 HD animal companion. |
 | Animal Whisperer | **Edge** to calm, ride, or direct animals. |
