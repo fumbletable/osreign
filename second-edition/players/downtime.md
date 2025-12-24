@@ -17,3 +17,4 @@ What happens between adventures.
 
 - [Hiring Help](hiring-help.md) - Recruiting and managing retainers
 - [Carousing](carousing.md) - Spend gold to earn XP between adventures
+- [Alchemy](alchemy.md) - Harvest monster essences and craft potions and poisons
