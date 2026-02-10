@@ -46,7 +46,7 @@ Each Turn, the Referee rolls dice to see if something happens—an encounter, a 
 
 ## Time in the Wilderness
 
-Overland, time is tracked in **Watches** (about 6 hours each). Four **Watches** make a day.
+Overland, time is tracked in **Watches** (about 4 hours each). Six **Watches** make a day.
 
 A typical day:
 - **Two watches of travel** — the safe maximum
