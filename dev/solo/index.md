@@ -29,6 +29,18 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
     </div>
   </div>
 
+  <!-- Last Result (persistent feedback) -->
+  <div id="last-result">
+    <span id="last-result-text">-</span>
+  </div>
+
+  <!-- Tab Bar -->
+  <div id="tab-bar">
+    <button class="tab-btn active" data-tab="dice">Dice</button>
+    <button class="tab-btn" data-tab="oracle">Oracle</button>
+    <button class="tab-btn" data-tab="history">History</button>
+  </div>
+
   <!-- Character Selection Modal -->
   <div id="character-modal" class="modal" style="display: none;">
     <div class="modal-content">
@@ -38,9 +50,8 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
     </div>
   </div>
 
-  <!-- Main Dice Roller -->
-  <div id="dice-section">
-    <h2>Dice Roller</h2>
+  <!-- TAB: Dice -->
+  <div id="dice-section" class="tab-panel active">
 
     <!-- Big D20 Button -->
     <div id="d20-zone">
@@ -164,9 +175,11 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
     </div>
   </div>
 
-  <!-- Oracle Section -->
-  <div id="oracle-section">
-    <h2>Oracle</h2>
+  <!-- TAB: Oracle + Generators -->
+  <div id="oracle-tab" class="tab-panel">
+    <!-- Oracle Section -->
+    <div id="oracle-section">
+      <h3>Oracle</h3>
     <p class="oracle-help">Ask a yes/no question, set likelihood, and consult the oracle.</p>
 
     <!-- Likelihood Selector -->
@@ -201,7 +214,7 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
 
   <!-- Generators Section -->
   <div id="generators-section">
-    <h2>Generators</h2>
+    <h3>Generators</h3>
     <p class="gen-help">Roll on d66 tables to generate NPCs, items, and names.</p>
 
     <!-- Quick Formulas -->
@@ -240,11 +253,14 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
       <div id="table-result"></div>
     </div>
   </div>
+  </div>
 
-  <!-- Roll History -->
-  <div id="history-section">
-    <h3>History <button id="clear-history-btn" class="btn-small">Clear</button></h3>
-    <div id="roll-history"></div>
+  <!-- TAB: History -->
+  <div id="history-tab" class="tab-panel">
+    <div id="history-section">
+      <h3>Roll History <button id="clear-history-btn" class="btn-small">Clear</button></h3>
+      <div id="roll-history"></div>
+    </div>
   </div>
 </div>
 
@@ -259,10 +275,77 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
     background: #f0f4f8;
     padding: 0.75rem 1rem;
     border-radius: 6px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  /* Last Result (persistent feedback) */
+  #last-result {
+    background: #1a202c;
+    color: #e2e8f0;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+    font-family: monospace;
+    font-size: 0.9rem;
+    text-align: center;
+    min-height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #last-result-text {
+    opacity: 0.8;
+  }
+  #last-result.has-result #last-result-text {
+    opacity: 1;
+    font-weight: bold;
+  }
+  #last-result.success {
+    background: #276749;
+  }
+  #last-result.failure {
+    background: #9b2c2c;
+  }
+
+  /* Tab Bar */
+  #tab-bar {
+    display: flex;
+    gap: 0.25rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0;
+  }
+  .tab-btn {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: #718096;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.15s;
+  }
+  .tab-btn:hover {
+    color: #2c5282;
+    background: #f7fafc;
+  }
+  .tab-btn.active {
+    color: #2c5282;
+    border-bottom-color: #2c5282;
+  }
+
+  /* Tab Panels */
+  .tab-panel {
+    display: none;
+  }
+  .tab-panel.active {
+    display: block;
   }
   #no-character {
     display: flex;
@@ -810,14 +893,12 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
 
   /* Oracle Section */
   #oracle-section {
-    border-top: 2px solid #2c5282;
-    padding-top: 1.5rem;
-    margin-top: 2rem;
     margin-bottom: 2rem;
   }
-  #oracle-section h2 {
+  #oracle-section h3 {
     color: #2c5282;
     margin-bottom: 0.5rem;
+    font-size: 1.25rem;
   }
   .oracle-help, .scene-help {
     color: #666;
@@ -983,12 +1064,13 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
   #generators-section {
     border-top: 2px solid #38a169;
     padding-top: 1.5rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
-  #generators-section h2 {
+  #generators-section h3 {
     color: #38a169;
     margin-bottom: 0.5rem;
+    font-size: 1.25rem;
   }
   .gen-help {
     color: #666;
@@ -1107,21 +1189,20 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
     }
   }
 
-  /* History Section */
+  /* History Section (now in its own tab) */
   #history-section {
-    border-top: 1px solid #ddd;
-    padding-top: 1rem;
+    padding-top: 0;
   }
   #history-section h3 {
-    font-size: 1rem;
-    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
     color: #555;
     display: flex;
     align-items: center;
     gap: 1rem;
   }
   #roll-history {
-    max-height: 200px;
+    max-height: 60vh;
     overflow-y: auto;
   }
   .history-entry {
@@ -1649,6 +1730,25 @@ function addToHistory(type, detail, result, success) {
 
   renderHistory();
   saveHistory();
+  updateLastResult(type, result, success);
+}
+
+function updateLastResult(type, result, success) {
+  const container = document.getElementById('last-result');
+  const text = document.getElementById('last-result-text');
+
+  // Format the display text
+  text.textContent = `${type}: ${result}`;
+
+  // Add styling classes
+  container.classList.add('has-result');
+  container.classList.remove('success', 'failure');
+
+  if (success === true) {
+    container.classList.add('success');
+  } else if (success === false) {
+    container.classList.add('failure');
+  }
 }
 
 function renderHistory() {
@@ -1994,6 +2094,7 @@ function checkScene() {
 document.addEventListener('DOMContentLoaded', () => {
   setupOracleListeners();
   setupGenerators();
+  setupTabs();
 });
 
 // ============ GENERATORS ============
@@ -2122,5 +2223,49 @@ function rollFormula(formulaId) {
 
   // Add to history
   addToHistory(formula.name, breakdown.join(', '), output, null);
+}
+
+// ============ TABS ============
+const TAB_KEY = 'oswr-solo-active-tab';
+
+function setupTabs() {
+  // Restore last active tab
+  const savedTab = localStorage.getItem(TAB_KEY) || 'dice';
+  switchToTab(savedTab);
+
+  // Tab click handlers
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tabId = btn.dataset.tab;
+      switchToTab(tabId);
+    });
+  });
+}
+
+function switchToTab(tabId) {
+  // Update tab buttons
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.tab === tabId);
+  });
+
+  // Update tab panels
+  document.querySelectorAll('.tab-panel').forEach(panel => {
+    panel.classList.remove('active');
+  });
+
+  // Map tab ID to panel ID
+  const panelMap = {
+    'dice': 'dice-section',
+    'oracle': 'oracle-tab',
+    'history': 'history-tab'
+  };
+
+  const panelId = panelMap[tabId];
+  if (panelId) {
+    document.getElementById(panelId).classList.add('active');
+  }
+
+  // Save preference
+  localStorage.setItem(TAB_KEY, tabId);
 }
 </script>
