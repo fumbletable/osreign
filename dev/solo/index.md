@@ -68,9 +68,11 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
 
     <!-- Modifiers Panel -->
     <div id="modifiers-panel">
-      <div class="mod-group">
+      <!-- Ability Selector - switches between generic and character-specific -->
+      <div class="mod-group" id="ability-group">
         <label>Ability</label>
-        <div class="mod-selector" id="ability-selector">
+        <!-- Generic selector (shown when no character loaded) -->
+        <div class="mod-selector" id="ability-selector-generic">
           <button class="mod-btn" data-value="-3">-3</button>
           <button class="mod-btn" data-value="-2">-2</button>
           <button class="mod-btn" data-value="-1">-1</button>
@@ -79,15 +81,16 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
           <button class="mod-btn" data-value="2">+2</button>
           <button class="mod-btn" data-value="3">+3</button>
         </div>
+        <!-- Character-specific selector (shown when character loaded) -->
+        <div class="stat-grid" id="ability-selector-character" style="display: none;"></div>
       </div>
 
-      <div class="mod-group">
-        <label>Proficiency</label>
-        <div class="mod-selector" id="pb-selector">
-          <button class="mod-btn" data-value="0">+0</button>
-          <button class="mod-btn selected" data-value="2">+2</button>
-          <button class="mod-btn" data-value="3">+3</button>
-          <button class="mod-btn" data-value="4">+4</button>
+      <!-- Proficiency Toggle -->
+      <div class="mod-group" id="pb-group">
+        <label>Proficiency <span id="pb-value">(+2)</span></label>
+        <div class="pb-toggle">
+          <button id="pb-toggle-btn" class="toggle-btn active">Add PB</button>
+          <span id="pb-status">+2 PB included</span>
         </div>
       </div>
 
@@ -111,7 +114,7 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
       </div>
 
       <div class="mod-group">
-        <label>Boost Dice</label>
+        <label>Boost Dice <span id="boost-available"></span></label>
         <div class="boost-control">
           <button id="spend-boost-btn" class="btn-small">Spend 1 Boost (+1d6)</button>
           <span id="boost-spent">0 spent</span>
@@ -130,6 +133,12 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
         <button class="quick-btn special-roll" data-type="reaction">Reaction (2d6)</button>
         <button class="quick-btn special-roll" data-type="morale">Morale (2d6)</button>
       </div>
+    </div>
+
+    <!-- Weapons Section (only shown with character) -->
+    <div id="weapons-section" style="display: none;">
+      <h3>Weapons</h3>
+      <div id="weapons-list"></div>
     </div>
 
     <!-- Damage Roller -->
@@ -245,18 +254,19 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
     color: #666;
   }
 
-  /* D20 Zone */
+  /* D20 Zone - Icosahedron Shape */
   #d20-zone {
     display: flex;
     justify-content: center;
     margin: 1.5rem 0;
   }
   .d20-button {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
+    width: 130px;
+    height: 150px;
+    /* D20 icosahedron silhouette using clip-path */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     background: linear-gradient(135deg, #2c5282 0%, #1e3a5f 100%);
-    border: 4px solid #1e3a5f;
+    border: none;
     color: white;
     cursor: pointer;
     display: flex;
@@ -264,39 +274,62 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
     align-items: center;
     justify-content: center;
     transition: all 0.15s;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    position: relative;
+  }
+  .d20-button::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background: linear-gradient(135deg, #3d6a9f 0%, #2c5282 100%);
+    z-index: 0;
+  }
+  .d20-button > * {
+    position: relative;
+    z-index: 1;
   }
   .d20-button:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
   }
   .d20-button:active {
     transform: scale(0.98);
   }
   .d20-label {
-    font-size: 1rem;
+    font-size: 0.9rem;
     opacity: 0.8;
     margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
   }
   .d20-result {
     font-size: 2.5rem;
     font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
   }
   .d20-button.rolling {
     animation: shake 0.3s ease-in-out;
   }
   @keyframes shake {
     0%, 100% { transform: rotate(0deg); }
-    25% { transform: rotate(-10deg); }
-    75% { transform: rotate(10deg); }
+    25% { transform: rotate(-8deg) scale(1.02); }
+    75% { transform: rotate(8deg) scale(1.02); }
   }
   .d20-button.crit {
     background: linear-gradient(135deg, #c9a227 0%, #9a7b1a 100%);
-    border-color: #9a7b1a;
+  }
+  .d20-button.crit::before {
+    background: linear-gradient(135deg, #e0b82e 0%, #c9a227 100%);
   }
   .d20-button.fumble {
     background: linear-gradient(135deg, #c44 0%, #922 100%);
-    border-color: #922;
+  }
+  .d20-button.fumble::before {
+    background: linear-gradient(135deg, #d66 0%, #c44 100%);
   }
 
   /* Result Display */
@@ -371,7 +404,7 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
   .mod-group:last-child {
     margin-bottom: 0;
   }
-  .mod-group label {
+  .mod-group > label {
     display: block;
     font-weight: bold;
     font-size: 0.85rem;
@@ -402,6 +435,93 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
     border-color: #2c5282;
   }
 
+  /* Character Stat Grid (like character sheet) */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 0.4rem;
+    text-align: center;
+  }
+  .stat-box {
+    border: 2px solid #666;
+    padding: 0.4rem 0.2rem;
+    background: #f8f8f8;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .stat-box:hover {
+    border-color: #2c5282;
+    background: #e8f0fe;
+  }
+  .stat-box.selected {
+    background: #2c5282;
+    border-color: #2c5282;
+  }
+  .stat-box.selected .stat-label,
+  .stat-box.selected .stat-mod {
+    color: white;
+  }
+  /* Gold border for proficient saves */
+  .stat-box.save-proficient {
+    border-color: #c9a227;
+    border-width: 3px;
+    background: #fefdf5;
+  }
+  .stat-box.save-proficient:hover {
+    background: #fef8e0;
+  }
+  .stat-box.save-proficient.selected {
+    background: #c9a227;
+    border-color: #c9a227;
+  }
+  .stat-label {
+    font-size: 0.65rem;
+    font-weight: bold;
+    color: #555;
+    display: block;
+  }
+  .stat-mod {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #2c5282;
+  }
+  .stat-box.save-proficient .stat-mod {
+    color: #997a1a;
+  }
+
+  /* PB Toggle */
+  .pb-toggle {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .toggle-btn {
+    padding: 0.4rem 1rem;
+    border: 2px solid #2c5282;
+    background: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #2c5282;
+    transition: all 0.1s;
+  }
+  .toggle-btn:hover {
+    background: #f0f4f8;
+  }
+  .toggle-btn.active {
+    background: #2c5282;
+    color: white;
+  }
+  #pb-status {
+    font-size: 0.85rem;
+    color: #666;
+  }
+  #pb-value {
+    font-weight: normal;
+    color: #2c5282;
+  }
+
   /* Edge/Setback */
   .edge-setback {
     display: flex;
@@ -430,16 +550,16 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
     border-color: #2c5282;
     background: #f0f4f8;
   }
-  .counter-control span {
+  .counter-control > span {
     font-size: 1.5rem;
     font-weight: bold;
     min-width: 2rem;
     text-align: center;
   }
-  .edge-control span {
+  .edge-control .counter-control > span {
     color: #2a7;
   }
-  .setback-control span {
+  .setback-control .counter-control > span {
     color: #c44;
   }
 
@@ -452,6 +572,10 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
   #boost-spent {
     color: #c9a227;
     font-weight: bold;
+  }
+  #boost-available {
+    font-weight: normal;
+    color: #c9a227;
   }
 
   /* Quick Rolls */
@@ -493,6 +617,45 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
     background: #fef8e8;
     border-color: #c9a227;
     color: #9a7b1a;
+  }
+
+  /* Weapons Section */
+  #weapons-section {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: #f8f8f8;
+    border-radius: 6px;
+  }
+  #weapons-section h3 {
+    font-size: 1rem;
+    margin: 0 0 0.75rem 0;
+    color: #555;
+  }
+  .weapon-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.6rem 0.8rem;
+    border: 2px solid #2c5282;
+    background: #e8f0fe;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    transition: all 0.1s;
+  }
+  .weapon-btn:hover {
+    background: #d8e4f8;
+  }
+  .weapon-btn:last-child {
+    margin-bottom: 0;
+  }
+  .weapon-name {
+    font-weight: bold;
+    color: #2c5282;
+  }
+  .weapon-stats {
+    font-size: 0.85rem;
+    color: #555;
   }
 
   /* Damage Section */
@@ -611,16 +774,23 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
   /* Mobile responsive */
   @media (max-width: 480px) {
     .d20-button {
-      width: 120px;
-      height: 120px;
+      width: 110px;
+      height: 127px;
     }
     .d20-result {
       font-size: 2rem;
     }
-    .mod-btn {
-      min-width: 36px;
-      height: 32px;
-      font-size: 0.9rem;
+    .stat-grid {
+      gap: 0.25rem;
+    }
+    .stat-box {
+      padding: 0.3rem 0.1rem;
+    }
+    .stat-label {
+      font-size: 0.55rem;
+    }
+    .stat-mod {
+      font-size: 0.95rem;
     }
     .quick-roll-grid {
       grid-template-columns: repeat(2, 1fr);
@@ -632,7 +802,9 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
 // ============ STATE ============
 let currentDC = 12;
 let abilityMod = 0;
+let selectedAbility = null; // Track which ability is selected (for character mode)
 let proficiencyBonus = 2;
+let includePB = true;
 let edgeCount = 0;
 let setbackCount = 0;
 let boostSpent = 0;
@@ -643,11 +815,42 @@ let loadedCharacter = null;
 const STORAGE_KEY = 'oswr-characters';
 const HISTORY_KEY = 'oswr-solo-history';
 
+const STATS = ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA'];
+
+// Class save proficiencies (matches character generator)
+const CLASS_SAVES = {
+  'Fighter': ['STR', 'CON'],
+  'Expert': ['DEX', 'INT'],
+  'Cleric (Hallowed)': ['WIS', 'CHA'],
+  'Cleric (Druidic)': ['WIS', 'CHA'],
+  'Magic-User': ['INT', 'WIS']
+};
+
+// Weapon data (subset - matches character generator)
+const WEAPONS = {
+  'Dagger': { damage: '1d4', stat: 'DEX', type: 'Light' },
+  'Shortsword': { damage: '1d6', stat: 'DEX', type: 'Light' },
+  'Longsword': { damage: '1d8', stat: 'STR', type: 'Medium' },
+  'Battleaxe': { damage: '1d8', stat: 'STR', type: 'Medium' },
+  'Greatsword': { damage: '2d6', stat: 'STR', type: 'Heavy' },
+  'Greataxe': { damage: '1d12', stat: 'STR', type: 'Heavy' },
+  'Mace': { damage: '1d6', stat: 'STR', type: 'Medium' },
+  'Spear': { damage: '1d6', stat: 'STR', type: 'Medium' },
+  'Staff': { damage: '1d6', stat: 'STR', type: 'Medium' },
+  'Shortbow': { damage: '1d6', stat: 'DEX', type: 'Medium' },
+  'Longbow': { damage: '1d8', stat: 'DEX', type: 'Medium' },
+  'Light Crossbow': { damage: '1d8', stat: 'DEX', type: 'Medium' },
+  'Hand Crossbow': { damage: '1d6', stat: 'DEX', type: 'Light' },
+  'Sling': { damage: '1d4', stat: 'DEX', type: 'Light' },
+  'Rapier': { damage: '1d8', stat: 'DEX', type: 'Medium' }
+};
+
 // ============ INITIALIZATION ============
 document.addEventListener('DOMContentLoaded', () => {
   loadHistory();
   renderHistory();
   setupEventListeners();
+  updatePBDisplay();
 });
 
 function setupEventListeners() {
@@ -664,22 +867,20 @@ function setupEventListeners() {
     });
   });
 
-  // Ability selector
-  document.querySelectorAll('#ability-selector .mod-btn').forEach(btn => {
+  // Generic ability selector
+  document.querySelectorAll('#ability-selector-generic .mod-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('#ability-selector .mod-btn').forEach(b => b.classList.remove('selected'));
+      document.querySelectorAll('#ability-selector-generic .mod-btn').forEach(b => b.classList.remove('selected'));
       btn.classList.add('selected');
       abilityMod = parseInt(btn.dataset.value);
+      selectedAbility = null;
     });
   });
 
-  // PB selector
-  document.querySelectorAll('#pb-selector .mod-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('#pb-selector .mod-btn').forEach(b => b.classList.remove('selected'));
-      btn.classList.add('selected');
-      proficiencyBonus = parseInt(btn.dataset.value);
-    });
+  // PB toggle
+  document.getElementById('pb-toggle-btn').addEventListener('click', () => {
+    includePB = !includePB;
+    updatePBDisplay();
   });
 
   // Edge controls
@@ -704,10 +905,8 @@ function setupEventListeners() {
 
   // Boost button
   document.getElementById('spend-boost-btn').addEventListener('click', () => {
-    if (loadedCharacter && loadedCharacter.boostDice > boostSpent) {
-      boostSpent++;
-      document.getElementById('boost-spent').textContent = boostSpent + ' spent';
-    } else if (!loadedCharacter) {
+    const maxBoost = loadedCharacter?.boostDice || 99;
+    if (boostSpent < maxBoost) {
       boostSpent++;
       document.getElementById('boost-spent').textContent = boostSpent + ' spent';
     }
@@ -733,6 +932,23 @@ function setupEventListeners() {
 
   // History
   document.getElementById('clear-history-btn').addEventListener('click', clearHistory);
+}
+
+function updatePBDisplay() {
+  const btn = document.getElementById('pb-toggle-btn');
+  const status = document.getElementById('pb-status');
+  const value = document.getElementById('pb-value');
+
+  btn.classList.toggle('active', includePB);
+  btn.textContent = includePB ? 'PB On' : 'PB Off';
+
+  if (includePB) {
+    status.textContent = `+${proficiencyBonus} PB included`;
+    value.textContent = `(+${proficiencyBonus})`;
+  } else {
+    status.textContent = 'No PB';
+    value.textContent = '(off)';
+  }
 }
 
 // ============ DICE ROLLING ============
@@ -788,8 +1004,11 @@ function rollD20() {
       boostBonus = boostRolls.reduce((a, b) => a + b, 0);
     }
 
+    // Calculate PB to use
+    const pbToUse = includePB ? proficiencyBonus : 0;
+
     // Calculate total
-    const total = d20 + abilityMod + proficiencyBonus + edgeBonus - setbackPenalty + boostBonus;
+    const total = d20 + abilityMod + pbToUse + edgeBonus - setbackPenalty + boostBonus;
 
     // Update display
     document.getElementById('d20-result').textContent = d20;
@@ -802,8 +1021,9 @@ function rollD20() {
 
     // Build breakdown string
     let breakdown = `${d20}`;
-    if (abilityMod !== 0) breakdown += ` ${abilityMod >= 0 ? '+' : ''}${abilityMod}`;
-    if (proficiencyBonus !== 0) breakdown += ` +${proficiencyBonus} PB`;
+    const abilityLabel = selectedAbility ? ` ${selectedAbility}` : '';
+    if (abilityMod !== 0) breakdown += ` ${abilityMod >= 0 ? '+' : ''}${abilityMod}${abilityLabel}`;
+    if (pbToUse !== 0) breakdown += ` +${pbToUse} PB`;
     if (edgeBonus > 0) breakdown += ` +${edgeBonus} Edge[${edgeRolls.join(',')}]`;
     if (setbackPenalty > 0) breakdown += ` -${setbackPenalty} Setback[${setbackRolls.join(',')}]`;
     if (boostBonus > 0) breakdown += ` +${boostBonus} Boost[${boostRolls.join(',')}]`;
@@ -814,7 +1034,8 @@ function rollD20() {
     updateDCResult();
 
     // Add to history
-    addToHistory('Check', breakdown, total, total >= currentDC);
+    const rollType = selectedAbility ? `${selectedAbility} Check` : 'Check';
+    addToHistory(rollType, breakdown, total, total >= currentDC);
 
     // Reset boost spent after roll
     boostSpent = 0;
@@ -823,12 +1044,15 @@ function rollD20() {
 }
 
 function quickRollD20(type) {
-  // Just trigger the main roll - modifiers are already set
   rollD20();
 
   // Update history type based on button pressed
   if (rollHistory.length > 0) {
-    rollHistory[0].type = type.charAt(0).toUpperCase() + type.slice(1);
+    let label = type.charAt(0).toUpperCase() + type.slice(1);
+    if (selectedAbility) {
+      label = `${selectedAbility} ${label}`;
+    }
+    rollHistory[0].type = label;
     renderHistory();
     saveHistory();
   }
@@ -839,7 +1063,6 @@ function specialRoll(type) {
 
   switch(type) {
     case 'death':
-      // Death Save: 2d6 - Fatigue
       const deathRolls = rollMultiple(2, 6);
       const deathTotal = deathRolls.reduce((a, b) => a + b, 0);
       const fatigue = loadedCharacter?.fatigue || 0;
@@ -860,7 +1083,6 @@ function specialRoll(type) {
       break;
 
     case 'reaction':
-      // Reaction: 2d6
       const reactionRolls = rollMultiple(2, 6);
       result = reactionRolls.reduce((a, b) => a + b, 0);
       breakdown = `[${reactionRolls.join('+')}]`;
@@ -878,7 +1100,6 @@ function specialRoll(type) {
       break;
 
     case 'morale':
-      // Morale: 2d6 vs target (usually 7-9)
       const moraleRolls = rollMultiple(2, 6);
       result = moraleRolls.reduce((a, b) => a + b, 0);
       breakdown = `[${moraleRolls.join('+')}]`;
@@ -889,13 +1110,11 @@ function specialRoll(type) {
       break;
   }
 
-  // Clear d20 display for special rolls
   document.getElementById('d20-result').textContent = '-';
   document.getElementById('roll-d20-btn').classList.remove('crit', 'fumble');
 }
 
 function rollDamage(diceStr) {
-  // Parse dice string like "2d6"
   const match = diceStr.match(/(\d+)d(\d+)/);
   if (!match) return;
 
@@ -909,6 +1128,33 @@ function rollDamage(diceStr) {
   document.getElementById('damage-result').textContent = `${diceStr}: ${breakdown} = ${total} damage`;
 
   addToHistory('Damage', `${diceStr} ${breakdown}`, total, null);
+}
+
+function rollWeaponAttack(weaponName, attackBonus, damage, stat) {
+  // Set the ability mod and select the stat
+  if (loadedCharacter?.finalAbilities) {
+    abilityMod = loadedCharacter.finalAbilities[stat] || 0;
+    selectedAbility = stat;
+
+    // Update the stat grid selection
+    document.querySelectorAll('#ability-selector-character .stat-box').forEach(box => {
+      box.classList.toggle('selected', box.dataset.stat === stat);
+    });
+  }
+
+  // Make sure PB is on for weapon attacks
+  includePB = true;
+  updatePBDisplay();
+
+  // Roll the attack
+  rollD20();
+
+  // Update history to show weapon name
+  if (rollHistory.length > 0) {
+    rollHistory[0].type = `${weaponName} Attack`;
+    renderHistory();
+    saveHistory();
+  }
 }
 
 function updateDCResult() {
@@ -940,7 +1186,6 @@ function addToHistory(type, detail, result, success) {
     timestamp: Date.now()
   });
 
-  // Keep last 20 rolls
   if (rollHistory.length > 20) {
     rollHistory = rollHistory.slice(0, 20);
   }
@@ -997,7 +1242,6 @@ function showCharacterModal() {
   const modal = document.getElementById('character-modal');
   const list = document.getElementById('character-select-list');
 
-  // Load characters from localStorage (shared with character generator)
   let characters = [];
   try {
     const data = localStorage.getItem(STORAGE_KEY);
@@ -1045,7 +1289,7 @@ function selectCharacter(id) {
 
   loadedCharacter = char;
 
-  // Update UI
+  // Update header UI
   document.getElementById('no-character').style.display = 'none';
   document.getElementById('active-character').style.display = 'flex';
 
@@ -1055,20 +1299,120 @@ function selectCharacter(id) {
   document.getElementById('char-hp').textContent = `HP: ${char.currentHp}/${char.maxHp}`;
   document.getElementById('char-boost').textContent = `Boost: ${char.boostDice || 0}`;
 
+  // Update boost display
+  document.getElementById('boost-available').textContent = `(${char.boostDice || 0} available)`;
+
   // Set PB based on level
-  const pb = level <= 4 ? 2 : (level <= 8 ? 3 : 4);
-  proficiencyBonus = pb;
-  document.querySelectorAll('#pb-selector .mod-btn').forEach(btn => {
-    btn.classList.toggle('selected', parseInt(btn.dataset.value) === pb);
+  proficiencyBonus = level <= 4 ? 2 : (level <= 8 ? 3 : 4);
+  updatePBDisplay();
+
+  // Switch to character ability selector
+  document.getElementById('ability-selector-generic').style.display = 'none';
+  document.getElementById('ability-selector-character').style.display = 'grid';
+
+  // Get save proficiencies
+  const className = char.className || char.charClass;
+  const saveProficiencies = CLASS_SAVES[className] || [];
+
+  // Render character stats as buttons
+  const statGrid = document.getElementById('ability-selector-character');
+  statGrid.innerHTML = STATS.map(stat => {
+    const mod = char.finalAbilities?.[stat] || 0;
+    const isProficient = saveProficiencies.includes(stat);
+    const profClass = isProficient ? 'save-proficient' : '';
+    return `
+      <div class="stat-box ${profClass}" data-stat="${stat}" data-mod="${mod}">
+        <span class="stat-label">${stat}</span>
+        <span class="stat-mod">${mod >= 0 ? '+' : ''}${mod}</span>
+      </div>
+    `;
+  }).join('');
+
+  // Add click handlers to stat boxes
+  statGrid.querySelectorAll('.stat-box').forEach(box => {
+    box.addEventListener('click', () => {
+      statGrid.querySelectorAll('.stat-box').forEach(b => b.classList.remove('selected'));
+      box.classList.add('selected');
+      abilityMod = parseInt(box.dataset.mod);
+      selectedAbility = box.dataset.stat;
+    });
   });
+
+  // Render weapons section
+  renderWeaponsSection(char);
 
   hideCharacterModal();
 }
 
+function renderWeaponsSection(char) {
+  const section = document.getElementById('weapons-section');
+  const list = document.getElementById('weapons-list');
+
+  const weapons = char.weapons || [];
+  if (weapons.length === 0) {
+    section.style.display = 'none';
+    return;
+  }
+
+  section.style.display = 'block';
+
+  const level = getTotalLevel(char);
+  const pb = level <= 4 ? 2 : (level <= 8 ? 3 : 4);
+
+  list.innerHTML = weapons.map(w => {
+    const weaponData = WEAPONS[w.name] || { damage: '1d6', stat: 'STR', type: 'Medium' };
+    const statMod = char.finalAbilities?.[weaponData.stat] || 0;
+    const attackBonus = pb + statMod;
+    const damageBonus = statMod;
+
+    return `
+      <div class="weapon-btn" data-weapon="${w.name}" data-attack="${attackBonus}" data-damage="${weaponData.damage}" data-stat="${weaponData.stat}">
+        <span class="weapon-name">${w.name}</span>
+        <span class="weapon-stats">+${attackBonus} / ${weaponData.damage}${damageBonus >= 0 ? '+' : ''}${damageBonus}</span>
+      </div>
+    `;
+  }).join('');
+
+  // Add click handlers
+  list.querySelectorAll('.weapon-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      rollWeaponAttack(
+        btn.dataset.weapon,
+        parseInt(btn.dataset.attack),
+        btn.dataset.damage,
+        btn.dataset.stat
+      );
+    });
+  });
+}
+
 function unloadCharacter() {
   loadedCharacter = null;
+
+  // Reset header
   document.getElementById('no-character').style.display = 'flex';
   document.getElementById('active-character').style.display = 'none';
+
+  // Switch back to generic ability selector
+  document.getElementById('ability-selector-generic').style.display = 'flex';
+  document.getElementById('ability-selector-character').style.display = 'none';
+
+  // Hide weapons section
+  document.getElementById('weapons-section').style.display = 'none';
+
+  // Reset boost display
+  document.getElementById('boost-available').textContent = '';
+
+  // Reset to defaults
+  abilityMod = 0;
+  selectedAbility = null;
+  proficiencyBonus = 2;
+  updatePBDisplay();
+
+  // Reset generic selector
+  document.querySelectorAll('#ability-selector-generic .mod-btn').forEach(btn => {
+    btn.classList.toggle('selected', btn.dataset.value === '0');
+  });
 }
 
 function getTotalLevel(char) {
