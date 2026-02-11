@@ -66,6 +66,10 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
           <span class="coins" id="coin-display">0 gp</span>
         </div>
         <div id="equipment-list"></div>
+        <div id="add-item-row">
+          <input type="text" id="add-item-input" placeholder="Add item..." maxlength="50">
+          <button id="add-item-btn" class="btn-small">+</button>
+        </div>
       </div>
     </div>
   </div>
@@ -588,6 +592,60 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
     color: #999;
     font-style: italic;
     padding: 0.25rem;
+  }
+  .equipment-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .equipment-name {
+    flex: 1;
+  }
+  .remove-item-btn {
+    width: 20px;
+    height: 20px;
+    border: none;
+    background: #fed7d7;
+    color: #c53030;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    line-height: 1;
+    padding: 0;
+    opacity: 0.6;
+    transition: opacity 0.15s;
+  }
+  .remove-item-btn:hover {
+    opacity: 1;
+    background: #fc8181;
+  }
+  #add-item-row {
+    display: flex;
+    gap: 0.25rem;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid #e2e8f0;
+  }
+  #add-item-input {
+    flex: 1;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #cbd5e0;
+    border-radius: 3px;
+    font-size: 0.85rem;
+  }
+  #add-item-input:focus {
+    outline: none;
+    border-color: #38a169;
+  }
+  #add-item-btn {
+    padding: 0.25rem 0.5rem;
+    background: #c6f6d5;
+    border: 1px solid #38a169;
+    color: #276749;
+    font-weight: bold;
+  }
+  #add-item-btn:hover {
+    background: #9ae6b4;
   }
 
   /* Modal */
@@ -1853,6 +1911,26 @@ let inventoryExpanded = false;
 
 function setupInventory() {
   document.getElementById('toggle-inventory-btn').addEventListener('click', toggleInventory);
+
+  // Add item button
+  document.getElementById('add-item-btn').addEventListener('click', () => {
+    const input = document.getElementById('add-item-input');
+    if (input.value.trim()) {
+      addInventoryItem(input.value);
+      input.value = '';
+    }
+  });
+
+  // Add item on Enter key
+  document.getElementById('add-item-input').addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') {
+      const input = e.target;
+      if (input.value.trim()) {
+        addInventoryItem(input.value);
+        input.value = '';
+      }
+    }
+  });
 }
 
 function toggleInventory() {
@@ -1885,12 +1963,21 @@ function updateInventoryDisplay() {
     listEl.innerHTML = '<div class="no-equipment">No equipment</div>';
   } else {
     // Equipment is array of strings (item names), each takes 1 slot
-    listEl.innerHTML = equipment.map(item => `
+    listEl.innerHTML = equipment.map((item, idx) => `
       <div class="equipment-item">
         <span class="equipment-name">${item}</span>
-        <span class="equipment-slots">1 slot</span>
+        <span class="equipment-slots">1</span>
+        <button class="remove-item-btn" data-idx="${idx}" title="Remove">×</button>
       </div>
     `).join('');
+
+    // Add click handlers to remove buttons
+    listEl.querySelectorAll('.remove-item-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const idx = parseInt(btn.dataset.idx);
+        removeInventoryItem(idx);
+      });
+    });
   }
 
   // Slot count - each item is 1 slot
@@ -1906,6 +1993,23 @@ function updateInventoryDisplay() {
   if (coins.sp) coinParts.push(`${coins.sp} sp`);
   if (coins.cp) coinParts.push(`${coins.cp} cp`);
   document.getElementById('coin-display').textContent = coinParts.length > 0 ? coinParts.join(', ') : '0 gp';
+}
+
+function addInventoryItem(itemName) {
+  if (!loadedCharacter || !itemName.trim()) return;
+
+  loadedCharacter.equipment = loadedCharacter.equipment || [];
+  loadedCharacter.equipment.push(itemName.trim());
+  updateInventoryDisplay();
+  saveCharacterChanges();
+}
+
+function removeInventoryItem(idx) {
+  if (!loadedCharacter || !loadedCharacter.equipment) return;
+
+  loadedCharacter.equipment.splice(idx, 1);
+  updateInventoryDisplay();
+  saveCharacterChanges();
 }
 
 function hideInventory() {
