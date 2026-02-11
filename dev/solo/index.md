@@ -808,18 +808,20 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
     color: white;
   }
 
-  /* Oracle Button - Crystal Ball Style */
+  /* Oracle Button - D6 Cube Style (matches d20) */
   #oracle-zone {
     display: flex;
     justify-content: center;
     margin: 1.5rem 0;
   }
   .oracle-button {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #6b46c1 0%, #553c9a 50%, #44337a 100%);
-    border: 4px solid #9f7aea;
+    width: 120px;
+    height: 120px;
+    /* Rotated square suggests a d6 cube face */
+    transform: rotate(45deg);
+    background: linear-gradient(135deg, #2c5282 0%, #1e3a5f 100%);
+    border: none;
+    border-radius: 12px;
     color: white;
     cursor: pointer;
     display: flex;
@@ -827,32 +829,37 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
     align-items: center;
     justify-content: center;
     transition: all 0.15s;
-    box-shadow: 0 4px 20px rgba(107, 70, 193, 0.4), inset 0 -10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     position: relative;
-    overflow: hidden;
   }
   .oracle-button::before {
     content: '';
     position: absolute;
-    top: 10%;
-    left: 20%;
-    width: 30%;
-    height: 20%;
-    background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, transparent 100%);
-    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    background: linear-gradient(135deg, #3d6a9f 0%, #2c5282 100%);
+    border-radius: 10px;
+    z-index: 0;
+  }
+  .oracle-button > * {
+    position: relative;
+    z-index: 1;
+    transform: rotate(-45deg);
   }
   .oracle-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 25px rgba(107, 70, 193, 0.5), inset 0 -10px 30px rgba(0,0,0,0.2);
+    transform: rotate(45deg) scale(1.05);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.4);
   }
   .oracle-button:active {
-    transform: scale(0.98);
+    transform: rotate(45deg) scale(0.98);
   }
   .oracle-label {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     opacity: 0.8;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     margin-bottom: 0.25rem;
   }
   .oracle-dice {
@@ -861,25 +868,26 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
   }
   .oracle-button.thinking {
-    animation: pulse 0.6s ease-in-out;
+    animation: oracle-shake 0.3s ease-in-out;
   }
-  @keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.08); box-shadow: 0 8px 30px rgba(107, 70, 193, 0.6), inset 0 -10px 30px rgba(0,0,0,0.2); }
+  @keyframes oracle-shake {
+    0%, 100% { transform: rotate(45deg); }
+    25% { transform: rotate(37deg) scale(1.02); }
+    75% { transform: rotate(53deg) scale(1.02); }
   }
 
   /* Oracle Result */
   #oracle-result {
     text-align: center;
     padding: 1rem;
-    background: #faf5ff;
+    background: #f0f4f8;
     border-radius: 8px;
     margin-bottom: 1.5rem;
   }
   #oracle-answer {
     font-size: 1.8rem;
     font-weight: bold;
-    color: #553c9a;
+    color: #2c5282;
     margin-bottom: 0.5rem;
   }
   #oracle-answer.strong-yes {
