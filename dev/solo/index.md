@@ -34,6 +34,10 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
           <div class="stat-editable" id="fatigue-display">
             <span class="stat-label-mini">Fatigue</span>
             <span class="stat-value" id="char-fatigue">0</span>
+            <div class="stat-edit-btns" id="fatigue-edit-btns" style="display: none;">
+              <button class="edit-btn" data-action="fatigue-minus">−</button>
+              <button class="edit-btn" data-action="fatigue-plus">+</button>
+            </div>
           </div>
           <div class="stat-editable" id="boost-display">
             <span class="stat-label-mini">Boost</span>
@@ -48,8 +52,9 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
       </div>
       <!-- Rest Buttons -->
       <div id="rest-buttons" style="display: none;">
-        <button id="breather-btn" class="rest-btn" title="10 min: Roll CON save DC 12 to remove 1 Fatigue">Breather</button>
-        <button id="night-rest-btn" class="rest-btn" title="8 hrs: Remove 1-2 Fatigue, restore Boost">Night's Rest</button>
+        <button id="breather-btn" class="rest-btn" title="10 min: Heal OR remove Fatigue (spend 1 Supply)">Breather</button>
+        <button id="night-rest-btn" class="rest-btn" title="8 hrs: Spend Hit Dice to heal, remove 1-2 Fatigue, restore spells">Night's Rest</button>
+        <button id="safe-haven-btn" class="rest-btn rest-btn-full" title="1d4+1 days: Full reset (HP, Hit Dice, spells, Fatigue)">Safe Haven</button>
       </div>
       <!-- Collapsible Inventory -->
       <div id="inventory-toggle" style="display: none;">
@@ -507,6 +512,15 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
   }
   .rest-btn:active {
     transform: scale(0.98);
+  }
+  .rest-btn-full {
+    flex-basis: 100%;
+    background: #e6fffa;
+    border-color: #319795;
+    color: #234e52;
+  }
+  .rest-btn-full:hover {
+    background: #b2f5ea;
   }
 
   /* Inventory Panel */
@@ -1672,10 +1686,11 @@ function setupEditableStats() {
     toggleStatEdit('hp');
   });
 
-  // Fatigue display - cycle on click
-  document.getElementById('fatigue-display').addEventListener('click', () => {
+  // Fatigue display - toggle edit mode on click
+  document.getElementById('fatigue-display').addEventListener('click', (e) => {
+    if (e.target.classList.contains('edit-btn')) return;
     if (!loadedCharacter) return;
-    cycleFatigue();
+    toggleStatEdit('fatigue');
   });
 
   // Boost display - toggle edit mode on click
@@ -1704,6 +1719,7 @@ function setupEditableStats() {
   // Rest buttons
   document.getElementById('breather-btn').addEventListener('click', takeBreather);
   document.getElementById('night-rest-btn').addEventListener('click', takeNightRest);
+  document.getElementById('safe-haven-btn').addEventListener('click', takeSafeHaven);
 }
 
 function toggleStatEdit(stat) {
@@ -1721,7 +1737,7 @@ function toggleStatEdit(stat) {
 }
 
 function closeAllStatEdits() {
-  ['hp', 'boost'].forEach(stat => {
+  ['hp', 'fatigue', 'boost'].forEach(stat => {
     const display = document.getElementById(`${stat}-display`);
     const btns = document.getElementById(`${stat}-edit-btns`);
     if (display) display.classList.remove('editing');
@@ -1764,9 +1780,24 @@ function handleStatEdit(action) {
         saveCharacterChanges();
       }
       break;
+    case 'fatigue-minus':
+      if ((loadedCharacter.fatigue || 0) > 0) {
+        loadedCharacter.fatigue--;
+        updateFatigueDisplay();
+        saveCharacterChanges();
+      }
+      break;
+    case 'fatigue-plus':
+      if ((loadedCharacter.fatigue || 0) < 5) {
+        loadedCharacter.fatigue = (loadedCharacter.fatigue || 0) + 1;
+        updateFatigueDisplay();
+        saveCharacterChanges();
+      }
+      break;
   }
 }
 
+// cycleFatigue kept for backwards compat but no longer used
 function cycleFatigue() {
   if (!loadedCharacter) return;
 
@@ -1891,47 +1922,75 @@ function hideRestButtons() {
 }
 
 // ============ RESTS ============
+
+// Breather (10 min): Spend 1 Supply, choose heal OR remove fatigue
 function takeBreather() {
   if (!loadedCharacter) return;
+
   const fatigue = loadedCharacter.fatigue || 0;
-
-  if (fatigue === 0) {
-    alert('No fatigue to remove!');
-    return;
-  }
-
-  // Roll CON save DC 12
   const conMod = loadedCharacter.finalAbilities?.CON || 0;
-  const d20 = roll(20);
-  const total = d20 + conMod + proficiencyBonus; // CON save includes PB if proficient
+  const currentHp = loadedCharacter.currentHp;
+  const maxHp = loadedCharacter.maxHp;
 
-  // Check CON save proficiency
-  const className = loadedCharacter.classes?.[0]?.name || loadedCharacter.className;
-  const saveProficiencies = CLASS_SAVES[className] || [];
-  const isProficient = saveProficiencies.includes('CON');
-  const saveTotal = d20 + conMod + (isProficient ? proficiencyBonus : 0);
+  // Ask what they want to do
+  const choice = prompt(
+    "Breather (10 min, costs 1 Supply)\n\nChoose one:\n" +
+    "1 = Heal (1d4 + CON HP)\n" +
+    "2 = Shake it off (CON save DC 12 to remove 1 Fatigue)\n\n" +
+    `Current HP: ${currentHp}/${maxHp} | Fatigue: ${fatigue}\n\n` +
+    "Enter 1 or 2:"
+  );
 
-  const success = saveTotal >= 12;
+  if (choice === '1') {
+    // Heal option
+    const healRoll = roll(4);
+    const healAmount = Math.max(1, healRoll + conMod);
+    const newHp = Math.min(maxHp, currentHp + healAmount);
+    const actualHeal = newHp - currentHp;
 
-  if (success) {
-    loadedCharacter.fatigue = Math.max(0, fatigue - 1);
-    updateFatigueDisplay();
+    loadedCharacter.currentHp = newHp;
+    updateHPDisplay();
     saveCharacterChanges();
-    addToHistory('Breather', `CON save: ${d20}+${conMod}${isProficient ? '+'+proficiencyBonus : ''} = ${saveTotal} vs DC 12`, 'Fatigue −1', true);
-    alert(`Breather: CON save ${saveTotal} vs DC 12 - Success!\nFatigue reduced to ${loadedCharacter.fatigue}`);
-  } else {
-    addToHistory('Breather', `CON save: ${d20}+${conMod}${isProficient ? '+'+proficiencyBonus : ''} = ${saveTotal} vs DC 12`, 'No effect', false);
-    alert(`Breather: CON save ${saveTotal} vs DC 12 - Failed.\nFatigue remains at ${fatigue}`);
+
+    addToHistory('Breather (Heal)', `1d4+${conMod} = ${healRoll}+${conMod}`, `+${actualHeal} HP`, true);
+    alert(`Breather: Healed ${actualHeal} HP (${healRoll}+${conMod})\nHP: ${currentHp} → ${newHp}`);
+
+  } else if (choice === '2') {
+    // Shake it off option
+    if (fatigue === 0) {
+      alert('No fatigue to remove!');
+      return;
+    }
+
+    const className = loadedCharacter.classes?.[0]?.name || loadedCharacter.className;
+    const saveProficiencies = CLASS_SAVES[className] || [];
+    const isProficient = saveProficiencies.includes('CON');
+    const d20 = roll(20);
+    const saveTotal = d20 + conMod + (isProficient ? proficiencyBonus : 0);
+    const success = saveTotal >= 12;
+
+    if (success) {
+      loadedCharacter.fatigue = Math.max(0, fatigue - 1);
+      updateFatigueDisplay();
+      saveCharacterChanges();
+      addToHistory('Breather (Fatigue)', `CON save: ${d20}+${conMod}${isProficient ? '+'+proficiencyBonus : ''} = ${saveTotal} vs DC 12`, 'Fatigue −1', true);
+      alert(`Breather: CON save ${saveTotal} vs DC 12 - Success!\nFatigue: ${fatigue} → ${loadedCharacter.fatigue}`);
+    } else {
+      addToHistory('Breather (Fatigue)', `CON save: ${d20}+${conMod}${isProficient ? '+'+proficiencyBonus : ''} = ${saveTotal} vs DC 12`, 'Failed', false);
+      alert(`Breather: CON save ${saveTotal} vs DC 12 - Failed.\nFatigue remains at ${fatigue}`);
+    }
   }
+  // If cancelled or invalid, do nothing
 }
 
+// Night's Rest (8 hrs): Spend Hit Dice to heal, remove fatigue, restore spells
 function takeNightRest() {
   if (!loadedCharacter) return;
   const fatigue = loadedCharacter.fatigue || 0;
   const maxBoost = loadedCharacter.boostDice || 2;
 
   // Ask about shelter
-  const hasShelter = confirm("Night's Rest (8 hours)\n\nDo you have food and shelter?\n\n• YES = Remove 2 Fatigue\n• NO = Remove 1 Fatigue (roughing it)");
+  const hasShelter = confirm("Night's Rest (8 hours)\n\nDo you have food and shelter?\n\n• OK = Yes (remove 2 Fatigue)\n• Cancel = No, roughing it (remove 1 Fatigue)");
 
   const fatigueRemoved = hasShelter ? 2 : 1;
   const newFatigue = Math.max(0, fatigue - fatigueRemoved);
@@ -1946,7 +2005,27 @@ function takeNightRest() {
 
   const shelterText = hasShelter ? 'with shelter' : 'roughing it';
   addToHistory("Night's Rest", shelterText, `Fatigue ${fatigue}→${newFatigue}, Boost restored`, null);
-  alert(`Night's Rest complete (${shelterText}):\n• Fatigue: ${fatigue} → ${newFatigue}\n• Boost dice restored to ${maxBoost}`);
+  alert(`Night's Rest complete (${shelterText}):\n• Fatigue: ${fatigue} → ${newFatigue}\n• Boost dice restored to ${maxBoost}\n• Spell slots restored (track manually)`);
+}
+
+// Safe Haven (1d4+1 days): Full reset
+function takeSafeHaven() {
+  if (!loadedCharacter) return;
+
+  const days = roll(4) + 1;
+
+  // Full reset
+  loadedCharacter.currentHp = loadedCharacter.maxHp;
+  loadedCharacter.fatigue = 0;
+  loadedCharacter.boostDiceCurrent = loadedCharacter.boostDice || 2;
+
+  updateHPDisplay();
+  updateFatigueDisplay();
+  updateBoostDisplay();
+  saveCharacterChanges();
+
+  addToHistory('Safe Haven', `${days} days`, 'Full reset', true);
+  alert(`Safe Haven: ${days} days\n\n✓ HP fully restored\n✓ All Fatigue removed\n✓ Boost dice restored\n✓ Hit Dice restored (track manually)\n✓ Spell slots restored (track manually)`);
 }
 
 function updatePBDisplay() {
