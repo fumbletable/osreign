@@ -1258,7 +1258,7 @@ function showCharacterModal() {
       return `
         <div class="char-select-card" data-id="${char.id}">
           <h4>${char.name}</h4>
-          <div class="details">Level ${level} ${char.ancestry} ${char.className || char.charClass} | HP: ${char.currentHp}/${char.maxHp}</div>
+          <div class="details">Level ${level} ${char.ancestry} ${char.classes?.[0]?.name || char.className || 'Unknown'} | HP: ${char.currentHp}/${char.maxHp}</div>
         </div>
       `;
     }).join('');
@@ -1311,8 +1311,11 @@ function selectCharacter(id) {
   document.getElementById('ability-selector-character').style.display = 'grid';
 
   // Get save proficiencies
-  const className = char.className || char.charClass;
+  // Get class name - modern format uses char.classes array
+  const className = char.classes?.[0]?.name || char.className || char.charClass;
   const saveProficiencies = CLASS_SAVES[className] || [];
+
+  console.log('Character loaded:', char.name, 'Class:', className, 'Saves:', saveProficiencies, 'Weapons:', char.weapons);
 
   // Render character stats as buttons
   const statGrid = document.getElementById('ability-selector-character');
