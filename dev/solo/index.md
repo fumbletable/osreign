@@ -1884,16 +1884,17 @@ function updateInventoryDisplay() {
   if (equipment.length === 0) {
     listEl.innerHTML = '<div class="no-equipment">No equipment</div>';
   } else {
+    // Equipment is array of strings (item names), each takes 1 slot
     listEl.innerHTML = equipment.map(item => `
       <div class="equipment-item">
-        <span class="equipment-name">${item.name}</span>
-        <span class="equipment-slots">${item.slots || 1} slot${(item.slots || 1) !== 1 ? 's' : ''}</span>
+        <span class="equipment-name">${item}</span>
+        <span class="equipment-slots">1 slot</span>
       </div>
     `).join('');
   }
 
-  // Slot count
-  const usedSlots = equipment.reduce((sum, item) => sum + (item.slots || 1), 0);
+  // Slot count - each item is 1 slot
+  const usedSlots = equipment.length;
   const maxSlots = loadedCharacter.maxSlots || 10; // Default to 10 if not set
   document.getElementById('slots-used').textContent = usedSlots;
   document.getElementById('slots-max').textContent = maxSlots;
