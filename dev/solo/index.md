@@ -54,15 +54,23 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
     <div id="result-display">
       <div id="roll-breakdown">-</div>
       <div id="roll-total">-</div>
-      <div id="roll-vs-dc">
-        <span>vs DC</span>
-        <div class="dc-buttons">
-          <button class="dc-btn" data-dc="8">8</button>
-          <button class="dc-btn selected" data-dc="12">12</button>
-          <button class="dc-btn" data-dc="16">16</button>
-          <button class="dc-btn" data-dc="20">20</button>
+      <div id="roll-vs-target">
+        <!-- DC mode (for checks/saves) -->
+        <div id="dc-mode">
+          <span>vs DC</span>
+          <div class="dc-buttons">
+            <button class="dc-btn" data-dc="8">8</button>
+            <button class="dc-btn selected" data-dc="12">12</button>
+            <button class="dc-btn" data-dc="16">16</button>
+            <button class="dc-btn" data-dc="20">20</button>
+          </div>
         </div>
-        <span id="dc-result"></span>
+        <!-- AC mode (for attacks) -->
+        <div id="ac-mode" style="display: none;">
+          <span>vs AC</span>
+          <input type="number" id="ac-input" value="12" min="1" max="30">
+        </div>
+        <span id="target-result"></span>
       </div>
     </div>
 
@@ -380,14 +388,36 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
     color: white;
     border-color: #2c5282;
   }
-  #dc-result {
+  #roll-vs-target {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+  }
+  #dc-mode, #ac-mode {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  #ac-input {
+    width: 50px;
+    padding: 0.25rem;
+    border: 2px solid #c44;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: center;
+  }
+  #target-result {
     font-weight: bold;
     min-width: 60px;
   }
-  #dc-result.success {
+  #target-result.success {
     color: #2a7;
   }
-  #dc-result.failure {
+  #target-result.failure {
     color: #c44;
   }
 
@@ -646,6 +676,14 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
   .weapon-btn:hover {
     background: #d8e4f8;
   }
+  .weapon-btn.selected {
+    background: #2c5282;
+    border-color: #1e3a5f;
+  }
+  .weapon-btn.selected .weapon-name,
+  .weapon-btn.selected .weapon-stats {
+    color: white;
+  }
   .weapon-btn:last-child {
     margin-bottom: 0;
   }
@@ -801,8 +839,11 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
 <script>
 // ============ STATE ============
 let currentDC = 12;
+let currentAC = 12;
+let rollMode = 'check'; // 'check' or 'attack'
 let abilityMod = 0;
 let selectedAbility = null; // Track which ability is selected (for character mode)
+let selectedWeapon = null; // Track selected weapon
 let proficiencyBonus = 2;
 let includePB = true;
 let edgeCount = 0;
@@ -863,8 +904,14 @@ function setupEventListeners() {
       document.querySelectorAll('.dc-btn').forEach(b => b.classList.remove('selected'));
       btn.classList.add('selected');
       currentDC = parseInt(btn.dataset.dc);
-      updateDCResult();
+      updateTargetResult();
     });
+  });
+
+  // AC input
+  document.getElementById('ac-input')?.addEventListener('change', (e) => {
+    currentAC = parseInt(e.target.value) || 12;
+    updateTargetResult();
   });
 
   // Generic ability selector
@@ -1031,11 +1078,12 @@ function rollD20() {
     document.getElementById('roll-breakdown').textContent = breakdown;
     document.getElementById('roll-total').textContent = total;
 
-    updateDCResult();
+    updateTargetResult();
 
     // Add to history
-    const rollType = selectedAbility ? `${selectedAbility} Check` : 'Check';
-    addToHistory(rollType, breakdown, total, total >= currentDC);
+    const target = rollMode === 'attack' ? currentAC : currentDC;
+    const rollType = selectedAbility ? `${selectedAbility} ${rollMode === 'attack' ? 'Attack' : 'Check'}` : (rollMode === 'attack' ? 'Attack' : 'Check');
+    addToHistory(rollType, breakdown, total, total >= target);
 
     // Reset boost spent after roll
     boostSpent = 0;
@@ -1044,6 +1092,13 @@ function rollD20() {
 }
 
 function quickRollD20(type) {
+  // Set mode based on roll type
+  if (type === 'attack') {
+    setRollMode('attack');
+  } else {
+    setRollMode('check');
+  }
+
   rollD20();
 
   // Update history type based on button pressed
@@ -1131,6 +1186,12 @@ function rollDamage(diceStr) {
 }
 
 function rollWeaponAttack(weaponName, attackBonus, damage, stat) {
+  // Highlight selected weapon
+  selectedWeapon = weaponName;
+  document.querySelectorAll('#weapons-list .weapon-btn').forEach(btn => {
+    btn.classList.toggle('selected', btn.dataset.weapon === weaponName);
+  });
+
   // Set the ability mod and select the stat
   if (loadedCharacter?.finalAbilities) {
     abilityMod = loadedCharacter.finalAbilities[stat] || 0;
@@ -1146,6 +1207,9 @@ function rollWeaponAttack(weaponName, attackBonus, damage, stat) {
   includePB = true;
   updatePBDisplay();
 
+  // Set to attack mode (vs AC)
+  setRollMode('attack');
+
   // Roll the attack
   rollD20();
 
@@ -1157,8 +1221,14 @@ function rollWeaponAttack(weaponName, attackBonus, damage, stat) {
   }
 }
 
-function updateDCResult() {
-  const resultEl = document.getElementById('dc-result');
+function setRollMode(mode) {
+  rollMode = mode;
+  document.getElementById('dc-mode').style.display = mode === 'check' ? 'flex' : 'none';
+  document.getElementById('ac-mode').style.display = mode === 'attack' ? 'flex' : 'none';
+}
+
+function updateTargetResult() {
+  const resultEl = document.getElementById('target-result');
   const total = parseInt(document.getElementById('roll-total').textContent);
 
   if (isNaN(total) || document.getElementById('roll-total').textContent === '-') {
@@ -1167,11 +1237,12 @@ function updateDCResult() {
     return;
   }
 
-  if (total >= currentDC) {
-    resultEl.textContent = 'Success!';
+  const target = rollMode === 'attack' ? currentAC : currentDC;
+  if (total >= target) {
+    resultEl.textContent = rollMode === 'attack' ? 'Hit!' : 'Success!';
     resultEl.className = 'success';
   } else {
-    resultEl.textContent = 'Failure';
+    resultEl.textContent = rollMode === 'attack' ? 'Miss' : 'Failure';
     resultEl.className = 'failure';
   }
 }
