@@ -164,6 +164,41 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
     </div>
   </div>
 
+  <!-- Oracle Section -->
+  <div id="oracle-section">
+    <h2>Oracle</h2>
+    <p class="oracle-help">Ask a yes/no question, set likelihood, and consult the oracle.</p>
+
+    <!-- Likelihood Selector -->
+    <div id="likelihood-selector">
+      <button class="likelihood-btn" data-likelihood="unlikely">Unlikely</button>
+      <button class="likelihood-btn selected" data-likelihood="neutral">50/50</button>
+      <button class="likelihood-btn" data-likelihood="likely">Likely</button>
+    </div>
+
+    <!-- Oracle Button -->
+    <div id="oracle-zone">
+      <button id="ask-oracle-btn" class="oracle-button">
+        <span class="oracle-label">Ask</span>
+        <span class="oracle-dice" id="oracle-dice">?</span>
+      </button>
+    </div>
+
+    <!-- Oracle Result -->
+    <div id="oracle-result">
+      <div id="oracle-answer">-</div>
+      <div id="oracle-breakdown">-</div>
+    </div>
+
+    <!-- Scene Check (Optional) -->
+    <div id="scene-check">
+      <h3>Scene Check</h3>
+      <p class="scene-help">Roll at scene start to see if something unexpected happens.</p>
+      <button id="scene-check-btn" class="btn-secondary">Check Scene</button>
+      <div id="scene-result"></div>
+    </div>
+  </div>
+
   <!-- Roll History -->
   <div id="history-section">
     <h3>History <button id="clear-history-btn" class="btn-small">Clear</button></h3>
@@ -729,6 +764,169 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
     font-weight: bold;
     color: #c44;
     min-height: 1.5rem;
+  }
+
+  /* Oracle Section */
+  #oracle-section {
+    border-top: 2px solid #2c5282;
+    padding-top: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  #oracle-section h2 {
+    color: #2c5282;
+    margin-bottom: 0.5rem;
+  }
+  .oracle-help, .scene-help {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Likelihood Selector */
+  #likelihood-selector {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+  .likelihood-btn {
+    padding: 0.6rem 1.2rem;
+    border: 2px solid #2c5282;
+    background: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #2c5282;
+    transition: all 0.15s;
+  }
+  .likelihood-btn:hover {
+    background: #f0f4f8;
+  }
+  .likelihood-btn.selected {
+    background: #2c5282;
+    color: white;
+  }
+
+  /* Oracle Button - Crystal Ball Style */
+  #oracle-zone {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+  }
+  .oracle-button {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6b46c1 0%, #553c9a 50%, #44337a 100%);
+    border: 4px solid #9f7aea;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+    box-shadow: 0 4px 20px rgba(107, 70, 193, 0.4), inset 0 -10px 30px rgba(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  .oracle-button::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    width: 30%;
+    height: 20%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, transparent 100%);
+    border-radius: 50%;
+  }
+  .oracle-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 25px rgba(107, 70, 193, 0.5), inset 0 -10px 30px rgba(0,0,0,0.2);
+  }
+  .oracle-button:active {
+    transform: scale(0.98);
+  }
+  .oracle-label {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 0.25rem;
+  }
+  .oracle-dice {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+  .oracle-button.thinking {
+    animation: pulse 0.6s ease-in-out;
+  }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); box-shadow: 0 8px 30px rgba(107, 70, 193, 0.6), inset 0 -10px 30px rgba(0,0,0,0.2); }
+  }
+
+  /* Oracle Result */
+  #oracle-result {
+    text-align: center;
+    padding: 1rem;
+    background: #faf5ff;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+  }
+  #oracle-answer {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #553c9a;
+    margin-bottom: 0.5rem;
+  }
+  #oracle-answer.strong-yes {
+    color: #2f855a;
+  }
+  #oracle-answer.yes {
+    color: #38a169;
+  }
+  #oracle-answer.no {
+    color: #c53030;
+  }
+  #oracle-answer.strong-no {
+    color: #9b2c2c;
+  }
+  #oracle-breakdown {
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  /* Scene Check */
+  #scene-check {
+    background: #f8f8f8;
+    padding: 1rem;
+    border-radius: 6px;
+    text-align: center;
+  }
+  #scene-check h3 {
+    font-size: 1rem;
+    margin: 0 0 0.5rem 0;
+    color: #555;
+  }
+  #scene-check-btn {
+    margin-top: 0.5rem;
+  }
+  #scene-result {
+    margin-top: 0.75rem;
+    font-weight: bold;
+    min-height: 1.5rem;
+  }
+  #scene-result.interrupt {
+    color: #c53030;
+  }
+  #scene-result.normal {
+    color: #555;
+  }
+  #scene-result.opportunity {
+    color: #2f855a;
   }
 
   /* History Section */
@@ -1496,4 +1694,110 @@ function getTotalLevel(char) {
   }
   return 1;
 }
+
+// ============ ORACLE ============
+let currentLikelihood = 'neutral';
+
+// Oracle result table
+const ORACLE_RESULTS = {
+  1: { answer: 'Strong No', class: 'strong-no', description: 'No, and there\'s a complication' },
+  2: { answer: 'No', class: 'no', description: 'No' },
+  3: { answer: 'No', class: 'no', description: 'No' },
+  4: { answer: 'Yes', class: 'yes', description: 'Yes' },
+  5: { answer: 'Yes', class: 'yes', description: 'Yes' },
+  6: { answer: 'Strong Yes', class: 'strong-yes', description: 'Yes, and it\'s better than expected' }
+};
+
+// Scene check results
+const SCENE_RESULTS = {
+  1: { text: 'Interrupt — Something unexpected happens', class: 'interrupt' },
+  2: { text: 'Normal — Scene proceeds as expected', class: 'normal' },
+  3: { text: 'Normal — Scene proceeds as expected', class: 'normal' },
+  4: { text: 'Normal — Scene proceeds as expected', class: 'normal' },
+  5: { text: 'Normal — Scene proceeds as expected', class: 'normal' },
+  6: { text: 'Opportunity — Something advantageous appears', class: 'opportunity' }
+};
+
+function setupOracleListeners() {
+  // Likelihood buttons
+  document.querySelectorAll('.likelihood-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.likelihood-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      currentLikelihood = btn.dataset.likelihood;
+    });
+  });
+
+  // Oracle button
+  document.getElementById('ask-oracle-btn').addEventListener('click', askOracle);
+
+  // Scene check button
+  document.getElementById('scene-check-btn').addEventListener('click', checkScene);
+}
+
+function askOracle() {
+  const btn = document.getElementById('ask-oracle-btn');
+  btn.classList.add('thinking');
+
+  setTimeout(() => {
+    btn.classList.remove('thinking');
+
+    let rolls, finalResult, breakdown;
+
+    if (currentLikelihood === 'neutral') {
+      // 50/50: Roll 1d6
+      const d6 = roll(6);
+      rolls = [d6];
+      finalResult = d6;
+      breakdown = `1d6 = [${d6}]`;
+    } else if (currentLikelihood === 'likely') {
+      // Likely Yes: Roll 2d6, keep highest
+      const d6a = roll(6);
+      const d6b = roll(6);
+      rolls = [d6a, d6b];
+      finalResult = Math.max(d6a, d6b);
+      breakdown = `2d6 keep highest = [${d6a}, ${d6b}] → ${finalResult}`;
+    } else {
+      // Unlikely/Likely No: Roll 2d6, keep lowest
+      const d6a = roll(6);
+      const d6b = roll(6);
+      rolls = [d6a, d6b];
+      finalResult = Math.min(d6a, d6b);
+      breakdown = `2d6 keep lowest = [${d6a}, ${d6b}] → ${finalResult}`;
+    }
+
+    const result = ORACLE_RESULTS[finalResult];
+
+    // Update display
+    document.getElementById('oracle-dice').textContent = finalResult;
+    const answerEl = document.getElementById('oracle-answer');
+    answerEl.textContent = result.answer;
+    answerEl.className = result.class;
+    document.getElementById('oracle-breakdown').textContent = breakdown;
+
+    // Add to history
+    const likelihoodLabel = currentLikelihood === 'likely' ? 'Likely' :
+                           currentLikelihood === 'unlikely' ? 'Unlikely' : '50/50';
+    addToHistory(`Oracle (${likelihoodLabel})`, breakdown, result.answer,
+                 finalResult >= 4 ? true : false);
+  }, 400);
+}
+
+function checkScene() {
+  const d6 = roll(6);
+  const result = SCENE_RESULTS[d6];
+
+  const resultEl = document.getElementById('scene-result');
+  resultEl.textContent = `[${d6}] ${result.text}`;
+  resultEl.className = result.class;
+
+  // Add to history
+  const isGood = d6 === 6 ? true : (d6 === 1 ? false : null);
+  addToHistory('Scene Check', `1d6 = [${d6}]`, result.text.split(' — ')[0], isGood);
+}
+
+// Add oracle listeners on page load
+document.addEventListener('DOMContentLoaded', () => {
+  setupOracleListeners();
+});
 </script>
