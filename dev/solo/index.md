@@ -17,15 +17,46 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
       <button id="load-character-btn" class="btn-small">Load Character</button>
     </div>
     <div id="active-character" style="display: none;">
-      <div class="char-summary">
-        <strong id="char-name">Character Name</strong>
-        <span id="char-level">Level 1</span>
+      <div class="char-row">
+        <div class="char-summary">
+          <strong id="char-name">Character Name</strong>
+          <span id="char-level">Level 1</span>
+        </div>
+        <div class="char-stats">
+          <div class="stat-editable" id="hp-display">
+            <span class="stat-label-mini">HP</span>
+            <span class="stat-value" id="char-hp-current">8</span>/<span class="stat-max" id="char-hp-max">8</span>
+            <div class="stat-edit-btns" id="hp-edit-btns" style="display: none;">
+              <button class="edit-btn" data-action="hp-minus">−</button>
+              <button class="edit-btn" data-action="hp-plus">+</button>
+            </div>
+          </div>
+          <div class="stat-editable" id="fatigue-display">
+            <span class="stat-label-mini">Fatigue</span>
+            <span class="stat-value" id="char-fatigue">Fresh</span>
+          </div>
+          <div class="stat-editable" id="boost-display">
+            <span class="stat-label-mini">Boost</span>
+            <span class="stat-value" id="char-boost-current">2</span>/<span class="stat-max" id="char-boost-max">2</span>
+            <div class="stat-edit-btns" id="boost-edit-btns" style="display: none;">
+              <button class="edit-btn" data-action="boost-minus">−</button>
+              <button class="edit-btn" data-action="boost-plus">+</button>
+            </div>
+          </div>
+        </div>
+        <button id="unload-character-btn" class="btn-small">Unload</button>
       </div>
-      <div class="char-stats">
-        <span id="char-hp">HP: 8/8</span>
-        <span id="char-boost">Boost: 2</span>
+      <!-- Collapsible Inventory -->
+      <div id="inventory-toggle" style="display: none;">
+        <button id="toggle-inventory-btn" class="btn-small">▼ Gear</button>
       </div>
-      <button id="unload-character-btn" class="btn-small">Unload</button>
+      <div id="inventory-panel" style="display: none;">
+        <div class="inventory-header">
+          <span class="slot-count">Slots: <span id="slots-used">0</span>/<span id="slots-max">10</span></span>
+          <span class="coins" id="coin-display">0 gp</span>
+        </div>
+        <div id="equipment-list"></div>
+      </div>
     </div>
   </div>
 
@@ -276,13 +307,13 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
     padding: 0.75rem 1rem;
     border-radius: 6px;
     margin-bottom: 0.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
   }
 
-  /* Last Result (persistent feedback) */
+  /* Last Result (persistent feedback - sticky on scroll) */
   #last-result {
+    position: sticky;
+    top: 0;
+    z-index: 100;
     background: #1a202c;
     color: #e2e8f0;
     padding: 0.5rem 1rem;
@@ -354,10 +385,13 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
     color: #666;
   }
   #active-character {
+    width: 100%;
+  }
+  .char-row {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
-    width: 100%;
+    gap: 1rem;
+    flex-wrap: wrap;
   }
   .char-summary {
     display: flex;
@@ -368,12 +402,147 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
   }
   .char-stats {
     display: flex;
-    gap: 1rem;
-    font-size: 0.9rem;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    flex-wrap: wrap;
   }
-  #char-boost {
+
+  /* Editable stat blocks */
+  .stat-editable {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    background: #e2e8f0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.15s;
+    position: relative;
+  }
+  .stat-editable:hover {
+    background: #cbd5e0;
+  }
+  .stat-editable.editing {
+    background: #bee3f8;
+  }
+  .stat-label-mini {
+    font-size: 0.7rem;
+    color: #555;
+    text-transform: uppercase;
+  }
+  .stat-value {
+    font-weight: bold;
+    color: #2c5282;
+  }
+  .stat-max {
+    color: #718096;
+  }
+  #boost-display .stat-value {
+    color: #c9a227;
+  }
+  #fatigue-display .stat-value {
+    font-weight: bold;
+  }
+  #fatigue-display.fatigue-0 .stat-value { color: #38a169; }
+  #fatigue-display.fatigue-1 .stat-value { color: #68d391; }
+  #fatigue-display.fatigue-2 .stat-value { color: #ecc94b; }
+  #fatigue-display.fatigue-3 .stat-value { color: #ed8936; }
+  #fatigue-display.fatigue-4 .stat-value { color: #e53e3e; }
+  #fatigue-display.fatigue-5 .stat-value { color: #9b2c2c; }
+
+  /* Edit buttons */
+  .stat-edit-btns {
+    display: flex;
+    gap: 0.2rem;
+    margin-left: 0.25rem;
+  }
+  .edit-btn {
+    width: 22px;
+    height: 22px;
+    border: 1px solid #999;
+    background: white;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .edit-btn:hover {
+    background: #f0f0f0;
+  }
+  .edit-btn:active {
+    background: #e0e0e0;
+  }
+
+  /* Inventory Panel */
+  #inventory-toggle {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+  #toggle-inventory-btn {
+    width: 100%;
+    text-align: left;
+    background: #e2e8f0;
+    border: 1px solid #cbd5e0;
+  }
+  #toggle-inventory-btn.expanded {
+    background: #cbd5e0;
+  }
+  #inventory-panel {
+    width: 100%;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    margin-top: 0.25rem;
+    padding: 0.5rem;
+    font-size: 0.85rem;
+  }
+  .inventory-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.25rem;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .slot-count {
+    color: #555;
+  }
+  .slot-count span {
+    font-weight: bold;
+    color: #2c5282;
+  }
+  .coins {
     color: #c9a227;
     font-weight: bold;
+  }
+  #equipment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .equipment-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.25rem 0.5rem;
+    background: white;
+    border-radius: 3px;
+    border: 1px solid #e2e8f0;
+  }
+  .equipment-name {
+    color: #2c5282;
+  }
+  .equipment-slots {
+    color: #718096;
+    font-size: 0.8rem;
+  }
+  .no-equipment {
+    color: #999;
+    font-style: italic;
+    padding: 0.25rem;
   }
 
   /* Modal */
@@ -1316,6 +1485,9 @@ const ACTIVE_CHAR_KEY = 'oswr-solo-active-character';
 
 const STATS = ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA'];
 
+// Fatigue levels (0-5)
+const FATIGUE_LEVELS = ['Fresh', 'Tired', 'Winded', 'Exhausted', 'Incapacitated', 'Dead'];
+
 // Class save proficiencies (matches character generator)
 const CLASS_SAVES = {
   'Fighter': ['STR', 'CON'],
@@ -1349,6 +1521,7 @@ document.addEventListener('DOMContentLoaded', () => {
   loadHistory();
   renderHistory();
   setupEventListeners();
+  setupInventory();
   updatePBDisplay();
   restoreActiveCharacter();
 });
@@ -1417,10 +1590,17 @@ function setupEventListeners() {
     document.getElementById('setback-count').textContent = setbackCount;
   });
 
-  // Boost button
+  // Boost button - spends from character's available boost dice
   document.getElementById('spend-boost-btn').addEventListener('click', () => {
-    const maxBoost = loadedCharacter?.boostDice || 99;
-    if (boostSpent < maxBoost) {
+    if (loadedCharacter) {
+      // Use character's current boost
+      const available = loadedCharacter.boostDiceCurrent ?? loadedCharacter.boostDice ?? 0;
+      if (available > 0 && boostSpent < available) {
+        boostSpent++;
+        document.getElementById('boost-spent').textContent = boostSpent + ' spent this roll';
+      }
+    } else {
+      // No character - allow unlimited spending for testing
       boostSpent++;
       document.getElementById('boost-spent').textContent = boostSpent + ' spent';
     }
@@ -1446,6 +1626,224 @@ function setupEventListeners() {
 
   // History
   document.getElementById('clear-history-btn').addEventListener('click', clearHistory);
+
+  // Editable stats
+  setupEditableStats();
+}
+
+// ============ EDITABLE STATS ============
+function setupEditableStats() {
+  // HP display - toggle edit mode on click
+  document.getElementById('hp-display').addEventListener('click', (e) => {
+    if (e.target.classList.contains('edit-btn')) return; // Let button handle itself
+    if (!loadedCharacter) return;
+    toggleStatEdit('hp');
+  });
+
+  // Fatigue display - cycle on click
+  document.getElementById('fatigue-display').addEventListener('click', () => {
+    if (!loadedCharacter) return;
+    cycleFatigue();
+  });
+
+  // Boost display - toggle edit mode on click
+  document.getElementById('boost-display').addEventListener('click', (e) => {
+    if (e.target.classList.contains('edit-btn')) return;
+    if (!loadedCharacter) return;
+    toggleStatEdit('boost');
+  });
+
+  // Edit button handlers
+  document.querySelectorAll('.edit-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const action = btn.dataset.action;
+      handleStatEdit(action);
+    });
+  });
+
+  // Close edit mode when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.stat-editable')) {
+      closeAllStatEdits();
+    }
+  });
+}
+
+function toggleStatEdit(stat) {
+  const display = document.getElementById(`${stat}-display`);
+  const btns = document.getElementById(`${stat}-edit-btns`);
+  const isEditing = display.classList.contains('editing');
+
+  // Close other edits first
+  closeAllStatEdits();
+
+  if (!isEditing) {
+    display.classList.add('editing');
+    btns.style.display = 'flex';
+  }
+}
+
+function closeAllStatEdits() {
+  ['hp', 'boost'].forEach(stat => {
+    const display = document.getElementById(`${stat}-display`);
+    const btns = document.getElementById(`${stat}-edit-btns`);
+    if (display) display.classList.remove('editing');
+    if (btns) btns.style.display = 'none';
+  });
+}
+
+function handleStatEdit(action) {
+  if (!loadedCharacter) return;
+
+  switch (action) {
+    case 'hp-minus':
+      if (loadedCharacter.currentHp > 0) {
+        loadedCharacter.currentHp--;
+        updateHPDisplay();
+        saveCharacterChanges();
+      }
+      break;
+    case 'hp-plus':
+      if (loadedCharacter.currentHp < loadedCharacter.maxHp) {
+        loadedCharacter.currentHp++;
+        updateHPDisplay();
+        saveCharacterChanges();
+      }
+      break;
+    case 'boost-minus':
+      const currentBoost = loadedCharacter.boostDiceCurrent ?? loadedCharacter.boostDice;
+      if (currentBoost > 0) {
+        loadedCharacter.boostDiceCurrent = currentBoost - 1;
+        updateBoostDisplay();
+        saveCharacterChanges();
+      }
+      break;
+    case 'boost-plus':
+      const current = loadedCharacter.boostDiceCurrent ?? loadedCharacter.boostDice;
+      const max = loadedCharacter.boostDice || 2;
+      if (current < max) {
+        loadedCharacter.boostDiceCurrent = current + 1;
+        updateBoostDisplay();
+        saveCharacterChanges();
+      }
+      break;
+  }
+}
+
+function cycleFatigue() {
+  if (!loadedCharacter) return;
+
+  const currentFatigue = loadedCharacter.fatigue || 0;
+  // Cycle 0 → 1 → 2 → 3 → 4 → 5 → 0
+  loadedCharacter.fatigue = (currentFatigue + 1) % 6;
+  updateFatigueDisplay();
+  saveCharacterChanges();
+}
+
+function updateHPDisplay() {
+  if (!loadedCharacter) return;
+  document.getElementById('char-hp-current').textContent = loadedCharacter.currentHp;
+  document.getElementById('char-hp-max').textContent = loadedCharacter.maxHp;
+}
+
+function updateFatigueDisplay() {
+  if (!loadedCharacter) return;
+  const fatigue = loadedCharacter.fatigue || 0;
+  const display = document.getElementById('fatigue-display');
+  document.getElementById('char-fatigue').textContent = FATIGUE_LEVELS[fatigue];
+
+  // Update fatigue class for coloring
+  display.className = 'stat-editable fatigue-' + fatigue;
+}
+
+function updateBoostDisplay() {
+  if (!loadedCharacter) return;
+  const current = loadedCharacter.boostDiceCurrent ?? loadedCharacter.boostDice ?? 0;
+  const max = loadedCharacter.boostDice || 2;
+  document.getElementById('char-boost-current').textContent = current;
+  document.getElementById('char-boost-max').textContent = max;
+  document.getElementById('boost-available').textContent = `(${current} available)`;
+}
+
+function saveCharacterChanges() {
+  if (!loadedCharacter) return;
+
+  try {
+    const characters = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+    const idx = characters.findIndex(c => c.id === loadedCharacter.id);
+    if (idx !== -1) {
+      characters[idx] = loadedCharacter;
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(characters));
+    }
+  } catch (e) {
+    console.error('Failed to save character:', e);
+  }
+}
+
+// ============ INVENTORY ============
+let inventoryExpanded = false;
+
+function setupInventory() {
+  document.getElementById('toggle-inventory-btn').addEventListener('click', toggleInventory);
+}
+
+function toggleInventory() {
+  inventoryExpanded = !inventoryExpanded;
+  const panel = document.getElementById('inventory-panel');
+  const btn = document.getElementById('toggle-inventory-btn');
+
+  if (inventoryExpanded) {
+    panel.style.display = 'block';
+    btn.textContent = '▲ Gear';
+    btn.classList.add('expanded');
+  } else {
+    panel.style.display = 'none';
+    btn.textContent = '▼ Gear';
+    btn.classList.remove('expanded');
+  }
+}
+
+function updateInventoryDisplay() {
+  if (!loadedCharacter) return;
+
+  // Show the toggle button
+  document.getElementById('inventory-toggle').style.display = 'block';
+
+  // Equipment list
+  const equipment = loadedCharacter.equipment || [];
+  const listEl = document.getElementById('equipment-list');
+
+  if (equipment.length === 0) {
+    listEl.innerHTML = '<div class="no-equipment">No equipment</div>';
+  } else {
+    listEl.innerHTML = equipment.map(item => `
+      <div class="equipment-item">
+        <span class="equipment-name">${item.name}</span>
+        <span class="equipment-slots">${item.slots || 1} slot${(item.slots || 1) !== 1 ? 's' : ''}</span>
+      </div>
+    `).join('');
+  }
+
+  // Slot count
+  const usedSlots = equipment.reduce((sum, item) => sum + (item.slots || 1), 0);
+  const maxSlots = loadedCharacter.maxSlots || 10; // Default to 10 if not set
+  document.getElementById('slots-used').textContent = usedSlots;
+  document.getElementById('slots-max').textContent = maxSlots;
+
+  // Coins
+  const coins = loadedCharacter.coins || {};
+  const coinParts = [];
+  if (coins.gp) coinParts.push(`${coins.gp} gp`);
+  if (coins.sp) coinParts.push(`${coins.sp} sp`);
+  if (coins.cp) coinParts.push(`${coins.cp} cp`);
+  document.getElementById('coin-display').textContent = coinParts.length > 0 ? coinParts.join(', ') : '0 gp';
+}
+
+function hideInventory() {
+  document.getElementById('inventory-toggle').style.display = 'none';
+  document.getElementById('inventory-panel').style.display = 'none';
+  inventoryExpanded = false;
 }
 
 function updatePBDisplay() {
@@ -1552,7 +1950,15 @@ function rollD20() {
     const rollType = selectedAbility ? `${selectedAbility} ${rollMode === 'attack' ? 'Attack' : 'Check'}` : (rollMode === 'attack' ? 'Attack' : 'Check');
     addToHistory(rollType, breakdown, total, total >= target);
 
-    // Reset boost spent after roll
+    // Deduct boost from character pool and save
+    if (loadedCharacter && boostSpent > 0) {
+      const current = loadedCharacter.boostDiceCurrent ?? loadedCharacter.boostDice ?? 0;
+      loadedCharacter.boostDiceCurrent = Math.max(0, current - boostSpent);
+      updateBoostDisplay();
+      saveCharacterChanges();
+    }
+
+    // Reset boost spent for next roll
     boostSpent = 0;
     document.getElementById('boost-spent').textContent = '0 spent';
   }, 300);
@@ -1856,11 +2262,16 @@ function selectCharacter(id) {
   const level = getTotalLevel(char);
   document.getElementById('char-name').textContent = char.name;
   document.getElementById('char-level').textContent = `Level ${level} ${char.ancestry}`;
-  document.getElementById('char-hp').textContent = `HP: ${char.currentHp}/${char.maxHp}`;
-  document.getElementById('char-boost').textContent = `Boost: ${char.boostDice || 0}`;
 
-  // Update boost display
-  document.getElementById('boost-available').textContent = `(${char.boostDice || 0} available)`;
+  // Initialize boostDiceCurrent if not set
+  if (char.boostDiceCurrent === undefined) {
+    char.boostDiceCurrent = char.boostDice || 2;
+  }
+
+  // Update editable stat displays
+  updateHPDisplay();
+  updateFatigueDisplay();
+  updateBoostDisplay();
 
   // Set PB based on level
   proficiencyBonus = level <= 4 ? 2 : (level <= 8 ? 3 : 4);
@@ -1903,6 +2314,9 @@ function selectCharacter(id) {
 
   // Render weapons section
   renderWeaponsSection(char);
+
+  // Render inventory
+  updateInventoryDisplay();
 
   hideCharacterModal();
 }
@@ -1966,8 +2380,16 @@ function unloadCharacter() {
   // Hide weapons section
   document.getElementById('weapons-section').style.display = 'none';
 
-  // Reset boost display
+  // Reset stat displays
+  document.getElementById('char-hp-current').textContent = '8';
+  document.getElementById('char-hp-max').textContent = '8';
+  document.getElementById('char-fatigue').textContent = 'Fresh';
+  document.getElementById('fatigue-display').className = 'stat-editable fatigue-0';
+  document.getElementById('char-boost-current').textContent = '2';
+  document.getElementById('char-boost-max').textContent = '2';
   document.getElementById('boost-available').textContent = '';
+  closeAllStatEdits();
+  hideInventory();
 
   // Reset to defaults
   abilityMod = 0;
