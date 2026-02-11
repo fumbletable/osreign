@@ -33,7 +33,7 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
           </div>
           <div class="stat-editable" id="fatigue-display">
             <span class="stat-label-mini">Fatigue</span>
-            <span class="stat-value" id="char-fatigue">Fresh</span>
+            <span class="stat-value" id="char-fatigue">0</span>
           </div>
           <div class="stat-editable" id="boost-display">
             <span class="stat-label-mini">Boost</span>
@@ -45,6 +45,11 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
           </div>
         </div>
         <button id="unload-character-btn" class="btn-small">Unload</button>
+      </div>
+      <!-- Rest Buttons -->
+      <div id="rest-buttons" style="display: none;">
+        <button id="breather-btn" class="rest-btn" title="10 min: Roll CON save DC 12 to remove 1 Fatigue">Breather</button>
+        <button id="night-rest-btn" class="rest-btn" title="8 hrs: Remove 1-2 Fatigue, restore Boost">Night's Rest</button>
       </div>
       <!-- Collapsible Inventory -->
       <div id="inventory-toggle" style="display: none;">
@@ -476,6 +481,32 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
   }
   .edit-btn:active {
     background: #e0e0e0;
+  }
+
+  /* Rest Buttons */
+  #rest-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+    width: 100%;
+  }
+  .rest-btn {
+    flex: 1;
+    padding: 0.4rem 0.75rem;
+    border: 2px solid #38a169;
+    background: #f0fff4;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #276749;
+    transition: all 0.15s;
+  }
+  .rest-btn:hover {
+    background: #c6f6d5;
+  }
+  .rest-btn:active {
+    transform: scale(0.98);
   }
 
   /* Inventory Panel */
@@ -1485,8 +1516,9 @@ const ACTIVE_CHAR_KEY = 'oswr-solo-active-character';
 
 const STATS = ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA'];
 
-// Fatigue levels (0-5)
-const FATIGUE_LEVELS = ['Fresh', 'Tired', 'Winded', 'Exhausted', 'Incapacitated', 'Dead'];
+// Fatigue levels (0-5) - per OSWR rules
+// 0 = no fatigue, 1-4 = −X penalty to all checks/saves, 5 = incapacitated
+const FATIGUE_DISPLAY = ['0', '−1', '−2', '−3', '−4', 'Inc.'];
 
 // Class save proficiencies (matches character generator)
 const CLASS_SAVES = {
@@ -1668,6 +1700,10 @@ function setupEditableStats() {
       closeAllStatEdits();
     }
   });
+
+  // Rest buttons
+  document.getElementById('breather-btn').addEventListener('click', takeBreather);
+  document.getElementById('night-rest-btn').addEventListener('click', takeNightRest);
 }
 
 function toggleStatEdit(stat) {
@@ -1751,7 +1787,7 @@ function updateFatigueDisplay() {
   if (!loadedCharacter) return;
   const fatigue = loadedCharacter.fatigue || 0;
   const display = document.getElementById('fatigue-display');
-  document.getElementById('char-fatigue').textContent = FATIGUE_LEVELS[fatigue];
+  document.getElementById('char-fatigue').textContent = FATIGUE_DISPLAY[fatigue];
 
   // Update fatigue class for coloring
   display.className = 'stat-editable fatigue-' + fatigue;
@@ -1844,6 +1880,73 @@ function hideInventory() {
   document.getElementById('inventory-toggle').style.display = 'none';
   document.getElementById('inventory-panel').style.display = 'none';
   inventoryExpanded = false;
+}
+
+function showRestButtons() {
+  document.getElementById('rest-buttons').style.display = 'flex';
+}
+
+function hideRestButtons() {
+  document.getElementById('rest-buttons').style.display = 'none';
+}
+
+// ============ RESTS ============
+function takeBreather() {
+  if (!loadedCharacter) return;
+  const fatigue = loadedCharacter.fatigue || 0;
+
+  if (fatigue === 0) {
+    alert('No fatigue to remove!');
+    return;
+  }
+
+  // Roll CON save DC 12
+  const conMod = loadedCharacter.finalAbilities?.CON || 0;
+  const d20 = roll(20);
+  const total = d20 + conMod + proficiencyBonus; // CON save includes PB if proficient
+
+  // Check CON save proficiency
+  const className = loadedCharacter.classes?.[0]?.name || loadedCharacter.className;
+  const saveProficiencies = CLASS_SAVES[className] || [];
+  const isProficient = saveProficiencies.includes('CON');
+  const saveTotal = d20 + conMod + (isProficient ? proficiencyBonus : 0);
+
+  const success = saveTotal >= 12;
+
+  if (success) {
+    loadedCharacter.fatigue = Math.max(0, fatigue - 1);
+    updateFatigueDisplay();
+    saveCharacterChanges();
+    addToHistory('Breather', `CON save: ${d20}+${conMod}${isProficient ? '+'+proficiencyBonus : ''} = ${saveTotal} vs DC 12`, 'Fatigue −1', true);
+    alert(`Breather: CON save ${saveTotal} vs DC 12 - Success!\nFatigue reduced to ${loadedCharacter.fatigue}`);
+  } else {
+    addToHistory('Breather', `CON save: ${d20}+${conMod}${isProficient ? '+'+proficiencyBonus : ''} = ${saveTotal} vs DC 12`, 'No effect', false);
+    alert(`Breather: CON save ${saveTotal} vs DC 12 - Failed.\nFatigue remains at ${fatigue}`);
+  }
+}
+
+function takeNightRest() {
+  if (!loadedCharacter) return;
+  const fatigue = loadedCharacter.fatigue || 0;
+  const maxBoost = loadedCharacter.boostDice || 2;
+
+  // Ask about shelter
+  const hasShelter = confirm("Night's Rest (8 hours)\n\nDo you have food and shelter?\n\n• YES = Remove 2 Fatigue\n• NO = Remove 1 Fatigue (roughing it)");
+
+  const fatigueRemoved = hasShelter ? 2 : 1;
+  const newFatigue = Math.max(0, fatigue - fatigueRemoved);
+  loadedCharacter.fatigue = newFatigue;
+
+  // Restore boost dice
+  loadedCharacter.boostDiceCurrent = maxBoost;
+
+  updateFatigueDisplay();
+  updateBoostDisplay();
+  saveCharacterChanges();
+
+  const shelterText = hasShelter ? 'with shelter' : 'roughing it';
+  addToHistory("Night's Rest", shelterText, `Fatigue ${fatigue}→${newFatigue}, Boost restored`, null);
+  alert(`Night's Rest complete (${shelterText}):\n• Fatigue: ${fatigue} → ${newFatigue}\n• Boost dice restored to ${maxBoost}`);
 }
 
 function updatePBDisplay() {
@@ -2318,6 +2421,9 @@ function selectCharacter(id) {
   // Render inventory
   updateInventoryDisplay();
 
+  // Show rest buttons
+  showRestButtons();
+
   hideCharacterModal();
 }
 
@@ -2383,13 +2489,14 @@ function unloadCharacter() {
   // Reset stat displays
   document.getElementById('char-hp-current').textContent = '8';
   document.getElementById('char-hp-max').textContent = '8';
-  document.getElementById('char-fatigue').textContent = 'Fresh';
+  document.getElementById('char-fatigue').textContent = '0';
   document.getElementById('fatigue-display').className = 'stat-editable fatigue-0';
   document.getElementById('char-boost-current').textContent = '2';
   document.getElementById('char-boost-max').textContent = '2';
   document.getElementById('boost-available').textContent = '';
   closeAllStatEdits();
   hideInventory();
+  hideRestButtons();
 
   // Reset to defaults
   abilityMod = 0;
