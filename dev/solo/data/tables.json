@@ -1,0 +1,411 @@
+{
+  "categories": [
+    { "id": "npc", "name": "NPCs" },
+    { "id": "item", "name": "Items" },
+    { "id": "name", "name": "Names" },
+    { "id": "faction", "name": "Factions" }
+  ],
+  "formulas": [
+    { "id": "quick_npc", "name": "Quick NPC", "tables": ["npc_detail", "npc_demeanor"], "category": "npc" },
+    { "id": "full_npc", "name": "Full NPC", "tables": ["npc_detail", "npc_demeanor", "npc_voice", "npc_occupation"], "category": "npc" },
+    { "id": "quick_item", "name": "Quick Item", "tables": ["item_quality", "item_material", "form_mundane"], "category": "item" },
+    { "id": "magic_weapon", "name": "Magic Weapon", "tables": ["effect_elemental", "form_arms"], "category": "item" },
+    { "id": "magic_jewelry", "name": "Magic Jewelry", "tables": ["effect_spiritual", "form_worn"], "category": "item" },
+    { "id": "human_name", "name": "Human Name", "tables": ["name_human_root", "name_human_ending"], "category": "name", "combine": true },
+    { "id": "dwarf_name", "name": "Dwarf Name", "tables": ["name_dwarf_root", "name_dwarf_ending"], "category": "name", "combine": true },
+    { "id": "elf_name", "name": "Elf Name", "tables": ["name_elf_root", "name_elf_ending"], "category": "name", "combine": true },
+    { "id": "halfling_name", "name": "Halfling Name", "tables": ["name_halfling_first", "name_halfling_family1", "name_halfling_family2"], "category": "name", "combine": "halfling" }
+  ],
+  "tables": {
+    "npc_detail": {
+      "name": "Physical Details",
+      "category": "npc",
+      "type": "d66",
+      "entries": {
+        "11": "Scarred", "12": "Burned", "13": "Branded", "14": "Pocked", "15": "Weathered", "16": "Wrinkled",
+        "21": "Calloused", "22": "Rough", "23": "Cracked", "24": "Stained", "25": "Grimy", "26": "Powdered",
+        "31": "Limp", "32": "Hunched", "33": "Twisted", "34": "Crooked", "35": "Bent", "36": "Stooped",
+        "41": "One-eyed", "42": "Squinting", "43": "Blind", "44": "Deaf", "45": "Mute", "46": "Twitching",
+        "51": "Shaved", "52": "Braided", "53": "Tangled", "54": "Greying", "55": "Bald", "56": "Scarred",
+        "61": "Toothless", "62": "Gold-toothed", "63": "Broken-nosed", "64": "One-armed", "65": "One-handed", "66": "Tattooed"
+      }
+    },
+    "npc_demeanor": {
+      "name": "Demeanor",
+      "category": "npc",
+      "type": "d66",
+      "entries": {
+        "11": "Nervous", "12": "Friendly", "13": "Cold", "14": "Quiet", "15": "Loud", "16": "Bitter",
+        "21": "Curious", "22": "Dismissive", "23": "Earnest", "24": "Sly", "25": "Gruff", "26": "Gentle",
+        "31": "Paranoid", "32": "Cheerful", "33": "Arrogant", "34": "Meek", "35": "Aggressive", "36": "Melancholy",
+        "41": "Distracted", "42": "Eager", "43": "Bored", "44": "Intense", "45": "Casual", "46": "Desperate",
+        "51": "Pious", "52": "Crude", "53": "Formal", "54": "Playful", "55": "Stern", "56": "Manic",
+        "61": "Serene", "62": "Resentful", "63": "Obsequious", "64": "Defiant", "65": "Weary", "66": "Charming"
+      }
+    },
+    "npc_occupation": {
+      "name": "Occupation",
+      "category": "npc",
+      "type": "d66",
+      "entries": {
+        "11": "Farmer", "12": "Herder", "13": "Miller", "14": "Brewer", "15": "Baker", "16": "Butcher",
+        "21": "Smith", "22": "Mason", "23": "Carpenter", "24": "Weaver", "25": "Tanner", "26": "Potter",
+        "31": "Merchant", "32": "Peddler", "33": "Moneylender", "34": "Innkeeper", "35": "Fence", "36": "Smuggler",
+        "41": "Guard", "42": "Soldier", "43": "Mercenary", "44": "Bailiff", "45": "Bounty hunter", "46": "Executioner",
+        "51": "Priest", "52": "Monk", "53": "Herbalist", "54": "Midwife", "55": "Gravedigger", "56": "Beggar",
+        "61": "Noble", "62": "Steward", "63": "Scribe", "64": "Sage", "65": "Hermit", "66": "Poacher"
+      }
+    },
+    "npc_voice": {
+      "name": "Voice & Mannerism",
+      "category": "npc",
+      "type": "d66",
+      "entries": {
+        "11": "Mumbles", "12": "Shouts", "13": "Whispers", "14": "Drawls", "15": "Rasps", "16": "Lisps",
+        "21": "Interrupts", "22": "Pauses", "23": "Rambles", "24": "Repeats", "25": "Trails off", "26": "Lectures",
+        "31": "Fidgets", "32": "Paces", "33": "Stills", "34": "Gestures", "35": "Twitches", "36": "Slouches",
+        "41": "Stares", "42": "Avoids eyes", "43": "Squints", "44": "Winks", "45": "Glances", "46": "Watches",
+        "51": "Laughs", "52": "Sighs", "53": "Sniffs", "54": "Coughs", "55": "Hums", "56": "Clicks tongue",
+        "61": "Touches face", "62": "Cracks knuckles", "63": "Picks teeth", "64": "Scratches", "65": "Tugs ear", "66": "Drums fingers"
+      }
+    },
+    "npc_motivation": {
+      "name": "Motivation",
+      "category": "npc",
+      "type": "d66",
+      "entries": {
+        "11": "Wealth", "12": "Power", "13": "Revenge", "14": "Knowledge", "15": "Love", "16": "Freedom",
+        "21": "Safety", "22": "Status", "23": "Justice", "24": "Truth", "25": "Family", "26": "Escape",
+        "31": "Comfort", "32": "Control", "33": "Absolution", "34": "Secrets", "35": "Belonging", "36": "Independence",
+        "41": "Legacy", "42": "Recognition", "43": "Redemption", "44": "Discovery", "45": "Protection", "46": "Survival",
+        "51": "Pleasure", "52": "Dominance", "53": "Vindication", "54": "Mastery", "55": "Acceptance", "56": "Change",
+        "61": "Land", "62": "Influence", "63": "Atonement", "64": "Understanding", "65": "Loyalty", "66": "Adventure"
+      }
+    },
+    "npc_method": {
+      "name": "Method",
+      "category": "npc",
+      "type": "d66",
+      "entries": {
+        "11": "Violence", "12": "Deception", "13": "Manipulation", "14": "Trade", "15": "Patience", "16": "Alliances",
+        "21": "Intimidation", "22": "Lies", "23": "Flattery", "24": "Bribes", "25": "Observation", "26": "Marriage",
+        "31": "Threats", "32": "Disguise", "33": "Seduction", "34": "Favors", "35": "Planning", "36": "Oaths",
+        "41": "Coercion", "42": "Forgery", "43": "Gossip", "44": "Contracts", "45": "Infiltration", "46": "Patronage",
+        "51": "Assassination", "52": "Impersonation", "53": "Blackmail", "54": "Debts", "55": "Waiting", "56": "Service",
+        "61": "War", "62": "Framing", "63": "Leverage", "64": "Monopoly", "65": "Timing", "66": "Diplomacy"
+      }
+    },
+    "npc_secret": {
+      "name": "Secret",
+      "category": "npc",
+      "type": "d66",
+      "entries": {
+        "11": "Murder", "12": "Theft", "13": "Betrayal", "14": "Heresy", "15": "Debt", "16": "Cowardice",
+        "21": "Fraud", "22": "Smuggling", "23": "Treason", "24": "Pact", "25": "Curse", "26": "Weakness",
+        "31": "Massacre", "32": "Counterfeiting", "33": "Desertion", "34": "Forbidden lore", "35": "Dependency", "36": "Decline",
+        "41": "Atrocity", "42": "Piracy", "43": "False identity", "44": "Dark bargain", "45": "Corruption", "46": "Failing",
+        "51": "Sacrifice", "52": "Extortion", "53": "Hidden allegiance", "54": "Prophecy", "55": "Obsession", "56": "Ruin",
+        "61": "Cannibalism", "62": "Slavery", "63": "Imposter", "64": "Witnessed horror", "65": "Possession", "66": "Doom"
+      }
+    },
+    "npc_reputation": {
+      "name": "Reputation",
+      "category": "npc",
+      "type": "d66",
+      "entries": {
+        "11": "Feared", "12": "Respected", "13": "Despised", "14": "Mysterious", "15": "Infamous", "16": "Rising",
+        "21": "Trusted", "22": "Mocked", "23": "Dreaded", "24": "Unknown", "25": "Scandalous", "26": "Fading",
+        "31": "Honored", "32": "Pitied", "33": "Ruthless", "34": "Legendary", "35": "Divisive", "36": "Contested",
+        "41": "Admired", "42": "Scorned", "43": "Dangerous", "44": "Secretive", "45": "Controversial", "46": "Exaggerated",
+        "51": "Reliable", "52": "Ignored", "53": "Untouchable", "54": "Enigmatic", "55": "Whispered", "56": "Undeserved",
+        "61": "Celebrated", "62": "Hated", "63": "Notorious", "64": "Mythical", "65": "Debated", "66": "Forgotten"
+      }
+    },
+    "item_material": {
+      "name": "Material",
+      "category": "item",
+      "type": "d66",
+      "entries": {
+        "11": "Bone", "12": "Iron", "13": "Bronze", "14": "Silver", "15": "Gold", "16": "Copper",
+        "21": "Stone", "22": "Granite", "23": "Marble", "24": "Jade", "25": "Crystal", "26": "Glass",
+        "31": "Wood", "32": "Oak", "33": "Ash", "34": "Ebony", "35": "Driftwood", "36": "Petrified",
+        "41": "Leather", "42": "Hide", "43": "Fur", "44": "Scale", "45": "Chitin", "46": "Shell",
+        "51": "Cloth", "52": "Silk", "53": "Velvet", "54": "Linen", "55": "Wool", "56": "Sackcloth",
+        "61": "Ivory", "62": "Antler", "63": "Horn", "64": "Tooth", "65": "Coral", "66": "Amber"
+      }
+    },
+    "item_color": {
+      "name": "Color",
+      "category": "item",
+      "type": "d66",
+      "entries": {
+        "11": "Crimson", "12": "Scarlet", "13": "Rust", "14": "Copper", "15": "Ochre", "16": "Gold",
+        "21": "Amber", "22": "Saffron", "23": "Honey", "24": "Brass", "25": "Bronze", "26": "Tan",
+        "31": "Verdant", "32": "Emerald", "33": "Moss", "34": "Olive", "35": "Verdigris", "36": "Jade",
+        "41": "Azure", "42": "Cobalt", "43": "Sapphire", "44": "Teal", "45": "Cerulean", "46": "Slate",
+        "51": "Violet", "52": "Plum", "53": "Amethyst", "54": "Mauve", "55": "Indigo", "56": "Midnight",
+        "61": "Ashen", "62": "Bone", "63": "Ivory", "64": "Obsidian", "65": "Onyx", "66": "Silver"
+      }
+    },
+    "item_quality": {
+      "name": "Quality",
+      "category": "item",
+      "type": "d66",
+      "entries": {
+        "11": "Ancient", "12": "Antique", "13": "Weathered", "14": "Worn", "15": "Aged", "16": "Timeless",
+        "21": "Cracked", "22": "Chipped", "23": "Fractured", "24": "Broken", "25": "Shattered", "26": "Ruined",
+        "31": "Ornate", "32": "Elaborate", "33": "Gilded", "34": "Jeweled", "35": "Engraved", "36": "Filigreed",
+        "41": "Plain", "42": "Simple", "43": "Crude", "44": "Rough", "45": "Unfinished", "46": "Functional",
+        "51": "Pristine", "52": "Polished", "53": "Gleaming", "54": "Immaculate", "55": "Perfect", "56": "Flawless",
+        "61": "Tarnished", "62": "Stained", "63": "Corroded", "64": "Rusted", "65": "Blackened", "66": "Scorched"
+      }
+    },
+    "form_arms": {
+      "name": "Arms",
+      "category": "item",
+      "type": "d66",
+      "entries": {
+        "11": "Sword", "12": "Blade", "13": "Dagger", "14": "Knife", "15": "Stiletto", "16": "Dirk",
+        "21": "Axe", "22": "Hatchet", "23": "Cleaver", "24": "Mattock", "25": "Pick", "26": "Maul",
+        "31": "Spear", "32": "Lance", "33": "Pike", "34": "Javelin", "35": "Trident", "36": "Harpoon",
+        "41": "Mace", "42": "Flail", "43": "Hammer", "44": "Club", "45": "Staff", "46": "Rod",
+        "51": "Bow", "52": "Arrow", "53": "Crossbow", "54": "Bolt", "55": "Sling", "56": "Dart",
+        "61": "Shield", "62": "Helm", "63": "Breastplate", "64": "Gauntlet", "65": "Greaves", "66": "Mail"
+      }
+    },
+    "form_worn": {
+      "name": "Worn Items",
+      "category": "item",
+      "type": "d66",
+      "entries": {
+        "11": "Ring", "12": "Band", "13": "Signet", "14": "Seal", "15": "Loop", "16": "Coil",
+        "21": "Amulet", "22": "Pendant", "23": "Talisman", "24": "Charm", "25": "Medallion", "26": "Locket",
+        "31": "Crown", "32": "Circlet", "33": "Diadem", "34": "Tiara", "35": "Coronet", "36": "Wreath",
+        "41": "Cloak", "42": "Cape", "43": "Mantle", "44": "Shroud", "45": "Veil", "46": "Hood",
+        "51": "Belt", "52": "Sash", "53": "Girdle", "54": "Cord", "55": "Chain", "56": "Rope",
+        "61": "Bracelet", "62": "Anklet", "63": "Armband", "64": "Torc", "65": "Collar", "66": "Choker"
+      }
+    },
+    "form_mundane": {
+      "name": "Mundane Objects",
+      "category": "item",
+      "type": "d66",
+      "entries": {
+        "11": "Cup", "12": "Chalice", "13": "Goblet", "14": "Bowl", "15": "Plate", "16": "Urn",
+        "21": "Mirror", "22": "Lens", "23": "Glass", "24": "Prism", "25": "Orb", "26": "Sphere",
+        "31": "Key", "32": "Lock", "33": "Chain", "34": "Shackle", "35": "Cage", "36": "Box",
+        "41": "Lantern", "42": "Candle", "43": "Torch", "44": "Lamp", "45": "Brazier", "46": "Censer",
+        "51": "Book", "52": "Scroll", "53": "Tablet", "54": "Map", "55": "Letter", "56": "Deck",
+        "61": "Skull", "62": "Bone", "63": "Hand", "64": "Eye", "65": "Heart", "66": "Tooth"
+      }
+    },
+    "effect_elemental": {
+      "name": "Elemental Effects",
+      "category": "item",
+      "type": "d66",
+      "entries": {
+        "11": "Burning", "12": "Blazing", "13": "Smoldering", "14": "Scorching", "15": "Searing", "16": "Igniting",
+        "21": "Freezing", "22": "Chilling", "23": "Frosting", "24": "Numbing", "25": "Crystallizing", "26": "Shattering",
+        "31": "Shocking", "32": "Crackling", "33": "Sparking", "34": "Jolting", "35": "Surging", "36": "Arcing",
+        "41": "Corroding", "42": "Dissolving", "43": "Rotting", "44": "Withering", "45": "Decaying", "46": "Rusting",
+        "51": "Crushing", "52": "Breaking", "53": "Grinding", "54": "Crumbling", "55": "Shattering", "56": "Sundering",
+        "61": "Bleeding", "62": "Draining", "63": "Leeching", "64": "Siphoning", "65": "Devouring", "66": "Consuming"
+      }
+    },
+    "effect_spiritual": {
+      "name": "Spiritual Effects",
+      "category": "item",
+      "type": "d66",
+      "entries": {
+        "11": "Whispering", "12": "Murmuring", "13": "Speaking", "14": "Screaming", "15": "Singing", "16": "Wailing",
+        "21": "Binding", "22": "Sealing", "23": "Trapping", "24": "Holding", "25": "Anchoring", "26": "Imprisoning",
+        "31": "Warding", "32": "Shielding", "33": "Protecting", "34": "Guarding", "35": "Deflecting", "36": "Banishing",
+        "41": "Calling", "42": "Summoning", "43": "Commanding", "44": "Compelling", "45": "Charming", "46": "Dominating",
+        "51": "Dreaming", "52": "Sleeping", "53": "Watching", "54": "Seeing", "55": "Knowing", "56": "Remembering",
+        "61": "Fading", "62": "Hiding", "63": "Veiling", "64": "Shadowing", "65": "Dimming", "66": "Vanishing"
+      }
+    },
+    "item_quirk": {
+      "name": "Quirk",
+      "category": "item",
+      "type": "d66",
+      "entries": {
+        "11": "Intelligent", "12": "Aware", "13": "Watchful", "14": "Cunning", "15": "Calculating", "16": "Scheming",
+        "21": "Hungry", "22": "Thirsting", "23": "Greedy", "24": "Envious", "25": "Jealous", "26": "Covetous",
+        "31": "Loyal", "32": "Devoted", "33": "Protective", "34": "Possessive", "35": "Obsessed", "36": "Bonded",
+        "41": "Treacherous", "42": "Deceitful", "43": "Manipulative", "44": "Corrupting", "45": "Tempting", "46": "Seductive",
+        "51": "Ancient", "52": "Forgotten", "53": "Dreaming", "54": "Sleeping", "55": "Awakening", "56": "Remembering",
+        "61": "Wrathful", "62": "Vengeful", "63": "Hateful", "64": "Spiteful", "65": "Bitter", "66": "Patient"
+      }
+    },
+    "item_origin": {
+      "name": "Origin",
+      "category": "item",
+      "type": "d66",
+      "entries": {
+        "11": "Elven", "12": "Dwarven", "13": "Orcish", "14": "Goblin", "15": "Gnomish", "16": "Halfling",
+        "21": "Imperial", "22": "Barbarian", "23": "Nomadic", "24": "Merchant", "25": "Noble", "26": "Royal",
+        "31": "Infernal", "32": "Demonic", "33": "Abyssal", "34": "Diabolic", "35": "Fiendish", "36": "Accursed",
+        "41": "Celestial", "42": "Angelic", "43": "Divine", "44": "Blessed", "45": "Sacred", "46": "Holy",
+        "51": "Fey", "52": "Faerie", "53": "Unseelie", "54": "Seelie", "55": "Sylvan", "56": "Wild",
+        "61": "Elder", "62": "Primordial", "63": "Forgotten", "64": "Lost", "65": "Sunken", "66": "Buried"
+      }
+    },
+    "name_human_root": {
+      "name": "Human Roots",
+      "category": "name",
+      "type": "d66",
+      "entries": {
+        "11": "Ald", "12": "Bran", "13": "Cade", "14": "Dorn", "15": "Edric", "16": "Finn",
+        "21": "Gwen", "22": "Hale", "23": "Isla", "24": "Joss", "25": "Kira", "26": "Leif",
+        "31": "Mira", "32": "Ness", "33": "Orin", "34": "Pell", "35": "Quinn", "36": "Rolf",
+        "41": "Seren", "42": "Thom", "43": "Ulric", "44": "Vale", "45": "Wren", "46": "Yara",
+        "51": "Zara", "52": "Ash", "53": "Beck", "54": "Cole", "55": "Darcy", "56": "Elda",
+        "61": "Frey", "62": "Grim", "63": "Hart", "64": "Ivy", "65": "Jace", "66": "Kell"
+      }
+    },
+    "name_human_ending": {
+      "name": "Human Endings",
+      "category": "name",
+      "type": "d66",
+      "entries": {
+        "11": "-an", "12": "-en", "13": "-in", "14": "-on", "15": "-yn", "16": "-ar",
+        "21": "-er", "22": "-ir", "23": "-or", "24": "-ur", "25": "-el", "26": "-al",
+        "31": "-wen", "32": "-wyn", "33": "-win", "34": "-ward", "35": "-wold", "36": "-wald",
+        "41": "-ton", "42": "-son", "43": "-sen", "44": "-ston", "45": "-ham", "46": "-ley",
+        "51": "-rick", "52": "-ric", "53": "-red", "54": "-rad", "55": "-mund", "56": "-bert",
+        "61": "-ia", "62": "-a", "63": "-ine", "64": "-elle", "65": "-ette", "66": "-is"
+      }
+    },
+    "name_dwarf_root": {
+      "name": "Dwarf Roots",
+      "category": "name",
+      "type": "d66",
+      "entries": {
+        "11": "Bor", "12": "Dain", "13": "Dur", "14": "Gim", "15": "Grom", "16": "Kaz",
+        "21": "Kor", "22": "Krag", "23": "Mag", "24": "Mor", "25": "Nar", "26": "Nok",
+        "31": "Orn", "32": "Rok", "33": "Skar", "34": "Skor", "35": "Thod", "36": "Thrain",
+        "41": "Tor", "42": "Trak", "43": "Ulf", "44": "Ung", "45": "Varn", "46": "Vok",
+        "51": "Bel", "52": "Dol", "53": "Fal", "54": "Gal", "55": "Hel", "56": "Kar",
+        "61": "Brin", "62": "Dral", "63": "Gral", "64": "Kral", "65": "Thal", "66": "Zorn"
+      }
+    },
+    "name_dwarf_ending": {
+      "name": "Dwarf Endings",
+      "category": "name",
+      "type": "d66",
+      "entries": {
+        "11": "-in", "12": "-im", "13": "-ir", "14": "-is", "15": "-i", "16": "-il",
+        "21": "-ak", "22": "-ok", "23": "-ek", "24": "-ik", "25": "-uk", "26": "-ar",
+        "31": "-ur", "32": "-or", "33": "-er", "34": "-ri", "35": "-ra", "36": "-rum",
+        "41": "-gar", "42": "-grim", "43": "-grom", "44": "-grak", "45": "-gund", "46": "-gur",
+        "51": "-dur", "52": "-din", "53": "-dak", "54": "-dom", "55": "-dan", "56": "-dar",
+        "61": "-rek", "62": "-rik", "63": "-rok", "64": "-run", "65": "-ren", "66": "-rim"
+      }
+    },
+    "name_elf_root": {
+      "name": "Elf Roots",
+      "category": "name",
+      "type": "d66",
+      "entries": {
+        "11": "Aer", "12": "Cel", "13": "Cyl", "14": "Eil", "15": "Fae", "16": "Gal",
+        "21": "Iel", "22": "Lir", "23": "Loth", "24": "Mir", "25": "Nal", "26": "Nim",
+        "31": "Nol", "32": "Quel", "33": "Ryl", "34": "Sil", "35": "Thal", "36": "Thel",
+        "41": "Tir", "42": "Val", "43": "Vel", "44": "Yl", "45": "Aes", "46": "Ath",
+        "51": "Bel", "52": "Cal", "53": "Del", "54": "Eld", "55": "Fael", "56": "Gil",
+        "61": "Hal", "62": "Ith", "63": "Kel", "64": "Mel", "65": "Nel", "66": "Sel"
+      }
+    },
+    "name_elf_ending": {
+      "name": "Elf Endings",
+      "category": "name",
+      "type": "d66",
+      "entries": {
+        "11": "-iel", "12": "-ael", "13": "-uel", "14": "-oel", "15": "-eal", "16": "-ial",
+        "21": "-wen", "22": "-wyn", "23": "-wain", "24": "-wan", "25": "-weth", "26": "-with",
+        "31": "-ion", "32": "-ien", "33": "-ian", "34": "-ios", "35": "-ius", "36": "-ias",
+        "41": "-ara", "42": "-ora", "43": "-ira", "44": "-era", "45": "-ura", "46": "-ana",
+        "51": "-is", "52": "-as", "53": "-os", "54": "-us", "55": "-es", "56": "-ys",
+        "61": "-il", "62": "-al", "63": "-ol", "64": "-el", "65": "-ul", "66": "-yl"
+      }
+    },
+    "name_halfling_first": {
+      "name": "Halfling First Names",
+      "category": "name",
+      "type": "d66",
+      "entries": {
+        "11": "Pip", "12": "Merry", "13": "Tolly", "14": "Jem", "15": "Will", "16": "Sam",
+        "21": "Rosie", "22": "Bess", "23": "Lily", "24": "Daisy", "25": "Posie", "26": "Tansy",
+        "31": "Tom", "32": "Bob", "33": "Ned", "34": "Ted", "35": "Hal", "36": "Bert",
+        "41": "May", "42": "Nell", "43": "Peg", "44": "Dot", "45": "Flo", "46": "Gert",
+        "51": "Cob", "52": "Hob", "53": "Nob", "54": "Rob", "55": "Dob", "56": "Lob",
+        "61": "Ada", "62": "Ida", "63": "Ora", "64": "Etta", "65": "Mab", "66": "Nan"
+      }
+    },
+    "name_halfling_family1": {
+      "name": "Halfling Family (First Part)",
+      "category": "name",
+      "type": "d66",
+      "entries": {
+        "11": "Under", "12": "Over", "13": "Good", "14": "Old", "15": "High", "16": "Low",
+        "21": "Bramble", "22": "Thistle", "23": "Nettle", "24": "Clover", "25": "Barley", "26": "Wheat",
+        "31": "Green", "32": "Brown", "33": "White", "34": "Black", "35": "Grey", "36": "Gold",
+        "41": "Stone", "42": "Hill", "43": "Dale", "44": "Brook", "45": "Marsh", "46": "Mead",
+        "51": "Oak", "52": "Ash", "53": "Elm", "54": "Birch", "55": "Willow", "56": "Thorn",
+        "61": "Copper", "62": "Silver", "63": "Iron", "64": "Brass", "65": "Tin", "66": "Steel"
+      }
+    },
+    "name_halfling_family2": {
+      "name": "Halfling Family (Second Part)",
+      "category": "name",
+      "type": "d66",
+      "entries": {
+        "11": "-hill", "12": "-dale", "13": "-bottom", "14": "-field", "15": "-bury", "16": "-ton",
+        "21": "-foot", "22": "-hand", "23": "-finger", "24": "-toe", "25": "-thumb", "26": "-nose",
+        "31": "-barrel", "32": "-bucket", "33": "-basket", "34": "-kettle", "35": "-bottle", "36": "-pot",
+        "41": "-burrow", "42": "-hole", "43": "-hollow", "44": "-den", "45": "-warren", "46": "-nook",
+        "51": "-brook", "52": "-ford", "53": "-bridge", "54": "-bank", "55": "-pool", "56": "-spring",
+        "61": "-wood", "62": "-leaf", "63": "-root", "64": "-branch", "65": "-bower", "66": "-hedge"
+      }
+    },
+    "faction_type": {
+      "name": "Faction Type",
+      "category": "faction",
+      "type": "d66",
+      "entries": {
+        "11": "Noble house", "12": "Royal court", "13": "Council", "14": "Parliament", "15": "Dynasty", "16": "Regency",
+        "21": "Merchant guild", "22": "Craft guild", "23": "Trade company", "24": "Banking house", "25": "Cartel", "26": "Monopoly",
+        "31": "Thieves' guild", "32": "Smuggling ring", "33": "Criminal family", "34": "Assassination guild", "35": "Extortion ring", "36": "Fencing network",
+        "41": "Religious order", "42": "Heretical sect", "43": "Mystery cult", "44": "Monastic order", "45": "Inquisition", "46": "Prophecy circle",
+        "51": "Military order", "52": "Mercenary company", "53": "Guard corps", "54": "Veteran band", "55": "Knight order", "56": "Militia",
+        "61": "Scholarly circle", "62": "Wizard cabal", "63": "Secret society", "64": "Spy network", "65": "Revolutionary cell", "66": "Conspiracy"
+      }
+    },
+    "faction_resources": {
+      "name": "Faction Resources",
+      "category": "faction",
+      "type": "d66",
+      "entries": {
+        "11": "Wealth", "12": "Land", "13": "Trade routes", "14": "Rare goods", "15": "Debt ledgers", "16": "Treasury",
+        "21": "Armed forces", "22": "Trained killers", "23": "City watch", "24": "Fleet", "25": "Fortresses", "26": "Armory",
+        "31": "Information", "32": "Spy network", "33": "Blackmail files", "34": "Ancient texts", "35": "Prophecies", "36": "Contacts",
+        "41": "Influence", "42": "Noble connections", "43": "Royal favor", "44": "Popular support", "45": "Religious authority", "46": "Legal power",
+        "51": "Magic", "52": "Artifacts", "53": "Spellcasters", "54": "Bound creatures", "55": "Sacred sites", "56": "Forbidden lore",
+        "61": "Loyalty", "62": "Fanatics", "63": "Blood oaths", "64": "Hostages", "65": "Tradition", "66": "Fear"
+      }
+    },
+    "faction_structure": {
+      "name": "Faction Structure",
+      "category": "faction",
+      "type": "d66",
+      "entries": {
+        "11": "Strict hierarchy", "12": "Military ranks", "13": "Noble titles", "14": "Religious offices", "15": "Guild ranks", "16": "Chain of command",
+        "21": "Inner circle", "22": "Trusted lieutenants", "23": "Council of elders", "24": "Ruling triumvirate", "25": "Hereditary leaders", "26": "Elected officers",
+        "31": "Cells", "32": "Compartmentalized", "33": "Need-to-know", "34": "Layers of secrecy", "35": "Masks and codes", "36": "Deniable assets",
+        "41": "Family-based", "42": "Blood ties", "43": "Marriage alliances", "44": "Adopted members", "45": "Clan structure", "46": "Inheritance rules",
+        "51": "Meritocracy", "52": "Trial by deed", "53": "Promotion by skill", "54": "Challenge rights", "55": "Testing grounds", "56": "Proving missions",
+        "61": "Loose network", "62": "Favors owed", "63": "Informal ties", "64": "Shared interests", "65": "Temporary alliances", "66": "No true leader"
+      }
+    }
+  }
+}

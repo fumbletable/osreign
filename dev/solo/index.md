@@ -199,6 +199,48 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
     </div>
   </div>
 
+  <!-- Generators Section -->
+  <div id="generators-section">
+    <h2>Generators</h2>
+    <p class="gen-help">Roll on d66 tables to generate NPCs, items, and names.</p>
+
+    <!-- Quick Formulas -->
+    <div id="quick-formulas">
+      <h3>Quick Rolls</h3>
+      <div class="formula-grid">
+        <button class="formula-btn" data-formula="quick_npc">Quick NPC</button>
+        <button class="formula-btn" data-formula="full_npc">Full NPC</button>
+        <button class="formula-btn" data-formula="quick_item">Quick Item</button>
+        <button class="formula-btn" data-formula="magic_weapon">Magic Weapon</button>
+        <button class="formula-btn" data-formula="human_name">Human Name</button>
+        <button class="formula-btn" data-formula="dwarf_name">Dwarf Name</button>
+        <button class="formula-btn" data-formula="elf_name">Elf Name</button>
+        <button class="formula-btn" data-formula="halfling_name">Halfling Name</button>
+      </div>
+    </div>
+
+    <!-- Generator Result -->
+    <div id="generator-result">
+      <div id="gen-output">-</div>
+      <div id="gen-breakdown">-</div>
+    </div>
+
+    <!-- Individual Table Rolling -->
+    <div id="table-roller">
+      <h3>Individual Tables</h3>
+      <div class="table-controls">
+        <select id="table-category">
+          <option value="">Category...</option>
+        </select>
+        <select id="table-select" disabled>
+          <option value="">Table...</option>
+        </select>
+        <button id="roll-table-btn" class="btn-secondary" disabled>Roll d66</button>
+      </div>
+      <div id="table-result"></div>
+    </div>
+  </div>
+
   <!-- Roll History -->
   <div id="history-section">
     <h3>History <button id="clear-history-btn" class="btn-small">Clear</button></h3>
@@ -935,6 +977,134 @@ Dice roller and oracle for solo OSWR play. Load a character or use standalone.
   }
   #scene-result.opportunity {
     color: #2f855a;
+  }
+
+  /* Generators Section */
+  #generators-section {
+    border-top: 2px solid #38a169;
+    padding-top: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  #generators-section h2 {
+    color: #38a169;
+    margin-bottom: 0.5rem;
+  }
+  .gen-help {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Quick Formulas */
+  #quick-formulas {
+    margin-bottom: 1.5rem;
+  }
+  #quick-formulas h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: #555;
+  }
+  .formula-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+  .formula-btn {
+    padding: 0.75rem 0.5rem;
+    border: 2px solid #38a169;
+    background: #f0fff4;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #276749;
+    transition: all 0.15s;
+    font-size: 0.9rem;
+  }
+  .formula-btn:hover {
+    background: #c6f6d5;
+  }
+  .formula-btn:active {
+    transform: scale(0.98);
+  }
+
+  /* Generator Result */
+  #generator-result {
+    text-align: center;
+    padding: 1rem;
+    background: #f0fff4;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    min-height: 80px;
+  }
+  #gen-output {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #276749;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+  }
+  #gen-breakdown {
+    font-size: 0.85rem;
+    color: #666;
+  }
+
+  /* Table Roller */
+  #table-roller {
+    background: #f8f8f8;
+    padding: 1rem;
+    border-radius: 6px;
+  }
+  #table-roller h3 {
+    font-size: 1rem;
+    margin: 0 0 0.75rem 0;
+    color: #555;
+  }
+  .table-controls {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .table-controls select {
+    flex: 1;
+    min-width: 100px;
+    padding: 0.5rem;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    background: white;
+  }
+  .table-controls select:focus {
+    border-color: #38a169;
+    outline: none;
+  }
+  #roll-table-btn {
+    padding: 0.5rem 1rem;
+    white-space: nowrap;
+  }
+  #roll-table-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  #table-result {
+    margin-top: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #276749;
+    min-height: 1.5rem;
+  }
+
+  /* Mobile responsive for generators */
+  @media (max-width: 480px) {
+    .formula-grid {
+      grid-template-columns: 1fr;
+    }
+    .table-controls {
+      flex-direction: column;
+    }
+    .table-controls select {
+      width: 100%;
+    }
   }
 
   /* History Section */
@@ -1823,5 +1993,134 @@ function checkScene() {
 // Add oracle listeners on page load
 document.addEventListener('DOMContentLoaded', () => {
   setupOracleListeners();
+  setupGenerators();
 });
+
+// ============ GENERATORS ============
+let tablesData = null;
+
+async function setupGenerators() {
+  // Load tables data
+  try {
+    const response = await fetch('./data/tables.json');
+    tablesData = await response.json();
+    initGeneratorUI();
+  } catch (e) {
+    console.error('Failed to load tables:', e);
+    document.getElementById('gen-output').textContent = 'Failed to load tables';
+  }
+}
+
+function initGeneratorUI() {
+  // Populate category dropdown
+  const categorySelect = document.getElementById('table-category');
+  tablesData.categories.forEach(cat => {
+    const option = document.createElement('option');
+    option.value = cat.id;
+    option.textContent = cat.name;
+    categorySelect.appendChild(option);
+  });
+
+  // Category change handler
+  categorySelect.addEventListener('change', () => {
+    const tableSelect = document.getElementById('table-select');
+    const rollBtn = document.getElementById('roll-table-btn');
+
+    tableSelect.innerHTML = '<option value="">Table...</option>';
+
+    if (!categorySelect.value) {
+      tableSelect.disabled = true;
+      rollBtn.disabled = true;
+      return;
+    }
+
+    // Get tables for this category
+    const categoryTables = Object.entries(tablesData.tables)
+      .filter(([id, table]) => table.category === categorySelect.value)
+      .sort((a, b) => a[1].name.localeCompare(b[1].name));
+
+    categoryTables.forEach(([id, table]) => {
+      const option = document.createElement('option');
+      option.value = id;
+      option.textContent = table.name;
+      tableSelect.appendChild(option);
+    });
+
+    tableSelect.disabled = false;
+  });
+
+  // Table change handler
+  document.getElementById('table-select').addEventListener('change', () => {
+    document.getElementById('roll-table-btn').disabled = !document.getElementById('table-select').value;
+  });
+
+  // Roll table button
+  document.getElementById('roll-table-btn').addEventListener('click', () => {
+    const tableId = document.getElementById('table-select').value;
+    if (tableId) {
+      const result = rollOnTable(tableId);
+      document.getElementById('table-result').textContent = result;
+    }
+  });
+
+  // Formula buttons
+  document.querySelectorAll('.formula-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const formulaId = btn.dataset.formula;
+      rollFormula(formulaId);
+    });
+  });
+}
+
+function rollD66() {
+  const tens = Math.floor(Math.random() * 6) + 1;
+  const units = Math.floor(Math.random() * 6) + 1;
+  return `${tens}${units}`;
+}
+
+function rollOnTable(tableId) {
+  const table = tablesData.tables[tableId];
+  if (!table) return 'Table not found';
+
+  const roll = rollD66();
+  const result = table.entries[roll];
+  return result || `No entry for ${roll}`;
+}
+
+function rollFormula(formulaId) {
+  const formula = tablesData.formulas.find(f => f.id === formulaId);
+  if (!formula) return;
+
+  const results = [];
+  const breakdown = [];
+
+  formula.tables.forEach(tableId => {
+    const table = tablesData.tables[tableId];
+    const roll = rollD66();
+    const result = table.entries[roll];
+    results.push(result);
+    breakdown.push(`${table.name}: ${result} [${roll}]`);
+  });
+
+  // Format output based on formula type
+  let output;
+  if (formula.combine === true) {
+    // Combine name parts (strip leading hyphens from endings)
+    output = results.map(r => r.replace(/^-/, '')).join('');
+  } else if (formula.combine === 'halfling') {
+    // Halfling: First + Family1+Family2
+    const first = results[0];
+    const family = results[1] + results[2].replace(/^-/, '');
+    output = `${first} ${family}`;
+  } else {
+    // Join with " + " for NPC/Item formulas
+    output = results.join(' + ');
+  }
+
+  document.getElementById('gen-output').textContent = output;
+  document.getElementById('gen-breakdown').textContent = breakdown.join(' | ');
+
+  // Add to history
+  addToHistory(formula.name, breakdown.join(', '), output, null);
+}
 </script>
