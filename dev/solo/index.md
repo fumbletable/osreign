@@ -1061,6 +1061,7 @@ let loadedCharacter = null;
 
 const STORAGE_KEY = 'oswr-characters';
 const HISTORY_KEY = 'oswr-solo-history';
+const ACTIVE_CHAR_KEY = 'oswr-solo-active-character';
 
 const STATS = ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA'];
 
@@ -1098,7 +1099,16 @@ document.addEventListener('DOMContentLoaded', () => {
   renderHistory();
   setupEventListeners();
   updatePBDisplay();
+  restoreActiveCharacter();
 });
+
+// Restore previously loaded character on page return
+function restoreActiveCharacter() {
+  const savedCharId = localStorage.getItem(ACTIVE_CHAR_KEY);
+  if (savedCharId) {
+    selectCharacter(savedCharId);
+  }
+}
 
 function setupEventListeners() {
   // D20 button
@@ -1566,6 +1576,9 @@ function selectCharacter(id) {
 
   loadedCharacter = char;
 
+  // Remember this character for next visit
+  localStorage.setItem(ACTIVE_CHAR_KEY, char.id);
+
   // Update header UI
   document.getElementById('no-character').style.display = 'none';
   document.getElementById('active-character').style.display = 'flex';
@@ -1668,6 +1681,9 @@ function renderWeaponsSection(char) {
 
 function unloadCharacter() {
   loadedCharacter = null;
+
+  // Clear saved character
+  localStorage.removeItem(ACTIVE_CHAR_KEY);
 
   // Reset header
   document.getElementById('no-character').style.display = 'flex';
