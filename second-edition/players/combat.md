@@ -108,4 +108,28 @@ You can only make one opportunity attack per round.
 
 ---
 
+## Mounted Combat
+
+Here's how fighting from the saddle works.
+
+Your mount moves on your turn, using its Speed instead of yours. It doesn't take its own turn—you direct it.
+
+**Mounting and Dismounting.** Costs half your movement.
+
+**Falling Off.** If your mount drops to 0 HP or is knocked **Prone**, you fall off and land **Prone**. If a flying mount goes down, you also take falling damage as normal.
+
+**Targeting.** An attacker chooses whether to hit the rider or the mount. You can't grapple a creature larger than you—a foot soldier can't wrestle a horse to the ground, but a giant could. Area effects hit both rider and mount.
+
+**Charge.** When your mount moves at least 15 ft in a straight line toward a target and you make a melee attack on the same turn, that's a charge. On its own, a charge is just movement plus an attack—feats like [Cavalry Charge](fighter-feats) make it devastating.
+
+**Trained Mounts.** A trained combat mount (war horse, griffon) can make one attack on your turn in addition to yours. Alternatively, the mount can forgo its attack—when it does, its movement doesn't provoke opportunity attacks. Charge in and strike, then wheel away.
+
+**Untrained Mounts.** Riding horses and other untrained animals don't attack in combat. When an untrained mount takes damage, the Referee rolls **Morale** for it. If it breaks, the mount bolts—the rider must pass a **DEX save (DC 12)** or be thrown **Prone** as the mount flees.
+
+War horses and trained mounts only check Morale under the usual triggers (first ally falls, half the group down, leader killed).
+
+**Weapons.** One-handed weapons work normally from the saddle. Two-handed weapons have **Setback**—you need a hand free for the reins.
+
+---
+
 Combat ends when all foes flee, surrender, or fall.
