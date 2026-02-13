@@ -44,6 +44,7 @@ All the key terms in one place.
 |------|------------|
 | **AC (Armor Class)** | Target number to hit you. Base 10 + DEX, modified by armor. |
 | **Attack Roll** | d20 + ability + PB (if proficient). Meet or beat AC to hit. |
+| **Charge** | Mount moves at least 15 ft in a straight line toward a target and rider makes a melee attack. Enhanced by feats like Cavalry Charge. |
 | **Critical Hit** | Natural 20. Double your damage dice (not ability bonus). |
 | **Fumble** | Natural 1. Referee may add a complication—dropped weapon, slipped footing. |
 | **Opportunity Attack** | Free attack when a foe leaves your reach (unless they Disengage). One per round. |
@@ -103,6 +104,19 @@ All the key terms in one place.
 **Dash** — Action to move again at full Speed.
 
 **Disengage** — Action to move without provoking opportunity attacks.
+
+---
+
+## Size
+
+| Size | Examples |
+|------|----------|
+| **Small** | Halflings, goblins, kobolds, sprites, dogs |
+| **Medium** | Humans, elves, dwarves, orcs |
+| **Large** | Horses, ogres, centaurs, griffons, worgs |
+| **Huge** | Giants, dragons, rocs, mastodons |
+
+Size determines two things: you can't grapple a creature larger than you, and the [Mounted Combatant](../../players/general-feats) feat grants **Edge** against creatures smaller than your mount.
 
 ---
 
