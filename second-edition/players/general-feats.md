@@ -53,7 +53,7 @@ These feats are open to everyone. You pick one at each even level (2, 4, 6, 8, 1
 | Poison Resistance | **Edge** on saves vs poison. |
 | Resilience | Once per day, reroll a failed save. |
 | Strong Back | +5 item slots to your carrying capacity. |
-| Stunning Strike | When you hit with an unarmed attack, target makes a CON save (DC 8 + PB + DEX) or is **Stunned** until end of your next turn. Once per combat. Requires Brawler. |
+| Stunning Strike | When you hit with an unarmed attack, spend 1 **Boost Die**. Target makes a CON save (DC 8 + PB + DEX) or is **Stunned** until end of your next turn. Once per combat. Requires Brawler. |
 | Tough | +2 HP per level (retroactive). |
 | Unarmored Defense | When unarmored, AC = 10 + DEX + CON. |
 | Weapon Mastery | Gain proficiency with one weapon category (Light, Medium, or Heavy). |
